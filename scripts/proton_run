@@ -1,0 +1,15 @@
+#! /bin/sh
+# This is a small script to run mod managers and dlc installers and such meant
+# for Windows. The first argument is the app ID number for the corresponding
+# game. The second argument is a file to run. The version of proton is
+# hardcoded, so update this script as necessary.
+
+STEAM_DIR=/home/robert/.local/share/Steam/
+
+APP_ID=$1
+EXE=$2
+
+
+STEAM_COMPAT_DATA_PATH=/home/robert/.local/share/Steam/steamapps/compatdata/$APP_ID/ \
+/home/robert/.local/share/Steam/steamapps/common/Proton\ 3.16\ Beta/proton run $EXE
+

@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+	<title>Todoist – The Best To Do List App & Task Manager</title>
+    <meta name="description" content="Millions of people trust Todoist to tame life's chaos. Ranked by The Verge as the world's best to do list app. Free on iOS, Android, macOS, Windows, & more." />
+
+    
+    
+
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@todoist">
+<meta name="twitter:title" content="Todoist – The Best To Do List App & Task Manager">
+<meta name="twitter:description" content="Millions of people trust Todoist to tame life's chaos. Ranked by The Verge as the world's best to do list app. Free on iOS, Android, macOS, Windows, & more.">
+<meta name="twitter:creator" content="@todoist">
+<meta name="twitter:image" content="https://d3ptyyxy2at9ui.cloudfront.net/td-968d99.jpg">
+
+
+<!-- Open Graph data -->
+<meta property="og:title" content="Todoist – The Best To Do List App & Task Manager" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://todoist.com/" />
+<meta property="og:image" content="https://d3ptyyxy2at9ui.cloudfront.net/td-968d99.jpg" />
+<meta property="og:description" content="Millions of people trust Todoist to tame life's chaos. Ranked by The Verge as the world's best to do list app. Free on iOS, Android, macOS, Windows, & more." />
+<meta property="og:site_name" content="Todoist" />
+<meta property="fb:admins" content="165864136843769" />
+
+
+
+    <link rel="canonical" href="https://todoist.com/?lang=en" />
+<link rel="alternate" hreflang="x-default" href="https://todoist.com/" />
+<link rel="alternate" hreflang="da" href="https://todoist.com/?lang=da" />
+<link rel="alternate" hreflang="en" href="https://todoist.com/?lang=en" />
+<link rel="alternate" hreflang="de" href="https://todoist.com/?lang=de" />
+<link rel="alternate" hreflang="es" href="https://todoist.com/?lang=es" />
+<link rel="alternate" hreflang="fi" href="https://todoist.com/?lang=fi" />
+<link rel="alternate" hreflang="fr" href="https://todoist.com/?lang=fr" />
+<link rel="alternate" hreflang="it" href="https://todoist.com/?lang=it" />
+<link rel="alternate" hreflang="nl" href="https://todoist.com/?lang=nl" />
+<link rel="alternate" hreflang="nb" href="https://todoist.com/?lang=nb" />
+<link rel="alternate" hreflang="pl" href="https://todoist.com/?lang=pl" />
+<link rel="alternate" hreflang="pt-BR" href="https://todoist.com/?lang=ptBR" />
+<link rel="alternate" hreflang="ru" href="https://todoist.com/?lang=ru" />
+<link rel="alternate" hreflang="tr" href="https://todoist.com/?lang=tr" />
+<link rel="alternate" hreflang="sv" href="https://todoist.com/?lang=sv" />
+<link rel="alternate" hreflang="zh-TW" href="https://todoist.com/?lang=zhTW" />
+<link rel="alternate" hreflang="zh-CN" href="https://todoist.com/?lang=zhCN" />
+<link rel="alternate" hreflang="ko" href="https://todoist.com/?lang=ko" />
+<link rel="alternate" hreflang="ja" href="https://todoist.com/?lang=ja" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    
+<meta name="robots" content="index, follow" />
+
+
+    <meta name="apple-itunes-app" content="app-id=572688855" />
+    <link rel="icon" sizes="256x256" type="image/png" href="https://d3ptyyxy2at9ui.cloudfront.net/logo_256-47cb98.png" />
+    <link rel="mask-icon" href="https://d3ptyyxy2at9ui.cloudfront.net/logo_mask-4cb109.svg" color="#e44332">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#e44232">
+
+    <meta name="google-site-verification" content="5yr27JJ7TxirZBa19ALfe4oyx39mZi0Gmkyyis1KKmo" />
+    <link href="https://plus.google.com/106827182652048588353/" rel="publisher" />
+    <meta property="fb:admins" content="100001898074257" />
+
+    
+
+        <script>
+            LANG = 'en';
+        </script>
+
+	
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Organization",
+  "name": "Todoist",
+  "url": "https://todoist.com",
+  "logo": "https://d1x0mwiac2rqwt.cloudfront.net/bab0a0c4b1c3135a24bd0518417b66e3/as/logo_todoist_schema.png",
+  "sameAs": [
+    "https://twitter.com/todoist",
+    "https://www.facebook.com/Todoist",
+    "https://plus.google.com/+Todoist",
+    "https://www.youtube.com/user/DoistApps",
+    "https://instagram.com/todoistofficial/",
+    "https://www.pinterest.com/todoist/",
+    "https://dribbble.com/todoist",
+    "https://flipboard.com/@Todoist",
+    "https://www.linkedin.com/company/doist"
+  ]
+}
+</script>
+
+
+	
+
+    <script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-5309378-4', { 'sampleRate': 100 });
+ga('send', 'pageview');
+</script>
+
+    <link rel="stylesheet" type="text/css" href="https://d3ptyyxy2at9ui.cloudfront.net/LandingPagesCSS-fdb7d9.css" media="all" />
+<script type="text/javascript" src="https://d3ptyyxy2at9ui.cloudfront.net/Col_ICECollection-667c37.js" ></script>
+<link rel="stylesheet" type="text/css" href="https://d3ptyyxy2at9ui.cloudfront.net/Col_ICECollection-7c3625.css" media="all" />
+<script type="text/javascript" src="https://d3ptyyxy2at9ui.cloudfront.net/Col_LandingPagesJSPack-529e68.js" ></script>
+<link rel="stylesheet" type="text/css" href="https://d3ptyyxy2at9ui.cloudfront.net/Col_LandingPagesJSPack-bae1ac.css" media="all" />
+	
+
+	
+</head>
+
+<body>
+    <div class="td-overflow-hidden">
+        
+
+
+
+<nav class="td-header td-header--theme-base  js-header">
+    <div class="td-header__floating">
+        <div class="td-container">
+            <div class="td-header__inner">
+                <div class="td-header__brand">
+                    <a class="td-header__logo-holder" href="/overview">
+                        <img alt="Todoist" class="td-header__logo td-header__logo--base" src="https://d3ptyyxy2at9ui.cloudfront.net/logo-todoist-b5b89f.svg">
+                        <img alt="Todoist Premium" class="td-header__logo td-header__logo--premium" src="https://d3ptyyxy2at9ui.cloudfront.net/logo-todoist-premium-cc12c4.svg">
+                        <img alt="Todoist Premium" class="td-header__logo td-header__logo--premium-inverse" src="https://d3ptyyxy2at9ui.cloudfront.net/logo-todoist-premium-inverse-7c4fa8.svg">
+                    </a>
+                </div>
+                <a class="td-header__toggle js-header-toggle" href="#">
+                    <div class="td-cssicon-cross "><div class="td-cssicon-cross__y"></div></div>
+                </a>
+                <div class="td-header__actions-holder">
+                    <ul class="td-header__actions">
+                        <li class="td-header__action">
+                            <a class="td-header__action-link " href="/tour">How It Works</a>
+                        </li>
+                        <li class="td-header__action">
+                            <a class="td-header__action-link" href="/templates?lang=en">Templates</a>
+                        </li>
+                        <li class="td-header__action">
+                            <a class="td-header__action-link " href="/premium">Premium</a>
+                        </li>
+                        <li class="td-header__action">
+                            <a class="td-header__action-link " href="/business">Business</a>
+                        </li>
+                            <li class="td-header__action">
+                                <a class="td-header__action-link sel_login" href="/Users/showLogin" onclick="return showLogin()">Log in</a>
+                            </li>
+                            <li class="td-header__action">
+                                
+                                <a class="td-header__signup-link td-header__action-link sel_signup" href="/Users/showRegister" onclick="return showSignUp()">Sign up</a>
+                                
+    
+    <a href="/Users/showRegister"
+        class="td-button
+        td-button--primary
+        
+        td-button--hollow
+        td-header__signup-button sel_signup"
+        onclick="return showSignUp()"
+        role="button">
+        Sign up
+    </a>
+
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<section class="td-container td-p-v-2-section">
+    <div class="td-grid td-grid--m-b-0 td-flex-x-center td-flex-x-start-@md">
+        <div class="td-grid__cell td-width-6-12-@sm">
+            <h2 class="td-t-hd1 td-m-b-1">
+                Organize life <span class="td-t-c-primary td-display-block">Then go enjoy it…</span>
+            </h2>
+            <p class="td-t-pl td-m-b-4">
+                Life can feel overwhelming, but it doesn’t have to. Todoist lets you keep track of everything in one place, so you can get it all done and enjoy more peace of mind along the way.
+            </p>
+            
+    
+    
+    
+    <a href="/Users/showRegister"
+        class="td-button
+        td-button--primary
+        td-button--xl
+        
+        td-m-b-2 sel_signup2"
+        onclick="return showSignUp()"
+        role="button">
+        Get Started – It’s Free
+    </a>
+
+
+            <p class="td-t-ps td-m-b-0">
+                Wondering how it works?
+                <a href="https://www.youtube.com/watch?v=8ZKq0r-g87M" class="" onclick='return playYoutube("How Todoist works", this.href);'>
+                    Watch a video
+                </a>
+            </p>
+        </div>
+        <div class="td-grid__cell td-width-6-12-@sm">
+            <img alt="" class="td-img-preserve td-w-200-@sm-down td-w-100-gap-sm-@xs-down" src="https://d3ptyyxy2at9ui.cloudfront.net/illo-organized-life-a11f87.png" width="623">
+        </div>
+    </div>
+</section>
+
+<section class="td-container td-p-v-section td-p-t-0-@sm-down td-p-b-0-@sm-down">
+    <div class="td-grid td-grid--m-b-0 td-flex-row-reverse td-flex-x-center td-flex-space-between">
+        <div class="td-grid__cell td-width-7-12-@sm td-width-6-12-@lg">
+            <h2 class="td-t-h1 td-m-b-1">
+                Never worry about forgetting things again
+            </h2>
+            <p class="td-t-pl td-m-b-3">
+                Let Todoist remember it all for you. You can get tasks out of your head and onto your to-do list anytime, anywhere, on any device – even offline.
+            </p>
+            <a href="/tour" class="td-t-a-arrow "  >See How It Works<svg class="td-svg" xmlns="http://www.w3.org/2000/svg" width="14" height="12" viewBox="0 0 14 12"><path fill="currentColor" d="M13.707 5.267L8.767.152a.485.485 0 0 0-.706 0 .531.531 0 0 0 0 .732s4.458 4.602 4.456 4.602H.5a.51.51 0 0 0-.5.518.51.51 0 0 0 .5.518h12.016L8.06 11.116a.532.532 0 0 0 0 .733c.196.2.513.2.708 0l4.94-5.118c.39-.405.39-1.06 0-1.465z"/></svg></a>
+        </div>
+        <div class="td-grid__cell td-dir-rtl-bdo td-width-5-12-@sm">
+            <img alt="" class="td-img-preserve td-w-100-@sm-down" src="https://d3ptyyxy2at9ui.cloudfront.net/illo-remember-d31285.png" width="437">
+        </div>
+    </div>
+</section>
+
+<section class="td-container td-p-v-section td-p-b-0-@sm-down">
+    <header class="td-width-9-12-@sm td-width-6-12-@xl">
+        <h2 class="td-t-h1 td-m-b-1">
+            Todoist helps millions of people feel more in control of their lives
+        </h2>
+        <p class="td-t-pl td-m-b-3 td-m-b-5-@md">
+            and is trusted by leaders at some of the world’s most inspired organizations.
+        </p>
+    </header>
+    <div class="td-grid td-grid--match td-grid--m-b-0 td-grid--gap-sm-@xs-down">
+        <div class="td-grid__cell td-width-6-12-@md">
+
+            
+    <div class="td-card td-card--gray td-hidden js-quote">
+        <blockquote class="td-quote td-quote--lg td-quote--primary td-m-b-8-@lg">
+            <p>Todoist keeps all my to-dos in one place and integrates perfectly with the other tools I use. It helps me turn things around more quickly.</p>
+        </blockquote>
+        <footer class="td-flex-x-center td-flex-@sm">
+            <div class="td-flex-item-fill">
+                <div class="td-flex td-flex-x-start">
+                    <img alt="Rachel Paiva" src="https://d3ptyyxy2at9ui.cloudfront.net/avatar-rachel-p-d4e032.png" width="48">
+                    <div class="td-flex-item-fill td-p-s-1 td-p-s-2d5-@sm td-p-e-1-@sm">
+                        <p class="td-t-pl td-m-b-0">Rachel Paiva</p>
+                        <p class="td-t-pl td-m-b-0">Principal Technical Project Manager</p>
+                    </div>
+                </div>
+            </div>
+                <div class="td-text-end td-m-t-2"><img alt="America Online" src="https://d3ptyyxy2at9ui.cloudfront.net/logo-aol-22f283.svg" width="82"></div>
+        </footer>
+    </div>
+
+
+            
+    <div class="td-card td-card--gray td-hidden js-quote">
+        <blockquote class="td-quote td-quote--lg td-quote--primary td-m-b-8-@lg">
+            <p>Constantly trying to remember things drains energy and causes stress. Todoist takes all this pressure and worrying off of your head.</p>
+        </blockquote>
+        <footer class="td-flex-x-center td-flex-@sm">
+            <div class="td-flex-item-fill">
+                <div class="td-flex td-flex-x-start">
+                    <img alt="Matija Biljeskovic" src="https://d3ptyyxy2at9ui.cloudfront.net/avatar-matija-b-44ba54.png" width="48">
+                    <div class="td-flex-item-fill td-p-s-1 td-p-s-2d5-@sm td-p-e-1-@sm">
+                        <p class="td-t-pl td-m-b-0">Matija Biljeskovic</p>
+                        <p class="td-t-pl td-m-b-0">Founder of BalkanViator</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+            
+    <div class="td-card td-card--gray td-hidden js-quote">
+        <blockquote class="td-quote td-quote--lg td-quote--primary td-m-b-8-@lg">
+            <p>Todoist has become my digital brain for juggling different aspects of my job. This makes the busyness and craziness feel so much simpler.</p>
+        </blockquote>
+        <footer class="td-flex-x-center td-flex-@sm">
+            <div class="td-flex-item-fill">
+                <div class="td-flex td-flex-x-start">
+                    <img alt="Josh Graham" src="https://d3ptyyxy2at9ui.cloudfront.net/avatar-josh-g-f4b5b9.png" width="48">
+                    <div class="td-flex-item-fill td-p-s-1 td-p-s-2d5-@sm td-p-e-1-@sm">
+                        <p class="td-t-pl td-m-b-0">Josh Graham</p>
+                        <p class="td-t-pl td-m-b-0">Campus Field Staff at CRU</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+        </div>
+        <div class="td-grid__cell td-width-6-12 td-width-3-12-@md">
+            <div class="td-grid td-grid--match-rows td-grid--m-b-0 td-grid--gap-sm-@xs-down">
+                <div class="td-grid__cell">
+                    <div class="td-card td-card--gray td-flex-center td-flex-x-center">
+                        <img alt="Apple" src="https://d3ptyyxy2at9ui.cloudfront.net/logo-apple-4f4b7c.svg" width="45">
+                    </div>
+                </div>
+                <div class="td-grid__cell">
+                    <div class="td-card td-card--gray td-flex-center td-flex-x-center">
+                        <img alt="Google" src="https://d3ptyyxy2at9ui.cloudfront.net/logo-google-6b5ab6.svg" width="139">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="td-grid__cell td-width-6-12 td-width-3-12-@md">
+            <div class="td-grid td-grid--match-rows td-grid--m-b-0 td-grid--gap-sm-@xs-down">
+                <div class="td-grid__cell">
+                    <div class="td-card td-card--gray td-flex-center td-flex-x-center">
+                        <img alt="Starbucks" src="https://d3ptyyxy2at9ui.cloudfront.net/logo-nike-01d1c6.svg" width="62">
+                    </div>
+                </div>
+                <div class="td-grid__cell">
+                    <div class="td-card td-card--gray td-flex-center td-flex-x-center">
+                        <img alt="Massachusetts Institute of Technology" src="https://d3ptyyxy2at9ui.cloudfront.net/logo-mit-d9a4f9.svg" width="172">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <p style="width: 100%; text-align: center">
+                Millions of people have completed over 1 billion Todoist tasks.
+            &nbsp;
+            <a href="/community" class="td-t-a-arrow "  >See their accomplishments<svg class="td-svg" xmlns="http://www.w3.org/2000/svg" width="14" height="12" viewBox="0 0 14 12"><path fill="currentColor" d="M13.707 5.267L8.767.152a.485.485 0 0 0-.706 0 .531.531 0 0 0 0 .732s4.458 4.602 4.456 4.602H.5a.51.51 0 0 0-.5.518.51.51 0 0 0 .5.518h12.016L8.06 11.116a.532.532 0 0 0 0 .733c.196.2.513.2.708 0l4.94-5.118c.39-.405.39-1.06 0-1.465z"/></svg></a>
+        </p>
+    </div>
+</section>
+
+<div class="td-container td-text-center td-p-v-2-section">
+    <h2 class="td-t-h1 td-m-b-4">Unclutter your mind with Todoist</h2>
+    
+    
+    
+    
+    <a href="/Users/showRegister"
+        class="td-button
+        td-button--primary
+        td-button--xl
+        
+         sel_signup2"
+        onclick="return showSignUp()"
+        role="button">
+        Get Started – It’s Free
+    </a>
+
+
+</div>
+
+
+
+    <aside class="td-border-top">
+        <div class="td-container td-text-center td-p-v-section">
+            <p class="td-t-hs1 td-m-b-2">Created by a fully remote, independent &amp; bootstrapped team</p>
+            <a href="https://doist.com" class="td-t-a-arrow "  >Learn more about Doist<svg class="td-svg" xmlns="http://www.w3.org/2000/svg" width="14" height="12" viewBox="0 0 14 12"><path fill="currentColor" d="M13.707 5.267L8.767.152a.485.485 0 0 0-.706 0 .531.531 0 0 0 0 .732s4.458 4.602 4.456 4.602H.5a.51.51 0 0 0-.5.518.51.51 0 0 0 .5.518h12.016L8.06 11.116a.532.532 0 0 0 0 .733c.196.2.513.2.708 0l4.94-5.118c.39-.405.39-1.06 0-1.465z"/></svg></a>
+        </div>
+    </aside>
+
+
+
+
+
+
+<footer class="td-footer td-footer--theme-base">
+    <div class="td-container">
+        <div class="td-grid td-grid--m-b-0">
+            <nav class="td-grid__cell td-width-4-12-@sm td-width-2-12-@lg">
+                <h2 class="td-footer__h">Language</h2>
+
+                
+
+                <select class="td-footer__language-selector td-form-control td-form-control--sm td-form-control--select td-width-full js-language-selector ">
+
+                        <option  value="https://todoist.com/?lang=da" target="_top">Dansk</option>
+                        <option selected="selected" value="https://todoist.com/?lang=en" target="_top">English</option>
+                        <option  value="https://todoist.com/?lang=de" target="_top">Deutsch</option>
+                        <option  value="https://todoist.com/?lang=es" target="_top">Español</option>
+                        <option  value="https://todoist.com/?lang=fi" target="_top">Suomi</option>
+                        <option  value="https://todoist.com/?lang=fr" target="_top">Français</option>
+                        <option  value="https://todoist.com/?lang=it" target="_top">Italiano</option>
+                        <option  value="https://todoist.com/?lang=nl" target="_top">Nederlands</option>
+                        <option  value="https://todoist.com/?lang=nb" target="_top">Norsk</option>
+                        <option  value="https://todoist.com/?lang=pl" target="_top">Polski</option>
+                        <option  value="https://todoist.com/?lang=ptBR" target="_top">Português (Brazil)</option>
+                        <option  value="https://todoist.com/?lang=ru" target="_top">Pусский (Russian)</option>
+                        <option  value="https://todoist.com/?lang=tr" target="_top">Türkçe</option>
+                        <option  value="https://todoist.com/?lang=sv" target="_top">Svenska</option>
+                        <option  value="https://todoist.com/?lang=zhTW" target="_top">中文 (繁體)</option>
+                        <option  value="https://todoist.com/?lang=zhCN" target="_top">中文 (简体)</option>
+                        <option  value="https://todoist.com/?lang=ko" target="_top">한국어</option>
+                        <option  value="https://todoist.com/?lang=ja" target="_top">日本語</option>
+
+                </select>
+            </nav>
+            <nav class="td-grid__cell td-width-6-12 td-width-4-12-@sm td-width-2-12-@lg">
+                <h2 class="td-footer__h">Product</h2>
+                <ul class="td-footer__l">
+                    <li class="td-footer__l-i">
+                        <a class="td-footer__l-a" href="/tour">How It Works</a>
+                    </li>
+                    <li class="td-footer__l-i">
+                        <a class="td-footer__l-a" href="/templates?lang=en">Templates</a>
+                    </li>
+                    <li class="td-footer__l-i">
+                        <a class="td-footer__l-a" href="/premium">Premium</a>
+                    </li>
+                    <li class="td-footer__l-i">
+                        <a class="td-footer__l-a" href="/business">For Teams</a>
+                    </li>
+                    <li class="td-footer__l-i">
+                        <a class="td-footer__l-a" href="/pricing">Pricing</a>
+                    </li>
+                    <li class="td-footer__l-i">
+                        <a class="td-footer__l-a" href="/nonprofits">Todoist for Nonprofits</a>
+                    </li>
+                    <li class="td-footer__l-i">
+                        <a class="td-footer__l-a" href="/education">Todoist for Education</a>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="td-grid__cell td-width-6-12 td-width-4-12-@sm td-width-2-12-@lg">
+                <h2 class="td-footer__h">Resources</h2>
+                <ul class="td-footer__l">
+                    <li class="td-footer__l-i">
+                        <a class="td-footer__l-a" href="/downloads">Download Apps</a>
+                    </li>
+                    <li class="td-footer__l-i">
+                        <a class="td-footer__l-a" href="https://get.todoist.help">Help Center</a>
+                    </li>
+                    <li class="td-footer__l-i">
+                        <a class="td-footer__l-a" href="/integrations">Integrations</a>
+                    </li>
+                    <li class="td-footer__l-i">
+                        <a class="td-footer__l-a" href="https://developer.todoist.com">Developer API</a>
+                    </li>
+
+                    <li class="td-footer__l-i">
+                        <a class="td-footer__l-a" href="/refer">Refer a friend</a>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="td-grid__cell td-width-6-12 td-width-4-12-@sm td-width-2-12-@lg">
+                <h2 class="td-footer__h">Legal</h2>
+                <ul class="td-footer__l">
+                    <li class="td-footer__l-i">
+                        <a class="td-footer__l-a" href="/security">Security</a>
+                    </li>
+                    <li class="td-footer__l-i">
+                        <a class="td-footer__l-a" href="/privacy">Privacy</a>
+                    </li>
+                    <li class="td-footer__l-i">
+                        <a class="td-footer__l-a" href="/terms">Terms of service</a>
+                    </li>
+                </ul>
+            </nav>
+            <nav class="td-grid__cell td-width-6-12 td-width-4-12-@sm td-width-2-12-@lg">
+                <h2 class="td-footer__h">Made by Doist</h2>
+                <ul class="td-footer__l">
+                    <li class="td-footer__l-i">
+                        <a class="td-footer__l-a" href="https://twist.com/by-todoist?utm_source=todoist&utm_campaign=tdfooter">Twist</a><a class="td-footer__badge td-m-s-1" href="https://twist.com/by-todoist?utm_source=todoist&utm_campaign=tdfooter">New</a>
+                    </li>
+                    <li class="td-footer__l-i">
+                        <a class="td-footer__l-a" href="https://doist.com">About Us</a>
+                    </li>
+                    <li class="td-footer__l-i">
+                        <a class="td-footer__l-a" href="https://doist.com/press/">Press</a>
+                    </li>
+                    <li class="td-footer__l-i">
+                        <a class="td-footer__l-a" href="https://doist.com/jobs/">Jobs</a>
+                    </li>
+                </ul>
+            </nav>
+            <aside class="td-grid__cell td-width-4-12-@sm td-width-2-12-@lg td-hidden-@xs-down">
+                <h2 class="td-footer__h">From our blog</h2>
+                <ul class="td-footer__l">
+                    <li class="td-footer__l-i">
+                        <a class="td-footer__l-a" href="https://blog.doist.com/systemist-a-modern-productivity-workflow-b6ec9ef05d3f">Systemist: A productivity workflow by Todoist's founder</a>
+                    </li>
+                    <li class="td-footer__l-i">
+                        <a class="td-footer__l-a" href="https://blog.doist.com/11-of-the-fastest-ways-to-get-tasks-off-your-mind-and-into-your-todoist-8c25983aab9a">11 of the Fastest Ways to Get Tasks Off Your Mind and Into Your Todoist</a>
+                    </li>
+                    <li class="td-footer__l-i">
+                        <a class="td-footer__l-a" href="https://blog.doist.com/the-ultimate-guide-to-personal-productivity-methods-eef50340f575">The Ultimate Guide to Personal Productivity Methods</a>
+                    </li>
+                    <li class="td-footer__l-i">
+                        <a class="td-footer__l-a td-footer__c-primary" href="https://blog.doist.com">Read more</a>
+                    </li>
+                </ul>
+            </aside>
+        </div>
+        <div class="td-footer__separator"></div>
+        <div class="td-flex td-flex-x-center">
+            <h2 class="td-footer__h td-m-b-0 td-flex-item-fill td-text-truncate td-p-e-1">Keep in touch</h2>
+            <div class="td-m-gap-1d5 td-m-gap-no-offset">
+                <a class="td-footer__logo td-icon td-icon--30" href="https://www.facebook.com/Todoist/">
+                    <svg class="td-svg" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22"><path fill="currentColor" d="M21.5 20.45c0 .636-.32 1.05-.968 1.05h-5.45v-7.946h2.772l.42-3.405h-3.19V8.377c0-.908.25-1.635 1.592-1.635h1.907V4.036c-.583-.04-1.487-.125-2.67-.125-2.463 0-4.33 1.465-4.33 4.156v2.083H8.667v3.404h2.916V21.5H1.48c-.653 0-.98-.414-.98-1.05V1.913C.5 1.278.827.5 1.48.5h19.052c.647 0 .968.778.968 1.413V20.45z"/></svg>
+                </a>
+                <a class="td-footer__logo td-icon td-icon--30" href="https://twitter.com/todoist">
+                    <svg class="td-svg" xmlns="http://www.w3.org/2000/svg" width="22" height="19" viewBox="0 0 22 19"><path fill="currentColor" d="M21.193 1.286c-.857.52-1.804.9-2.816 1.1A4.377 4.377 0 0 0 15.143.954c-2.445 0-4.43 2.034-4.43 4.544 0 .355.038.7.114 1.034-3.682-.19-6.947-1.996-9.134-4.75a4.632 4.632 0 0 0-.6 2.288c0 1.576.782 2.967 1.972 3.782a4.372 4.372 0 0 1-2.01-.567v.056c0 2.203 1.53 4.04 3.558 4.456-.372.107-.764.16-1.168.16a4.32 4.32 0 0 1-.834-.08c.565 1.805 2.2 3.12 4.14 3.154a8.746 8.746 0 0 1-5.504 1.946c-.357 0-.71-.02-1.057-.062a12.331 12.331 0 0 0 6.792 2.04c8.152 0 12.61-6.923 12.61-12.93 0-.197-.005-.394-.012-.588a9.126 9.126 0 0 0 2.21-2.35 8.74 8.74 0 0 1-2.545.714 4.538 4.538 0 0 0 1.948-2.514"/></svg>
+                </a>
+                <a class="td-footer__logo td-icon td-icon--30" href="https://www.youtube.com/user/DoistApps/videos">
+                    <svg class="td-svg" xmlns="http://www.w3.org/2000/svg" width="24" height="17" viewBox="0 0 24 17"><path fill="currentColor" d="M11.995 0h.01s5.038 0 8.397.243c.47.056 1.492.06 2.404 1.016.72.728.954 2.382.954 2.382S24 5.583 24 7.525v1.82c0 1.943-.24 3.885-.24 3.885s-.234 1.655-.954 2.383c-.912.956-1.935.96-2.404 1.017-3.36.242-8.402.25-8.402.25s-6.24-.057-8.16-.24c-.534-.1-1.733-.07-2.646-1.027-.72-.728-.954-2.382-.954-2.382S0 11.29 0 9.348v-1.82c0-1.943.24-3.885.24-3.885s.234-1.654.954-2.383C2.107.303 3.129.3 3.598.243 6.958 0 11.995 0 11.995 0zM9.521 4.81l.002 6.743 6.484-3.36L9.522 4.81z"/></svg>
+                </a>
+                <a class="td-footer__logo td-icon td-icon--30" href="https://www.instagram.com/todoistofficial/">
+                    <svg class="td-svg" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" fill-rule="evenodd" d="M11.996.008C8.738.008 8.33.021 7.05.08 5.773.138 4.9.34 4.138.637a5.878 5.878 0 0 0-2.125 1.384A5.895 5.895 0 0 0 .63 4.147C.333 4.91.13 5.782.072 7.059.014 8.338 0 8.746 0 12.004s.014 3.666.072 4.946c.058 1.277.26 2.15.558 2.912.306.79.717 1.458 1.383 2.125a5.883 5.883 0 0 0 2.125 1.383c.763.297 1.635.5 2.912.558 1.28.058 1.688.072 4.946.072s3.667-.014 4.946-.072c1.277-.058 2.15-.26 2.912-.558a5.875 5.875 0 0 0 2.125-1.383 5.896 5.896 0 0 0 1.383-2.125c.296-.763.5-1.635.557-2.912.06-1.28.072-1.688.072-4.946s-.013-3.667-.072-4.946c-.058-1.277-.26-2.15-.557-2.912a5.878 5.878 0 0 0-1.384-2.125A5.908 5.908 0 0 0 19.852.638c-.763-.296-1.635-.5-2.912-.557-1.28-.06-1.688-.072-4.946-.072zm0 2.16c3.203 0 3.583.013 4.848.07 1.17.054 1.805.25 2.227.414.56.218.96.478 1.38.897.42.42.68.82.898 1.38.164.42.36 1.057.413 2.226.06 1.265.07 1.645.07 4.848s-.01 3.582-.07 4.847c-.052 1.17-.248 1.806-.412 2.23-.218.56-.478.958-.897 1.378-.42.42-.82.68-1.38.898-.42.164-1.057.36-2.226.413-1.265.056-1.644.07-4.848.07-3.203 0-3.582-.014-4.847-.07-1.17-.055-1.806-.25-2.23-.414a3.717 3.717 0 0 1-1.378-.898c-.42-.42-.68-.82-.898-1.38-.164-.422-.36-1.057-.413-2.227-.056-1.264-.07-1.643-.07-4.846 0-3.203.014-3.583.07-4.848.055-1.17.25-1.805.414-2.227.218-.56.478-.96.898-1.38.42-.42.82-.68 1.38-.898.422-.164 1.057-.36 2.227-.413 1.264-.06 1.643-.07 4.846-.07zm0 13.835a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm0-10.16a6.16 6.16 0 1 1 0 12.32 6.16 6.16 0 1 1 0-12.32zM19.84 5.6a1.44 1.44 0 1 1-2.88 0 1.44 1.44 0 0 1 2.88 0z"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+    </div>
+    
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

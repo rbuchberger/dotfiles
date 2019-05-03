@@ -1,0 +1,58 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "pixel",
+    "current_border_width": 0,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 690,
+       "width": 838,
+       "x": 0,
+       "y": 0
+    },
+    "name": "vis",
+    "percent": 1,
+    "swallows": [
+       {
+        "class": "^kitty$",
+        "instance": "^kitty$",
+       }
+    ],
+    "type": "con"
+}
+
+{
+    "border": "normal",
+    "floating": "on",
+    "layout": "splith",
+    "percent": null,
+    "rect": {
+       "height": 659,
+       "width": 926,
+       "x": 827,
+       "y": 310
+    },
+    "type": "floating_con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 0,
+            "floating": "user_on",
+            "geometry": {
+               "height": 600,
+               "width": 800,
+               "x": 0,
+               "y": 0
+            },
+            "name": "Spotify Premium",
+            "percent": 1,
+            "swallows": [
+               {
+                "class": "^Spotify$",
+                "instance": "^spotify$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+

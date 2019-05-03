@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html class="client-nojs" lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<title>System maintenance - ArchWiki</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"System_maintenance","wgTitle":"System maintenance","wgCurRevisionId":571099,"wgRevisionId":571099,"wgArticleId":14206,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["System administration"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"System_maintenance","wgRelevantArticleId":14206,"wgRequestId":"c18e80a9be53470d85371068","wgCSPNonce":false,"wgIsProbablyEditable":false,"wgRelevantPageIsProbablyEditable":false,"wgRestrictionEdit":[],"wgRestrictionMove":[]});mw.loader.state({"site.styles":"ready","noscript":"ready","user.styles":"ready","user":"ready","user.options":"ready","user.tokens":"loading","mediawiki.legacy.shared":"ready","mediawiki.legacy.commonPrint":"ready","mediawiki.toc.styles":"ready","zzz.ext.archLinux.styles":"ready","skins.vector.styles.responsive":"ready","mediawiki.skinning.interface":"ready","skins.vector.styles":"ready"});mw.loader.implement("user.tokens@0tffind",function($,jQuery,require,module){/*@nomin*/mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\","csrfToken":"+\\"});
+});RLPAGEMODULES=["site","mediawiki.page.startup","mediawiki.user","mediawiki.page.ready","mediawiki.toc","mediawiki.searchSuggest","skins.vector.js"];mw.loader.load(RLPAGEMODULES);});</script>
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=en&amp;modules=mediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.skinning.interface%7Cmediawiki.toc.styles%7Cskins.vector.styles%7Cskins.vector.styles.responsive%7Czzz.ext.archLinux.styles&amp;only=styles&amp;skin=vector"/>
+<script async="" src="/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="ResourceLoaderDynamicStyles" content=""/>
+<link rel="stylesheet" href="/load.php?debug=false&amp;lang=en&amp;modules=site.styles&amp;only=styles&amp;skin=vector"/>
+<meta name="generator" content="MediaWiki 1.32.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="shortcut icon" href="/favicon.ico"/>
+<link rel="search" type="application/opensearchdescription+xml" href="/opensearch_desc.php" title="ArchWiki (en)"/>
+<link rel="EditURI" type="application/rsd+xml" href="https://wiki.archlinux.org/api.php?action=rsd"/>
+<link rel="license" href="http://www.gnu.org/copyleft/fdl.html"/>
+<link rel="alternate" type="application/atom+xml" title="ArchWiki Atom feed" href="/index.php?title=Special:RecentChanges&amp;feed=atom"/>
+<!--[if lt IE 9]><script src="/load.php?debug=false&amp;lang=en&amp;modules=html5shiv&amp;only=scripts&amp;skin=vector&amp;sync=1"></script><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr mw-hide-empty-elt ns-0 ns-subject page-System_maintenance rootpage-System_maintenance skin-vector action-view"><div id="archnavbar" class="noprint">
+    <div id="archnavbarlogo">
+        <p><a id="logo" href="https://www.archlinux.org/"></a></p>
+    </div>
+    <div id="archnavbarmenu">
+        <ul id="archnavbarlist">
+                        <li id="anb-home"><a href="https://www.archlinux.org/">Home</a></li>            <li id="anb-packages"><a href="https://www.archlinux.org/packages/">Packages</a></li>            <li id="anb-forums"><a href="https://bbs.archlinux.org/">Forums</a></li>            <li id="anb-wiki" class="anb-selected"><a href="https://wiki.archlinux.org/">Wiki</a></li>            <li id="anb-bugs"><a href="https://bugs.archlinux.org/">Bugs</a></li>            <li id="anb-security"><a href="https://security.archlinux.org/">Security</a></li>            <li id="anb-aur"><a href="https://aur.archlinux.org/">AUR</a></li>            <li id="anb-download"><a href="https://www.archlinux.org/download/">Download</a></li>        </ul>
+    </div>
+</div>
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+			<div class="mw-indicators mw-body-content">
+</div>
+<h1 id="firstHeading" class="firstHeading" lang="en">System maintenance</h1>			<div id="bodyContent" class="mw-body-content">
+				<div id="siteSub" class="noprint">From ArchWiki</div>				<div id="contentSub"></div>
+				<div id="jump-to-nav"></div>				<a class="mw-jump-link" href="#mw-head">Jump to navigation</a>
+				<a class="mw-jump-link" href="#p-search">Jump to search</a>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="mw-parser-output"><div class="archwiki-template-meta-related-articles-start"><p>Related articles</p><ul>
+<li><a href="/index.php/General_recommendations" title="General recommendations">General recommendations</a></li>
+</ul></div>
+<p>Regular system maintenance is necessary for the proper function of Arch over a period of time.  Timely maintenance is a practice many users get accustomed to.
+</p>
+<div id="toc" class="toc"><input type="checkbox" role="button" id="toctogglecheckbox" class="toctogglecheckbox" style="display:none" /><div class="toctitle" lang="en" dir="ltr"><h2>Contents</h2><span class="toctogglespan"><label class="toctogglelabel" for="toctogglecheckbox"></label></span></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#Check_for_errors"><span class="tocnumber">1</span> <span class="toctext">Check for errors</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="#Failed_systemd_services"><span class="tocnumber">1.1</span> <span class="toctext">Failed systemd services</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="#Logfiles"><span class="tocnumber">1.2</span> <span class="toctext">Logfiles</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="#Backup"><span class="tocnumber">2</span> <span class="toctext">Backup</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="#Configuration_files"><span class="tocnumber">2.1</span> <span class="toctext">Configuration files</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="#List_of_installed_packages"><span class="tocnumber">2.2</span> <span class="toctext">List of installed packages</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="#Pacman_database"><span class="tocnumber">2.3</span> <span class="toctext">Pacman database</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="#LUKS_headers"><span class="tocnumber">2.4</span> <span class="toctext">LUKS headers</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="#System_and_user_data"><span class="tocnumber">2.5</span> <span class="toctext">System and user data</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-10"><a href="#Upgrading_the_system"><span class="tocnumber">3</span> <span class="toctext">Upgrading the system</span></a>
+<ul>
+<li class="toclevel-2 tocsection-11"><a href="#Read_before_upgrading_the_system"><span class="tocnumber">3.1</span> <span class="toctext">Read before upgrading the system</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="#Avoid_certain_pacman_commands"><span class="tocnumber">3.2</span> <span class="toctext">Avoid certain pacman commands</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="#Partial_upgrades_are_unsupported"><span class="tocnumber">3.3</span> <span class="toctext">Partial upgrades are unsupported</span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="#Act_on_alerts_during_an_upgrade"><span class="tocnumber">3.4</span> <span class="toctext">Act on alerts during an upgrade</span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="#Deal_promptly_with_new_configuration_files"><span class="tocnumber">3.5</span> <span class="toctext">Deal promptly with new configuration files</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="#Revert_broken_updates"><span class="tocnumber">3.6</span> <span class="toctext">Revert broken updates</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="#Check_for_orphans_and_dropped_packages"><span class="tocnumber">3.7</span> <span class="toctext">Check for orphans and dropped packages</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-18"><a href="#Use_the_package_manager_to_install_software"><span class="tocnumber">4</span> <span class="toctext">Use the package manager to install software</span></a>
+<ul>
+<li class="toclevel-2 tocsection-19"><a href="#Choose_open-source_drivers"><span class="tocnumber">4.1</span> <span class="toctext">Choose open-source drivers</span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="#Be_careful_with_unofficial_packages"><span class="tocnumber">4.2</span> <span class="toctext">Be careful with unofficial packages</span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="#Update_the_mirrorlist"><span class="tocnumber">4.3</span> <span class="toctext">Update the mirrorlist</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-22"><a href="#Clean_the_filesystem"><span class="tocnumber">5</span> <span class="toctext">Clean the filesystem</span></a>
+<ul>
+<li class="toclevel-2 tocsection-23"><a href="#Package_cache"><span class="tocnumber">5.1</span> <span class="toctext">Package cache</span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="#Unused_packages_(orphans)"><span class="tocnumber">5.2</span> <span class="toctext">Unused packages (orphans)</span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="#Old_configuration_files"><span class="tocnumber">5.3</span> <span class="toctext">Old configuration files</span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="#Broken_symlinks"><span class="tocnumber">5.4</span> <span class="toctext">Broken symlinks</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-27"><a href="#Tips_and_tricks"><span class="tocnumber">6</span> <span class="toctext">Tips and tricks</span></a>
+<ul>
+<li class="toclevel-2 tocsection-28"><a href="#Use_proven_software_packages"><span class="tocnumber">6.1</span> <span class="toctext">Use proven software packages</span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="#Install_the_linux-lts_package"><span class="tocnumber">6.2</span> <span class="toctext">Install the linux-lts package</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-30"><a href="#See_Also"><span class="tocnumber">7</span> <span class="toctext">See Also</span></a></li>
+</ul>
+</div>
+
+<h2><span class="mw-headline" id="Check_for_errors">Check for errors</span></h2>
+<h3><span class="mw-headline" id="Failed_systemd_services">Failed systemd services</span></h3>
+<p>Check if any systemd services have entered in a failed state:
+</p>
+<pre>$ systemctl --failed
+</pre>
+<p>See <a href="/index.php/Systemd#Analyzing_the_system_state" title="Systemd">Systemd#Analyzing the system state</a> for more information.
+</p>
+<h3><span class="mw-headline" id="Logfiles">Logfiles</span></h3>
+<p>Look for errors in the log files located at <code>/var/log</code>, as well as high priority errors in the systemd journal:
+</p>
+<pre># journalctl -p 3 -xb
+</pre>
+<p>See <a href="/index.php/Systemd/Journal" title="Systemd/Journal">systemd/Journal</a> for more information.
+</p><p>See <a href="/index.php/Xorg#Troubleshooting" title="Xorg">Xorg#Troubleshooting</a> for information on where and how <a href="/index.php/Xorg" title="Xorg">Xorg</a> logs errors.
+</p>
+<h2><span class="mw-headline" id="Backup">Backup</span></h2>
+<p>Create backups of important data at regular intervals. See <a href="/index.php/Synchronization_and_backup_programs" title="Synchronization and backup programs">Synchronization and backup programs</a> for many alternative applications that may better suit your case. See <a href="/index.php/Category:System_recovery" title="Category:System recovery">Category:System recovery</a> for other articles of interest.
+</p><p>Backups may be automated with <a href="/index.php/Systemd/Timers" title="Systemd/Timers">systemd/Timers</a>.
+</p>
+<h3><span class="mw-headline" id="Configuration_files">Configuration files</span></h3>
+<p>Before editing any configuration files, create a backup so that you can revert to a working version in case of problems. Editors like <a href="/index.php/Vim" title="Vim">vim</a> and <a href="/index.php/Emacs" title="Emacs">emacs</a> can do this automatically, as well as tools like <a href="/index.php/Etckeeper" title="Etckeeper">etckeeper</a> which keep <code>/etc</code> in a <a href="/index.php/Version_control_system" class="mw-redirect" title="Version control system">version control system</a> (VCS); see <a href="/index.php/Dotfiles#Tracking_dotfiles_directly_with_Git" title="Dotfiles">dotfiles#Tracking dotfiles directly with Git</a> for more.
+</p>
+<h3><span class="mw-headline" id="List_of_installed_packages">List of installed packages</span></h3>
+<p>Maintain a list of all installed packages, so that if a complete re-installation is inevitable, it is easier to re-create the original environment.
+</p><p>See <a href="/index.php/Pacman_tips#List_of_installed_packages" class="mw-redirect" title="Pacman tips">Pacman tips#List of installed packages</a> for details.
+</p>
+<h3><span class="mw-headline" id="Pacman_database">Pacman database</span></h3>
+<p>See <a href="/index.php/Pacman/Tips_and_tricks#Backup_the_pacman_database" title="Pacman/Tips and tricks">pacman/Tips and tricks#Backup the pacman database</a>.
+</p>
+<h3><span class="mw-headline" id="LUKS_headers">LUKS headers</span></h3>
+<p>It can make sense to periodically check and synchronize the backups of LUKS-encrypted partition headers, especially if passphrases have been revoked. See <a href="/index.php/Dm-crypt/Device_encryption#Backup_and_restore" title="Dm-crypt/Device encryption">Dm-crypt/Device encryption#Backup and restore</a>.
+</p>
+<h3><span class="mw-headline" id="System_and_user_data">System and user data</span></h3>
+<p>See <a href="/index.php/System_backup" title="System backup">System backup</a>.
+</p>
+<h2><span class="mw-headline" id="Upgrading_the_system">Upgrading the system</span></h2>
+<p>It is recommended to perform full system upgrades regularly via <a href="/index.php/Pacman#Upgrading_packages" title="Pacman">Pacman#Upgrading packages</a>, to enjoy both the latest bug fixes and security updates, and also to avoid having to deal with too many package upgrades that require manual intervention at once. When requesting support from the community, it will usually be assumed that the system is up to date.
+</p><p>Make sure to have the Arch install media or another Linux "live" CD/USB available so you can easily rescue your system if there is a problem after updating. If you are running Arch in a production environment, or cannot afford downtime for any reason, test changes to configuration files, as well as updates to software packages, on a non-critical duplicate system first. Then, if no problems arise, roll out the changes to the production system. 
+</p><p>If the system has packages from the <a href="/index.php/AUR" class="mw-redirect" title="AUR">AUR</a>, carefully upgrade all of them. 
+</p><p><i>pacman</i> is a powerful package management tool, but it does not attempt to handle all corner cases. Users must be vigilant and take responsibility for maintaining their own system.
+</p>
+<h3><span class="mw-headline" id="Read_before_upgrading_the_system">Read before upgrading the system</span></h3>
+<p>Before upgrading, users are expected to visit the <a rel="nofollow" class="external text" href="https://www.archlinux.org/">Arch Linux home page</a> to check the latest news, or alternatively subscribe to the <a rel="nofollow" class="external text" href="https://www.archlinux.org/feeds/news/">RSS feed</a> or the <a rel="nofollow" class="external text" href="https://mailman.archlinux.org/mailman/listinfo/arch-announce/">arch-announce mailing list</a>. When updates require out-of-the-ordinary user intervention (more than what can be handled simply by following the instructions given by <i>pacman</i>), an appropriate news post will be made.
+</p><p>Before upgrading fundamental software (such as the <a href="/index.php/Kernel" title="Kernel">kernel</a>, <a href="/index.php/Xorg" title="Xorg">xorg</a>, <a href="/index.php/Systemd" title="Systemd">systemd</a>, or <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://www.archlinux.org/packages/?name=glibc">glibc</a></span>) to a new version, look over the appropriate <a rel="nofollow" class="external text" href="https://bbs.archlinux.org/">forum</a> to see if there have been any reported problems.
+</p><p>Users must equally be aware that upgrading packages can raise <b>unexpected</b> problems that could need immediate intervention; therefore, it is discouraged to upgrade a stable system shortly before it is required for carrying out an important task. It is wise to wait instead to have enough time in order to be able to deal with possible post-upgrade issues.
+</p>
+<h3><span class="mw-headline" id="Avoid_certain_pacman_commands">Avoid certain pacman commands</span></h3>
+<p>Avoid doing <a href="#Partial_upgrades_are_unsupported">partial upgrades</a>. In other words, never run <code>pacman -Sy</code>; instead, always use <code>pacman -Syu</code>.
+</p><p>Generally avoid using the <code>--overwrite</code> option with pacman. The <code>--overwrite</code> option takes an argument containing a glob. When used pacman will bypass file conflict checks for files that match the glob. In a properly maintained system, it should only be used when explicitly recommended by the Arch developers. See the <a href="#Read_before_upgrading_the_system">#Read before upgrading the system</a> section.
+</p><p>Avoid using the <code>-d</code> option with pacman. <code>pacman -Rdd <i>package</i></code> skips dependency checks during package removal. As a result, a package providing a critical dependency could be removed, resulting in a broken system.
+</p>
+<h3><span class="mw-headline" id="Partial_upgrades_are_unsupported">Partial upgrades are unsupported</span></h3>
+<p>Arch Linux is a <a href="https://en.wikipedia.org/wiki/rolling_release" class="extiw" title="wikipedia:rolling release">rolling release</a> distribution. That means when new <a href="https://en.wikipedia.org/wiki/Library_(computing)" class="extiw" title="wikipedia:Library (computing)">library</a> versions are pushed to the repositories, the <a rel="nofollow" class="external text" href="https://www.archlinux.org/people/developers/">developers</a> and <a href="/index.php/Trusted_Users" title="Trusted Users">Trusted Users</a> rebuild all the packages in the repositories that need to be rebuilt against the libraries. For example, if two packages depend on the same library, upgrading only one package might also upgrade the library (as a dependency), which might then break the other package which depends on an older version of the library.
+</p><p>That is why partial upgrades are <b>not supported</b>. Do not use <code>pacman -Sy <i>package</i></code> or any equivalent such as <code>pacman -Sy</code> followed by <code>pacman -S <i>package</i></code>. <b>Always</b> upgrade (with <code>pacman -Syu</code>) before installing a package. Be very careful when using <code>IgnorePkg</code> and <code>IgnoreGroup</code> for the same reason. If the system has locally built packages (such as <a href="/index.php/AUR" class="mw-redirect" title="AUR">AUR</a> packages), users will need to rebuild them when their dependencies receive a <a href="https://en.wikipedia.org/wiki/soname" class="extiw" title="wikipedia:soname">soname</a> bump.
+</p><p>If a partial upgrade scenario has been created, and binaries are broken because they cannot find the libraries they are linked against, <b>do not "fix" the problem simply by symlinking</b>. Libraries receive <a href="https://en.wikipedia.org/wiki/soname" class="extiw" title="wikipedia:soname">soname</a> bumps when they are <b>not backwards compatible</b>. A simple <code>pacman -Syu</code> to a properly synced mirror will fix the problem as long as <i>pacman</i> is not broken.
+</p><p>The bash script <i>checkupdates</i>, included with the <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://www.archlinux.org/packages/?name=pacman-contrib">pacman-contrib</a></span> package, provides a safe way to check for upgrades to installed packages without running a system update at the same time.
+</p>
+<h3><span class="mw-headline" id="Act_on_alerts_during_an_upgrade">Act on alerts during an upgrade</span></h3>
+<p>When upgrading the system, be sure to pay attention to the alert notices provided by <a href="/index.php/Pacman" title="Pacman">pacman</a>. If any additional actions are required by the user, be sure to take care of them right away. If a pacman alert is confusing, search the forums and the recent news posts for more detailed instructions.
+</p>
+<h3><span class="mw-headline" id="Deal_promptly_with_new_configuration_files">Deal promptly with new configuration files</span></h3>
+<p>When pacman is invoked, <code>.pacnew</code> and <code>.pacsave</code> files can be created. Pacman provides notice when this happens and users must deal with these files promptly. Users are referred to the <a href="/index.php/Pacman/Pacnew_and_Pacsave" title="Pacman/Pacnew and Pacsave">Pacman/Pacnew and Pacsave</a> wiki page for detailed instructions.
+</p><p>Also, think about other configuration files you may have copied or created. If a package had an example configuration that you copied to your home directory, check to see if a new one has been created.
+</p>
+<h3><span class="mw-headline" id="Revert_broken_updates">Revert broken updates</span></h3>
+<p>If a package update is expected/known to cause problems, packagers will ensure that pacman displays an appropriate message when the package is updated. If experiencing trouble after an update, double-check pacman's output by looking at <code>/var/log/pacman.log</code>.
+</p>
+<div class="archwiki-template-box archwiki-template-box-tip"><strong>Tip:</strong> You can use a log viewer such as <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://aur.archlinux.org/packages/wat-git/">wat-git</a></span><sup><small>AUR</small></sup> to search the pacman logs.</div>
+<p>At this point, only after ensuring there is no information available through pacman, there is no relative news on <a rel="nofollow" class="external free" href="https://www.archlinux.org/">https://www.archlinux.org/</a>, and there are no forum posts regarding the update, consider seeking help on the <a rel="nofollow" class="external text" href="https://bbs.archlinux.org">forum</a>, over <a href="/index.php/IRC" class="mw-redirect" title="IRC">IRC</a>, or by <a href="/index.php/Downgrading" class="mw-redirect" title="Downgrading">downgrading</a> the offending package.
+</p>
+<h3><span class="mw-headline" id="Check_for_orphans_and_dropped_packages">Check for orphans and dropped packages</span></h3>
+<p>After upgrading you may now have packages that are no longer needed or that are no longer in the official repositories.
+</p><p>Use <code>pacman -Qtd</code> to check for packages that were installed as a dependency but now, no other packages depend on them. If an orphaned package is still needed, it is recommended to change the <a href="/index.php/Installation_reason" class="mw-redirect" title="Installation reason">installation reason</a> to explicit. Otherwise, if the package is no longer needed, it can be removed.
+</p><p>Additionally, some packages may no longer be in the remote repositories, but they still may be on your local system. To list all foreign packages use <code>pacman -Qm</code>. Note that this list will include packages that have been installed manually (e.g., from the <a href="/index.php/AUR" class="mw-redirect" title="AUR">AUR</a>).
+</p>
+<h2><span class="mw-headline" id="Use_the_package_manager_to_install_software">Use the package manager to install software</span></h2>
+<p><a href="/index.php/Pacman" title="Pacman">Pacman</a> does a much better job than you at keeping track of files. If you install things manually you <i>will</i>, sooner or later, forget what you did, forget where you installed to, install conflicting software, install to the wrong locations, etc.
+</p>
+<ul><li>Install packages from the official repositories using the method in the <a href="/index.php/Pacman#Installing_packages" title="Pacman">Pacman#Installing packages</a> section.</li>
+<li>If the program you desire is not available, check to see if someone has created a package in the <a href="/index.php/AUR" class="mw-redirect" title="AUR">AUR</a>. Follow the method in that article for installation.</li>
+<li>Lastly, if the program you want is not in the official repositories or in the AUR, learn how to <a href="/index.php/Create_a_package" class="mw-redirect" title="Create a package">create a package</a> for it.</li></ul>
+<p>To clean up improperly installed files, see <a href="/index.php/Pacman/Tips_and_tricks#Identify_files_not_owned_by_any_package" title="Pacman/Tips and tricks">Pacman/Tips and tricks#Identify files not owned by any package</a>.
+</p>
+<h3><span class="mw-headline" id="Choose_open-source_drivers">Choose open-source drivers</span></h3>
+<p>Always try open source drivers before resorting to proprietary drivers. Most of the time, open source drivers are more stable and reliable than proprietary drivers. Open source driver bugs are fixed more easily and quickly. While proprietary drivers can offer more features and capabilities, this can come at the cost of stability. To avoid this dilemma, try to choose hardware components known to have mature open source driver support with full features. Information about hardware with open source Linux drivers is available at <a rel="nofollow" class="external text" href="http://www.linux-drivers.org/">linux-drivers.org</a>.
+</p>
+<h3><span class="mw-headline" id="Be_careful_with_unofficial_packages">Be careful with unofficial packages</span></h3>
+<p>Use precaution when using packages from the <a href="/index.php/AUR" class="mw-redirect" title="AUR">AUR</a> or an <a href="/index.php/Unofficial_user_repository" class="mw-redirect" title="Unofficial user repository">unofficial user repository</a>. Most are supplied by regular users and thus may not have the same standards as those in the official repositories. Avoid <a href="/index.php/AUR_helpers" title="AUR helpers">AUR helpers</a> which automate installation of AUR packages. <b>Always</b> check PKGBUILDs for sanity and signs of mistake or malicious code before building and/or installing the package.
+</p><p>To simplify maintenance, limit the amount of unofficial packages used. Make periodic checks on which are in actual use, and remove (or replace with their official counterparts) any others. See <a href="/index.php/Pacman/Tips_and_tricks#Maintenance" title="Pacman/Tips and tricks">pacman/Tips and tricks#Maintenance</a> for useful commands.
+</p>
+<h3><span class="mw-headline" id="Update_the_mirrorlist">Update the mirrorlist</span></h3>
+<p>Update pacman's mirrorlist, as the quality of mirrors can vary over time, and some might go offline or their download rate might degrade.
+</p><p>See <a href="/index.php/Mirrors" title="Mirrors">mirrors</a> for details.
+</p>
+<h2><span class="mw-headline" id="Clean_the_filesystem">Clean the filesystem</span></h2>
+<p>When looking for files to remove, it is important to find the files that take up the most disk space. Programs that help with this are found in:
+</p>
+<ul><li><a href="/index.php/List_of_applications#Disk_usage_display" title="List of applications">List of applications#Disk usage display</a>.</li>
+<li><a href="/index.php/List_of_applications#Disk_cleaning" title="List of applications">List of applications#Disk cleaning</a>.</li></ul>
+<h3><span class="mw-headline" id="Package_cache">Package cache</span></h3>
+<p>Remove unwanted <code>.pkg</code> files from <code>/var/cache/pacman/pkg/</code> to free up disk space.
+</p><p>See <a href="/index.php/Pacman#Cleaning_the_package_cache" title="Pacman">Pacman#Cleaning the package cache</a> for more information.
+</p>
+<h3><span id="Unused_packages_.28orphans.29"></span><span class="mw-headline" id="Unused_packages_(orphans)">Unused packages (orphans)</span></h3>
+<p>Remove unused packages from the system to free up disk space and simplify maintenance.
+</p><p>See <a href="/index.php/Pacman/Tips_and_tricks#Removing_unused_packages_(orphans)" title="Pacman/Tips and tricks">Pacman/Tips and tricks#Removing unused packages (orphans)</a> for details.
+</p>
+<h3><span class="mw-headline" id="Old_configuration_files">Old configuration files</span></h3>
+<p>Old configuration files may conflict with newer software versions, or corrupt over time. Remove unneeded configurations periodically, particularly in your home folder and <code>~/.config</code>. For similar reasons, be careful when sharing home folders between installations.
+</p><p>Look for the following folders:
+</p>
+<ul><li><code>~/.config/</code> -- where apps stores their configuration</li>
+<li><code>~/.cache/</code> -- cache of some programs may grow in size</li>
+<li><code>~/.local/share/</code> -- old files may be lying there</li></ul>
+<p>See <a href="/index.php/XDG_Base_Directory_support" class="mw-redirect" title="XDG Base Directory support">XDG Base Directory support</a> for more information.
+</p><p>To keep the home directory clean from temporary files created at the wrong place, it is a good idea to manage a list of unwanted files and remove them regularly, for example with <a rel="nofollow" class="external text" href="https://github.com/lahwaacz/Scripts/blob/master/rmshit.py">rmshit.py</a>.
+</p><p><span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://www.archlinux.org/packages/?name=rmlint">rmlint</a></span> can be used to find and optionally remove duplicate files, empty files, recursive empty directories and broken symlinks.
+</p>
+<h3><span class="mw-headline" id="Broken_symlinks">Broken symlinks</span></h3>
+<p>Old, broken symbolic links might be sitting around your system; you should remove them. Examples on achieving this can be found <a rel="nofollow" class="external text" href="https://unix.stackexchange.com/questions/34248/how-can-i-find-broken-symlinks">here</a> and <a rel="nofollow" class="external text" href="http://www.commandlinefu.com/commands/view/8260/find-broken-symlinks">here</a>.
+</p><p>To quickly list all the broken symlinks of your system, use:
+</p>
+<pre># find / -xtype l -print
+</pre>
+<p>Then inspect and remove unnecessary entries from this list.
+</p>
+<h2><span class="mw-headline" id="Tips_and_tricks">Tips and tricks</span></h2>
+<p>The following tips are generally not required, but certain users may find them useful.
+</p>
+<h3><span class="mw-headline" id="Use_proven_software_packages">Use proven software packages</span></h3>
+<p>Arch's rolling releases can be a boon for users who want to try the latest features and get upstream updates as soon as possible, but they can also make system maintenance more difficult. To simplify maintenance and improve stability, try to avoid cutting edge software and install only mature and proven software. Such packages are less likely to receive difficult upgrades such as major configuration changes or feature removals. Prefer software that has a strong and active development community, as well as a high number of competent users, in order to simplify support in the event of a problem.
+</p><p>Avoid any use of the testing repository, even individual packages from testing. These packages are experimental and not suitable for a stable system. Similarly, avoid packages which are built directly from upstream development sources. These are usually found in the <a href="/index.php/AUR" class="mw-redirect" title="AUR">AUR</a>, with names including things like: "dev", "devel", "svn", "cvs", "git", etc.
+</p>
+<h3><span class="mw-headline" id="Install_the_linux-lts_package">Install the linux-lts package</span></h3>
+<p>The <span class="plainlinks archwiki-template-pkg"><a rel="nofollow" class="external text" href="https://www.archlinux.org/packages/?name=linux-lts">linux-lts</a></span> package is an alternative Arch kernel package, and is available in the <a href="/index.php/Core" class="mw-redirect" title="Core">core</a> repository. This particular kernel version has long-term support (LTS) from upstream, including security fixes and some feature backports. It is useful if you prefer the stability of less-frequent kernel updates or if you want a fallback kernel in case a new kernel version causes problems.
+</p><p>To make it available as a boot option, you will need to update your <a href="/index.php/Bootloader" class="mw-redirect" title="Bootloader">bootloader</a>'s configuration file to use the LTS kernel and ram disk: <code>vmlinuz-linux-lts</code> and <code>initramfs-linux-lts.img</code>.
+</p>
+<h2><span class="mw-headline" id="See_Also">See Also</span></h2>
+<ul><li><a rel="nofollow" class="external text" href="https://bbs.archlinux.org/viewtopic.php?id=146850">Arch News Bash Script</a></li>
+<li><a rel="nofollow" class="external text" href="https://bbs.archlinux.org/viewtopic.php?pid=1791008">Automatic Arch System Maintenance</a></li></ul>
+
+<!-- 
+NewPP limit report
+Cached time: 20190423004944
+Cache expiry: 86400
+Dynamic content: false
+CPU time usage: 0.041 seconds
+Real time usage: 0.043 seconds
+Preprocessor visited node count: 384/1000000
+Preprocessor generated node count: 922/1000000
+Post‐expand include size: 1844/2097152 bytes
+Template argument size: 656/2097152 bytes
+Highest expansion depth: 4/40
+Expensive parser function count: 0/100
+Unstrip recursion depth: 0/20
+Unstrip post‐expand size: 0/5000000 bytes
+-->
+<!--
+Transclusion expansion time report (%,ms,calls,template)
+100.00%   12.822      1 -total
+ 25.46%    3.265     28 Template:Ic
+ 16.63%    2.133      1 Template:Tip
+ 14.92%    1.913      1 Template:Related_articles_start
+  8.92%    1.144      4 Template:Pkg
+  8.35%    1.071      1 Template:AUR
+  6.67%    0.855      1 Template:META_Related_articles_start
+  6.36%    0.815      1 Template:Related_articles_end
+  5.84%    0.749      1 Template:Related
+-->
+
+<!-- Saved in parser cache with key archwiki:pcache:idhash:14206-0!canonical and timestamp 20190423004944 and revision id 571099
+ -->
+</div></div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://wiki.archlinux.org/index.php?title=System_maintenance&amp;oldid=571099">https://wiki.archlinux.org/index.php?title=System_maintenance&amp;oldid=571099</a>"					</div>
+				<div id="catlinks" class="catlinks" data-mw="interface"><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/index.php/Special:Categories" title="Special:Categories">Category</a>: <ul><li><a href="/index.php/Category:System_administration" title="Category:System administration">System administration</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="/index.php?title=Special:CreateAccount&amp;returnto=System+maintenance" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="/index.php?title=Special:UserLogin&amp;returnto=System+maintenance" title="You are encouraged to log in; however, it is not mandatory [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+							<li id="ca-nstab-main" class="selected"><span><a href="/index.php/System_maintenance" title="View the content page [c]" accesskey="c">Page</a></span></li><li id="ca-talk"><span><a href="/index.php/Talk:System_maintenance" rel="discussion" title="Discussion about the content page [t]" accesskey="t">Discussion</a></span></li>						</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<input type="checkbox" class="vectorMenuCheckbox" aria-labelledby="p-variants-label" />
+						<h3 id="p-variants-label">
+							<span>Variants</span>
+						</h3>
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+							<li id="ca-view" class="collapsible selected"><span><a href="/index.php/System_maintenance">Read</a></span></li><li id="ca-viewsource" class="collapsible"><span><a href="/index.php?title=System_maintenance&amp;action=edit" title="This page is protected.&#10;You can view its source [e]" accesskey="e">View source</a></span></li><li id="ca-history" class="collapsible"><span><a href="/index.php?title=System_maintenance&amp;action=history" title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>						</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<input type="checkbox" class="vectorMenuCheckbox" aria-labelledby="p-cactions-label" />
+						<h3 id="p-cactions-label"><span>More</span></h3>
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+						<form action="/index.php" id="searchform">
+							<div id="simpleSearch">
+								<input type="search" name="search" placeholder="Search ArchWiki" title="Search ArchWiki [f]" accesskey="f" id="searchInput"/><input type="hidden" value="Special:Search" name="title"/><input type="submit" name="fulltext" value="Search" title="Search the pages for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton"/><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton"/>							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="/index.php/Main_page"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id="p-navigation" aria-labelledby="p-navigation-label">
+			<h3 id="p-navigation-label">Navigation</h3>
+			<div class="body">
+								<ul>
+					<li id="n-mainpage-description"><a href="/index.php/Main_page" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-Table-of-contents"><a href="/index.php/Table_of_contents">Table of contents</a></li><li id="n-portal"><a href="/index.php/Getting_involved" title="Various ways Archers can contribute to the community">Getting involved</a></li><li id="n-currentevents"><a href="/index.php/ArchWiki:News" title="The latest lowdown on the wiki">Wiki news</a></li><li id="n-randompage"><a href="/index.php/Special:Random" title="Load a random page [x]" accesskey="x">Random page</a></li>				</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-Interaction" aria-labelledby="p-Interaction-label">
+			<h3 id="p-Interaction-label">Interaction</h3>
+			<div class="body">
+								<ul>
+					<li id="n-help"><a href="/index.php/Category:Help" title="Wiki navigation, reading, and editing help">Help</a></li><li id="n-Contributing"><a href="/index.php/ArchWiki:Contributing">Contributing</a></li><li id="n-recentchanges"><a href="/index.php/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-Recent-talks"><a href="https://wiki.archlinux.org/index.php/Special:RecentChanges?namespace=0&amp;invert=1" rel="nofollow">Recent talks</a></li><li id="n-newpages"><a href="/index.php/Special:NewPages">New pages</a></li><li id="n-Statistics"><a href="/index.php/ArchWiki:Statistics">Statistics</a></li><li id="n-Requests"><a href="/index.php/ArchWiki:Requests">Requests</a></li>				</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-tb" aria-labelledby="p-tb-label">
+			<h3 id="p-tb-label">Tools</h3>
+			<div class="body">
+								<ul>
+					<li id="t-whatlinkshere"><a href="/index.php/Special:WhatLinksHere/System_maintenance" title="A list of all wiki pages that link here [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="/index.php/Special:RecentChangesLinked/System_maintenance" rel="nofollow" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-specialpages"><a href="/index.php/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-print"><a href="/index.php?title=System_maintenance&amp;printable=yes" rel="alternate" title="Printable version of this page [p]" accesskey="p">Printable version</a></li><li id="t-permalink"><a href="/index.php?title=System_maintenance&amp;oldid=571099" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="/index.php?title=System_maintenance&amp;action=info" title="More information about this page">Page information</a></li>				</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id="p-lang" aria-labelledby="p-lang-label">
+			<h3 id="p-lang-label">In other languages</h3>
+			<div class="body">
+								<ul>
+					<li class="interlanguage-link interwiki-es"><a href="https://wiki.archlinux.org/index.php/System_maintenance_(Espa%C3%B1ol)" title="System maintenance – español" lang="es" hreflang="es" class="interlanguage-link-target">Español</a></li><li class="interlanguage-link interwiki-fa"><a href="https://wiki.archusers.ir/index.php/%D9%86%DA%AF%D9%87%D8%AF%D8%A7%D8%B4%D8%AA_%D8%B3%DB%8C%D8%B3%D8%AA%D9%85" title="نگهداشت سیستم – فارسی" lang="fa" hreflang="fa" class="interlanguage-link-target">فارسی</a></li><li class="interlanguage-link interwiki-fr"><a href="https://wiki.archlinux.fr/Maintenance_Syst%C3%A8me" title="Maintenance Système – français" lang="fr" hreflang="fr" class="interlanguage-link-target">Français</a></li><li class="interlanguage-link interwiki-ja"><a href="https://wiki.archlinux.jp/index.php/%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E3%83%A1%E3%83%B3%E3%83%86%E3%83%8A%E3%83%B3%E3%82%B9" title="システムメンテナンス – 日本語" lang="ja" hreflang="ja" class="interlanguage-link-target">日本語</a></li><li class="interlanguage-link interwiki-pt"><a href="https://wiki.archlinux.org/index.php/System_maintenance_(Portugu%C3%AAs)" title="System maintenance – português" lang="pt" hreflang="pt" class="interlanguage-link-target">Português</a></li><li class="interlanguage-link interwiki-ru"><a href="https://wiki.archlinux.org/index.php/System_maintenance_(%D0%A0%D1%83%D1%81%D1%81%D0%BA%D0%B8%D0%B9)" title="System maintenance – русский" lang="ru" hreflang="ru" class="interlanguage-link-target">Русский</a></li><li class="interlanguage-link interwiki-zh-hans"><a href="https://wiki.archlinux.org/index.php/System_maintenance_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)" title="System maintenance – 中文（简体）‎" lang="zh-Hans" hreflang="zh-Hans" class="interlanguage-link-target">中文（简体）‎</a></li>				</ul>
+							</div>
+		</div>
+				</div>
+		</div>
+				<div id="footer" role="contentinfo">
+						<ul id="footer-info">
+								<li id="footer-info-lastmod"> This page was last edited on 13 April 2019, at 22:11.</li>
+								<li id="footer-info-copyright">Content is available under <a class="external" rel="nofollow" href="http://www.gnu.org/copyleft/fdl.html">GNU Free Documentation License 1.3 or later</a> unless otherwise noted.</li>
+							</ul>
+						<ul id="footer-places">
+								<li id="footer-places-privacy"><a href="/index.php/ArchWiki:Privacy_policy" title="ArchWiki:Privacy policy">Privacy policy</a></li>
+								<li id="footer-places-about"><a href="/index.php/ArchWiki:About" title="ArchWiki:About">About ArchWiki</a></li>
+								<li id="footer-places-disclaimer"><a href="/index.php/ArchWiki:General_disclaimer" title="ArchWiki:General disclaimer">Disclaimers</a></li>
+							</ul>
+										<ul id="footer-icons" class="noprint">
+										<li id="footer-copyrightico">
+											</li>
+									</ul>
+						<div style="clear: both;"></div>
+		</div>
+		
+<script>(window.RLQ=window.RLQ||[]).push(function(){mw.config.set({"wgPageParseReport":{"limitreport":{"cputime":"0.041","walltime":"0.043","ppvisitednodes":{"value":384,"limit":1000000},"ppgeneratednodes":{"value":922,"limit":1000000},"postexpandincludesize":{"value":1844,"limit":2097152},"templateargumentsize":{"value":656,"limit":2097152},"expansiondepth":{"value":4,"limit":40},"expensivefunctioncount":{"value":0,"limit":100},"unstrip-depth":{"value":0,"limit":20},"unstrip-size":{"value":0,"limit":5000000},"timingprofile":["100.00%   12.822      1 -total"," 25.46%    3.265     28 Template:Ic"," 16.63%    2.133      1 Template:Tip"," 14.92%    1.913      1 Template:Related_articles_start","  8.92%    1.144      4 Template:Pkg","  8.35%    1.071      1 Template:AUR","  6.67%    0.855      1 Template:META_Related_articles_start","  6.36%    0.815      1 Template:Related_articles_end","  5.84%    0.749      1 Template:Related"]},"cachereport":{"timestamp":"20190423004944","ttl":86400,"transientcontent":false}}});mw.config.set({"wgBackendResponseTime":38});});</script>
+	</body>
+<!-- Cached/compressed 20190423041950 -->
+</html>

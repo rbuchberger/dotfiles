@@ -1,0 +1,63 @@
+// vim:ts=4:sw=4:et
+{
+    "border": "pixel",
+    "current_border_width": 0,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 600,
+       "width": 800,
+       "x": 0,
+       "y": 0
+    },
+    "name": "@cgDISVMf:T | Today: Todoist",
+    "percent": 0.159375,
+    "swallows": [
+       {
+        "class": "^Surf$",
+        "instance": "^surf$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    "border": "pixel",
+    "current_border_width": 0,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 1390,
+       "width": 1265,
+       "x": 0,
+       "y": 0
+    },
+    "name": "Mozilla Firefox",
+    "percent": 0.507291666666667,
+    "swallows": [
+       {
+        "class": "^Firefox$"
+       }
+    ],
+    "type": "con"
+}
+
+{
+    "border": "pixel",
+    "current_border_width": 0,
+    "floating": "auto_off",
+    "geometry": {
+       "height": 1390,
+       "width": 838,
+       "x": 0,
+       "y": 0
+    },
+    "name": "i3-save-tree --workspace 3 > ~/.config/i3/std_workspace.json",
+    "percent": 0.333333333333333,
+    "swallows": [
+       {
+        "class": "^kitty$",
+        "instance": "^kitty$"
+       }
+    ],
+    "type": "con"
+}
+

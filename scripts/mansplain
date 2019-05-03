@@ -1,0 +1,8 @@
+#!/bin/sh
+# Pulled this from a luke smith video - 
+# https://www.youtube.com/watch?v=8E8sUNHdzG8&list=WL&index=2&t=0s
+
+# Creates a menu of all manual entries on the machine, then displays selected
+# item as a pdf in zathura.
+
+man -k . | dmenu -l 30 | awk '{print $1}' | xargs -r man -Tpdf | zathura -
