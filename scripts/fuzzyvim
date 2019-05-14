@@ -1,4 +1,16 @@
 #!/bin/bash
 
 # Fuzzy-find a file, then open it in nvim
-find -type f | fzf | xargs nvim
+find \
+  -type f \
+  -maxdepth 6\
+  -not -path '*/.git' \
+  -not -path '*/.rbenv' \
+  -not -path '*/.cache' \
+  -not -path '*/.steam' \
+  -not -path '*/.local' \
+  -not -path '.yadm' \
+  -not -path '*/tmp' \
+  -not -path '*/node_modules' \
+  -not -name 'tags'\
+  | fzf | xargs -r nvim

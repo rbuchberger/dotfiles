@@ -1,0 +1,7 @@
+#!/bin/bash
+
+# This little script shows a menu of my notes and prints it to the terminal
+find ~/notes/ -name '*.md' \
+  | fzf \
+  | xargs -r \
+  bat

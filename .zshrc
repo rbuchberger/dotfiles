@@ -117,6 +117,7 @@ export RANGER_LOAD_DEFAULT_RC=FALSE
 # Vim mode
 bindkey -v
 
+# Fuzzyvim bound to ctrl+p
 _fuzzyvim() {
   ~/scripts/fuzzyvim
 }
@@ -124,6 +125,16 @@ _fuzzyvim() {
 zle -N _fuzzyvim
 
 bindkey "^P" _fuzzyvim
+
+# Show notes bound to ctrl+n
+
+_note_show() {
+  ~/scripts/note_show
+}
+
+zle -N _note_show
+
+bindkey "^N" _note_show
 
 # Delay by .2 seconds; reduce insert & normal mode switching lag
 export KEYTIMEOUT=2
