@@ -3,6 +3,8 @@
 
 config_version: 2
 settings:
+  content.pdfjs:
+    global: true
   downloads.location.directory:
     global: ~/Downloads
   scrolling.smooth:
