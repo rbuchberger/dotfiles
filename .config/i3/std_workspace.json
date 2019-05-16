@@ -30,11 +30,11 @@
        "x": 0,
        "y": 0
     },
-    "name": "Mozilla Firefox",
+    "name": "qutebrowser",
     "percent": 0.507291666666667,
     "swallows": [
        {
-        "class": "^Firefox$"
+        "class": "^qutebrowser$"
        }
     ],
     "type": "con"
@@ -50,7 +50,7 @@
        "x": 0,
        "y": 0
     },
-    "name": "i3-save-tree --workspace 3 > ~/.config/i3/std_workspace.json",
+    "name": "kitty",
     "percent": 0.333333333333333,
     "swallows": [
        {

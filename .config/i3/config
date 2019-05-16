@@ -31,6 +31,9 @@ font pango:DejaVu Sans Mono 11
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+# Set focus not to follow mouse
+focus_follows_mouse no
+
 # start a terminal
 bindsym $mod+Return exec kitty
 
@@ -184,11 +187,13 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id compton --config /home/robert/.config/compton/compton.conf &
 
 # Hide all borders and titlebars
-for_window [class="^.*"] border pixel 0
+# for_window [class="^.*"] border pixel 3
+default_border pixel 3
+title_align center
 
 # program shortcuts
-bindsym $mod+apostrophe exec google-chrome-stable
-bindsym $mod+semicolon exec firefox
+bindsym $mod+apostrophe exec firefox
+bindsym $mod+semicolon exec qutebrowser
 bindsym $mod+XF86AudioPlay exec ~/.config/i3/music.sh
 bindsym $mod+p exec passmenu
 
