@@ -7,6 +7,13 @@ settings:
     global: true
   downloads.location.directory:
     global: ~/Downloads
+  downloads.open_dispatcher:
+    global: null
+  editor.command:
+    global:
+    - kitty nvim {file} +{line}
+  editor.encoding:
+    global: utf-8
   scrolling.smooth:
     global: false
   tabs.background:
@@ -22,6 +29,6 @@ settings:
   tabs.show:
     global: switching
   tabs.show_switching_delay:
-    global: 2000
+    global: 800
   tabs.width:
     global: 400
