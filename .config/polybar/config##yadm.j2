@@ -1,3 +1,5 @@
+; Warning: Do not edit the config file directly, those changes will be
+; overwritten. Edit the ##yadm.j2 file instead. See yadm docs for more info.
 ;==========================================================
 ;
 ;
@@ -40,6 +42,15 @@ background = ${colors.dark-trans}
 
 [bar/taskbar]
 
+{% if YADM_CLASS == 'desktop' %}
+modules-left = jgmenu i3 logout-button
+modules-right = pulseaudio keyboard date time 
+{% else %}
+modules-left = i3
+modules-right = network battery backlight pulseaudio keyboard date time 
+{% endif %}
+
+
 background = ${colors.full-trans}
 foreground = ${colors.lightgrey}
 
@@ -65,7 +76,6 @@ font-3 = NotoEmoji Nerd Font Mono:size=11;3
 height = 25
 {% endif %}
 
-
 line-size = 2
 module-margin = 1
 
@@ -73,9 +83,6 @@ module-margin = 1
 
 tray-position = none
 tray-background = ${root.background}
-
-modules-left = jgmenu i3 logout-button
-modules-right = pulseaudio keyboard date time 
 
 [module/jgmenu]
 type = custom/text
@@ -110,20 +117,13 @@ label-mode-background = ${colors.red}
 label-mode-foreground = ${colors.purewhite}
 label-mode-padding = 2
 
-; ws-icon-0 = 1;
-; ws-icon-1 = 2;
-; ws-icon-2 = 3;
-; ws-icon-3 = 4;
-; ws-icon-4 = 5;
-; ws-icon-default = 
-
 [module/date]
 type = internal/date
 
 date = %A, %B %e
 
 format-suffix = "📅" 
-format-suffix-foreground = ${colors.green}
+format-suffix-foreground = ${colors.violet}
 format-suffix-padding-left = 2
 label =  %date%
 
@@ -132,7 +132,7 @@ format-foreground = ${colors.foreground}
 format-padding = 2
 label-font = 2
 
-format-underline = ${colors.blue}
+format-underline = ${colors.lightgrey}
 
 [module/time]
 type = internal/date
@@ -141,36 +141,16 @@ time = %H:%M
 
 
 format-suffix = "🕑" 
-format-suffix-foreground = ${colors.green}
+format-suffix-foreground = ${colors.violet}
 format-suffix-padding-left = 2
 label =  %time%
 label-font = 2
 
 format-background = ${colors.dark-trans}
 format-foreground = ${colors.foreground}
-format-underline = ${colors.violet}
+format-underline = ${colors.lightgrey}
 format-padding = 2
 
-[module/appmenu]
-type = custom/menu
-
-label-open =  Apps
-label-close = X Close
-label-font = 3
-label-separator = " " 
-
-format-label-padding = 1
-
-menu-0-0 = "  Firefox "
-menu-0-0-exec = firefox &
-menu-0-0-background = ${colors.red}
-menu-0-0-foreground = ${colors.black}
-menu-0-1 = "  Chrome "
-menu-0-1-exec = google-chrome-stable &
-menu-0-1-background = ${colors.green}
-menu-0-1-foreground = ${colors.black}
-
-format-underline = ${colors.cyan}
 [module/pulseaudio]
 type = internal/pulseaudio
 sink = alsa_output.pci-0000_0d_00.3.analog-stereo
@@ -180,16 +160,16 @@ label-muted = 0%
 format-muted-suffix = "🔇"
 format-muted-suffix-foreground = ${colors.blue}
 format-muted-suffix-background = ${colors.background}
-format-muted-suffix-padding-right = 1
+format-muted-suffix-padding = 1
 label-muted-background = ${colors.background}
 label-muted-foreground = ${colors.darkgrey}
 label-muted-padding-left = 2
 label-muted-font = 2
 
 format-volume-suffix = "🔈"
-format-volume-suffix-foreground = ${colors.blue}
+format-volume-suffix-foreground = ${colors.yellow}
 format-volume-suffix-background = ${colors.background}
-format-volume-suffix-padding-right = 1
+format-volume-suffix-padding = 1
 label-volume = %percentage%%
 label-volume-background = ${colors.background}
 label-volume-foreground = ${colors.foreground}
@@ -209,14 +189,16 @@ type = internal/xkeyboard
 blacklist-0 = num lock
 blacklist-1 = scroll lock
 
-format-underline = ${colors.green}
+format-underline = ${colors.lightgrey}
 format-padding = 2
 format-background = ${colors.background}
 format-foreground = ${colors.foreground}
 
-format-layout-prefix = ""
+format-suffix = ⌨
+format-suffix-padding-left = 2
+format-suffix-foreground = ${colors.violet}
 
-label-layout = %name% ⌨ 
+label-layout = %name%
 
 label-font = 2
 
@@ -224,8 +206,175 @@ label-font = 2
 
 type = custom/text
 content = 
-content-underline = ${colors.cyan}
+content-underline = ${colors.lightgrey}
 content-background = ${colors.background}
 content-foreground = ${colors.red}
 content-padding = 2
 click-left = dm-tool switch-to-greeter
+
+[module/network]
+type = internal/network
+interface = wlp1s0
+interval = 0.3
+
+; Test connectivity every Nth update
+; A value of 0 disables the feature
+; NOTE: Experimental (needs more testing)
+; Default: 0
+ping-interval = 30
+
+format-connected-background = ${colors.background}
+format-disconnected-background = ${colors.background}
+format-packetloss-background = ${colors.background}
+
+format-connected-underline = ${colors.green}
+format-disconnected-underline = ${colors.lightgrey}
+format-packetloss-underline = ${colors.red}
+
+format-connected-padding = 2
+format-disconnected-padding = 2
+format-packetloss-padding = 2
+
+label-connected-foreground = ${colors.foreground}
+label-disconnected-foreground = ${colors.foreground}
+label-packetloss-foreground = ${colors.foreground}
+ramp-signal-foreground = ${colors.foreground}
+
+format-connected = <label-connected> · <ramp-signal>
+format-connected-suffix = 直
+format-connected-suffix-padding-left = 2
+format-connected-suffix-foreground = ${colors.green}
+label-connected = %downspeed:9%
+
+format-disconnected = <label-disconnected>
+format-disconnected-suffix = 睊
+format-disconnected-suffix-padding-left = 2
+format-disconnected-suffix-foreground = ${colors.red}
+label-disconnected = --
+
+format-packetloss = <label-connected>·<animation-packetloss>
+format-packetloss-suffix = 直
+format-packetloss-suffix-padding-left = 2
+format-packetloss-suffix-foreground = ${colors.yellow}
+
+; Only applies if <ramp-signal> is used
+ramp-signal-0 = 0%
+ramp-signal-1 = 10%
+ramp-signal-2 = 20%
+ramp-signal-3 = 30%
+ramp-signal-4 = 40%
+ramp-signal-6 = 50%
+ramp-signal-7 = 60%
+ramp-signal-8 = 70%
+ramp-signal-9 = 80%
+ramp-signal-10 = 90%
+
+; Only applies if <animation-packetloss> is used
+animation-packetloss-0 = ⚠
+animation-packetloss-0-foreground = ${colors.red}
+animation-packetloss-1 = 📶
+animation-packetloss-1-foreground = ${colors.red}
+; Framerate in milliseconds
+animation-packetloss-framerate = 200
+
+{% if YADM_CLASS == 'laptop' %}
+
+[module/backlight]
+type = internal/xbacklight
+
+format = <label><ramp>
+
+label = %percentage%%
+
+; Only applies if <ramp> is used
+ramp-0 = 🌕
+ramp-1 = 🌔
+ramp-2 = 🌓
+ramp-3 = 🌒
+ramp-4 = 🌑
+
+ramp-foreground = ${colors.yellow}
+ramp-padding-left = 2
+label-font = 2
+
+format-background = ${colors.dark-trans}
+format-foreground = ${colors.foreground}
+format-underline = ${colors.lightgrey}
+format-padding = 2
+
+[module/battery]
+type = internal/battery
+
+ramp-capacity-foreground = ${colors.blue}
+ramp-capacity-padding-left = 2
+label-font = 2
+
+animation-charging-foreground = ${colors.blue}
+animation-charging-padding-left = 2
+animation-charging-font = 2
+
+format-discharging-background = ${colors.dark-trans}
+format-discharging-foreground = ${colors.foreground}
+format-discharging-underline = ${colors.blue}
+format-discharging-padding = 2
+
+format-charging-background = ${colors.dark-trans}
+format-charging-foreground = ${colors.foreground}
+format-charging-padding = 2
+format-charging-underline = ${colors.blue}
+
+format-full-background = ${colors.dark-trans}
+format-full-foreground = ${colors.foreground}
+format-full-padding = 2
+format-full-underline = ${colors.green}
+
+battery = BAT0
+adapter = AC
+poll-interval = 60
+time-format = %l:%M · 
+
+format-charging = <label-charging><animation-charging>
+format-discharging = <label-discharging><ramp-capacity>
+
+; Available tags:
+;   <label-full> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+format-full = <label-full>
+
+label-charging = %time% %percentage%%
+label-discharging = %time% %percentage%%
+
+; Available tokens:
+;   %percentage% (default) - is set to 100 if full-at is reached
+;   %percentage_raw% (unreleased)
+label-full = %percentage%% 
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-5 = 
+ramp-capacity-6 = 
+ramp-capacity-7 = 
+ramp-capacity-8 = 
+ramp-capacity-9 = 
+ramp-capacity-10 = 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-5 = 
+animation-charging-6 = 
+animation-charging-7 = 
+animation-charging-8 = 
+animation-charging-9 = 
+animation-charging-10 = 
+animation-charging-11 = 
+animation-charging-framerate = 200
+
+{% endif %}
+
