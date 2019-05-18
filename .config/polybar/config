@@ -49,21 +49,14 @@ bottom = true
 border-size = 5
 border-top-size = 0
 
-{% if YADM_CLASS == 'laptop' %}
+
 font-0 = DejaVu Sans:size=18;3
 font-1 = Hack Nerd Font Mono:size=18;3
 font-2 = mplus Nerd Font Mono:size=18;3
 font-3 = NotoEmoji Nerd Font Mono:size=18;3
 
 height = 45
-{% else %}
-font-0 = DejaVu Sans:size=11;3
-font-1 = Hack Nerd Font Mono:size=11;3
-font-2 = mplus Nerd Font Mono:size=11;3
-font-3 = NotoEmoji Nerd Font Mono:size=11;3
 
-height = 25
-{% endif %}
 
 
 line-size = 2
