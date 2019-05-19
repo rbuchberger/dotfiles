@@ -42,15 +42,6 @@ background = ${colors.dark-trans}
 
 [bar/taskbar]
 
-{% if YADM_CLASS == 'desktop' %}
-modules-left = jgmenu i3 logout-button
-modules-right = pulseaudio keyboard date time 
-{% else %}
-modules-left = i3
-modules-right = network battery backlight pulseaudio keyboard date time 
-{% endif %}
-
-
 background = ${colors.full-trans}
 foreground = ${colors.lightgrey}
 
@@ -83,6 +74,14 @@ module-margin = 1
 
 tray-position = none
 tray-background = ${root.background}
+
+{% if YADM_CLASS == 'desktop' %}
+modules-left = i3 logout-button
+modules-right = pulseaudio keyboard date time 
+{% else %}
+modules-left = i3
+modules-right = network battery backlight pulseaudio keyboard date time 
+{% endif %}
 
 [module/jgmenu]
 type = custom/text
@@ -214,7 +213,12 @@ click-left = dm-tool switch-to-greeter
 
 [module/network]
 type = internal/network
+{% if YADM_HOSTNAME == 'caroline' %}
 interface = wlp1s0
+{% elif YADM_HOSTNAME == 'charybdis' %}
+interface = wlp2s0f0u3
+unknown-as-up = true
+{% endif %}
 interval = 0.3
 
 ; Test connectivity every Nth update
