@@ -41,6 +41,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   " Git
   Plug 'tpope/vim-fugitive'
   Plug 'airblade/vim-gitgutter'
+  Plug 'rhysd/git-messenger.vim'
 
   " Ruby and rails:
   Plug 'tpope/vim-rails'
@@ -88,17 +89,23 @@ nnoremap <silent> <leader>g :Goyo<CR>
 " Limelight enable
 nnoremap <silent> <leader>l :Limelight!!<CR>
 
-" Coc settings
+" Coc keybindings
+" ctrl+space triggers completion
+inoremap <silent><expr> <c-space> coc#refresh()
 nmap gd <Plug>(coc-definition)
 nmap gy <Plug>(coc-type-definition)
 nmap gi <Plug>(coc-implementation)
 nmap gr <Plug>(coc-references)
-
-" Remap for rename current word
 nmap <leader>rn <Plug>(coc-rename)
+nmap <leader>qf  <Plug>(coc-fix-current)
+" Show documentation in preview window
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+" Highlight symbol under cursor
+autocmd CursorHold * silent call CocActionAsync('highlight')
+" Remap for rename current word
+" nmap <leader>f <Plug>(coc-format)
 
 nnoremap <silent> K :call <SID>show_documentation()<CR>
-
 function! s:show_documentation()
   if &filetype == 'vim'
     execute 'h '.expand('<cword>')
@@ -153,6 +160,7 @@ set foldmethod=manual                         " Disable auto-folding
 set termguicolors
 " Disable blank line tildes
 set fcs=eob:\ 
+set cmdheight=2
 
 " Color Scheme config
 " set background=dark
