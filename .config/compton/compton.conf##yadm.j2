@@ -109,6 +109,10 @@ shadow-ignore-shaped = false;
 #
 #################################
 
+# Dim inactive windows. (0.0 - 1.0)
+inactive-dim = 0.15;
+
+{% if YADM_CLASS == 'desktop' %}
 menu-opacity = .8;
 inactive-opacity = .95;
 active-opacity = 1;
@@ -137,6 +141,13 @@ opacity-rule = [
   "90:class_g = 'kitty'",
   # "60:class_g = 'kitty' && !focused"
 ];
+{% else %}
+# Transparent background for terminals
+opacity-rule = [
+  "90:class_g = 'kitty'",
+  # "60:class_g = 'kitty' && !focused"
+];
+{% endif %}
 
 #################################
 #
