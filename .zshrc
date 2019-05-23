@@ -152,3 +152,6 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs)
 POWERLEVEL9K_VI_INSERT_MODE_STRING=""
 POWERLEVEL9K_VI_COMMAND_MODE_STRING="Normal Mode"
 # POWERLEVEL9K_MODE='awesome-patched'
+
+# The next line updates PATH for Netlify's Git Credential Helper.
+if [ -f '/home/robert/.netlify/helper/path.zsh.inc' ]; then source '/home/robert/.netlify/helper/path.zsh.inc'; fi
