@@ -17,21 +17,40 @@ data.location=~/.task
 #include /usr/share/doc/task/rc/light-16.theme
 #include /usr/share/doc/task/rc/light-256.theme
 #include /usr/share/doc/task/rc/dark-16.theme
-include /usr/share/doc/task/rc/dark-256.theme
+#include /usr/share/doc/task/rc/dark-256.theme
 #include /usr/share/doc/task/rc/dark-red-256.theme
 #include /usr/share/doc/task/rc/dark-green-256.theme
 #include /usr/share/doc/task/rc/dark-blue-256.theme
 #include /usr/share/doc/task/rc/dark-violets-256.theme
 #include /usr/share/doc/task/rc/dark-yellow-green.theme
 #include /usr/share/doc/task/rc/dark-gray-256.theme
-#include /usr/share/doc/task/rc/dark-gray-blue-256.theme
+include /usr/share/doc/task/rc/dark-gray-blue-256.theme
 #include /usr/share/doc/task/rc/solarized-dark-256.theme
 #include /usr/share/doc/task/rc/solarized-light-256.theme
 #include /usr/share/doc/task/rc/no-color.theme
 
+# Sync configuration
 taskd.certificate=\/home\/robert\/.task\/robert_b.cert.pem
 taskd.key=\/home\/robert\/.task\/robert_b.key.pem
 taskd.ca=\/home\/robert\/.task\/ca.cert.pem
 taskd.server=cloud.robert-buchberger.com:53589
 taskd.credentials=justme\/robert\/9b857a68-43e6-4ee0-9cfd-963aca549e75
 taskd.trust=ignore hostname
+
+# Calendar holidays
+include /usr/share/doc/task/rc/holidays.en-US.rc
+include /usr/share/doc/task/rc/holidays.pl-PL.rc
+
+# Tweaks
+nag=
+recurrence.indicator=
+displayweeknumber=no
+due=1
+
+# default report
+
+# Columns are a comma separated list of columns and formatting specifiers. See
+# the command 'task columns' for a list of options and examples.
+report.next.labels=id,due,project,description
+report.next.columns=id,due.relative,project,description.count
+report.next.filter=+READY
