@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# This is a small script for keeping an up-to-date taskwarrior window open.
+
+echo '/home/robert/.task/pending.data' \
+  | entr -c ~/scripts/taskmon_update
