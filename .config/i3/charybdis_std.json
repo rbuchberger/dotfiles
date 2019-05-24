@@ -16,7 +16,7 @@
                "y": 0
             },
             "name": "taskmon",
-            "percent": 0.709929078014184,
+            "percent": 0.5,
             "swallows": [
                {
                 "class": "^taskmon$"
@@ -35,7 +35,7 @@
                "y": 0
             },
             "name": "robert@charybdis: ~",
-            "percent": 0.290070921985816,
+            "percent": 0.5,
             "swallows": [
                {
                 "class": "^kitty$"
@@ -112,4 +112,60 @@
         }
     ]
 }
+
+// vim:ts=4:sw=4:et
+{
+    // splitv split container with 2 children
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.194921875,
+    "type": "con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 3,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 1384,
+               "width": 2534,
+               "x": 0,
+               "y": 0
+            },
+            "name": "taskmon",
+            "percent": 0.517021276595745,
+            "swallows": [
+               {
+               // "class": "^taskmon$",
+               // "instance": "^taskmon$",
+               // "title": "^taskmon$"
+               }
+            ],
+            "type": "con"
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 3,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 684,
+               "width": 1259,
+               "x": 0,
+               "y": 0
+            },
+            "name": "robert@charybdis: ~",
+            "percent": 0.482978723404255,
+            "swallows": [
+               {
+               // "class": "^kitty$",
+               // "instance": "^kitty$",
+               // "title": "^robert\\@charybdis\\:\\ \\~$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
+
 
