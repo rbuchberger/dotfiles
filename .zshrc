@@ -102,6 +102,7 @@ export EDITOR='nvim'
 
 alias icat="kitty +kitten icat"
 alias cat="bat"
+alias t="task"
 
 export PATH=/usr/bin:/home/robert/.rbenv/bin:$PATH
 export PATH=/home/robert/.config/composer/vendor/bin:$PATH
