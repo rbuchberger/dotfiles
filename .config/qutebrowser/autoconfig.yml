@@ -25,7 +25,7 @@ settings:
       right: 5
       top: 5
   tabs.position:
-    global: top
+    global: bottom
   tabs.show:
     global: multiple
   tabs.show_switching_delay:
