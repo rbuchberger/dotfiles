@@ -198,7 +198,7 @@ bindsym $mod+XF86AudioPlay exec ~/.config/i3/music.sh
 bindsym $mod+p exec passmenu
 
 # layout builders
-bindsym $mod+control+semicolon exec ~/.config/i3/std_workspace.sh &
+bindsym $mod+control+semicolon exec ~/.config/i3/charybdis_std.sh &
 
 # i3 Gaps
 
