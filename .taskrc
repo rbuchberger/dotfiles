@@ -51,6 +51,6 @@ due=1
 
 # Columns are a comma separated list of columns and formatting specifiers. See
 # the command 'task columns' for a list of options and examples.
-report.next.labels=ID,due,tags,description
-report.next.columns=id,due.relative,tags,description.truncated
+report.next.labels=ID,due,project,tags,description
+report.next.columns=id,due.relative,project,tags,description.truncated
 report.next.filter=+READY -shopping
