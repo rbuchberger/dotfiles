@@ -1,3 +1,3 @@
 #!/bin/bash
 
-task sync && clear; task; task sync
+task sync; task; task sync
