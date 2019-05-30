@@ -34,6 +34,9 @@ floating_modifier $mod
 # Set focus not to follow mouse
 focus_follows_mouse no
 
+# Don't wrap focus around to the other side of the screen
+focus_wrapping no
+
 # start a terminal
 bindsym $mod+Return exec kitty
 
