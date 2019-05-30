@@ -1,0 +1,23 @@
+IMAPStore fastmail-remote
+Host imap.fastmail.com
+Port  993
+User robert@buchberger.cc
+PassCmd "pass mutt-wizard-fastmail"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore fastmail-local
+Subfolders Verbatim
+Path ~/.local/share/mail/fastmail/
+Inbox ~/.local/share/mail/fastmail/INBOX
+Flatten .
+
+Channel fastmail
+Expunge Both
+Master :fastmail-remote:
+Slave :fastmail-local:
+Patterns * !"[Gmail]/All Mail"
+Create Both
+SyncState *
+MaxMessages 3000
+# End profile
