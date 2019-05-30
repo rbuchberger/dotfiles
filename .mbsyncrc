@@ -19,5 +19,4 @@ Slave :fastmail-local:
 Patterns * !"[Gmail]/All Mail"
 Create Both
 SyncState *
-MaxMessages 3000
 # End profile
