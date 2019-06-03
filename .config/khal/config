@@ -1,0 +1,29 @@
+[default]
+default_calendar=personal
+highlight_event_days=true
+show_all_days=false
+timedelta=7d
+
+[calendars]
+
+[[personal]]
+path = /home/robert/.calendars/personal
+type = calendar
+color = dark green
+
+[[us holidays]]
+path = /home/robert/.calendars/holidays_us
+type = calendar
+color = dark blue
+
+[[polish holidays]]
+path = /home/robert/.calendars/holidays_pl
+type = calendar
+color = dark red
+
+[locale]
+timeformat = %H:%M
+dateformat = %Y-%m-%d
+longdateformat = %Y-%m-%d
+datetimeformat = %Y-%m-%d %H:%M
+longdatetimeformat = %Y-%m-%d %H:%M
