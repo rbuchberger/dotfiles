@@ -14,6 +14,8 @@ settings:
     - kitty nvim {file} +{line}
   editor.encoding:
     global: utf-8
+  qt.highdpi:
+    global: true
   scrolling.smooth:
     global: false
   tabs.background:
