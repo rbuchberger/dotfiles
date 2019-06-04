@@ -1,0 +1,21 @@
+urls-source "ocnews"
+ocnews-url "https://cloud.robert-buchberger.com"
+ocnews-login "robert"
+ocnews-passwordeval "pass nextcloud_cal_card_dav"
+
+browser "qutebrowser %u"
+display-article-progress yes
+
+color listfocus black green
+color info black green bold
+color listnormal_unread yellow black
+color listfocus_unread black green bold
+
+bind-key l open
+bind-key k up
+bind-key j down
+bind-key h quit
+
+player "vlc -I ncurses "
+download-path "~/podcasts/%n/"
+download-filename-format "%F_%t.%e"
