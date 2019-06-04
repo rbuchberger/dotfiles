@@ -1,0 +1,4 @@
+urls-source "ocnews"
+ocnews-url "https://cloud.robert-buchberger.com"
+ocnews-login "robert"
+ocnews-passwordeval "pass nextcloud_cal_card_dav"
