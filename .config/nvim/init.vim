@@ -11,8 +11,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 
   " Color schemes
   Plug 'flazz/vim-colorschemes'
-  Plug 'fenetikm/falcon'
-  Plug 'ayu-theme/ayu-vim'
 
   " Text manipulation/convenience:
   Plug 'tpope/vim-surround'             " Awesome plugin for changing things like tags. Read the documentation.
@@ -164,8 +162,7 @@ set cmdheight=2
 
 " Color Scheme config
 " set background=dark
-let ayucolor="mirage"
-colorscheme ayu
+colorscheme base16-railscasts
 let g:falcon_airline = 1
 
 set cursorline
@@ -184,7 +181,7 @@ let NERDTreeQuitOnOpen                         = 1               " Quit nerdtree
 
 " Airline
 let g:airline_powerline_fonts                 = 1
-let g:airline_theme = 'falcon'
+let g:airline_theme = 'wombat'
 let g:airline#extensions#tabline#enabled      = 1               " Enable buffer & tab list at the top
 let g:airline#extensions#tabline#show_splits  = 1               " Display open splits on a tab
 let g:airline#extensions#tabline#fnamemod     = ':t'            " Show just the filename
