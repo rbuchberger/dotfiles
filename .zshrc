@@ -1,6 +1,21 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
+# Aliases
+alias icat="kitty +kitten icat"
+alias cat="bat"
+alias be="bundle exec"
+
+alias m="neomutt"
+alias n="newsboat"
+alias p="podboat"
+alias c="ikhal"
+
+alias t="task"
+alias ta="task add"
+alias td="task done"
+alias tm="task mod"
+
 # Path to your oh-my-zsh installation.
   export ZSH="/home/robert/.oh-my-zsh"
 
@@ -91,20 +106,6 @@ export EDITOR='nvim'
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-alias icat="kitty +kitten icat"
-alias cat="bat"
-alias t="task"
-alias be="bundle exec"
-alias m="neomutt"
 
 export PATH=/usr/bin:/home/robert/.rbenv/bin:$PATH
 export PATH=/home/robert/.config/composer/vendor/bin:$PATH
