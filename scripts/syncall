@@ -4,12 +4,6 @@
 # This is a little script that lets me sync all my stuff, simultaneously, with
 # one command.
 
-if mom_up?
-  sync_all
-else
-  abort "Can't connect to cloud.robert-buchberger.com"
-end
-
 def commands
   [
     'yadm fetch',
@@ -53,6 +47,12 @@ def report_fails(threads)
   if fails.any?
     fails.each { |f| warn 'Failed to execute command: ' + f }
   else
-    puts 'Complete Success!'
+    puts "\n\n====================\nComplete Success!\n===================="
   end
+end
+
+if mom_up?
+  sync_all
+else
+  abort "Can't connect to cloud.robert-buchberger.com"
 end
