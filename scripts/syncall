@@ -1,0 +1,27 @@
+#!ruby
+
+# I tried to write this in bash but its syntax sucks. Don't judge me.
+
+def mom_up?
+  ping = `ping -c1 cloud.robert-buchberger.com`
+  ping.include? '64 bytes from'
+end
+
+def sync
+  # Sync Khal and Khard
+  puts `vdirsyncer sync`
+  # Sync Mailboxes
+  puts `mbsync --all`
+  # Sync dotfiles
+  puts `yadm fetch`
+  # Sync feeds
+  puts `newsboat --execute=reload`
+  # Sync taskwarrior
+  puts `task sync`
+end
+
+if mom_up?
+  sync
+else
+  abort "Can't connect to cloud.robert-buchberger.com"
+end
