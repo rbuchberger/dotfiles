@@ -1,27 +1,58 @@
 #!ruby
 
 # I tried to write this in bash but its syntax sucks. Don't judge me.
+# This is a little script that lets me sync all my stuff, simultaneously, with
+# one command.
+
+if mom_up?
+  sync_all
+else
+  abort "Can't connect to cloud.robert-buchberger.com"
+end
+
+def commands
+  [
+    'yadm fetch',
+    'vdirsyncer sync',
+    'mbsync --all',
+    'newsboat --execute=reload',
+    'task sync'
+  ]
+end
 
 def mom_up?
   ping = `ping -c1 cloud.robert-buchberger.com`
   ping.include? '64 bytes from'
 end
 
-def sync
-  # Sync Khal and Khard
-  puts `vdirsyncer sync`
-  # Sync Mailboxes
-  puts `mbsync --all`
-  # Sync dotfiles
-  puts `yadm fetch`
-  # Sync feeds
-  puts `newsboat --execute=reload`
-  # Sync taskwarrior
-  puts `task sync`
+def sync_all
+  puts 'Starting sync'
+
+  threads = start_threads
+
+  report_fails(threads)
 end
 
-if mom_up?
-  sync
-else
-  abort "Can't connect to cloud.robert-buchberger.com"
+def start_threads
+  threads = []
+
+  commands.each do |c|
+    puts 'Starting sync:' + c
+    threads << Thread.new { system c }
+  end
+
+  threads
+end
+
+def report_fails(threads)
+  fails = []
+  threads.map.with_index do |thread, i|
+    fails << command[i] unless thread.value
+  end
+
+  if fails.any?
+    fails.each { |f| warn 'Failed to execute command: ' + f }
+  else
+    puts 'Complete Success!'
+  end
 end
