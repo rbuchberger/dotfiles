@@ -41,7 +41,7 @@ end
 def report_fails(threads)
   fails = []
   threads.map.with_index do |thread, i|
-    fails << command[i] unless thread.value
+    fails << commands[i] unless thread.value
   end
 
   if fails.any?
