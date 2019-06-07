@@ -30,11 +30,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'jiangmiao/auto-pairs'           " Auto pair things like ( and {} )
   Plug 'tpope/vim-ragtag'               " Shortcut mappings for useful tags
   Plug 'alvan/vim-closetag'
-
-  " Tags
-  Plug 'ludovicchabant/vim-gutentags'   " Auto tag generation
-  Plug 'majutsushi/tagbar'              " Tag navigation and viewer
-  Plug 'kien/ctrlp.vim'                 " Fuzzy file finding
+  Plug 'junegunn/fzf.vim'
 
   " Git
   Plug 'tpope/vim-fugitive'
@@ -78,10 +74,6 @@ nnoremap <leader>f :ALEFix<CR>
 nnoremap <leader>s :Gstatus<CR>
 " Git commit
 nnoremap <leader>c :Gcommit<CR>
-" Tagbar
-nnoremap <leader>a :TagbarToggle<CR>
-" Ctrl-p buffer tag mode
-nnoremap <C-Q> :CtrlPBufTagAll<CR>
 " Goyo enable
 nnoremap <silent> <leader>g :Goyo<CR>
 " Limelight enable
@@ -98,10 +90,6 @@ nmap <leader>rn <Plug>(coc-rename)
 nmap <leader>qf  <Plug>(coc-fix-current)
 " Show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
-" Highlight symbol under cursor
-autocmd CursorHold * silent call CocActionAsync('highlight')
-" Remap for rename current word
-" nmap <leader>f <Plug>(coc-format)
 
 nnoremap <silent> K :call <SID>show_documentation()<CR>
 function! s:show_documentation()
@@ -169,6 +157,12 @@ set cursorline
 
 " Plugins
 
+" FZF
+nmap <silent> <C-p> :Files<cr>
+nmap <silent> <leader>p :Rg<cr>
+nmap <silent> <leader>j :Lines<cr>
+nmap <silent> <leader>b :Buffers<cr>
+
 " ALE
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
@@ -192,15 +186,6 @@ let g:airline#extensions#ale#enabled = 1
 
 " Ragtag
 let g:ragtag_global_maps                      = 1
-
-" Tagbar
-let g:tagbar_autofocus = 1
-let g:tagbar_autoclose = 1
-
-" ctrlp.vim
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_working_path_mode = 'r'
-let g:ctrlp_extensions = ['tag', 'quickfix']
 
 " Ignore node_modules (useful for ctrlp)
 set wildignore+=*/node_modules/*

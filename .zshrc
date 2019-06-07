@@ -159,3 +159,4 @@ POWERLEVEL9K_VI_COMMAND_MODE_STRING="Normal Mode"
 
 # The next line updates PATH for Netlify's Git Credential Helper.
 if [ -f '/home/robert/.netlify/helper/path.zsh.inc' ]; then source '/home/robert/.netlify/helper/path.zsh.inc'; fi
+[ -f /home/robert/.config/cani/completions/_cani.zsh ] && source /home/robert/.config/cani/completions/_cani.zsh
