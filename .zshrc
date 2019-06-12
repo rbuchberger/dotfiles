@@ -16,6 +16,9 @@ alias ta="task add"
 alias td="task done"
 alias tm="task mod"
 
+# Clone repo in the clipboard
+alias gcy="xsel -ob | xargs git clone"
+
 # Path to your oh-my-zsh installation.
   export ZSH="/home/robert/.oh-my-zsh"
 

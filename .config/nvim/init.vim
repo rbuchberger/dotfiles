@@ -19,6 +19,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tpope/vim-repeat'               " Dot repeat support for plugins
   Plug 'tyru/caw.vim'
   Plug 'Shougo/context_filetype.vim'    " Sets filetype by context. (Vue files)
+  Plug 'reedes/vim-pencil'
 
   " Code Completion and linting:
   Plug 'w0rp/ale'                       " Async Linting
