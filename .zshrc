@@ -20,7 +20,7 @@ alias tm="task mod"
 alias gcy="xsel -ob | xargs git clone"
 
 # Path to your oh-my-zsh installation.
-  export ZSH="/home/robert/.oh-my-zsh"
+export ZSH="/home/robert/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -120,6 +120,9 @@ source /usr/share/nvm/init-nvm.sh
 
 # Ranger load only my config:
 export RANGER_LOAD_DEFAULT_RC=FALSE
+
+# GPG key setting for package builds
+export GPGKEY=8C29272B84A3CC1BD7CBBCF218B7E45B74319F2C
 
 # Vim mode
 bindkey -v
