@@ -86,3 +86,14 @@ rehash_precmd() {
 
 add-zsh-hook -Uz precmd rehash_precmd
 
+# Configure less
+
+export COLUMNS=80
+export LESS="\
+  --ignore-case \
+  --jump-target=10 \
+  --status-column \
+  --hilite-unread \
+  --tabs=4 \
+  --window=-10 \
+  "
