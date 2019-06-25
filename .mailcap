@@ -1,0 +1,10 @@
+text/html; qutebrowser '%s';
+text/plain; bat '%s'; copiousoutput;
+
+application/pdf; zathura;
+
+image/*; display;
+
+video/x-youtube; mpv -vo drm -quiet '%s'; needsterminal
+video/*; mpv -vo drm -quiet '%s'; needsterminal
+video/*; mpv '%s' --autofit 640x480 --loop=inf; test=test -n "$DISPLAY"
