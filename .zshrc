@@ -8,6 +8,7 @@ export ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim
 alias icat="kitty +kitten icat"
 alias cat="bat"
 alias be="bundle exec"
+alias bejs="bundle exec jekyll serve --livereload"
 
 alias m="neomutt"
 alias n="newsboat"
@@ -90,10 +91,6 @@ add-zsh-hook -Uz precmd rehash_precmd
 
 export COLUMNS=80
 export LESS="\
-  --ignore-case \
   --jump-target=10 \
-  --status-column \
-  --hilite-unread \
-  --tabs=4 \
   --window=-10 \
   "
