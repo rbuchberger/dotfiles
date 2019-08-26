@@ -7,6 +7,8 @@ set $mod Mod4
 # workspace_layout stacking
 
 exec_always export TERMINAL=kitty
+exec_always export STEAMAPPS=~/.steam/steam/steamapps
+exec_always export WINEPREFIX=$STEAMAPPS/compatdata/359320/pfx
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.

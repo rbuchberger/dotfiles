@@ -79,6 +79,8 @@ nnoremap <leader>c :Gcommit<CR>
 nnoremap <silent> <leader>g :Goyo<CR>
 " Limelight enable
 nnoremap <silent> <leader>l :Limelight!!<CR>
+" Write
+nnoremap <leader>w :w<CR>
 
 " Coc keybindings
 " ctrl+space triggers completion
