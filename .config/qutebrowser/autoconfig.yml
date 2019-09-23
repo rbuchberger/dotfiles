@@ -3,6 +3,12 @@
 
 config_version: 2
 settings:
+  bindings.commands:
+    global:
+      normal:
+        <Ctrl+e>: open-editor
+  content.geolocation:
+    https://www.intercity.pl: false
   content.notifications:
     https://www.allrecipes.com: false
     https://www.reddit.com: false
@@ -16,7 +22,10 @@ settings:
     global: null
   editor.command:
     global:
-    - kitty nvim {file} +{line}
+    - kitty
+    - nvim
+    - '{file}'
+    - +{line}
   editor.encoding:
     global: utf-8
   qt.highdpi:

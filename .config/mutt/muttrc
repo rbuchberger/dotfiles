@@ -10,3 +10,6 @@ color sidebar_flagged yellow default
 color sidebar_new green default
 color sidebar_highlight black green
 color sidebar_divider yellow black
+
+set query_command="khard email -p '%s'"
+macro index,pager \Ca "<pipe-message>khard add-email<return>" "Add sender to address book"
