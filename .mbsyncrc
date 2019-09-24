@@ -18,6 +18,7 @@ Master :fastmail-remote:
 Slave :fastmail-local:
 Patterns * !"[Gmail]/All Mail"
 Create Both
+Remove Both
 SyncState *
 MaxMessages 3000
 # End profile
