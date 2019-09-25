@@ -10,6 +10,7 @@ settings:
   content.geolocation:
     https://www.intercity.pl: false
   content.notifications:
+    https://blog.devolutions.net: false
     https://www.allrecipes.com: false
     https://www.reddit.com: false
   content.pdfjs:
