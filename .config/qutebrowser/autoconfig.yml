@@ -12,6 +12,7 @@ settings:
   content.notifications:
     https://blog.devolutions.net: false
     https://www.allrecipes.com: false
+    https://www.facebook.com: false
     https://www.reddit.com: false
   content.pdfjs:
     global: true
