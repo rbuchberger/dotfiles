@@ -27,7 +27,7 @@ fileext = ".vcf"
 type           = "carddav"
 url            = "https://cloud.robert-buchberger.com/"
 username       = "robert"
-password.fetch = ["command", "pass", "nextcloud_cal_card_dav"]
+password.fetch = ["command", "pass", "cloud.robert-buchberger.com/calDav_carDav"]
 
 # CALDAV
 [pair robert_calendar]
@@ -47,4 +47,4 @@ fileext = ".ics"
 type           = "caldav"
 url            = "https://cloud.robert-buchberger.com"
 username       = "robert"
-password.fetch = ["command", "pass", "nextcloud_cal_card_dav"]
+password.fetch = ["command", "pass", "cloud.robert-buchberger.com/calDav_carDav"]
