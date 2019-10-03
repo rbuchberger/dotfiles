@@ -11,6 +11,7 @@ settings:
     https://www.intercity.pl: false
   content.notifications:
     https://blog.devolutions.net: false
+    https://fustany.com: false
     https://www.allrecipes.com: false
     https://www.facebook.com: false
     https://www.reddit.com: false

@@ -134,6 +134,7 @@ endif
 
 " Indent Behavior
 set autoindent
+filetype on
 filetype plugin on
 filetype plugin indent on
 
