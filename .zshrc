@@ -26,6 +26,8 @@ alias gcy="xsel -ob | xargs git clone"
 export EDITOR='nvim'
 export BROWSER='qutebrowser'
 
+export MANWIDTH=80
+
 # Delay by .2 seconds; reduce insert & normal mode switching lag
 export KEYTIMEOUT=2
 
@@ -42,6 +44,7 @@ export RANGER_LOAD_DEFAULT_RC=FALSE
 
 # GPG key setting for package builds
 export GPGKEY=8C29272B84A3CC1BD7CBBCF218B7E45B74319F2C
+export RESTIC_PASSWORD_COMMAND="pass backup/restic/charybdis_backup_password"
 
 # Vim mode
 bindkey -v

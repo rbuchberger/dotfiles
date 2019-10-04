@@ -82,6 +82,11 @@ nnoremap <silent> <leader>l :Limelight!!<CR>
 " Write
 nnoremap <leader>w :w<CR>
 
+" Navigation
+nnoremap <leader>Q :qa!<cr>
+nnoremap <leader>j <c-d>
+nnoremap <leader>k <c-u>
+
 " Coc keybindings
 " ctrl+space triggers completion
 inoremap <silent><expr> <c-space> coc#refresh()
@@ -164,7 +169,7 @@ set cursorline
 " FZF
 nmap <silent> <C-p> :Files<cr>
 nmap <silent> <leader>p :Rg<cr>
-nmap <silent> <leader>j :Lines<cr>
+" nmap <silent> <leader>j :Lines<cr>
 nmap <silent> <leader>b :Buffers<cr>
 
 " ALE
