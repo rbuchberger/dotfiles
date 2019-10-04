@@ -1,0 +1,8 @@
+[Unit]
+Description=Schedule email sync
+
+[Timer]
+OnCalendar=8..20:00:00
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,5 @@
+[Unit]
+Description=Sync Contacts and Calendars
+
+[Service]
+ExecStart=/usr/bin/vdirsyncer metasync

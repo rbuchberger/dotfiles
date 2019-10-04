@@ -1,0 +1,8 @@
+[Unit]
+Description=Sync contacts and calendar
+
+[Timer]
+OnCalendar=6..22:00:00
+
+[Install]
+WantedBy=multi-user.target
