@@ -32,7 +32,7 @@ bind editor <Tab> complete-query
 
 macro index,pager a "<pipe-message>khard add-email<return>" "Add sender to address book"
 macro index \Cr "T~U<enter><tag-prefix><clear-flag>N<untag-pattern>.<enter>" "mark all messages as read"
-macro index O "<shell-escape>mailsync -a<enter>" "run offlineimap to sync all mail"
+macro index O "<shell-escape>mbsync -a<enter>" "run mbsync to sync all mail"
 macro index \Cf "<enter-command>unset wait_key<enter><shell-escape>read -p 'Enter a search term to find with notmuch: ' x; echo \$x >~/.cache/mutt_terms<enter><limit>~i \"\`notmuch search --output=messages \$(cat ~/.cache/mutt_terms) | head -n 600 | perl -le '@a=<>;s/\^id:// for@a;$,=\"|\";print@a' | perl -le '@a=<>; chomp@a; s/\\+/\\\\+/ for@a;print@a' \`\"<enter>" "show only messages matching a notmuch pattern"
 macro index A "<limit>all\n" "show all messages (undo limit)"
 
@@ -53,7 +53,7 @@ bind index,pager C noop
 bind index gg first-entry
 bind pager gg top
 bind pager G bottom
-macro index o "<shell-escape>mbsync --all --quiet<enter>" "run mbsync to sync fastmail"
+macro index o "<shell-escape>mbsync --all<enter>" "run mbsync to sync fastmail"
 macro index,pager A "<save-message>=Archive<enter><enter>" "move mail to archive"
 
 bind index,pager D noop
