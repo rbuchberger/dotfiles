@@ -1,0 +1,4 @@
+#! /bin/sh
+
+yadm alt
+./startup.sh
