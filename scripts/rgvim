@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Fuzzy-find a file, then open it in nvim
+rg | fzf | xargs -r nvim
