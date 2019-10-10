@@ -1,0 +1,22 @@
+#! /bin/bash
+# This is a set of helpful aliases; run this script to make backup repo
+# management easier.
+
+alias reschar="restic \
+  --repo robert@charybdis:/bucket/local_backups/cloudbucket/ \
+  --password-command=\"pass backup/restic/charybdis_backup_password\" \
+  --verbose"
+
+
+alias rescloud="restic \
+  --repo robert@cloudbucket:/bucket/local_backups/cloudbucket/ \
+  --password-command=\"pass backup/restic/charybdis_backup_password\" \
+  --verbose"
+
+alias resblaze="\
+  B2_ACCOUNT_ID=c0b133527475 \
+  B2_ACCOUNT_KEY=`pass backup/backblaze.com/master_api_key` \
+  restic \
+    --repo b2:charybdis:/ \
+    --password-command=\"pass backup/restic/charybdis_backup_password\" \
+    --verbose"
