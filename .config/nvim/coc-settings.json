@@ -1,4 +1,5 @@
 {
   "suggest.enablePreview": true,
-  "suggest.autoTrigger": false
+  "suggest.autoTrigger": "trigger",
+  "codeLens.enable": true
 }
