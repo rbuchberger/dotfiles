@@ -71,6 +71,8 @@ settings:
     global: asdfghjkl
   hints.uppercase:
     global: true
+  fonts.web.size.minimum:
+    global: 11
   qt.highdpi:
     global: true
   scrolling.smooth:
