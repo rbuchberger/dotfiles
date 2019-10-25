@@ -52,12 +52,12 @@ border-size = 5
 border-top-size = 0
 
 
-font-0 = DejaVu Sans:size=11;3
-font-1 = Hack Nerd Font Mono:size=11;3
-font-2 = mplus Nerd Font Mono:size=11;3
-font-3 = NotoEmoji Nerd Font Mono:size=11;3
+font-0 = DejaVu Sans:size=10;3
+font-1 = Hack Nerd Font Mono:size=10;3
+font-2 = mplus Nerd Font Mono:size=10;3
+font-3 = NotoEmoji Nerd Font Mono:size=10;3
 
-height = 25
+height = 20
 
 
 line-size = 2
@@ -69,8 +69,8 @@ tray-position = none
 tray-background = ${root.background}
 
 
-modules-left = i3 logout-button
-modules-right = pulseaudio keyboard date time 
+modules-left = i3
+modules-right = network battery backlight pulseaudio keyboard date time 
 
 
 [module/jgmenu]
@@ -204,8 +204,7 @@ click-left = dm-tool switch-to-greeter
 [module/network]
 type = internal/network
 
-interface = wlp2s0f0u3
-unknown-as-up = true
+interface = wlp1s0
 
 interval = 0.3
 
@@ -268,5 +267,104 @@ animation-packetloss-1 = 📶
 animation-packetloss-1-foreground = ${colors.red}
 ; Framerate in milliseconds
 animation-packetloss-framerate = 200
+
+
+
+[module/backlight]
+type = internal/xbacklight
+
+format = <label><ramp>
+
+label = %percentage%%
+
+; Only applies if <ramp> is used
+ramp-0 = 🌕
+ramp-1 = 🌔
+ramp-2 = 🌓
+ramp-3 = 🌒
+ramp-4 = 🌑
+
+ramp-foreground = ${colors.yellow}
+ramp-padding-left = 2
+label-font = 2
+
+format-background = ${colors.dark-trans}
+format-foreground = ${colors.foreground}
+format-underline = ${colors.lightgrey}
+format-padding = 2
+
+[module/battery]
+type = internal/battery
+
+ramp-capacity-foreground = ${colors.blue}
+ramp-capacity-padding-left = 2
+label-font = 2
+
+animation-charging-foreground = ${colors.blue}
+animation-charging-padding-left = 2
+animation-charging-font = 2
+
+format-discharging-background = ${colors.dark-trans}
+format-discharging-foreground = ${colors.foreground}
+format-discharging-underline = ${colors.blue}
+format-discharging-padding = 2
+
+format-charging-background = ${colors.dark-trans}
+format-charging-foreground = ${colors.foreground}
+format-charging-padding = 2
+format-charging-underline = ${colors.blue}
+
+format-full-background = ${colors.dark-trans}
+format-full-foreground = ${colors.foreground}
+format-full-padding = 2
+format-full-underline = ${colors.green}
+
+battery = BAT0
+adapter = AC
+poll-interval = 60
+time-format = %l:%M · 
+
+format-charging = <label-charging><animation-charging>
+format-discharging = <label-discharging><ramp-capacity>
+
+; Available tags:
+;   <label-full> (default)
+;   <bar-capacity>
+;   <ramp-capacity>
+format-full = <label-full>
+
+label-charging = %time% %percentage%%
+label-discharging = %time% %percentage%%
+
+; Available tokens:
+;   %percentage% (default) - is set to 100 if full-at is reached
+;   %percentage_raw% (unreleased)
+label-full = %percentage%% 
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-5 = 
+ramp-capacity-6 = 
+ramp-capacity-7 = 
+ramp-capacity-8 = 
+ramp-capacity-9 = 
+ramp-capacity-10 = 
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-5 = 
+animation-charging-6 = 
+animation-charging-7 = 
+animation-charging-8 = 
+animation-charging-9 = 
+animation-charging-10 = 
+animation-charging-11 = 
+animation-charging-framerate = 200
 
 
