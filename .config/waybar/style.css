@@ -1,0 +1,132 @@
+/* # black          */
+/* color0   #1d1f21 */
+/* color8   #969896 */
+
+/* # red            */
+/* color1   #cc6666 */
+/* color9   #cc6666 */
+
+/* # green          */
+/* color2   #b5bd68 */
+/* color10  #b5bd68 */
+
+/* # yellow         */
+/* color3   #f0c674 */
+/* color11  #f0c674 */
+
+/* # blue           */
+/* color4   #81a2be */
+/* color12  #81a2be */
+
+/* # magenta        */
+/* color5   #b294bb */
+/* color13  #b294bb */
+
+/* # cyan           */
+/* color6   #8abeb7 */
+/* color14  #8abeb7 */
+
+/* # white          */
+/* color7   #c5c8c6 */
+/* color15  #ffffff */
+
+* {
+  border: none;
+  border-radius: 0;
+  font-family: FuraMono;
+  font-size: 14px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: rgba(0, 0, 0, 0);
+  border-bottom: 3px solid #c5c8c6;
+  color: white;
+}
+
+#workspaces button {
+  padding: 0 5px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #c5c8c6;
+}
+
+#workspaces button.focused {
+  background: #b5bd68;
+  color: #1d1f21;
+  border-bottom: 3px solid #c5c8c6;
+}
+
+#mode {
+  background: #cc6666;
+  border-bottom: 3px solid white;
+}
+
+#clock,
+#idle_inhibitor,
+#pulseaudio,
+#cpu,
+#memory,
+#network,
+#tray {
+  padding: 0 15px;
+  margin: 0 5px;
+  color: black;
+}
+
+#custom-switch_user {
+  background: rgba(0,0,0,0.8);
+  color: #cc6666;
+  margin: 0 5px;
+  padding: 0 10px;
+  font-size: 18px;
+}
+
+#network {
+  background-color: #c5c8c6;
+}
+
+#memory {
+  background-color: #b294bb;
+}
+#cpu {
+  background-color: #8abeb7;
+}
+
+#pulseaudio {
+  background-color: #f0c674;
+}
+
+#clock {
+  background-color: #81a2be;
+}
+
+#idle_inhibitor {
+  background-color: #b5bd68;
+}
+
+#battery {
+  background-color: #ffffff;
+  color: black;
+}
+
+#battery.charging {
+  color: white;
+  background-color: #26a65b;
+}
+
+@keyframes blink {
+  to {
+    background-color: #ffffff;
+    color: black;
+  }
+}
+
+#battery.warning:not(.charging) {
+  background: #f53c3c;
+  color: white;
+  animation-name: blink;
+  animation-duration: 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
