@@ -15,8 +15,9 @@ def commands
 end
 
 def mom_up?
-  ping = `ping -c1 cloud.robert-buchberger.com`
-  ping.include? '64 bytes from'
+  # ping = `ping -c1 cloud.robert-buchberger.com`
+  # ping.include? '64 bytes from'
+  true
 end
 
 def sync_all
