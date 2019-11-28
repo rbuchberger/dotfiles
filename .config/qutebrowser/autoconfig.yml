@@ -17,8 +17,10 @@ settings:
     https://downshiftology.com: false
     https://fustany.com: false
     https://mediamarkt.pl: false
+    https://www.aimersoft.com: false
     https://www.allrecipes.com: false
     https://www.facebook.com: false
+    https://www.limetorrents.info: false
     https://www.reddit.com: false
   content.pdfjs:
     global: true
