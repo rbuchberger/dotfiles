@@ -16,8 +16,10 @@ settings:
     https://blog.devolutions.net: false
     https://downshiftology.com: false
     https://fustany.com: false
+    https://www.aimersoft.com: false
     https://www.allrecipes.com: false
     https://www.facebook.com: false
+    https://www.limetorrents.info: false
     https://www.reddit.com: false
   content.pdfjs:
     global: true
@@ -64,15 +66,13 @@ settings:
   fonts.web.size.default_fixed:
     global: 13
   fonts.web.size.minimum:
-    global: 10
+    global: 11
   fonts.web.size.minimum_logical:
     global: 6
   hints.chars:
     global: asdfghjkl
   hints.uppercase:
     global: true
-  fonts.web.size.minimum:
-    global: 11
   qt.highdpi:
     global: true
   scrolling.smooth:
