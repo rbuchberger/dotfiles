@@ -48,7 +48,8 @@
         "on-scroll-down": "light -A 2",
         "on-click": "light -S 100",
         "on-click-right": "light -S 20",
-        "format-icons": ["", ""]
+        "format-icons": ["", ""],
+        "interval": 30
     },
     "battery": {
         "states": {

@@ -31,20 +31,19 @@ export MANWIDTH=80
 # Delay by .2 seconds; reduce insert & normal mode switching lag
 export KEYTIMEOUT=2
 
-export PATH=/usr/bin:/home/robert/.rbenv/bin:$PATH
-export PATH=/home/robert/.config/composer/vendor/bin:$PATH
-export PATH=/home/robert/scripts:$PATH
+# export PATH=/usr/bin:/home/robert/.rbenv/bin:$PATH
+# export PATH=/home/robert/.config/composer/vendor/bin:$PATH
+# export PATH=/home/robert/scripts:$PATH
 
 eval "$(rbenv init -)"
 
 source /usr/share/nvm/init-nvm.sh
 
 # Ranger load only my config:
-export RANGER_LOAD_DEFAULT_RC=FALSE
+# export RANGER_LOAD_DEFAULT_RC=FALSE
 
 # GPG key setting for package builds
-export GPGKEY=8C29272B84A3CC1BD7CBBCF218B7E45B74319F2C
-export RESTIC_PASSWORD_COMMAND="pass backup/restic/charybdis_backup_password"
+# export GPGKEY=8C29272B84A3CC1BD7CBBCF218B7E45B74319F2C
 
 # Vim mode
 bindkey -v
@@ -129,3 +128,4 @@ rehash_precmd() {
 }
 
 add-zsh-hook -Uz precmd rehash_precmd
+# source ~/.config/environment.d/environment.conf
