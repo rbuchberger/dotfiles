@@ -22,6 +22,7 @@ settings:
     https://www.facebook.com: false
     https://www.limetorrents.info: false
     https://www.reddit.com: false
+    https://www.youtube.com: false
   content.pdfjs:
     global: true
   content.register_protocol_handler:
