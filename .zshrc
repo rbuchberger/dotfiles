@@ -110,6 +110,10 @@ bindkey -s '^O' 'ranger-cd\n'
 # The next line updates PATH for Netlify's Git Credential Helper.
 if [ -f '/home/robert/.netlify/helper/path.zsh.inc' ]; then source '/home/robert/.netlify/helper/path.zsh.inc'; fi
 
+# Rust
+export PATH="$HOME/.cargo/bin:$PATH"
+if [ -f '$HOME/.cargo/env' ]; then source '$HOME/.cargo/env'; fi
+
 # Rehash completion when pacman installs or updates packages. Note that this
 # requires a hook file in /etc/pacman.d/hooks/, see the arch wiki:
 
