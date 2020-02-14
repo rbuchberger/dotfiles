@@ -12,14 +12,19 @@ settings:
         <Ctrl+e>: open-editor
   content.geolocation:
     https://www.intercity.pl: false
+    https://www.mec.ca: false
   content.notifications:
     https://blog.devolutions.net: false
     https://downshiftology.com: false
     https://fustany.com: false
     https://mediamarkt.pl: false
+    https://theworkoutnut.com: false
     https://www.aimersoft.com: false
     https://www.allrecipes.com: false
+    https://www.decathlon.pl: false
     https://www.facebook.com: false
+    https://www.jpost.com: false
+    https://www.kartamultisport.pl: false
     https://www.limetorrents.info: false
     https://www.reddit.com: false
   content.pdfjs:
