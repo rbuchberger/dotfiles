@@ -12,6 +12,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
   " Color schemes
   Plug 'flazz/vim-colorschemes'
+  Plug 'chriskempson/base16-vim'
 
   " Text manipulation/convenience:
   Plug 'tpope/vim-surround'             " Awesome plugin for changing things like tags. Read the documentation.
@@ -74,6 +75,8 @@ nnoremap <leader>s :Gstatus<CR>
 nnoremap <leader>c :Gcommit<CR>
 " Write
 nnoremap <leader>w :w<CR>
+
+vnoremap <leader>t :Tabularize /-/<CR>
 
 " Input  behaviour
 autocmd FileType * setlocal formatoptions=tcqnBj
