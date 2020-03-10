@@ -14,6 +14,7 @@ settings:
     https://www.intercity.pl: false
     https://www.mec.ca: false
   content.notifications:
+    https://blankslateclimbing.myshopify.com: false
     https://blog.devolutions.net: false
     https://downshiftology.com: false
     https://fustany.com: false
