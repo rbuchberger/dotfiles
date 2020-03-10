@@ -58,17 +58,36 @@ zle -N _fuzzyvim
 bindkey "^P" _fuzzyvim
 
 # Show notes bound to ctrl+n
-
 _note_show() {
   ~/scripts/note_show
 }
 
+# Open a markdown file with today's date as a name.
 function today() {
   nvim $(date -I).md
 }
 
+# Download aur packages which are out of date:
 function aur_fetch_updates() {
   aur fetch $(aur repo -al | aur vercmp -q)
+}
+
+# Chack for packages which are in the custom repo, but which aren't installed on
+# the local system.
+function aur_check {
+  # list packages in aur repo
+  aur repo -l | cut -f 1 | sort > /tmp/aurlist
+  # list packages in pacman repo
+  pacman -Q | cut -d ' ' -f 1 | sort > /tmp/paclist
+
+  diff --new-line-format="" --unchanged-line-format="" /tmp/aurlist /tmp/paclist
+
+  rm /tmp/aurlist /tmp/paclist
+}
+
+# Remove packages from custom repo
+function aur_remove {
+  repo-remove $(aur repo).tar $@
 }
 
 # Change cursor shape for different vi modes.
