@@ -67,6 +67,16 @@ function today() {
   nvim $(date -I).md
 }
 
+# Create/edit today's journal entry
+function journal() {
+  # Format:
+  # ~/notes/journal/2020/03/10.md
+  filename="~/notes/journal/$(date -I | sed 's_-_/_g').md"
+  folder="$(echo $filename | cut -d '/' -f1-5)"
+  mkdir -p $folder
+  nvim $filename
+}
+
 # Download aur packages which are out of date:
 function aur_fetch_updates() {
   aur fetch $(aur repo -al | aur vercmp -q)
