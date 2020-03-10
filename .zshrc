@@ -63,6 +63,14 @@ _note_show() {
   ~/scripts/note_show
 }
 
+function today() {
+  nvim $(date -I).md
+}
+
+function aur_fetch_updates() {
+  aur fetch $(aur repo -al | aur vercmp -q)
+}
+
 # Change cursor shape for different vi modes.
 function zle-keymap-select {
   if [[ ${KEYMAP} == vicmd ]] ||
