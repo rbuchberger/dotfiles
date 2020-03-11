@@ -69,10 +69,9 @@ function today() {
 
 # Create/edit today's journal entry
 function journal() {
-  # Format:
-  # ~/notes/journal/2020/03/10.md
-  filename="~/notes/journal/$(date -I | sed 's_-_/_g').md"
-  folder="$(echo $filename | cut -d '/' -f1-5)"
+  folder=~/notes/journal/$(date +%Y/%m)/
+  filename=$folder$(date +%d).md
+
   mkdir -p $folder
   nvim $filename
 }
