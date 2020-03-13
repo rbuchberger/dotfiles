@@ -160,3 +160,7 @@ rehash_precmd() {
 
 add-zsh-hook -Uz precmd rehash_precmd
 # source ~/.config/environment.d/environment.conf
+if [ -f ~/.config/hunter/hunter_cd.sh ]
+then
+  source ~/.config/hunter/hunter_cd.sh
+fi
