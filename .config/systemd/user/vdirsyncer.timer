@@ -1,0 +1,8 @@
+[Unit]
+Description="Scheduled calendar and contact sync"
+
+[Timer]
+OnCalendar="1h"
+
+[Install]
+WantedBy=default.target
