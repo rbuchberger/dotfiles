@@ -1,17 +1,14 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
   " UI
-  Plug 'scrooloose/nerdtree'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
-  Plug 'ap/vim-css-color'
   Plug 'junegunn/goyo.vim'
   Plug 'junegunn/limelight.vim'
   Plug 'Yggdroot/indentLine'
   Plug 'cespare/vim-toml'
 
   " Color schemes
-  Plug 'flazz/vim-colorschemes'
   Plug 'chriskempson/base16-vim'
 
   " Text manipulation/convenience:
@@ -21,13 +18,11 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tpope/vim-repeat'               " Dot repeat support for plugins
   Plug 'tyru/caw.vim'
   Plug 'Shougo/context_filetype.vim'    " Sets filetype by context. (Vue files)
-  " Plug 'reedes/vim-pencil'
 
   " Code Completion and linting:
-  " Plug 'w0rp/ale'                       " Async Linting
   Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install() }}
   " Plug 'SirVer/ultisnips'
-  Plug 'honza/vim-snippets'
+  " Plug 'honza/vim-snippets'
 
   " Auto-stuff
   Plug 'jiangmiao/auto-pairs'           " Auto pair things like ( and {} )
@@ -37,7 +32,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 
   " Git
   Plug 'tpope/vim-fugitive'
-  " Plug 'airblade/vim-gitgutter'
   Plug 'rhysd/git-messenger.vim'
 
   " Ruby and rails:
@@ -54,8 +48,9 @@ call plug#begin('~/.local/share/nvim/plugged')
   " Plug 'sheerun/vim-polyglot'
 
   " Markdown
-  Plug 'gabrielelana/vim-markdown'
   Plug 'suan/vim-instant-markdown'
+  " vim-markdown depends on tabular, and must come after it.
+  Plug 'plasticboy/vim-markdown'
 
 call plug#end()
 
