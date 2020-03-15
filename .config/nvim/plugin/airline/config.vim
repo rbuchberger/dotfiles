@@ -1,6 +1,6 @@
 " Airline
 let g:airline_powerline_fonts                   =  1
-let g:airline_theme                             =  'wombat'
+let g:airline_theme                             =  'base16'
 " Enable buffer & tab list at the top:
 let g:airline#extensions#tabline#enabled        =  1
 " Display open splits on a tab
