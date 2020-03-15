@@ -74,7 +74,7 @@ nnoremap <leader>w :w<CR>
 vnoremap <leader>t :Tabularize /-/<CR>
 
 " Input  behaviour
-autocmd FileType * setlocal formatoptions=tcqnBj
+autocmd FileType * setlocal formatoptions=wnjr
 set textwidth=80
 set tabstop=2
 set softtabstop=2
@@ -106,22 +106,16 @@ set scrolloff=5        "  keep a 5 line padding when moving the cursor
 set showmatch          "  Shows matching parenthesis
 set number             "  Show current line number
 set relativenumber     "  Show relative line numbers
-set foldmethod=manual  "  Disable auto-folding
 set fcs=eob:\          "  Disable blank line tildes
-set cmdheight=2        "  Double-height command window
 
 " Color Scheme config
-colorscheme base16-railscasts
-let g:falcon_airline = 1
+colorscheme base16-default-dark
 set termguicolors
-set cursorline
 
-" I really loathe when syntax highlighting includes hiding characters. It's
-" seriously rage inducing: 
-autocmd FileType * set conceallevel=0
+" autocmd FileType * set conceallevel=0
 
 " Ruby host
 let g:ruby_host_prog = '/home/robert/.rbenv/versions/2.5.3/bin/neovim-ruby-host'
 
 " Indent line fix for conceallevel setting
-let g:indentLine_fileTypeExclude = ['markdown', 'json']
+let g:indentLine_fileTypeExclude = ['markdown']
