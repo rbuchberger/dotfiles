@@ -1,0 +1,45 @@
+snippet gtable "Gender and Grammar Table"
+|       | r. męski | r. żeński | r. nijaki | r. męskoosobowy | r. niemęskoosobowy |
+|-------|----------|-----------|-----------|-----------------|--------------------|
+| _ja_  | $1         | $2          |           |                 |                    |
+| _ty_  | $3         | $4          |           |                 |                    |
+| _on_  | $5         |           |           |                 |                    |
+| _ona_ |          | $6          |           |                 |                    |
+| _ono_ |          |           | $7          |                 |                    |
+| _my_  |          |           |           | $8                | $9                   |
+| _wy_  |          |           |           | $10                | $11                   |
+| _oni_ |          |           |           | $12                |                    |
+| _one_ |          |           |           |                 | $13                   |
+endsnippet
+
+snippet pnotes "Polish Notes Skeleton" b
+# `date -I`
+
+## Homework/Todo
+
+$1
+
+## Notes
+
+$2
+
+## Grammar
+
+$3
+
+## Vocab
+
+| polish | english |
+|--------|---------|
+| $4       | $5        |
+
+endsnippet
+
+snippet "^\| (\S+ )+\| (\S+ )+\|\n\|" "New Vocab Table Row" brA
+| $1 | $2 |
+endsnippet
+
+snippet "^\|" "New Vocab Table Row" r
+| $1 | $2 |
+$3
+endsnippet
