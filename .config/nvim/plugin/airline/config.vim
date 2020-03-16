@@ -12,7 +12,5 @@ let g:airline#extensions#tabline#show_buffers   =  1
 " Exclude preview windows
 let g:airline_exclude_preview                   =  1
 let g:airline#extensions#whitespace#enabled     =  0
-let g:airline#extensions#ale#enabled            =  1
 let g:airline#parts#ffenc#skip_expected_string  =  'utf-8[unix]'
 let g:airline#extensions#coc#enabled            =  1
-let g:falcon_airline                            =  1

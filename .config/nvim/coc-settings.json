@@ -1,6 +1,6 @@
 {
   "suggest.enablePreview": true,
-  "suggest.autoTrigger": "trigger",
+  "suggest.autoTrigger": "always",
   "suggest.completionItemKindLabels": {
     "keyword": "\uf1de",
     "variable": "\ue79b",
@@ -45,5 +45,20 @@
     "vue",
     "js",
     "jsx"
+  ],
+  "cSpellExt.enableDictionaries": ["polish"],
+  "cSpell.language": "en,pl",
+  "cSpell.userWords": [
+    "Shougo",
+    "Ulti",
+    "alvan",
+    "andrewradev",
+    "honza",
+    "neoclide",
+    "quizlet",
+    "rbenv",
+    "solargraph",
+    "tpope",
+    "vetur"
   ]
 }

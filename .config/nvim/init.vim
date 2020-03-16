@@ -1,56 +1,49 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
   " UI
-  Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
+  Plug 'chriskempson/base16-vim'
+  Plug 'junegunn/fzf.vim'
   Plug 'junegunn/goyo.vim'
   Plug 'junegunn/limelight.vim'
-  Plug 'Yggdroot/indentLine'
-  Plug 'cespare/vim-toml'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
 
-  " Color schemes
-  Plug 'chriskempson/base16-vim'
-
-  " Text manipulation/convenience:
-  Plug 'tpope/vim-surround'             " Awesome plugin for changing things like tags. Read the documentation.
-  Plug 'godlygeek/tabular'              " It's why everything lines up so nicely
-  Plug 'andrewradev/splitjoin.vim'      " Switch between oneline and multiline
-  Plug 'tpope/vim-repeat'               " Dot repeat support for plugins
+  " Text manipulation:
+  Plug 'Shougo/context_filetype.vim' " Sets filetype by context. (Vue files)
+  Plug 'alvan/vim-closetag'
+  Plug 'andrewradev/splitjoin.vim'
+  Plug 'godlygeek/tabular'
+  Plug 'jiangmiao/auto-pairs' " Auto pair things like ( and {} )
+  Plug 'tpope/vim-ragtag' " Shortcut mappings for useful tags
+  Plug 'tpope/vim-repeat'
+  Plug 'tpope/vim-surround'
   Plug 'tyru/caw.vim'
-  Plug 'Shougo/context_filetype.vim'    " Sets filetype by context. (Vue files)
 
   " Code Completion and linting:
   Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install() }}
-  " Plug 'SirVer/ultisnips'
-  " Plug 'honza/vim-snippets'
 
-  " Auto-stuff
-  Plug 'jiangmiao/auto-pairs'           " Auto pair things like ( and {} )
-  Plug 'tpope/vim-ragtag'               " Shortcut mappings for useful tags
-  Plug 'alvan/vim-closetag'
-  Plug 'junegunn/fzf.vim'
+  " Snippets
+  Plug 'honza/vim-snippets'
+  Plug 'SirVer/ultisnips'
 
   " Git
-  Plug 'tpope/vim-fugitive'
   Plug 'rhysd/git-messenger.vim'
+  Plug 'tpope/vim-fugitive'
 
-  " Ruby and rails:
-  Plug 'tpope/vim-rails'
-  Plug 'vim-ruby/vim-ruby'
-  Plug 'tpope/vim-endwise'              " Closes ruby blocks
-  Plug 'tpope/vim-rbenv'
+  " Language Specific
+  Plug 'cespare/vim-toml'
+
   Plug 'tpope/vim-bundler'
+  Plug 'tpope/vim-endwise' " Closes ruby blocks
+  Plug 'tpope/vim-rails'
+  Plug 'tpope/vim-rbenv'
+  Plug 'vim-ruby/vim-ruby'
 
-  " Javascript and Frameworks
-  " Plug 'posva/vim-vue'
-
-  " Syntax highlighting:
-  " Plug 'sheerun/vim-polyglot'
-
-  " Markdown
+  Plug 'plasticboy/vim-markdown' " Depends on tabular, must come after it.
   Plug 'suan/vim-instant-markdown'
-  " vim-markdown depends on tabular, and must come after it.
-  Plug 'plasticboy/vim-markdown'
+
+  " Plug 'posva/vim-vue'
+  " Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
@@ -64,16 +57,10 @@ nnoremap <leader>/ :nohlsearch<CR>
 inoremap jj <esc>
 " Get out of terminal mode with escape:
 tnoremap <esc> <C-\><C-n>
-" Git status
-nnoremap <leader>s :Gstatus<CR>
-" Git commit
-nnoremap <leader>c :Gcommit<CR>
 " Write
 nnoremap <leader>w :w<CR>
 
-vnoremap <leader>t :Tabularize /-/<CR>
-
-" Input  behaviour
+" Input  behavior
 autocmd FileType * setlocal formatoptions=wnjr
 set textwidth=80
 set tabstop=2
@@ -83,7 +70,7 @@ set autoindent
 set expandtab
 set ignorecase
 set smartcase
-set complete+=kspell
+" set complete+=kspell
 set hidden
 
 " Persistent undo:
@@ -116,6 +103,3 @@ set termguicolors
 
 " Ruby host
 let g:ruby_host_prog = '/home/robert/.rbenv/versions/2.5.3/bin/neovim-ruby-host'
-
-" Indent line fix for conceallevel setting
-let g:indentLine_fileTypeExclude = ['markdown']
