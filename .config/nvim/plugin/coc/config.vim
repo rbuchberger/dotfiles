@@ -60,6 +60,7 @@ nmap <leader>t :CocCommand explorer --toggle<cr>
 nmap <leader>a :CocCommand actions.open<cr>
 nmap <leader>ca <Plug>(coc-calc-result-append)
 nmap <leader>cr <Plug>(coc-calc-result-replace)
+nmap <leader>h :CocCommand cSpell.toggleEnableSpellChecker<cr>
 
 " Show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
