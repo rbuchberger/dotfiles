@@ -1,6 +1,6 @@
 {
   "suggest.enablePreview": true,
-  "suggest.autoTrigger": "always",
+  "suggest.autoTrigger": "trigger",
   "suggest.completionItemKindLabels": {
     "keyword": "\uf1de",
     "variable": "\ue79b",
@@ -53,9 +53,14 @@
     "Ulti",
     "alvan",
     "andrewradev",
+    "covid",
+    "epictv",
     "flightclub",
+    "hangboard",
     "honza",
     "neoclide",
+    "neovim",
+    "pullups",
     "quizlet",
     "rbenv",
     "solargraph",
