@@ -9,7 +9,7 @@ WORDCHARS=${WORDCHARS//[\/]}
 
 # Initialize zim
 
-if [[ ${ZIM_HOME}/init.zsh -ot ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
+if [[ ${ZIM_HOME}/init.zsh -ot ~/.config/zsh/zimrc ]]; then
   source ${ZIM_HOME}/zimfw.zsh init -q
 fi
 
