@@ -4,3 +4,6 @@
 [submodule ".config/zsh/pure"]
 	path = .config/zsh/pure
 	url = https://github.com/sindresorhus/pure
+[submodule ".config/zim"]
+	path = .config/zim
+	url = https://github.com/zimfw/zimfw
