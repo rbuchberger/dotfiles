@@ -6,7 +6,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "idle_inhibitor", "custom/switch-user", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["backlight", "pulseaudio", "battery", "network", "clock", "tray"],
+    "modules-right": ["backlight", "pulseaudio", "battery", "network", "clock#date", "clock#time", "tray"],
     // Modules configuration
 
      "sway/workspaces": {
@@ -43,8 +43,11 @@
         // "icon-size": 21,
         "spacing": 10
     },
-    "clock": {
-        "format-alt": "{:%Y-%m-%d}",
+    "clock#time": {
+        "tooltip": false
+    },
+    "clock#date": {
+        "format": "{:%A, %B %d}",
         "tooltip": false
     },
     "backlight": {
