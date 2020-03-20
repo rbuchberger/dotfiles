@@ -1,7 +1,7 @@
 # Note! Don't edit local_config, those changes will be overwritten. edit 
 # local_config##template instead.
 
-{% if yadm.host == "caroline" %}
+{% if yadm.hostname == "caroline" %}
 
 # HiDPI monitor scaling
 output * scale 1.5
