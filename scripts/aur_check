@@ -1,0 +1,13 @@
+#!/bin/bash
+# Check for packages which are in the custom repo, but which aren't installed on
+# the local system.
+
+# list packages in aur repo
+aur repo -l | cut -f 1 | sort > /tmp/aurlist
+
+# list packages in pacman repo
+pacman -Q | cut -d ' ' -f 1 | sort > /tmp/paclist
+
+diff --new-line-format="" --unchanged-line-format="" /tmp/aurlist /tmp/paclist
+
+rm /tmp/aurlist /tmp/paclist

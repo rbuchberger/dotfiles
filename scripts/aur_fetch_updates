@@ -1,0 +1,4 @@
+#!/bin/bash
+# Download aur packages which are out of date:
+
+aur fetch $(aur repo -al | aur vercmp -q)

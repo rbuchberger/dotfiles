@@ -1,0 +1,3 @@
+#!/bin/bash
+# Remove packages from custom repo
+repo-remove $(aur repo).tar $@

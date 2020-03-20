@@ -1,0 +1,7 @@
+#!/bin/bash
+# Create/edit today's journal entry
+folder=~/notes/journal/$(date +%Y/%m)/
+filename=$folder$(date +%d).md
+
+mkdir -p $folder
+nvim $filename

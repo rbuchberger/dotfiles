@@ -1,0 +1,3 @@
+#!/bin/bash
+# Open a markdown file with today's date as a name.
+nvim $(date -I).md
