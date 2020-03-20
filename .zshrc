@@ -1,36 +1,33 @@
-# Load everything in ~/.config/zsh/
-for file in ~/.config/zsh/*; do
-  source $file
-done
-
-# Start zim
-[[ -s ${ZIM_HOME}/init.zsh ]] && source ${ZIM_HOME}/init.zsh
+# Set vim style
+bindkey -v
 
 # Remove older command from the history if a duplicate is to be added.
 setopt HIST_IGNORE_ALL_DUPS
 
-# Vim mode
-bindkey -v
+WORDCHARS=${WORDCHARS//[\/]}
+# ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
-# Change cursor shape for different vi modes.
-function zle-keymap-select {
-  if [[ ${KEYMAP} == vicmd ]] ||
-     [[ $1 = 'block' ]]; then
-    echo -ne '\e[1 q'
-  elif [[ ${KEYMAP} == main ]] ||
-       [[ ${KEYMAP} == viins ]] ||
-       [[ ${KEYMAP} = '' ]] ||
-       [[ $1 = 'beam' ]]; then
-    echo -ne '\e[5 q'
-  fi
-}
+# Initialize zim
 
-zle -N zle-keymap-select
-zle-line-init() {
-    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
-    echo -ne "\e[5 q"
-}
+if [[ ${ZIM_HOME}/init.zsh -ot ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
+  source ${ZIM_HOME}/zimfw.zsh init -q
+fi
 
-zle -N zle-line-init
-echo -ne '\e[5 q' # Use beam shape cursor on startup.
-preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
+source ${ZIM_HOME}/init.zsh
+
+# Load everything in ~/.config/zsh/
+for file in ~/.config/zsh/source/*; do
+  source $file
+done
+
+# Prompt (pure)
+# The default prompt symbols don't work well in TTY
+PURE_PROMPT_SYMBOL=">"
+PURE_PROMPT_VICMD_SYMBOL="<"
+# Don't check for untracked files; faster prompt.
+PURE_GIT_UNTRACKED_DIRTY=0
+PURE_CMD_MAX_EXEC_TIME=1
+
+fpath+=$HOME/.config/zsh/pure
+autoload -U promptinit; promptinit
+prompt pure

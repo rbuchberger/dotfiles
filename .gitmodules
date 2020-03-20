@@ -1,3 +1,6 @@
 [submodule ".zim"]
-	path = .zim
+	path = .config/zim
 	url = https://github.com/zimfw/zimfw.git
+[submodule ".config/zsh/pure"]
+	path = .config/zsh/pure
+	url = https://github.com/sindresorhus/pure
