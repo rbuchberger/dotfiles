@@ -81,8 +81,12 @@ settings:
     global: asdfghjkl
   hints.uppercase:
     global: true
+  qt.force_platform:
+    global: wayland
+  qt.force_platformtheme:
+    global: null
   qt.highdpi:
-    global: true
+    global: false
   scrolling.smooth:
     global: false
   tabs.background:
