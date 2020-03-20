@@ -4,7 +4,8 @@ yadm submodule update --init --recursive
 
 source ~/.config/zim/zimfw.zsh install
 
+echo 'updating zim...'
 zimfw upgrade 
 zimfw update
-zimfw clean
-zimfw build
+zimfw clean -q
+zimfw build -q
