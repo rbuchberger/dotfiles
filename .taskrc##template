@@ -55,6 +55,6 @@ report.next.labels=ID,due,tags,description
 report.next.columns=id,due.relative,tags,description.truncated
 report.next.filter=+READY -shopping
 
-{% if YADM_HOSTNAME != 'cloudBucket' %}
+{% if yadm.hostname != 'cloudBucket' %}
 recurrence=no
 {% endif %}
