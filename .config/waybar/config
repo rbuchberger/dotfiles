@@ -19,6 +19,12 @@
       "rotate": 345,
       "tooltip": "false"
     },
+
+    "custom/jgmenu": {
+      "format": "↑",
+      "on-click": "jgmenu"
+    },
+
     "sway/window": {
       "tooltip": false
     },
