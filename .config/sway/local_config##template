@@ -1,0 +1,62 @@
+# Note! Don't edit local_config, those changes will be overwritten. edit 
+# local_config##template instead.
+
+{% if yadm.host == "caroline" %}
+
+# HiDPI monitor scaling
+output * scale 1.5
+
+# Mouse cursor theme and size
+seat seat0 xcursor_theme default 12
+
+# Lock button
+bindcode 191 exec swaylock
+
+# fullscreen
+bindcode 70 fullscreen
+
+# switch keyboard
+bindcode 71 input "1:1:AT_Translated_Set_2_keyboard" xkb_switch_layout
+
+# brightness down
+bindcode 72 exec light -U 10
+
+# brightness up
+bindcode 73 exec light -A 10
+
+# mute
+bindcode 74 exec amixer sset 'Master' toggle
+
+# volume down
+bindcode 75 XF86AudioLowerVolume exec amixer sset 'Master' 5%-
+
+# volume up
+bindcode 76 XF86AudioRaiseVolume exec amixer sset 'Master' 5%+
+
+# disable keyboard and trackbad in tablet mode
+# lock screen when closed
+bindswitch lid:on exec 'swaylock'
+
+input "0:0:Atmel_maXTouch_Touchpad" {
+    dwt enabled # disabled while typing
+    tap enabled
+    accel_profile flat
+    pointer_accel 0
+    scroll_method two_finger
+    scroll_factor 3
+    click_method clickfinger
+    drag enabled
+    natural_scroll enabled
+    middle_emulation enabled
+}
+
+input "0:0:Atmel_maXTouch_Touchscreen" {
+  # click_method clickfinger
+  # drag enabled
+  # scroll_factor 2
+  scroll_method two_finger
+}
+
+{% else %}
+# charybdis specific configs here
+{% endif %}
