@@ -6,7 +6,7 @@
     // Choose the order of the modules
     "modules-left": ["sway/workspaces", "idle_inhibitor", "custom/switch-user", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["backlight", "pulseaudio", "battery", "network", "clock#date", "clock#time", "tray"],
+    "modules-right": ["custom/coronatracker", "backlight", "pulseaudio", "battery", "network", "clock#date", "clock#time", "tray"],
     // Modules configuration
 
      "sway/workspaces": {
@@ -18,6 +18,17 @@
       "on-click": "dm-tool switch-to-greeter",
       "rotate": 345,
       "tooltip": "false"
+    },
+
+    "custom/coronatracker": {
+      "exec": "/home/robert/scripts/coronatracker -e $(/home/robert/scripts/corona_bar_readout)",
+      "interval": 120,
+      "on-click": "/home/robert/scripts/corona_bar_readout --increment",
+      "on-right-click": "/home/robert/scripts/corona_bar_readout --decrement",
+      "on-scroll-up": "/home/robert/scripts/corona_bar_readout --decrement",
+      "on-scroll-down": "/home/robert/scripts/corona_bar_readout --increment",
+      "signal": 8,
+      "tooltip": false
     },
 
     "custom/jgmenu": {

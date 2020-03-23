@@ -50,6 +50,7 @@
 }
 
 #clock,
+#custom-coronatracker,
 #jgmenu,
 #idle_inhibitor,
 #pulseaudio,
@@ -64,7 +65,7 @@
 #custom-switch-user {
   padding: 0 9px;
   margin: 0 10px 0 0;
-  background: rgba(21,26,35,.7);
+  background: rgba(21,26,35,.9);
   color: #c5c8c6;
   box-shadow: 5px 3px 3px rgba(0,0,0,.5);
   border-top-right-radius: 10%;
