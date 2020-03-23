@@ -1,7 +1,0 @@
-#! /bin/ruby
-
-# This little script outputs the status of all drives listed.
-
-# https://wiki.archlinux.org/index.php/S.M.A.R.T.
-
-drives = ['sda', 'sdb', 'sdc', 'nvme0n1']

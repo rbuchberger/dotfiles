@@ -1,0 +1,81 @@
+#! /bin/ruby
+
+# Script to handle the taskbar readout, because waybar isn't so smart.
+# - Save location to some temp dir
+# - option to cycle to next location
+# - option to print current selected location
+
+require 'optparse'
+
+def save_location
+  "#{Dir.home}/.cache/coronavirus_location"
+end
+
+def locations
+  %w[World US PL TN]
+end
+
+def current_setting
+  File.exist?(save_location) ? File.read(save_location).to_i : 0
+end
+
+def read_location
+  locations[current_setting]
+end
+
+def write_location(index)
+  file = File.new(save_location, 'w')
+  file << index
+  file.flush
+  file.close
+end
+
+def incremented_location
+  if current_setting >= locations.length - 1
+    0
+  else
+    current_setting + 1
+  end
+end
+
+def decremented_location
+  if current_setting.zero?
+    locations.length - 1
+  else
+    current_setting - 1
+  end
+end
+
+def increment_location
+  write_location incremented_location
+end
+
+def decrement_location
+  write_location decremented_location
+end
+
+# Send a signal to waybar telling it to update the tracker.
+def update_waybar
+  `pkill -RTMIN+8 waybar`
+end
+
+OptionParser.new do |options|
+  options.banner = 'CoronaVirus Taskbar Widget handler'
+
+  options.on '-h', '--help', 'Print Help' do
+    puts options
+    exit
+  end
+
+  options.on '-i', '--increment', 'Increment Location' do
+    increment_location
+    update_waybar
+  end
+
+  options.on '-d', '--decrement', 'Decrement Location' do
+    decrement_location
+    update_waybar
+  end
+end.parse(ARGV)
+
+$stdout.write read_location
