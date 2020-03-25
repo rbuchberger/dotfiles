@@ -1,9 +1,8 @@
-#!/bin/bash
 # Wayland and sway related vars only
 
-export QT_AUTO_SCREEN_SCALE_FACTOR=1
-export QT_QPA_PLATFORM=wayland-egl
-export CLUTTER_BACKEND=wayland
-export SDL_VIDEODRIVER=wayland
-export MOZ_ENABLE_WAYLAND=1
-export BEMENU_BACKEND=wayland
+QT_AUTO_SCREEN_SCALE_FACTOR=1
+QT_QPA_PLATFORM=wayland-egl
+CLUTTER_BACKEND=wayland
+SDL_VIDEODRIVER=wayland
+MOZ_ENABLE_WAYLAND=1
+BEMENU_BACKEND=wayland
