@@ -22,6 +22,7 @@ for file in ~/.config/zsh/source/*; do
   source $file
 done
 
+# Change
 # Prompt (pure)
 # The default prompt symbols don't work well in TTY
 PURE_PROMPT_SYMBOL=">"
@@ -33,3 +34,7 @@ PURE_CMD_MAX_EXEC_TIME=1
 fpath+=$HOME/.config/zsh/pure
 autoload -U promptinit; promptinit
 prompt pure
+
+mkdir -p $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
+compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
+alias units=units --history $XDG_DATA_HOME/units_history

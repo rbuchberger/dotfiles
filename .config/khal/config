@@ -7,17 +7,17 @@ timedelta=7d
 [calendars]
 
 [[personal]]
-path = /home/robert/.calendars/personal
+path = /home/robert/.local/share/calendars/personal
 type = calendar
 color = dark green
 
 [[us holidays]]
-path = /home/robert/.calendars/holidays_us
+path = /home/robert/.local/share/calendars/holidays_us
 type = calendar
 color = dark blue
 
 [[polish holidays]]
-path = /home/robert/.calendars/holidays_pl
+path = /home/robert/.local/share/calendars/holidays_pl
 type = calendar
 color = dark red
 

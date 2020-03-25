@@ -3,12 +3,13 @@ export PATH="$HOME/.cargo/bin:$PATH"
 [ -f '$HOME/.cargo/env' ] && source '$HOME/.cargo/env'
 
 # Rbenv
-export PATH=/usr/bin:/home/robert/.rbenv/bin:$PATH
+export PATH=$XDG_DATA_HOME/rbenv/bin:$PATH
 eval "$(rbenv init -)"
 
 # NVM
+source /usr/share/nvm/init-nvm.sh
+
 export PATH=/home/robert/scripts:$PATH
-source /usr/share/nvm/init-nvm.sh --no-use
 
 # Hunter CD
 [ -f ~/.config/hunter/hunter_cd.sh ] && source ~/.config/hunter/hunter_cd.sh

@@ -9,7 +9,7 @@
 
 [general]
 # A folder where vdirsyncer can store some metadata about each pair.
-status_path = "~/.vdirsyncer/status/"
+status_path = "~/.local/share/vdirsyncer/status"
 
 # CARDDAV
 [pair robert_contacts]
@@ -20,7 +20,7 @@ metadata    = ["displayname"]
 
 [storage robert_contacts_local]
 type    = "filesystem"
-path    = "~/.contacts/"
+path    = "~/.local/share/contacts"
 fileext = ".vcf"
 
 [storage robert_contacts_remote]
@@ -40,7 +40,7 @@ metadata = ["displayname", "color"]
 
 [storage robert_calendar_local]
 type    = "filesystem"
-path    = "~/.calendars/"
+path    = "~/.local/share/calendars/"
 fileext = ".ics"
 
 [storage robert_calendar_remote]

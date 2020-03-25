@@ -3,7 +3,7 @@
 	email = robert@buchberger.cc
   signingkey = 8C29272B84A3CC1BD7CBBCF218B7E45B74319F2C
 [core]
-	excludesfile = /home/robert/.gitignore-global
+	excludesfile = /home/robert/.config/git/gitignore-global
 	editor = nvim
 [color]
 	ui = true
