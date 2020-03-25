@@ -18,7 +18,6 @@
 
   xwayland enable
 
-  output * bg /home/robert/.wallpaper.jpg fill
   font pango:Fira Code Retina 11.5
 
   # Hide all borders and titlebars:

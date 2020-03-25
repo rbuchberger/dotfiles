@@ -1,0 +1,8 @@
+# Note! Don't edit local_config, those changes will be overwritten. edit 
+# local_config##template instead.
+
+# charybdis specific configs here
+
+  # Don't forget 'fill' at the end.
+  output * bg /home/robert/photos/wallpapers/1581461529822.png fill
+

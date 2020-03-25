@@ -50,7 +50,6 @@
 }
 
 #clock,
-#custom-coronatracker,
 #jgmenu,
 #idle_inhibitor,
 #pulseaudio,
@@ -62,6 +61,7 @@
 #tray,
 #mode, 
 #workspaces,
+#custom-covsum,
 #custom-switch-user {
   padding: 0 9px;
   margin: 0 10px 0 0;

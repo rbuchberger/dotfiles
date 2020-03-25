@@ -34,7 +34,7 @@ settings:
   content.register_protocol_handler:
     https://mail.google.com?extsrc=mailto&url=%25s: false
   downloads.location.directory:
-    global: ~/Downloads
+    global: ~/downloads
   downloads.open_dispatcher:
     global: null
   editor.command:

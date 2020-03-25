@@ -3,6 +3,8 @@
 
 {% if yadm.hostname == "caroline" %}
 
+output * bg /home/robert/.wallpaper.jpg fill
+
 # HiDPI monitor scaling
 output * scale 1.5
 
@@ -59,4 +61,8 @@ input "0:0:Atmel_maXTouch_Touchscreen" {
 
 {% else %}
 # charybdis specific configs here
+
+  # Don't forget 'fill' at the end.
+  output * bg /home/robert/photos/wallpapers/1581461529822.png fill
+
 {% endif %}
