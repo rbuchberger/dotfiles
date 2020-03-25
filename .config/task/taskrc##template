@@ -11,7 +11,7 @@
 # Use the command 'task show' to see all defaults and overrides
 
 # Files
-data.location=~/.task
+data.location=~/.local/share/task/
 
 # Color theme (uncomment one to use)
 #include /usr/share/doc/task/rc/light-16.theme
@@ -30,9 +30,9 @@ include /usr/share/doc/task/rc/dark-256.theme
 #include /usr/share/doc/task/rc/no-color.theme
 
 # Sync configuration
-taskd.certificate=\/home\/robert\/.task\/robert_b.cert.pem
-taskd.key=\/home\/robert\/.task\/robert_b.key.pem
-taskd.ca=\/home\/robert\/.task\/ca.cert.pem
+taskd.certificate=\/home\/robert\/.local/share/task\/robert_b.cert.pem
+taskd.key=\/home\/robert\/.local/share/task\/robert_b.key.pem
+taskd.ca=\/home\/robert\/.local/share/task\/ca.cert.pem
 taskd.server=cloud.robert-buchberger.com:30063
 taskd.credentials=justme\/robert\/9b857a68-43e6-4ee0-9cfd-963aca549e75
 taskd.trust=ignore hostname
