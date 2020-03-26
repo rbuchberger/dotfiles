@@ -29,7 +29,7 @@
     "default": "\uf29c"
   },
   "codeLens.enable": true,
-  "solargraph.useBundler": true,
+  "solargraph.useBundler": false,
   "solargraph.completion": true,
   "solargraph.diagnostics": true,
   "solargraph.hover": true,
@@ -51,11 +51,14 @@
   "cSpell.userWords": [
     "Shougo",
     "Ulti",
+    "Waybar",
     "YADM",
     "alvan",
     "andrewradev",
+    "chmod",
     "cloudbucket",
     "covid",
+    "covsum",
     "epictv",
     "flightclub",
     "hangboard",
