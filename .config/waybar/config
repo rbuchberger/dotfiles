@@ -4,13 +4,9 @@
     "height": 40, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     // Choose the order of the modules
-    {% if yadm.hostname == "caroline" %}
-    "modules-left": ["sway/workspaces", "idle_inhibitor", "sway/mode", "sway/window"],
-    "modules-right": ["custom/covsum", "backlight", "pulseaudio", "battery", "network", "clock#date", "clock#time", "tray"],
-    {% else %}
     "modules-left": ["sway/workspaces", "idle_inhibitor", "custom/switch-user", "sway/mode", "sway/window"],
     "modules-right": ["custom/covsum", "backlight", "pulseaudio", "battery", "network", "clock#date", "clock#time", "tray"],
-    {% end %}
+
     // Modules configuration
 
      "sway/workspaces": {

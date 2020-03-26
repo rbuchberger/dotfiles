@@ -38,7 +38,7 @@
 /* actually has pretty high specificity */
 * {
   border-radius: 0;
-  font: expanded 15 FiraCode Nerd Font Mono;
+  font: expanded 15px FiraCode Nerd Font Mono;
   border-radius: 0;
 }
 
@@ -48,6 +48,10 @@ window {
   color: #e6e1dc;
   padding: 0;
   margin: 0;
+}
+
+#window {
+  margin: 0 30px;
 }
 
 /* all widgets */
