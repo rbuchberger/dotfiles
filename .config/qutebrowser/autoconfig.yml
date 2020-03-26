@@ -47,38 +47,6 @@ settings:
     - +{line}
   editor.encoding:
     global: utf-8
-  fonts.completion.category:
-    global: 8pt furacode mono bold
-  fonts.completion.entry:
-    global: 8pt furacode mono
-  fonts.debug_console:
-    global: 8pt furacode mono
-  fonts.downloads:
-    global: 8pt furacode mono
-  fonts.hints:
-    global: 8pt furacode mono
-  fonts.keyhint:
-    global: 8pt furacode mono
-  fonts.messages.error:
-    global: 8pt furacode mono
-  fonts.messages.info:
-    global: 8pt furacode mono
-  fonts.messages.warning:
-    global: 8pt furacode mono
-  fonts.prompts:
-    global: 8pt furacode mono
-  fonts.statusbar:
-    global: 8pt furacode mono
-  fonts.tabs:
-    global: 8pt furacode mono
-  fonts.web.size.default:
-    global: 12
-  fonts.web.size.default_fixed:
-    global: 12
-  fonts.web.size.minimum:
-    global: 8
-  fonts.web.size.minimum_logical:
-    global: 6
   hints.chars:
     global: asdfghjkl
   hints.uppercase:
