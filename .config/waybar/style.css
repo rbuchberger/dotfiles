@@ -1,54 +1,56 @@
-/* # black          */
-/* color0   #1d1f21 */
-/* color8   #969896 */
+/* dark grey               */
+/* #2b2b2b                 */
+/* #272935                 */
 
-/* # red            */
-/* color1   #cc6666 */
-/* color9   #cc6666 */
+/* blue-grey               */
+/* #3a4055                 */
+/* #5a647e                 */
 
-/* # green          */
-/* color2   #b5bd68 */
-/* color10  #b5bd68 */
+/* whites (dark to light)  */
+/* #d4cfc9                 */
+/* #e6e1dc                 */
+/* #f4f1ed                 */
+/* #f9f7f3                 */
 
-/* # yellow         */
-/* color3   #f0c674 */
-/* color11  #f0c674 */
+/* red                     */
+/* #da4939                 */
 
-/* # blue           */
-/* color4   #81a2be */
-/* color12  #81a2be */
+/* orange                  */
+/* #cc7833                 */
 
-/* # magenta        */
-/* color5   #b294bb */
-/* color13  #b294bb */
+/* yellow                  */
+/* #ffc66d                 */
 
-/* # cyan           */
-/* color6   #8abeb7 */
-/* color14  #8abeb7 */
+/* greens (light and dark) */
+/* #a5c261                 */
+/* #519f50                 */
 
-/* # white          */
-/* color7   #c5c8c6 */
-/* color15  #ffffff */
+/* light blue              */
+/* #6d9cbe                 */
 
+/* purple                  */
+/* #b6b3eb                 */
+
+/* gold/brown              */
+/* #bc9458                 */
+
+
+/* actually has pretty high specificity */
 * {
-  font-family: FuraMono;
-  font-size: 16px;
-  background: rgba(0, 0, 0, 0);
+  border-radius: 0;
+  font: expanded 15 FiraCode Nerd Font Mono;
+  border-radius: 0;
 }
 
-#window {
-  padding: 0 40px;
-  margin: 0 10px 0 0;
-  font-weight: bold;
-  background: rgba(21,26,35,.7);
-  color: #c5c8c6;
-  box-shadow: 5px 3px 3px rgba(0,0,0,.5);
-  border-top-right-radius: 10%;
-  border-top-left-radius: 10%;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0
+/* whole bar */
+window {
+  background: #2b2b2b;
+  color: #e6e1dc;
+  padding: 0;
+  margin: 0;
 }
 
+/* all widgets */
 #clock,
 #jgmenu,
 #idle_inhibitor,
@@ -60,58 +62,57 @@
 #backlight,
 #tray,
 #mode, 
-#workspaces,
 #custom-covsum,
 #custom-switch-user {
-  padding: 0 9px;
-  margin: 0 10px 0 0;
-  background: rgba(21,26,35,.9);
-  color: #c5c8c6;
-  box-shadow: 5px 3px 3px rgba(0,0,0,.5);
-  border-top-right-radius: 10%;
-  border-top-left-radius: 10%;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0
+  color: #e6e1dc;
+  background: #3a4055;
+  padding: 0 10px;
+  margin: 6px 8px;
+  border-radius: 3px;
+  box-shadow: 3px 3px 3px rgba(0,0,0,.8);
+}
+
+#idle_inhibitor {
+  font-size: 19px;
 }
 
 #workspaces {
-  margin-left: 5px;
+  background: #3a4055;
+  border: 0;
   padding: 0;
+  margin: 6px 5px;
+  border-radius: 3px;
+  box-shadow: 4px 4px 4px rgba(0,0,0,.8);
 }
 
-#workspaces button {
-  padding: 0 4px;
-  color: #c5c8c6;
-  font-weight: bold;
-  transition: none;
-}
-
-#workspaces button.urgent {
-  color: #cc6666;
-}
-
-#workspaces button.focused {
-  background: #c5c8c6;
-  color: #1d1f21;
-  border-top-right-radius: 10%;
-  border-top-left-radius: 10%;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0
-}
-
+#workspaces button,
 #workspaces button:hover {
   box-shadow: none;
   text-shadow: none;
+  background: #3a4055;
+  color: #e6e1dc;
   border: 1px solid rgba(0,0,0,0);
+  padding: 0 6px;
+}
+
+#workspaces button.focused,
+#workspaces button.focused:hover {
+  background: #a5c261;
+  border-radius: 2px;
+  color: #2b2b2b;
+}
+
+#workspaces button.urgent {
+  color: #cc7833;
 }
 
 #custom-switch-user {
   color: #cc6666;
-  font-size: 20px;
+  font-size: 17px;
 }
 
 #battery.discharging {
-  color: #81a2be;
+  color: #bc9458;
 }
 
 #battery.full {
@@ -124,5 +125,4 @@
 #pulseaudio.muted,
 #mode {
   background: #cc6666;
-  color: #1d1f21;
 }

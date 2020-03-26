@@ -19,9 +19,9 @@
 
   exec ~/.azotebg
 
-  gaps inner 5
   default_border pixel 1
   for_window [title="."] {
+    gaps inner 10
     border pixel 1
   }
 
@@ -47,10 +47,10 @@
   set $base0F #bc9458
 
   # Property Name         Border  BG      Text    Indicator Border
-  client.focused          $base04 $base04 $base04 $base0A $base04
-  client.focused_inactive $base01 $base01 $base05 $base0A $base01
+  client.focused          $base04 $base04 $base04 $base04 $base04
+  client.focused_inactive $base01 $base01 $base05 $base01 $base01
   client.urgent           $base08 $base08 $base07 $base08 $base08
-  client.unfocused        $base01 $base01 $base05 $base0A $base01
+  client.unfocused        $base01 $base01 $base05 $base01 $base01
 
 # Key bindings
 
