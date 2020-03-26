@@ -48,35 +48,35 @@ settings:
   editor.encoding:
     global: utf-8
   fonts.completion.category:
-    global: 6pt furacode mono bold
+    global: 8pt furacode mono bold
   fonts.completion.entry:
-    global: 6pt furacode mono
+    global: 8pt furacode mono
   fonts.debug_console:
-    global: 6pt furacode mono
+    global: 8pt furacode mono
   fonts.downloads:
-    global: 6pt furacode mono
+    global: 8pt furacode mono
   fonts.hints:
     global: 8pt furacode mono
   fonts.keyhint:
-    global: 6pt furacode mono
+    global: 8pt furacode mono
   fonts.messages.error:
-    global: 6pt furacode mono
+    global: 8pt furacode mono
   fonts.messages.info:
-    global: 6pt furacode mono
+    global: 8pt furacode mono
   fonts.messages.warning:
-    global: 6pt furacode mono
+    global: 8pt furacode mono
   fonts.prompts:
-    global: 6pt furacode mono
+    global: 8pt furacode mono
   fonts.statusbar:
-    global: 6pt furacode mono
+    global: 8pt furacode mono
   fonts.tabs:
-    global: 6pt furacode mono
+    global: 8pt furacode mono
   fonts.web.size.default:
-    global: 14
+    global: 12
   fonts.web.size.default_fixed:
-    global: 14
+    global: 12
   fonts.web.size.minimum:
-    global: 13
+    global: 8
   fonts.web.size.minimum_logical:
     global: 6
   hints.chars:
