@@ -96,7 +96,7 @@ set relativenumber     "  Show relative line numbers
 set fcs=eob:\          "  Disable blank line tildes
 
 " Color Scheme config
-colorscheme base16-default-dark
+colorscheme base16-railscasts
 set termguicolors
 
 " autocmd FileType * set conceallevel=0
