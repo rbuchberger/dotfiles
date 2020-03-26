@@ -5,36 +5,57 @@ bindkey -v
 setopt HIST_IGNORE_ALL_DUPS
 
 WORDCHARS=${WORDCHARS//[\/]}
-# ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 
 # Initialize zim
 
 # Define zim location
-export ZIM_HOME=~/.config/zim/
-if [[ ~/.config/zim/init.zsh -ot ~/.zimrc ]]; then
-  source ~/.config/zim/zimfw.zsh init -q
+if [[ $ZIM_HOME/init.zsh -ot $ZDOTDIR/.zimrc ]]; then
+  source $ZIM_HOME/zimfw.zsh init -q
 fi
 
-source ~/.config/zim/init.zsh
+source $ZIM_HOME/init.zsh
 
 # Load everything in ~/.config/zsh/
-for file in ~/.config/zsh/source/*; do
+for file in $XDG_CONFIG_HOME/zsh/source/*; do
   source $file
 done
 
-# Change
 # Prompt (pure)
 # The default prompt symbols don't work well in TTY
-PURE_PROMPT_SYMBOL=">"
+PURE_PROMPT_SYMBOL="$"
 PURE_PROMPT_VICMD_SYMBOL="<"
+
 # Don't check for untracked files; faster prompt.
 PURE_GIT_UNTRACKED_DIRTY=0
 PURE_CMD_MAX_EXEC_TIME=1
-
-fpath+=$HOME/.config/zsh/pure
+fpath+=$XDG_CONFIG_HOME/zsh/pure
 autoload -U promptinit; promptinit
 prompt pure
 
-mkdir -p $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
-compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
-alias units=units --history $XDG_DATA_HOME/units_history
+# Change cursor shape for different vi modes.
+function zle-keymap-select {
+  if [[ ${KEYMAP} == vicmd ]] ||
+     [[ $1 = 'block' ]]; then	
+    echo -ne '\e[1 q'	
+  elif [[ ${KEYMAP} == main ]] ||	
+       [[ ${KEYMAP} == viins ]] ||	
+       [[ ${KEYMAP} = '' ]] ||	
+       [[ $1 = 'beam' ]]; then	
+    echo -ne '\e[5 q'	
+  fi	
+}
+
+zle -N zle-keymap-select	
+zle-line-init() {	
+    # zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)	
+    echo -ne "\e[5 q"	
+}	
+
+zle -N zle-line-init	
+echo -ne '\e[5 q' # Use beam shape cursor on startup.	
+preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
+
+# mkdir -p $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
+# compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
+# alias units=units --history $XDG_DATA_HOME/units_history

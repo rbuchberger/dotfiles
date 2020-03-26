@@ -1,0 +1,49 @@
+# User configuration sourced by all invocations of the shell
+
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_DATA_HOME=$HOME/.local/share
+
+export EDITOR='nvim'
+export BROWSER='qutebrowser'
+export MANWIDTH=80
+export ZIM_HOME=$XDG_CONFIG_HOME/zim/
+
+# export PATH=/home/robert/.config/composer/vendor/bin:$PATH
+
+# GPG key setting for package builds
+export GPGKEY=8C29272B84A3CC1BD7CBBCF218B7E45B74319F2C
+
+# Delay by .2 seconds; reduce insert & normal mode switching lag
+export KEYTIMEOUT=2
+
+# Cleanup
+# https://wiki.archlinux.org/index.php/XDG_Base_Directory
+export ZIM_HOME=$XDG_CONFIG_HOME/zim
+export AWS_CONFIG_FILE=$XDG_CONFIG_HOME/aws/config
+export AWS_SHARED_CREDENTIALS_FILE=$XDG_DATA_HOME/aws/credentials
+export B2_ACCOUNT_INFO=$XDG_DATA_HOME/b2/b2_account_info
+export BUNDLE_USER_CACHE="$XDG_CACHE_HOME"/bundle 
+export BUNDLE_USER_CONFIG="$XDG_CONFIG_HOME"/bundle 
+export BUNDLE_USER_PLUGIN="$XDG_DATA_HOME"/bundle
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
+export GNUPGHOME=$XDG_DATA_HOME/gnupg
+export HISTFILE=$XDG_DATA_HOME/zsh/history
+export ICEauthority=$XDG_CACHE_HOME/ICEauthority
+export NMBGIT=$XDG_DATA_HOME/notmuch/nmbug
+export NODE_REPL_HISTORY=$XDG_DATA_HOME/node_repl_history
+export NOTMUCH_CONFIG=$XDG_CONFIG_HOME/notmuch/notmuchrc
+export NPM_CONFIG_USERCONFIG=$XDG_CONFIG_HOME/npm/npmrc
+export NVM_DIR="$XDG_DATA_HOME"/nvm
+export PASSWORD_STORE_DIR="$XDG_DATA_HOME"/pass
+export PYLINTHOME="$XDG_CACHE_HOME"/pylint
+export RBENV_ROOT=$XDG_DATA_HOME/rbenv
+export RUSTUP_HOME=$XDG_DATA_HOME/rustup
+export SOLARGRAPH_CACHE=$XDG_CACHE_HOME/solargraph
+export TASKDATA="$XDG_DATA_HOME"/task
+export TASKRC="$XDG_CONFIG_HOME"/task/taskrc
+export VIT_DIR="$XDG_CONFIG_HOME"/vit
+export WEGORC=$XDG_CONFIG_HOME/wego/wegorc
+export WGETRC=$XDG_CONFIG_HOME/wgetrc
+export WINEPREFIX=$XDG_DATA_HOME/wineprefixes/default
+export ZDOTDIR=$XDG_CONFIG_HOME/zsh
