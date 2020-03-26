@@ -1,0 +1,19 @@
+#!/bin/zsh
+
+# Copy pasted from
+# https://git.zx2c4.com/password-store/tree/contrib/dmenu/passmenu, edited to
+# use wl-copy and stripping out the 'typeit' option.
+
+password_files=( "$PASSWORD_STORE_DIR"/**/*.gpg )
+password_files=( "${password_files[@]#"$PASSWORD_STORE_DIR"/}" )
+password_files=( "${password_files[@]%.gpg}" )
+
+password=$(printf '%s\n' "${password_files[@]}" | wofi --show dmenu "$@")
+
+echo $password
+
+[[ -n $password ]] || exit
+
+pass show "$password"      \
+  | head -1                \
+  | wl-copy --trim-newline --paste-once
