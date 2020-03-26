@@ -10,6 +10,8 @@ settings:
     global:
       normal:
         <Ctrl+e>: open-editor
+  completion.scrollbar.width:
+    global: 6
   content.geolocation:
     https://www.intercity.pl: false
     https://www.mec.ca: false
@@ -46,29 +48,29 @@ settings:
   editor.encoding:
     global: utf-8
   fonts.completion.category:
-    global: 10pt furacode mono bold
+    global: 6pt furacode mono bold
   fonts.completion.entry:
-    global: 10pt furacode mono
+    global: 6pt furacode mono
   fonts.debug_console:
-    global: 10pt furacode mono
+    global: 6pt furacode mono
   fonts.downloads:
-    global: 10pt furacode mono
+    global: 6pt furacode mono
   fonts.hints:
     global: 8pt furacode mono
   fonts.keyhint:
-    global: 10pt furacode mono
+    global: 6pt furacode mono
   fonts.messages.error:
-    global: 10pt furacode mono
+    global: 6pt furacode mono
   fonts.messages.info:
-    global: 10pt furacode mono
+    global: 6pt furacode mono
   fonts.messages.warning:
-    global: 10pt furacode mono
+    global: 6pt furacode mono
   fonts.prompts:
-    global: 10pt furacode mono
+    global: 6pt furacode mono
   fonts.statusbar:
-    global: 10pt furacode mono
+    global: 6pt furacode mono
   fonts.tabs:
-    global: 10pt furacode mono
+    global: 6pt furacode mono
   fonts.web.size.default:
     global: 14
   fonts.web.size.default_fixed:
@@ -87,6 +89,8 @@ settings:
     global: null
   qt.highdpi:
     global: false
+  qt.low_end_device_mode:
+    global: auto
   scrolling.smooth:
     global: false
   tabs.background:
@@ -107,3 +111,5 @@ settings:
     global: 800
   tabs.width:
     global: 400
+  zoom.default:
+    global: 100%
