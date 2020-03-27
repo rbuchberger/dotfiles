@@ -39,8 +39,16 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tpope/vim-rbenv'
   Plug 'vim-ruby/vim-ruby'
 
-  Plug 'plasticboy/vim-markdown' " Depends on tabular, must come after it.
-  Plug 'suan/vim-instant-markdown'
+  " Markdown-composer must be recompiled whenever it changes. If the compile
+  " fails, run $ rustup --update
+  function! BuildComposer(info)
+    if a:info.status != 'unchanged' || a:info.force
+      !cargo build --release --locked
+    endif
+  endfunction
+
+  Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
+  Plug 'vim-pandoc/vim-pandoc-syntax' " This is the best markdown synax plugin.
 
   " Plug 'posva/vim-vue'
   " Plug 'sheerun/vim-polyglot'
