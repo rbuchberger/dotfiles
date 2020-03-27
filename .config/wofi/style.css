@@ -1,0 +1,65 @@
+
+window#window {
+  border-radius: 5px;
+}
+
+#outer-box {
+  color: --wofi-color1;
+  background-color: --wofi-color0;
+  border-radius: 5px;
+  border: 1px solid --wofi-color1;
+}
+
+#inner-box {
+  color: --wofi-color1;
+  background-color: --wofi-color0;
+  margin: 0 50px;
+}
+
+#input {
+  background-color: --wofi-color0;
+  border: 1px solid --wofi-color1;
+  border-radius: 5px;
+  margin: 20px 50px;
+  font-style: italic;
+}
+
+*:focus {
+  outline: none;
+  border: none;
+  box-shadow: none;
+}
+
+#input:focus {
+  border: 1px solid --wofi-color7;
+  color: --wofi-color1;
+}
+
+#scroll {
+  color: --wofi-color1;
+  background-color: --wofi-color0;
+}
+
+#entry:selected {
+  border: 1px solid --wofi-color5;
+  border-radius: 5px;
+}
+
+#entry:selected,
+#entry:hover {
+  color: --wofi-color5;
+  background-color: --wofi-color0;
+}
+
+list {
+  color: --wofi-color1;
+  background-color: --wofi-color0;
+  font-family: Iosevka Aile;
+}
+
+#text {
+  /* color: --wofi-color1;           */
+  /* background-color: --wofi-color0; */
+  font-family: Iosevka Aile;
+}
+
