@@ -1,20 +1,20 @@
-{% if yadm.hostname == 'caroline' %}
-c.fonts.completion.category="6pt Iosevka Aile Bold"
-c.fonts.completion.entry="6pt Iosevka Aile"
-c.fonts.debug_console="6pt Iosevka Aile"
-c.fonts.downloads="6pt Iosevka Aile"
-c.fonts.hints="6pt Iosevka Aile"
-c.fonts.keyhint="6pt Iosevka Aile"
-c.fonts.messages.error="6pt Iosevka Aile"
-c.fonts.messages.info="6pt Iosevka Aile"
-c.fonts.messages.warning="6pt Iosevka Aile"
-c.fonts.prompts="6pt Iosevka Aile"
-c.fonts.statusbar="6pt Iosevka Aile"
-c.fonts.tabs="6pt Iosevka Aile"
-c.fonts.web.size.default=10
-c.fonts.web.size.default_fixed=10
-c.fonts.web.size.minimum=8
-c.fonts.web.size.minimum_logical=8
+{% if yadm.hostname == "caroline" %}
+c.fonts.completion.category="7pt Iosevka Aile Bold"
+c.fonts.completion.entry="7pt Iosevka Aile"
+c.fonts.debug_console="7pt Iosevka Aile"
+c.fonts.downloads="7pt Iosevka Aile"
+c.fonts.hints="8pt Iosevka Aile Bold"
+c.fonts.keyhint="8pt Iosevka Aile Bold"
+c.fonts.messages.error="7pt Iosevka Aile"
+c.fonts.messages.info="7pt Iosevka Aile"
+c.fonts.messages.warning="7pt Iosevka Aile"
+c.fonts.prompts="7pt Iosevka Aile"
+c.fonts.statusbar="7pt Iosevka Aile"
+c.fonts.tabs="7pt Iosevka Aile"
+c.fonts.web.size.default=11
+c.fonts.web.size.default_fixed=11
+c.fonts.web.size.minimum=9
+c.fonts.web.size.minimum_logical=9
 {% else %}
 c.fonts.completion.category="9pt Iosevka Aile Bold"
 c.fonts.completion.entry="9pt Iosevka Aile"
