@@ -9,10 +9,8 @@ password_files=( "${password_files[@]#"$PASSWORD_STORE_DIR"/}" )
 password_files=( "${password_files[@]%.gpg}" )
 
 password=$(printf '%s\n' "${password_files[@]}" | \
-  wofi --prompt="Password search" --show dmenu "$@")
+  wofi --prompt="Username search" --show dmenu "$@")
 
 [[ -n $password ]] || exit
 
-pass show "$password"      \
-  | head -1                \
-  | wl-copy --trim-newline --paste-once
+basename "$password" | wl-copy

@@ -62,7 +62,7 @@
   set $right l
   set $term kitty
 
-  set $menu wofi --show drun
+  set $menu wofi --show drun --prompt="Launch"
 
   # program shortcuts
   bindsym $mod+Return exec $term
@@ -70,6 +70,7 @@
   bindsym $mod+semicolon exec qutebrowser
   bindsym $mod+p exec ~/scripts/passmenu
   bindsym $mod+o exec ~/scripts/passmenu-otp
+  bindsym $mod+u exec ~/scripts/passmenu-username
   bindsym $mod+d exec $menu
 
   # Media volume controls
