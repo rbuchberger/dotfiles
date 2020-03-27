@@ -38,7 +38,9 @@
 /* actually has pretty high specificity */
 * {
   border-radius: 0;
-  font: expanded 15px FiraCode Nerd Font Mono;
+  font-family: Iosevka Aile;
+  font-size: 14px;
+  font-weight: 400;
   border-radius: 0;
 }
 
@@ -76,10 +78,6 @@ window {
   box-shadow: 3px 3px 3px rgba(0,0,0,.8);
 }
 
-#idle_inhibitor {
-  font-size: 19px;
-}
-
 #workspaces {
   background: #3a4055;
   border: 0;
@@ -96,14 +94,15 @@ window {
   background: #3a4055;
   color: #e6e1dc;
   border: 1px solid rgba(0,0,0,0);
-  padding: 0 6px;
+  padding: 0 4px;
+  font-family: Iosevka Term SS05 Heavy;
 }
 
 #workspaces button.focused,
 #workspaces button.focused:hover {
-  background: #a5c261;
+  background: #5a647e;
+  border: 1px solid #a5c261;
   border-radius: 2px;
-  color: #2b2b2b;
 }
 
 #workspaces button.urgent {
@@ -112,7 +111,7 @@ window {
 
 #custom-switch-user {
   color: #cc6666;
-  font-size: 17px;
+  font-size: 18px;
 }
 
 #battery.discharging {
