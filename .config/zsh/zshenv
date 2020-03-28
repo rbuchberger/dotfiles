@@ -11,6 +11,15 @@ export ZIM_HOME=$XDG_CONFIG_HOME/zim/
 
 # export PATH=/home/robert/.config/composer/vendor/bin:$PATH
 
+# export RIPGREP_CONFIG_PATH=$XDG_CONFIG_HOME/rg/config
+
+# FZF  setup
+export FZF_DEFAULT_COMMAND="rg --ignore-file $XDG_CONFIG_HOME/git/gitignore-global --files"
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_CTRL_T_OPTS='--preview "bat --style=numbers --color=always {} | head -500"'
+export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
+export FZF_ALT_C_COMMAND="fd --type d --ignore-file $XDG_CONFIG_HOME/git/gitignore-global"
+
 # GPG key setting for package builds
 export GPGKEY=8C29272B84A3CC1BD7CBBCF218B7E45B74319F2C
 
@@ -47,3 +56,4 @@ export WEGORC=$XDG_CONFIG_HOME/wego/wegorc
 export WGETRC=$XDG_CONFIG_HOME/wgetrc
 export WINEPREFIX=$XDG_DATA_HOME/wineprefixes/default
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh
+
