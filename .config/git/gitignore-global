@@ -18,3 +18,10 @@ tags
 # zwc files
 *.zwc
 *.zwc.old
+
+# Tools to make ripgrep (and fzf) play nicely
+node_modules
+games
+plex-server
+.git
+yadm/repo.git
