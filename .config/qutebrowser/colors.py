@@ -23,63 +23,51 @@ base0F = "#bc9458"
 
 # Text color of the completion widget. May be a single color to use for
 # all columns or a list of three colors, one for each column.
-c.colors.completion.fg = base05
+c.colors.completion.fg = base01
 
-# Background color of the completion widget for odd rows.
-c.colors.completion.odd.bg = base03
+# completion widget
+c.colors.completion.even.bg = base04
+c.colors.completion.odd.bg = base05
 
-# Background color of the completion widget for even rows.
-c.colors.completion.even.bg = base00
+# completion widget category headers
+c.colors.completion.category.fg = base09
+c.colors.completion.category.bg = base02
 
-# Foreground color of completion widget category headers.
-c.colors.completion.category.fg = base0A
+c.colors.completion.category.border.top = base03
+c.colors.completion.category.border.bottom = base02
 
-# Background color of the completion widget category headers.
-c.colors.completion.category.bg = base00
-
-# Top border color of the completion widget category headers.
-c.colors.completion.category.border.top = base00
-
-# Bottom border color of the completion widget category headers.
-c.colors.completion.category.border.bottom = base00
-
-# Foreground color of the selected completion item.
+# selected completion item.
 c.colors.completion.item.selected.fg = base01
-
-# Background color of the selected completion item.
 c.colors.completion.item.selected.bg = base0A
 
-# Top border color of the selected completion item.
 c.colors.completion.item.selected.border.top = base0A
-
-# Bottom border color of the selected completion item.
 c.colors.completion.item.selected.border.bottom = base0A
 
-# Foreground color of the matched text in the selected completion item.
+# matched text in the selected completion item.
 c.colors.completion.item.selected.match.fg = base08
 
-# Foreground color of the matched text in the completion.
-c.colors.completion.match.fg = base0B
+# matched text in unselected completion items
+c.colors.completion.match.fg = base08
 
-# Color of the scrollbar handle in the completion view.
+# scrollbar handle in the completion view
 c.colors.completion.scrollbar.fg = base05
 
-# Color of the scrollbar in the completion view.
+# scrollbar in the completion view
 c.colors.completion.scrollbar.bg = base00
 
-# Background color of the context menu. If set to null, the Qt default is used.
+# context menu. If set to null, the Qt default is used
 c.colors.contextmenu.menu.bg = base00
 
-# Foreground color of the context menu. If set to null, the Qt default is used.
+# context menu. If set to null, the Qt default is used
 c.colors.contextmenu.menu.fg =  base05
 
-# Background color of the context menu’s selected item. If set to null, the Qt default is used.
+# context menu’s selected item. If set to null, the Qt default is used.
 c.colors.contextmenu.selected.bg = base0A
 
-#Foreground color of the context menu’s selected item. If set to null, the Qt default is used.
+#context menu’s selected item. If set to null, the Qt default is used.
 c.colors.contextmenu.selected.fg = base01
 
-# Background color for the download bar.
+# download bar
 c.colors.downloads.bar.bg = base00
 
 # Color gradient start for download text.
@@ -238,54 +226,55 @@ c.colors.tabs.indicator.stop = base0C
 # Color for the tab indicator on errors.
 c.colors.tabs.indicator.error = base08
 
-# Foreground color of unselected odd tabs.
-c.colors.tabs.odd.fg = base05
-
-# Background color of unselected odd tabs.
-c.colors.tabs.odd.bg = base03
-
-# Foreground color of unselected even tabs.
+# unselected tabs
 c.colors.tabs.even.fg = base05
-
-# Background color of unselected even tabs.
 c.colors.tabs.even.bg = base00
+c.colors.tabs.odd.fg = base05
+c.colors.tabs.odd.bg = base00
 
-# Background color of pinned unselected even tabs.
-c.colors.tabs.pinned.even.bg = base0C
-
-# Foreground color of pinned unselected even tabs.
-c.colors.tabs.pinned.even.fg = base07
-
-# Background color of pinned unselected odd tabs.
-c.colors.tabs.pinned.odd.bg = base0B
-
-# Foreground color of pinned unselected odd tabs.
-c.colors.tabs.pinned.odd.fg = base07
-
-# Background color of pinned selected even tabs.
-c.colors.tabs.pinned.selected.even.bg = base05
-
-# Foreground color of pinned selected even tabs.
-c.colors.tabs.pinned.selected.even.fg = base00
-
-# Background color of pinned selected odd tabs.
-c.colors.tabs.pinned.selected.odd.bg = base05
-
-# Foreground color of pinned selected odd tabs.
-c.colors.tabs.pinned.selected.odd.fg = base0E
-
-# Foreground color of selected odd tabs.
+# selected tabs
+c.colors.tabs.selected.even.fg = base00
+c.colors.tabs.selected.even.bg = base05
 c.colors.tabs.selected.odd.fg = base00
-
-# Background color of selected odd tabs.
 c.colors.tabs.selected.odd.bg = base05
 
-# Foreground color of selected even tabs.
-c.colors.tabs.selected.even.fg = base00
+# pinned unselected tabs
+c.colors.tabs.pinned.even.bg = base0B
+c.colors.tabs.pinned.even.fg = base07
+c.colors.tabs.pinned.odd.bg = base0B
+c.colors.tabs.pinned.odd.fg = base07
 
-# Background color of selected even tabs.
-c.colors.tabs.selected.even.bg = base05
+# pinned selected tabs
+c.colors.tabs.pinned.selected.even.bg = base05
+c.colors.tabs.pinned.selected.even.fg = base0E
+c.colors.tabs.pinned.selected.odd.bg = base05
+c.colors.tabs.pinned.selected.odd.fg = base0E
 
 # Background color for webpages if unset (or empty to use the theme's
 # color).
-# c.colors.webpage.bg = base00
+c.colors.webpage.bg = base00
+
+# Foreground color of unselected even tabs.
+# c.colors.tabs.even.fg = base05
+
+# Background color of unselected even tabs.
+# c.colors.tabs.even.bg = base00
+
+# Background color of pinned unselected even tabs.
+# c.colors.tabs.pinned.even.bg = base0C
+
+# Foreground color of pinned unselected even tabs.
+# c.colors.tabs.pinned.even.fg = base07
+
+# Background color of pinned selected even tabs.
+# c.colors.tabs.pinned.selected.even.bg = base05
+
+# Foreground color of pinned selected even tabs.
+# c.colors.tabs.pinned.selected.even.fg = base00
+
+# Foreground color of selected even tabs.
+# c.colors.tabs.selected.even.fg = base00
+
+# Background color of selected even tabs.
+# c.colors.tabs.selected.even.bg = base05
+
