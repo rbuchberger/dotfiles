@@ -1,7 +1,9 @@
 #!/bin/zsh -i
 
+# Pull down zim
 yadm submodule update --init --recursive
 
+# Update/install zim plugins
 source ~/.config/zim/zimfw.zsh install
 
 echo 'updating zim...'
@@ -9,3 +11,6 @@ zimfw upgrade
 zimfw update
 zimfw clean -q
 zimfw build -q
+
+# Handle Neovim Plugins
+nvim +PlugClean! +PlugUpdate! +qa
