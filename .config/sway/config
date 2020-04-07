@@ -72,6 +72,8 @@
   bindsym $mod+o exec ~/scripts/passmenu-otp
   bindsym $mod+u exec ~/scripts/passmenu-username
   bindsym $mod+d exec $menu
+  bindsym $mod+comma exec ~/scripts/select_area_screenshot
+  bindsym $mod+period exec grim
 
   # Media volume controls
   bindsym XF86AudioMute exec amixer sset 'Master' toggle
