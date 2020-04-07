@@ -6,12 +6,26 @@
 
 config_version: 2
 settings:
+  auto_save.interval:
+    global: 15000
+  auto_save.session:
+    global: true
   bindings.commands:
     global:
       normal:
         <Ctrl+e>: open-editor
+  completion.delay:
+    global: 0
+  completion.height:
+    global: 33%
   completion.scrollbar.width:
     global: 6
+  completion.use_best_match:
+    global: false
+  completion.web_history.exclude:
+    global: null
+  content.autoplay:
+    global: false
   content.geolocation:
     https://www.intercity.pl: false
     https://www.mec.ca: false
