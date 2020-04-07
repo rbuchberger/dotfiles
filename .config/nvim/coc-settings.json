@@ -41,36 +41,5 @@
   "prettier.eslintIntegration": true,
   "prettier.disableLanguages": [],
   "vetur.format.enable": false,
-  "eslint.filetypes": [
-    "vue",
-    "js",
-    "jsx"
-  ],
-  "cSpellExt.enableDictionaries": ["polish"],
-  "cSpell.language": "en,pl",
-  "cSpell.userWords": [
-    "Shougo",
-    "Ulti",
-    "Waybar",
-    "YADM",
-    "alvan",
-    "andrewradev",
-    "chmod",
-    "cloudbucket",
-    "covid",
-    "covsum",
-    "epictv",
-    "flightclub",
-    "hangboard",
-    "honza",
-    "neoclide",
-    "neovim",
-    "pullups",
-    "quizlet",
-    "rbenv",
-    "solargraph",
-    "systemd",
-    "tpope",
-    "vetur"
-  ]
+  "eslint.filetypes": ["vue", "js", "jsx"]
 }
