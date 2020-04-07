@@ -12,3 +12,5 @@ alias t="task"
 alias ta="task add"
 alias td="task done"
 alias tm="task mod"
+
+alias zoom='QT_QPA_PLATFORM="" zoom'
