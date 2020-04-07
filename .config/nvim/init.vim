@@ -49,7 +49,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   endfunction
 
   Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
-  Plug 'vim-pandoc/vim-pandoc-syntax' " This is the best markdown synax plugin.
+  " Plug 'vim-pandoc/vim-pandoc-syntax' " This is the best markdown synax plugin.
+  Plug 'plasticboy/vim-markdown'
 
   " Plug 'posva/vim-vue'
   " Plug 'sheerun/vim-polyglot'
