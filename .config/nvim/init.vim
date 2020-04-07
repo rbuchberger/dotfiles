@@ -7,6 +7,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'junegunn/limelight.vim'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
+  Plug 'mbbill/undotree'
 
   " Text manipulation:
   Plug 'Shougo/context_filetype.vim' " Sets filetype by context. (Vue files)
@@ -67,6 +68,10 @@ inoremap jj <esc>
 tnoremap <esc> <C-\><C-n>
 " Write
 nnoremap <leader>w :w<CR>
+
+" Undotree
+
+nnoremap U :UndotreeToggle<cr>
 
 " Input  behavior
 autocmd FileType * setlocal formatoptions=wnjr
