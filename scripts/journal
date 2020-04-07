@@ -1,7 +1,20 @@
 #!/bin/bash
-# Create/edit today's journal entry
-folder=~/notes/journal/$(date +%Y/%m)/
-filename=$folder$(date +%d).md
+# Create/edit today's journal entry, and open the previous entry for review (So 
+# I know what I wrote last time.)
+
+notes=~/notes/journal
+folder=$notes/$(date +%Y/%m)
+today=$folder/$(date +%d).md
+
+list_existing () {
+  ls $notes/*/*/*.md --reverse -1
+}
+
+last=$(list_existing | sed '1q;d')
+
+if [ "$last" == "$today" ]; then
+  last=$(list_existing | sed '2q;d')
+fi
 
 mkdir -p $folder
-nvim $filename
+nvim -O $today $last
