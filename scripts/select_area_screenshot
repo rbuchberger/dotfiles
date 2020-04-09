@@ -1,0 +1,4 @@
+#! /bin/zsh
+# Meant for a sway keybinding
+# Select an area, save a screenshot to my home dir.
+grim -g "$(slurp)"

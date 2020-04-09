@@ -1,112 +1,127 @@
 {
-    "layer": "top", // Waybar at top layer
-    "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 40, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
-    // Choose the order of the modules
-    "modules-left": ["sway/workspaces", "idle_inhibitor", "custom/switch-user", "sway/mode", "sway/window"],
-    "modules-right": ["custom/covsum", "backlight", "pulseaudio", "battery", "network", "clock#date", "clock#time", "tray"],
+  "layer": "top", // Waybar at top layer
+  "position": "bottom", // Waybar position (top|bottom|left|right)
+  "height": 40, // Waybar height (to be removed for auto height)
+  // "width": 1280, // Waybar width
+  // Choose the order of the modules
+  "modules-left": [
+    "sway/workspaces",
+    "idle_inhibitor",
+    "custom/switch-user",
+    "sway/mode",
+    "sway/window"
+  ],
+  "modules-right": [
+    "custom/covsum",
+    "backlight",
+    "pulseaudio",
+    "battery",
+    "network",
+    "clock#date",
+    "clock#time",
+    "tray"
+  ],
 
-    // Modules configuration
+  // Modules configuration
 
-     "sway/workspaces": {
-         "disable-scroll": true
-     },
+  "sway/workspaces": {
+    "disable-scroll": true
+  },
 
-    "custom/switch-user": {
-      "format": "❤",
-      "on-click": "dm-tool switch-to-greeter",
-      "rotate": 345,
-      "tooltip": "false"
-    },
+  "custom/switch-user": {
+    "format": "❤",
+    "on-click": "dm-tool switch-to-greeter",
+    "rotate": 345,
+    "tooltip": "false"
+  },
 
-    "custom/covsum": {
-      "exec": "~/development/covsum/covsum -f confirmed,deaths -e $(~/development/covsum/covsum-location-handler)",
-      "interval": 600,
-      "on-click": "~/development/covsum/covsum-location-handler --increment",
-      "on-right-click": "~/development/covsum/covsum-location-handler --decrement",
-      "signal": 8,
-      "tooltip": false
-    },
+  "custom/covsum": {
+    "exec": "~/development/covsum/covsum -f confirmed,deaths -e $(~/development/covsum/covsum-location-handler)",
+    "interval": 600,
+    "on-click": "~/development/covsum/covsum-location-handler --increment",
+    "on-right-click": "~/development/covsum/covsum-location-handler --decrement",
+    "signal": 8,
+    "tooltip": false
+  },
 
-    "custom/jgmenu": {
-      "format": "↑",
-      "on-click": "jgmenu"
-    },
+  "custom/jgmenu": {
+    "format": "↑",
+    "on-click": "jgmenu"
+  },
 
-    "sway/window": {
-      "tooltip": false
+  "sway/window": {
+    "tooltip": false
+  },
+  "sway/mode": {
+    "format": "<span>{}</span>"
+  },
+  "idle_inhibitor": {
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": ""
     },
-    "sway/mode": {
-        "format": "<span>{}</span>"
+    "tooltip": false
+  },
+  "tray": {
+    // "icon-size": 21,
+    "spacing": 10
+  },
+  "clock#time": {
+    "tooltip": false
+  },
+  "clock#date": {
+    "format": "{:%A, %B %d}",
+    "tooltip": false
+  },
+  "backlight": {
+    // "device": "acpi_video1",
+    "format": "{percent}% {icon}",
+    "on-scroll-up": "light -U 2",
+    "on-scroll-down": "light -A 2",
+    "on-click": "light -S 100",
+    "on-click-right": "light -S 20",
+    "format-icons": ["", ""],
+    "interval": 30
+  },
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15
     },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        },
-        "tooltip": false
+    "format": "{time} {icon}",
+    "format-alt": "{capacity}% {icon}",
+    "format-charging": "{capacity}% ",
+    "format-icons": ["", "", "", "", ""],
+    "tooltip": false
+  },
+  "network": {
+    // "interface": "wlp2*", // (Optional) To force the use of this interface
+    "format-wifi": "{signalStrength}% ",
+    "format-ethernet": "{ipaddr} ",
+    "format-linked": "{ifname} (No IP) ",
+    "format-disconnected": "Disconnected ⚠",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}",
+    "tooltip": false
+  },
+  "pulseaudio": {
+    // "scroll-step": 1, // %, can be a float
+    "format": "{volume}% {icon}",
+    "format-bluetooth": "{volume}% {icon}",
+    "format-bluetooth-muted": " {icon}",
+    "format-muted": "",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphones": "",
+      "handsfree": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""]
     },
-    "tray": {
-        // "icon-size": 21,
-        "spacing": 10
-    },
-    "clock#time": {
-        "tooltip": false
-    },
-    "clock#date": {
-        "format": "{:%A, %B %d}",
-        "tooltip": false
-    },
-    "backlight": {
-        // "device": "acpi_video1",
-        "format": "{percent}% {icon}",
-        "on-scroll-up": "light -U 2",
-        "on-scroll-down": "light -A 2",
-        "on-click": "light -S 100",
-        "on-click-right": "light -S 20",
-        "format-icons": ["", ""],
-        "interval": 30
-    },
-    "battery": {
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{time} {icon}",
-        "format-alt": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-icons": ["", "", "", "", ""],
-        "tooltip": false
-    },
-    "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{signalStrength}% ",
-        "format-ethernet": "{ipaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}",
-        "tooltip": false
-    },
-    "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% {icon}",
-        "format-bluetooth-muted": " {icon}",
-        "format-muted": "",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphones": "",
-            "handsfree": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol",
-        "tooltip": false
-    }
+    "on-click": "pavucontrol",
+    "tooltip": false
+  }
 }

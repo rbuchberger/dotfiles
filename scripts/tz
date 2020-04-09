@@ -1,12 +1,5 @@
 #!/bin/bash
 
-#   __     __   _   _   _     _      
-#  / _|___/ _| | | | |_| | __| |_ __ 
-# | ||_  / |_  | | | __| |/ _` | '__|
-# |  _/ /|  _| | | | |_| | (_| | |   
-# |_|/___|_|   | |  \__|_|\__,_|_|   
-#              |_|                   
-
 # Fuzzy-search a list of TLDR pages, starting with an optional query.
 
 # If any arguments are passed, build parameter to pass to fzf:
@@ -17,5 +10,5 @@ fi
 # tldr --list returns a comma separated list; fzf wants them on lines.
 tldr --list \
   | sed 's/,/\n/g' \
-  | fzf $fzf_args \
+  | fzf $fzf_args --preview "echo {} | xargs tldr" \
   | xargs -r tldr

@@ -1,9 +1,13 @@
 # Rust
+export RUSTUP_HOME=$XDG_DATA_HOME/rustup
 export PATH="$HOME/.cargo/bin:$PATH"
 [ -f '$HOME/.cargo/env' ] && source '$HOME/.cargo/env'
 
 # Rbenv
-export PATH=$XDG_DATA_HOME/rbenv/bin:$PATH
+# https://github.com/rbenv/rbenv
+export RBENV_ROOT=$XDG_DATA_HOME/rbenv
+export PATH=$RBENV_ROOT/shims:$RBENV_ROOT/bin:$PATH
+source $RBENV_ROOT/completions/rbenv.zsh
 eval "$(rbenv init -)"
 
 # NVM

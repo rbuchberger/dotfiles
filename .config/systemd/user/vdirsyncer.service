@@ -1,8 +1,0 @@
-[Unit]
-Description="Sync Contacts and Calendars"
-Requires=network-online.target
-After=network-online.target
-
-[Service]
-Type=oneshot
-ExecStart='~/.config/vdirsyncer/sync.sh'

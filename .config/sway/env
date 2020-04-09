@@ -1,5 +1,7 @@
 # Wayland and sway related vars only
 
+TERMINAL=kitty
+
 BEMENU_BACKEND=wayland
 CLUTTER_BACKEND=wayland
 ECORE_EVAS_ENGINE=wayland_egl
