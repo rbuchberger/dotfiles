@@ -15,6 +15,10 @@
     repeat_rate 50
   }
 
+  input type:pointer {
+    scroll_factor 3
+  }
+
 # Colors and Appearance
 
   exec ~/.azotebg
@@ -74,6 +78,7 @@
   bindsym $mod+d exec $menu
   bindsym $mod+comma exec ~/scripts/select_area_screenshot
   bindsym $mod+period exec grim
+  bindsym $mod+t exec ~/scripts/screenshot_translate
 
   # Media volume controls
   bindsym XF86AudioMute exec amixer sset 'Master' toggle
