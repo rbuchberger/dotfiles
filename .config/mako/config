@@ -1,5 +1,6 @@
 # man 5 mako
 
+font=iosevka 11
 
 # Given in milliseconds
 default-timeout=10000
@@ -22,3 +23,7 @@ border-color=#6d9cbe
 background-color=#2b2b2b
 text-color=#da4939
 border-color=#6d9cbe
+
+[category=translation]
+width=900
+height=1200
