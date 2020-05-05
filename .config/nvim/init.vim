@@ -14,7 +14,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'alvan/vim-closetag'
   Plug 'andrewradev/splitjoin.vim'
   Plug 'godlygeek/tabular'
-  Plug 'jiangmiao/auto-pairs' " Auto pair things like ( and {} )
+  " Plug 'jiangmiao/auto-pairs' " Auto pair things like ( and {} )
   Plug 'tpope/vim-ragtag' " Shortcut mappings for useful tags
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-surround'
@@ -75,7 +75,7 @@ nnoremap <leader>w :w<CR>
 nnoremap U :UndotreeToggle<cr>
 
 " Input  behavior
-autocmd FileType * setlocal formatoptions=wnjr
+autocmd FileType * setlocal formatoptions=njr
 set textwidth=80
 set tabstop=2
 set softtabstop=2
