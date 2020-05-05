@@ -1,26 +1,32 @@
 # Rust
-export RUSTUP_HOME=$XDG_DATA_HOME/rustup
-export PATH="$HOME/.cargo/bin:$PATH"
 [ -f '$HOME/.cargo/env' ] && source '$HOME/.cargo/env'
 
 # Rbenv
-# https://github.com/rbenv/rbenv
-export RBENV_ROOT=$XDG_DATA_HOME/rbenv
-export PATH=$RBENV_ROOT/shims:$RBENV_ROOT/bin:$PATH
-source $RBENV_ROOT/completions/rbenv.zsh
+[ -f $RBENV_ROOT/completions/rbenv.zsh ] && source $RBENV_ROOT/completions/rbenv.zsh
 eval "$(rbenv init -)"
 
 # NVM
-source /usr/share/nvm/init-nvm.sh
+# source /usr/share/nvm/init-nvm.sh
 
 export PATH=/home/robert/scripts:$PATH
 
 # Hunter CD
 [ -f ~/.config/hunter/hunter_cd.sh ] && source ~/.config/hunter/hunter_cd.sh
 
+if [ -f /opt/asdf-vm/asdf.sh ]; then
+  source /opt/asdf-vm/asdf.sh
+
+  # append completions to fpath
+  fpath=(${ASDF_DIR}/completions $fpath)
+
+  # initialise completions with ZSH's compinit
+  autoload -Uz compinit
+  compinit
+fi
+
 # FZF
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
+[ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
+[ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
 
 # Netlify's Git Credential Helper.
 # if [ -f '/home/robert/.netlify/helper/path.zsh.inc' ]; then source '/home/robert/.netlify/helper/path.zsh.inc'; fi

@@ -14,6 +14,12 @@ settings:
     global:
       normal:
         <Ctrl+e>: open-editor
+  colors.webpage.bg:
+    global: '#eeeeee'
+  colors.webpage.prefers_color_scheme_dark:
+    global: true
+  completion.cmd_history_max_items:
+    global: 100
   completion.delay:
     global: 0
   completion.height:
@@ -42,7 +48,9 @@ settings:
     https://www.facebook.com: false
     https://www.jpost.com: false
     https://www.kartamultisport.pl: false
+    https://www.komputronik.pl: false
     https://www.limetorrents.info: false
+    https://www.pcworld.com: false
     https://www.reddit.com: false
     https://www.youtube.com: false
   content.pdfjs:

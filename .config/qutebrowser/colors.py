@@ -252,7 +252,7 @@ c.colors.tabs.pinned.selected.odd.fg = base0E
 
 # Background color for webpages if unset (or empty to use the theme's
 # color).
-c.colors.webpage.bg = base00
+c.colors.webpage.bg = base06
 
 # Foreground color of unselected even tabs.
 # c.colors.tabs.even.fg = base05

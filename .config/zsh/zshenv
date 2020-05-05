@@ -27,6 +27,14 @@ export GPGKEY=8C29272B84A3CC1BD7CBBCF218B7E45B74319F2C
 # Delay by .2 seconds; reduce insert & normal mode switching lag
 export KEYTIMEOUT=2
 
+# https://github.com/rbenv/rbenv
+export RBENV_ROOT=$XDG_DATA_HOME/rbenv
+export PATH=$RBENV_ROOT/shims:$RBENV_ROOT/bin:$PATH
+
+# Integrations
+export RUSTUP_HOME=$XDG_DATA_HOME/rustup
+export PATH="$HOME/.cargo/bin:$PATH"
+
 # Cleanup
 # https://wiki.archlinux.org/index.php/XDG_Base_Directory
 export ZIM_HOME=$XDG_CONFIG_HOME/zim

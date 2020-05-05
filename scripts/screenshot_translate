@@ -1,0 +1,16 @@
+#! /bin/zsh
+# Select an area of the screen, Screenhot, OCR, and translate it to english.
+
+temp_image=$(mktemp --suffix '.png')
+grim -g "$(slurp)" "$temp_image"
+
+# DPI of 120 seems to work OK for screenshots.
+source_text=$(tesseract "$temp_image" - --dpi 120 -l pol+deu) 
+
+translated_text=$(trans -no-warn --brief "$source_text")
+
+wl-copy $translated_text
+
+notify-send 'Translation: ' "$translated_text" --expire-time=60000 --category 'translation'
+
+rm $temp_image
