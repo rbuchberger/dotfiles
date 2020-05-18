@@ -25,7 +25,7 @@ fileext = ".vcf"
 
 [storage robert_contacts_remote]
 type           = "carddav"
-url            = "https://buchberger.cloud/"
+url            = "https://next.buchberger.cloud/"
 username       = "robert"
 password.fetch = ["command", "~/.config/vdirsyncer/get_pass.sh"]
 
@@ -45,6 +45,6 @@ fileext = ".ics"
 
 [storage robert_calendar_remote]
 type           = "caldav"
-url            = "https://buchberger.cloud/"
+url            = "https://next.buchberger.cloud/"
 username       = "robert"
 password.fetch = ["command", "~/.config/vdirsyncer/get_pass.sh"]
