@@ -38,9 +38,11 @@ settings:
   content.notifications:
     https://blankslateclimbing.myshopify.com: false
     https://blog.devolutions.net: false
+    https://buchberger.cloud: true
     https://downshiftology.com: false
     https://fustany.com: false
     https://mediamarkt.pl: false
+    https://next.buchberger.cloud: true
     https://theworkoutnut.com: false
     https://www.aimersoft.com: false
     https://www.allrecipes.com: false
@@ -101,5 +103,9 @@ settings:
     global: 800
   tabs.width:
     global: 400
+  url.default_page:
+    global: ' https://buchberger.cloud'
+  url.start_pages:
+    global: https://buchberger.cloud
   zoom.default:
     global: 100%
