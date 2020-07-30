@@ -7,7 +7,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'junegunn/limelight.vim'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
-  Plug 'mbbill/undotree'
 
   " Text manipulation:
   Plug 'Shougo/context_filetype.vim' " Sets filetype by context. (Vue files)
@@ -21,7 +20,10 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tyru/caw.vim'
 
   " Code Completion and linting:
-  Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install() }}
+  Plug 'dense-analysis/ale'
+  " Debugging
+  " Plug 'vim-vdebug/vdebug' " Ruby, python, perl, and PHP, but convoluted setup.
+  " Plug 'puremourning/vimspector'
 
   " Snippets
   Plug 'honza/vim-snippets'
@@ -70,10 +72,6 @@ tnoremap <esc> <C-\><C-n>
 " Write
 nnoremap <leader>w :w<CR>
 
-" Undotree
-
-nnoremap U :UndotreeToggle<cr>
-
 " Input  behavior
 autocmd FileType * setlocal formatoptions=njr
 set textwidth=80
@@ -84,7 +82,6 @@ set autoindent
 set expandtab
 set ignorecase
 set smartcase
-" set complete+=kspell
 set hidden
 
 " Persistent undo:
@@ -117,3 +114,5 @@ set termguicolors
 
 " Ruby host
 let g:ruby_host_prog = '/home/robert/.rbenv/versions/2.5.3/bin/neovim-ruby-host'
+
+let g:vimspector_enable_mappings = 'HUMAN'
