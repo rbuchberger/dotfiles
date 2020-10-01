@@ -1,0 +1,8 @@
+[Unit]
+Description = Sync contacts and calendar
+
+[Timer]
+OnCalendar = Hourly
+
+[Install]
+WantedBy = timers.target

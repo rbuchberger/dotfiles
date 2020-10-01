@@ -1,0 +1,6 @@
+[Unit]
+Description = Sync contacts and calendar metadata
+
+[Service]
+Type = oneshot
+ExecStart = vdirsyncer metasync
