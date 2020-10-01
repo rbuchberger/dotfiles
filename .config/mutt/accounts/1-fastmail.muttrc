@@ -19,7 +19,6 @@ set trash = "+Trash"
 
 mailboxes \
   "=INBOX" \
-  "=needs_attention" \
   "=Drafts" \
   "=Sent" \
   "=Archive" \
