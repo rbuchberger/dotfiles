@@ -16,9 +16,13 @@ Channel fastmail
 Expunge Both
 Master :fastmail-remote:
 Slave :fastmail-local:
-Patterns * !"[Gmail]/All Mail"
+Patterns *
 Create Both
 Remove Both
 SyncState *
-MaxMessages 3000
+{% if yadm.hostname == "charybdis" %}
+MaxMessages 0
+{% else %}
+MaxMessages 1000
+{% endif %}
 # End profile
