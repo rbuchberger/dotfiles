@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# The correct width for text.
+width=80
+
+# Calculate left indentation
+indent=$(( ( $(tput cols) - $width ) / 2 ))
+
+# Create a bunch of spaces
+spaces=$(printf %${indent}s )
+
+# Shove 'em in there
+sed "s/^/${spaces}/" -

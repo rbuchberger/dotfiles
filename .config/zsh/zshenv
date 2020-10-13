@@ -8,6 +8,7 @@ export EDITOR='nvim'
 export BROWSER='qutebrowser'
 export TERMINAL='kitty'
 export MANWIDTH=80
+export LESSOPEN="|- /home/robert/scripts/pager_center %s"
 export ZIM_HOME=$XDG_CONFIG_HOME/zim/
 
 # export PATH=/home/robert/.config/composer/vendor/bin:$PATH
