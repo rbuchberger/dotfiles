@@ -11,8 +11,12 @@ export MANWIDTH=80
 export ZIM_HOME=$XDG_CONFIG_HOME/zim/
 
 # export PATH=/home/robert/.config/composer/vendor/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
 
 # export RIPGREP_CONFIG_PATH=$XDG_CONFIG_HOME/rg/config
+
+# Aur utuils
+export AUR_PAGER=ranger
 
 # FZF  setup
 export FZF_DEFAULT_COMMAND="rg --ignore-file $XDG_CONFIG_HOME/git/gitignore-global --files"
@@ -34,6 +38,9 @@ export PATH=$RBENV_ROOT/shims:$RBENV_ROOT/bin:$PATH
 # Integrations
 export RUSTUP_HOME=$XDG_DATA_HOME/rustup
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# Steam
+export STEAM_DIR="$HOME/games/SteamLibrary/"
 
 # Cleanup
 # https://wiki.archlinux.org/index.php/XDG_Base_Directory
