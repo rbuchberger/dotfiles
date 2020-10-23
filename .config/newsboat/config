@@ -1,21 +1,21 @@
-urls-source "ocnews"
-ocnews-url "https://cloud.robert-buchberger.com"
-ocnews-login "robert"
-ocnews-passwordeval "pass cloud.robert-buchberger.com/calDav_carDav"
-
 browser "qutebrowser %u"
 display-article-progress yes
+text-width 80
+always-display-description yes
+article-sort-order date-desc
+reload-threads 20
+bookmark-cmd ~/scripts/bookmark
+show-read-articles no
 
-color listfocus black green
-color info black green bold
-color listnormal_unread yellow black
-color listfocus_unread black green bold
+color info black blue bold
+color listnormal blue black
+color listfocus blue color8
+color listnormal_unread white black bold
+color listfocus_unread white color8 bold
 
 bind-key l open
 bind-key k up
 bind-key j down
 bind-key h quit
-
-player "vlc -I ncurses "
-download-path "~/podcasts/%n/"
-download-filename-format "%F_%t.%e"
+bind-key q hard-quit
+bind-key . toggle-show-read-feeds
