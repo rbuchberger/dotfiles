@@ -3,11 +3,20 @@
 
 {% if yadm.hostname == "caroline" %}
 
-# HiDPI monitor scaling
-output * scale 1.5
+# Output config
+# Built-in monitor
+output eDP-1 {
+  scale 1.5
+  position 0,0
+}
+
+# External monitor
+output DP-2 {
+  position 1600,-800
+}
 
 # Mouse cursor theme and size
-seat seat0 xcursor_theme default 12
+seat seat0 xcursor_theme default 18
 
 # Lock button
 bindcode 191 exec swaylock
@@ -38,10 +47,10 @@ bindcode 76 XF86AudioRaiseVolume exec amixer sset 'Master' 5%+
 bindswitch lid:on exec 'swaylock'
 
 input "0:0:Atmel_maXTouch_Touchpad" {
-    dwt enabled # disabled while typing
+    dwt disabled # disabled while typing
     tap enabled
-    accel_profile flat
-    pointer_accel 0
+    accel_profile adaptive
+    pointer_accel .5
     scroll_method two_finger
     scroll_factor 3
     click_method clickfinger
