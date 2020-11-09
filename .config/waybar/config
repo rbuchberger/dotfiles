@@ -1,9 +1,7 @@
 {
-  "layer": "top", // Waybar at top layer
-  "position": "bottom", // Waybar position (top|bottom|left|right)
-  "height": 40, // Waybar height (to be removed for auto height)
-  // "width": 1280, // Waybar width
-  // Choose the order of the modules
+  "layer": "top", 
+  "position": "bottom",
+  "height": 40,
   "modules-left": [
     "sway/workspaces",
     "idle_inhibitor",
@@ -21,8 +19,6 @@
     "clock#time",
     "tray"
   ],
-
-  // Modules configuration
 
   "sway/workspaces": {
     "disable-scroll": true
@@ -44,17 +40,14 @@
     "tooltip": false
   },
 
-  "custom/jgmenu": {
-    "format": "↑",
-    "on-click": "jgmenu"
-  },
-
   "sway/window": {
     "tooltip": false
   },
+
   "sway/mode": {
     "format": "<span>{}</span>"
   },
+
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
@@ -64,7 +57,6 @@
     "tooltip": false
   },
   "tray": {
-    // "icon-size": 21,
     "spacing": 10
   },
   "clock#time": {
@@ -75,7 +67,6 @@
     "tooltip": false
   },
   "backlight": {
-    // "device": "acpi_video1",
     "format": "{percent}% {icon}",
     "on-scroll-up": "light -U 2",
     "on-scroll-down": "light -A 2",
@@ -96,7 +87,6 @@
     "tooltip": false
   },
   "network": {
-    // "interface": "wlp2*", // (Optional) To force the use of this interface
     "format-wifi": "{signalStrength}% ",
     "format-ethernet": "{ipaddr} ",
     "format-linked": "{ifname} (No IP) ",
@@ -105,7 +95,6 @@
     "tooltip": false
   },
   "pulseaudio": {
-    // "scroll-step": 1, // %, can be a float
     "format": "{volume}% {icon}",
     "format-bluetooth": "{volume}% {icon}",
     "format-bluetooth-muted": " {icon}",
