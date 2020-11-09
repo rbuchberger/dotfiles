@@ -32,7 +32,7 @@
   },
 
   "custom/covsum": {
-    "exec": "~/development/covsum/covsum -f confirmed,deaths -e $(~/development/covsum/covsum-location-handler)",
+    "exec": "~/development/covsum/covsum -f active,deaths -e $(~/development/covsum/covsum-location-handler)",
     "interval": 600,
     "on-click": "~/development/covsum/covsum-location-handler --increment",
     "on-right-click": "~/development/covsum/covsum-location-handler --decrement",
