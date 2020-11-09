@@ -14,3 +14,6 @@ alias td="task done"
 alias tm="task mod"
 
 alias zoom='QT_QPA_PLATFORM="" zoom'
+
+# This fixes terminfo problems over ssh
+alias ssh="kitty +kitten ssh"
