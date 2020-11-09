@@ -41,6 +41,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tpope/vim-rails'
   Plug 'tpope/vim-rbenv'
   Plug 'vim-ruby/vim-ruby'
+  Plug 'chikamichi/mediawiki.vim'
 
   " Markdown-composer must be recompiled whenever it changes. If the compile
   " fails, run $ rustup --update
