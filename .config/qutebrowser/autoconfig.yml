@@ -6,6 +6,13 @@
 
 config_version: 2
 settings:
+  aliases:
+    global:
+      q: close
+      qa: quit
+      w: session-save
+      wq: quit --save
+      wqa: quit --save
   auto_save.interval:
     global: 15000
   auto_save.session:
@@ -33,17 +40,24 @@ settings:
   content.autoplay:
     global: false
   content.geolocation:
+    https://www.bestbuy.com: false
     https://www.intercity.pl: false
     https://www.mec.ca: false
+    https://www.monster.com: false
   content.notifications:
+    https://barkingroyalty.com: false
     https://blankslateclimbing.myshopify.com: false
     https://blog.devolutions.net: false
+    https://board.demo.restya.com: false
     https://buchberger.cloud: true
     https://downshiftology.com: false
     https://fustany.com: false
     https://mediamarkt.pl: false
+    https://netdata.buchberger.cloud: true
     https://next.buchberger.cloud: true
+    https://ostoday.org: false
     https://theworkoutnut.com: false
+    https://web.whatsapp.com: true
     https://www.aimersoft.com: false
     https://www.allrecipes.com: false
     https://www.decathlon.pl: false
@@ -52,6 +66,7 @@ settings:
     https://www.kartamultisport.pl: false
     https://www.komputronik.pl: false
     https://www.limetorrents.info: false
+    https://www.networkworld.com: false
     https://www.pcworld.com: false
     https://www.reddit.com: false
     https://www.youtube.com: false
@@ -75,8 +90,6 @@ settings:
     global: asdfghjkl
   hints.uppercase:
     global: true
-  qt.force_platform:
-    global: wayland
   qt.force_platformtheme:
     global: null
   qt.highdpi:
@@ -85,6 +98,8 @@ settings:
     global: auto
   scrolling.smooth:
     global: false
+  statusbar.show:
+    global: in-mode
   tabs.background:
     global: true
   tabs.favicons.scale:
@@ -98,7 +113,7 @@ settings:
   tabs.position:
     global: bottom
   tabs.show:
-    global: multiple
+    global: switching
   tabs.show_switching_delay:
     global: 800
   tabs.width:
