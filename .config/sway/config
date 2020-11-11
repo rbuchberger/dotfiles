@@ -167,7 +167,7 @@
   }
 
   # Sway Commands
-  bindsym $mod+Shift+c reload
+  bindsym $mod+Ctrl+r reload
   bindsym $mod+Shift+e exec swaynag -t warning -m \
     'Do you really want to quit sway?' -b 'Yes, exit sway' 'swaymsg exit'
 
