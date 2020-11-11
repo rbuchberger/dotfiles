@@ -76,8 +76,8 @@
   bindsym $mod+o exec ~/scripts/passmenu-otp
   bindsym $mod+u exec ~/scripts/passmenu-username
   bindsym $mod+d exec $menu
-  bindsym $mod+comma exec ~/scripts/select_area_screenshot
-  bindsym $mod+period exec grim
+  bindsym $mod+Ctrl+comma exec ~/scripts/select_area_screenshot
+  bindsym $mod+Ctrl+period exec grim
   bindsym $mod+t exec ~/scripts/screenshot_translate
 
   # Media volume controls
