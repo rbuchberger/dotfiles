@@ -111,13 +111,19 @@ settings:
       right: 5
       top: 5
   tabs.position:
-    global: bottom
+    global: right
+  tabs.select_on_remove:
+    global: next
   tabs.show:
     global: switching
   tabs.show_switching_delay:
-    global: 800
+    global: 2000
+  tabs.title.alignment:
+    global: left
+  tabs.title.format:
+    global: '{audio}{index}: {current_title}'
   tabs.width:
-    global: 400
+    global: 200
   url.default_page:
     global: ' https://buchberger.cloud'
   url.start_pages:
