@@ -1,12 +1,3 @@
-# An example configuration for vdirsyncer.
-#
-# Move it to ~/.vdirsyncer/config or ~/.config/vdirsyncer/config and edit it.
-# Run `vdirsyncer --help` for CLI usage.
-#
-# Optional parameters are commented out.
-# This file doesn't document all available parameters, see
-# http://vdirsyncer.pimutils.org/ for the rest of them.
-
 [general]
 # A folder where vdirsyncer can store some metadata about each pair.
 status_path = "~/.local/share/vdirsyncer/status"
@@ -17,6 +8,7 @@ a           = "robert_contacts_local"
 b           = "robert_contacts_remote"
 collections = ["from a", "from b"]
 metadata    = ["displayname"]
+conflict_resolution = ["command", "nvim", "-d"]
 
 [storage robert_contacts_local]
 type    = "filesystem"
@@ -25,7 +17,7 @@ fileext = ".vcf"
 
 [storage robert_contacts_remote]
 type           = "carddav"
-url            = "https://next.buchberger.cloud/remote.php/dav"
+url            = "https://dav.buchberger.cloud/"
 username       = "robert"
 password.fetch = ["command", "~/.config/vdirsyncer/get_pass.sh"]
 # password.fetch = ["command", "pass", "next.buchberger.cloud/caldav"]
@@ -35,6 +27,7 @@ password.fetch = ["command", "~/.config/vdirsyncer/get_pass.sh"]
 a           = "robert_calendar_local"
 b           = "robert_calendar_remote"
 collections = ["from a", "from b"]
+conflict_resolution = ["command", "nvim", "-d"]
 
 # Calendars also have a color property
 metadata = ["displayname", "color"]
@@ -46,7 +39,7 @@ fileext = ".ics"
 
 [storage robert_calendar_remote]
 type           = "caldav"
-url            = "https://next.buchberger.cloud/remote.php/dav"
+url            = "https://dav.buchberger.cloud/"
 username       = "robert"
 password.fetch = ["command", "~/.config/vdirsyncer/get_pass.sh"]
 # password.fetch = ["command", "pass", "next.buchberger.cloud/caldav"]
