@@ -7,6 +7,12 @@ reload-threads 20
 bookmark-cmd ~/scripts/bookmark
 show-read-articles no
 
+urls-source "miniflux"
+miniflux-url "https://news.buchberger.cloud"
+
+miniflux-login "robert"
+miniflux-passwordfile "~/.config/newsboat/miniflux_password"
+
 color info black blue bold
 color listnormal blue black
 color listfocus blue color8
