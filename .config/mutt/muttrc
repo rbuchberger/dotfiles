@@ -40,9 +40,10 @@ set edit_headers=yes
 set query_command="khard email -p '%s'"
 
 # Viewing attachments
+auto_view text/plain
 auto_view text/html
 auto_view application/pgp-encrypted
-alternative_order text/html text/plain text/enriched  
+alternative_order text/enriched text/plain text/html
 
 # Under the hood
 set certificate_file = ~/.cache/neomutt/certificates
