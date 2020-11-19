@@ -11,16 +11,14 @@ path = /home/robert/.local/share/calendars/personal
 type = calendar
 
 [[us holidays]]
-path = /home/robert/.local/share/calendars/holidays_us
+path = /home/robert/.local/share/calendars/us_holidays
 type = calendar
+color = light blue
 
 [[polish holidays]]
-path = /home/robert/.local/share/calendars/holidays_pl
+path = /home/robert/.local/share/calendars/pl_holidays
 type = calendar
-
-[[tasks]]
-path = /home/robert/.local/share/calendars/tasks
-type = calendar
+color = light red
 
 [[contact birthdays]]
 path = /home/robert/.local/share/calendars/contact_birthdays

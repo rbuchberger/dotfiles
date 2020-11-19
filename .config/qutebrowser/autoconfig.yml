@@ -55,6 +55,7 @@ settings:
     https://mediamarkt.pl: false
     https://netdata.buchberger.cloud: true
     https://next.buchberger.cloud: true
+    https://nypost.com: false
     https://ostoday.org: false
     https://theworkoutnut.com: false
     https://web.whatsapp.com: true
@@ -99,7 +100,7 @@ settings:
   scrolling.smooth:
     global: false
   statusbar.show:
-    global: in-mode
+    global: always
   tabs.background:
     global: true
   tabs.favicons.scale:
