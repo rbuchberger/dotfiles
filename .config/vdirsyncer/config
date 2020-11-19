@@ -2,7 +2,6 @@
 # A folder where vdirsyncer can store some metadata about each pair.
 status_path = "~/.local/share/vdirsyncer/status"
 
-# CARDDAV
 [pair robert_contacts]
 a           = "robert_contacts_local"
 b           = "robert_contacts_remote"
@@ -20,16 +19,12 @@ type           = "carddav"
 url            = "https://dav.buchberger.cloud/"
 username       = "robert"
 password.fetch = ["command", "~/.config/vdirsyncer/get_pass.sh"]
-# password.fetch = ["command", "pass", "next.buchberger.cloud/caldav"]
 
-# CALDAV
 [pair robert_calendar]
 a           = "robert_calendar_local"
 b           = "robert_calendar_remote"
-collections = ["from a", "from b"]
+collections = ["from b"]
 conflict_resolution = ["command", "nvim", "-d"]
-
-# Calendars also have a color property
 metadata = ["displayname", "color"]
 
 [storage robert_calendar_local]
@@ -42,4 +37,33 @@ type           = "caldav"
 url            = "https://dav.buchberger.cloud/"
 username       = "robert"
 password.fetch = ["command", "~/.config/vdirsyncer/get_pass.sh"]
-# password.fetch = ["command", "pass", "next.buchberger.cloud/caldav"]
+
+[pair us_holidays]
+a = "us_holidays_public"
+b = "us_holidays_local"
+collections = null
+# partial_sync = ignore
+
+[storage us_holidays_public]
+type = "http"
+url = "https://www.officeholidays.com/ics-clean/usa"
+
+[storage us_holidays_local]
+type    = "filesystem"
+path    = "~/.local/share/calendars/us_holidays"
+fileext = ".ics"
+
+[pair pl_holidays]
+a = "pl_holidays_public"
+b = "pl_holidays_local"
+collections = null
+# partial_sync = ignore
+
+[storage pl_holidays_public]
+type = "http"
+url = "https://www.officeholidays.com/ics-clean/poland"
+
+[storage pl_holidays_local]
+type    = "filesystem"
+path    = "~/.local/share/calendars/pl_holidays"
+fileext = ".ics"
