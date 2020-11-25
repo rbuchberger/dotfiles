@@ -29,6 +29,9 @@ if [ -f /opt/asdf-vm/asdf.sh ]; then
   compinit
 fi
 
+# Direnv
+[ -f /usr/bin/direnv ] && eval "$(direnv hook zsh)"
+
 # FZF
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
 [ -f /usr/share/fzf/completion.zsh ] && source /usr/share/fzf/completion.zsh
