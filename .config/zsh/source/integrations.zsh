@@ -2,11 +2,12 @@
 [ -f '$HOME/.cargo/env' ] && source '$HOME/.cargo/env'
 
 # Rbenv
-[ -f $RBENV_ROOT/completions/rbenv.zsh ] && source $RBENV_ROOT/completions/rbenv.zsh
-eval "$(rbenv init -)"
+# [ -f $RBENV_ROOT/completions/rbenv.zsh ] && source $RBENV_ROOT/completions/rbenv.zsh
+# eval "$(rbenv init -)"
 
 # NVM
 # source /usr/share/nvm/init-nvm.sh
+# alias nvm_init="source /usr/share/nvm/init-nvm.sh"
 
 export PATH=/home/robert/scripts:$PATH
 
