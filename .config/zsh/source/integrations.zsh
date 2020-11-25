@@ -14,7 +14,11 @@ export PATH=/home/robert/scripts:$PATH
 # Hunter CD
 [ -f ~/.config/hunter/hunter_cd.sh ] && source ~/.config/hunter/hunter_cd.sh
 
+# asdf version manager
 if [ -f /opt/asdf-vm/asdf.sh ]; then
+  export ASDF_CONFIG_FILE=$XDG_CONFIG_HOME/asdf/asdfrc
+  export ASDF_DATA_DIR=$XDG_DATA_HOME/asdf
+
   source /opt/asdf-vm/asdf.sh
 
   # append completions to fpath
