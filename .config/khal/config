@@ -10,15 +10,9 @@ timedelta=7d
 path = /home/robert/.local/share/calendars/personal
 type = calendar
 
-[[us holidays]]
-path = /home/robert/.local/share/calendars/us_holidays
+[[holidays]]
+path = /home/robert/.local/share/calendars/c03e892d-27ef-735e-27cb-5c6c8a11f38f
 type = calendar
-color = light blue
-
-[[polish holidays]]
-path = /home/robert/.local/share/calendars/pl_holidays
-type = calendar
-color = light red
 
 [[contact birthdays]]
 path = /home/robert/.local/share/calendars/contact_birthdays
