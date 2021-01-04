@@ -37,33 +37,3 @@ type           = "caldav"
 url            = "https://dav.buchberger.cloud/"
 username       = "robert"
 password.fetch = ["command", "~/.config/vdirsyncer/get_pass.sh"]
-
-[pair us_holidays]
-a = "us_holidays_public"
-b = "us_holidays_local"
-collections = null
-# partial_sync = ignore
-
-[storage us_holidays_public]
-type = "http"
-url = "https://www.officeholidays.com/ics-clean/usa"
-
-[storage us_holidays_local]
-type    = "filesystem"
-path    = "~/.local/share/calendars/us_holidays"
-fileext = ".ics"
-
-[pair pl_holidays]
-a = "pl_holidays_public"
-b = "pl_holidays_local"
-collections = null
-# partial_sync = ignore
-
-[storage pl_holidays_public]
-type = "http"
-url = "https://www.officeholidays.com/ics-clean/poland"
-
-[storage pl_holidays_local]
-type    = "filesystem"
-path    = "~/.local/share/calendars/pl_holidays"
-fileext = ".ics"
