@@ -51,3 +51,6 @@ dev
 urandom
 zbarimg
 zbar
+rubocop
+magick
+simplecov
