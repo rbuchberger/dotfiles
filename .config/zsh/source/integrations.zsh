@@ -29,8 +29,13 @@ if [ -f /opt/asdf-vm/asdf.sh ]; then
   compinit
 fi
 
-# Direnv
-[ -f /usr/bin/direnv ] && eval "$(direnv hook zsh)"
+# asdf managed direnv
+[ -f /usr/bin/direnv ]                       \
+  && [ $(asdf --version) ]                   \
+  && [ $(asdf plugin list | grep 'direnv') ] \
+  && eval "$(asdf exec direnv hook zsh)"
+
+direnv() { asdf exec direnv "$@"; }
 
 # FZF
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
