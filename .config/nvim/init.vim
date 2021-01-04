@@ -114,6 +114,6 @@ set termguicolors
 " autocmd FileType * set conceallevel=0
 
 " Ruby host
-let g:ruby_host_prog = '/home/robert/.rbenv/versions/2.5.3/bin/neovim-ruby-host'
+" let g:ruby_host_prog = '/home/robert/.rbenv/versions/2.5.3/bin/neovim-ruby-host'
 
 let g:vimspector_enable_mappings = 'HUMAN'
