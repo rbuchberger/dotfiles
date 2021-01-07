@@ -20,3 +20,6 @@ alias ssh="kitty +kitten ssh"
 
 # Spin down hard drives
 alias shush="sudo hdparm -y /dev/sd{a,b,c,d}"
+
+# Units defaults are dumb.
+alias units="units --verbose --digits 4"
