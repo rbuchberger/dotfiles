@@ -70,6 +70,8 @@ window {
 #tray,
 #mode, 
 #custom-covsum,
+#custom-currency,
+#custom-room-lights,
 #custom-switch-user {
   /* color: #e6e1dc; */
   color: rgba(230,225,220,.9);

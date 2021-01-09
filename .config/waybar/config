@@ -10,6 +10,8 @@
     "sway/window"
   ],
   "modules-right": [
+    "custom/room-lights",
+    "custom/currency",
     "custom/covsum",
     "backlight",
     "pulseaudio",
@@ -31,12 +33,27 @@
     "tooltip": "false"
   },
 
+  "custom/room-lights": {
+    "format": "",
+    "on-click": "hueadm group 1 on",
+    "on-click-right": "hueadm group 1 off",
+    "on-scroll-up": "hueadm group 1 +30",
+    "on-scroll-down": "hueadm group 1 -30",
+
+  },
+
   "custom/covsum": {
     "exec": "~/development/covsum/covsum -f active,deaths -e $(~/development/covsum/covsum-location-handler)",
     "interval": 600,
     "on-click": "~/development/covsum/covsum-location-handler --increment",
     "on-right-click": "~/development/covsum/covsum-location-handler --decrement",
     "signal": 8,
+    "tooltip": false
+  },
+
+  "custom/currency": {
+    "exec": "/usr/bin/units --verbose -1 -d 3 USD PLN | sed -e 's/^[ \t]*/1 /'",
+    "interval": 3600,
     "tooltip": false
   },
 
