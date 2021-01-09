@@ -32,6 +32,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   " Git
   Plug 'rhysd/git-messenger.vim'
   Plug 'tpope/vim-fugitive'
+  Plug 'airblade/vim-gitgutter'
 
   " Language Specific
   Plug 'cespare/vim-toml'
@@ -84,6 +85,8 @@ set expandtab
 set ignorecase
 set smartcase
 set hidden
+" Update time in ms. Makes gitgutter signs react faster.
+set updatetime=500
 
 " Persistent undo:
 set undofile
