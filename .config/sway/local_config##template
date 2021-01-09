@@ -69,7 +69,4 @@ input "0:0:Atmel_maXTouch_Touchscreen" {
 {% else %}
 # charybdis specific configs here
 
-# enable freesync
-output DP-3 adaptive_sync on
-
 {% endif %}
