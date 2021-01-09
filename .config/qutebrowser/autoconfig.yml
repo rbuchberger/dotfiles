@@ -41,6 +41,7 @@ settings:
     global: false
   content.geolocation:
     https://www.bestbuy.com: false
+    https://www.ikea.com: false
     https://www.intercity.pl: false
     https://www.mec.ca: false
     https://www.monster.com: false
@@ -70,6 +71,7 @@ settings:
     https://www.networkworld.com: false
     https://www.pcworld.com: false
     https://www.reddit.com: false
+    https://www.support.com: false
     https://www.youtube.com: false
   content.pdfjs:
     global: true
