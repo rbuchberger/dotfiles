@@ -7,13 +7,13 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'junegunn/limelight.vim'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
+  Plug 'tpope/vim-unimpaired'
 
   " Text manipulation:
   Plug 'Shougo/context_filetype.vim' " Sets filetype by context. (Vue files)
   Plug 'alvan/vim-closetag'
   Plug 'andrewradev/splitjoin.vim'
   Plug 'godlygeek/tabular'
-  " Plug 'jiangmiao/auto-pairs' " Auto pair things like ( and {} )
   Plug 'tpope/vim-ragtag' " Shortcut mappings for useful tags
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-surround'
