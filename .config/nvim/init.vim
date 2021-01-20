@@ -17,7 +17,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tpope/vim-ragtag' " Shortcut mappings for useful tags
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-surround'
-  Plug 'tyru/caw.vim'
+  Plug 'tyru/caw.vim' " Comment shortcuts
+  Plug 'AndrewRadev/sideways.vim'
 
   " Code Completion and linting:
   Plug 'dense-analysis/ale'
@@ -75,7 +76,7 @@ tnoremap <esc> <C-\><C-n>
 nnoremap <leader>w :w<CR>
 
 " Input  behavior
-autocmd FileType * setlocal formatoptions=njr
+autocmd FileType * setlocal formatoptions=qnjc
 set textwidth=80
 set tabstop=2
 set softtabstop=2
