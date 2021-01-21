@@ -16,11 +16,6 @@ fi
 
 source $ZIM_HOME/init.zsh
 
-# Load everything in ~/.config/zsh/
-for file in $XDG_CONFIG_HOME/zsh/source/*; do
-  source $file
-done
-
 # Prompt (pure)
 # The default prompt symbols don't work well in TTY
 PURE_PROMPT_SYMBOL="$"
@@ -59,3 +54,8 @@ preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
 # mkdir -p $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 # compinit -d $XDG_CACHE_HOME/zsh/zcompdump-$ZSH_VERSION
 # alias units=units --history $XDG_DATA_HOME/units_history
+
+# Load everything in ~/.config/zsh/
+for file in $XDG_CONFIG_HOME/zsh/source/*; do
+  source $file
+done
