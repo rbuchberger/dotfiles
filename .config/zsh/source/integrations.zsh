@@ -1,41 +1,10 @@
 # Rust
 [ -f '$HOME/.cargo/env' ] && source '$HOME/.cargo/env'
 
-# Rbenv
-# [ -f $RBENV_ROOT/completions/rbenv.zsh ] && source $RBENV_ROOT/completions/rbenv.zsh
-# eval "$(rbenv init -)"
-
-# NVM
-# source /usr/share/nvm/init-nvm.sh
-# alias nvm_init="source /usr/share/nvm/init-nvm.sh"
-
 export PATH=/home/robert/scripts:$PATH
 
 # Hunter CD
 [ -f ~/.config/hunter/hunter_cd.sh ] && source ~/.config/hunter/hunter_cd.sh
-
-# asdf version manager
-if [ -f /opt/asdf-vm/asdf.sh ]; then
-  export ASDF_CONFIG_FILE=$XDG_CONFIG_HOME/asdf/asdfrc
-  export ASDF_DATA_DIR=$XDG_DATA_HOME/asdf
-
-  source /opt/asdf-vm/asdf.sh
-
-  # append completions to fpath
-  fpath=(${ASDF_DIR}/completions $fpath)
-
-  # initialise completions with ZSH's compinit
-  autoload -Uz compinit
-  compinit
-fi
-
-# asdf managed direnv
-[ -f /usr/bin/direnv ]                       \
-  && [ $(asdf --version) ]                   \
-  && [ $(asdf plugin list | grep 'direnv') ] \
-  && eval "$(asdf exec direnv hook zsh)"
-
-direnv() { asdf exec direnv "$@"; }
 
 # FZF
 [ -f /usr/share/fzf/key-bindings.zsh ] && source /usr/share/fzf/key-bindings.zsh
@@ -60,3 +29,24 @@ rehash_precmd() {
 }
 
 add-zsh-hook -Uz precmd rehash_precmd
+
+# asdf version manager
+if [ -f /opt/asdf-vm/asdf.sh ]; then
+  export ASDF_DIR=/opt/asdf-vm
+  export ASDF_CONFIG_FILE=$XDG_CONFIG_HOME/asdf/asdfrc
+  export ASDF_DATA_DIR=$XDG_DATA_HOME/asdf
+
+  source $ASDF_DIR/asdf.sh
+
+  # initialise completions with ZSH's compinit
+  autoload -Uz compinit
+  compinit
+fi
+
+# asdf managed direnv
+[ -f /usr/bin/direnv ]                       \
+  && [ $(asdf --version) ]                   \
+  && [ $(asdf plugin list | grep 'direnv') ] \
+  && eval "$(asdf exec direnv hook zsh)"
+
+direnv() { asdf exec direnv "$@"; }
