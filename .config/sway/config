@@ -175,3 +175,4 @@ include /etc/sway/config.d/*
 include ~/.config/sway/local_config
 
 exec "systemctl --user start sway-session.target"
+exec "blueman-tray"
