@@ -23,8 +23,8 @@ settings:
         <Ctrl+e>: open-editor
   colors.webpage.bg:
     global: '#eeeeee'
-  colors.webpage.prefers_color_scheme_dark:
-    global: true
+  colors.webpage.preferred_color_scheme:
+    global: dark
   completion.cmd_history_max_items:
     global: 100
   completion.delay:
@@ -68,6 +68,7 @@ settings:
     https://www.kartamultisport.pl: false
     https://www.komputronik.pl: false
     https://www.limetorrents.info: false
+    https://www.netflix.com: false
     https://www.networkworld.com: false
     https://www.pcworld.com: false
     https://www.reddit.com: false
@@ -89,6 +90,44 @@ settings:
     - +{line}
   editor.encoding:
     global: utf-8
+  fonts.completion.category:
+    global: 11pt Iosevka Term SS05
+  fonts.completion.entry:
+    global: 11pt Iosevka Term SS05
+  fonts.contextmenu:
+    global: 11pt Iosevka Term SS05
+  fonts.debug_console:
+    global: 12pt Iosevka Term SS05
+  fonts.default_family:
+    global: 13pt Iosevka Aile
+  fonts.default_size:
+    global: 13pt
+  fonts.downloads:
+    global: 11pt Iosevka Term SS05
+  fonts.hints:
+    global: 12pt Iosevka Term SS05
+  fonts.keyhint:
+    global: 12pt Iosevka Term SS05
+  fonts.messages.error:
+    global: 11pt Iosevka Term SS05
+  fonts.messages.info:
+    global: 11pt Iosevka Term SS05
+  fonts.messages.warning:
+    global: 11pt Iosevka Term SS05
+  fonts.prompts:
+    global: 11pt Iosevka Term SS05
+  fonts.statusbar:
+    global: 11pt Iosevka Term SS05
+  fonts.tabs.selected:
+    global: 11pt Iosevka Term SS05
+  fonts.tabs.unselected:
+    global: 11pt Iosevka Term SS05
+  fonts.web.size.default:
+    global: 14
+  fonts.web.size.default_fixed:
+    global: 14
+  fonts.web.size.minimum:
+    global: 13
   hints.chars:
     global: asdfghjkl
   hints.uppercase:
@@ -114,7 +153,7 @@ settings:
       right: 5
       top: 5
   tabs.position:
-    global: right
+    global: bottom
   tabs.select_on_remove:
     global: next
   tabs.show:

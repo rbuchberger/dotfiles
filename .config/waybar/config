@@ -12,7 +12,6 @@
   "modules-right": [
     "custom/room-lights",
     "custom/currency",
-    "custom/covsum",
     "backlight",
     "pulseaudio",
     "battery",
@@ -40,15 +39,6 @@
     "on-scroll-up": "hueadm group 1 +30",
     "on-scroll-down": "hueadm group 1 -30",
 
-  },
-
-  "custom/covsum": {
-    "exec": "~/development/covsum/covsum -f active,deaths -e $(~/development/covsum/covsum-location-handler)",
-    "interval": 600,
-    "on-click": "~/development/covsum/covsum-location-handler --increment",
-    "on-right-click": "~/development/covsum/covsum-location-handler --decrement",
-    "signal": 8,
-    "tooltip": false
   },
 
   "custom/currency": {
@@ -83,6 +73,7 @@
     "format": "{:%A, %B %d}",
     "tooltip": false
   },
+
   "backlight": {
     "format": "{percent}% {icon}",
     "on-scroll-up": "light -U 2",

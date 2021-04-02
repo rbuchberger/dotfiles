@@ -6,6 +6,7 @@ export XDG_DATA_HOME=$HOME/.local/share
 
 export EDITOR='nvim'
 export BROWSER='qutebrowser'
+export DIFFPROG='nvim -d'
 export TERMINAL='kitty'
 export MANWIDTH=80
 # export LESSOPEN="|- /home/robert/scripts/pager_center %s"
