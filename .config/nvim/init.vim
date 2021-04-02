@@ -38,12 +38,17 @@ call plug#begin('~/.local/share/nvim/plugged')
   " Language Specific
   Plug 'cespare/vim-toml'
 
-  Plug 'tpope/vim-bundler'
-  Plug 'tpope/vim-endwise' " Closes ruby blocks
-  Plug 'tpope/vim-rails'
-  Plug 'tpope/vim-rbenv'
+  " Ruby
   Plug 'vim-ruby/vim-ruby'
+  Plug 'tpope/vim-rails'
+  Plug 'tpope/vim-bundler'
+  Plug 'tpope/vim-endwise'
+
+  " Rust
+  Plug 'rust-lang/rust.vim'
+
   Plug 'chikamichi/mediawiki.vim'
+
 
   " Markdown-composer must be recompiled whenever it changes. If the compile
   " fails, run $ rustup --update
