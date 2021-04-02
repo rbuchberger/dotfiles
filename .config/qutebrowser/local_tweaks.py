@@ -1,0 +1,17 @@
+c.fonts.completion.category="9pt Iosevka Aile Bold"
+c.fonts.completion.entry="9pt Iosevka Aile"
+c.fonts.debug_console="9pt Iosevka Aile"
+c.fonts.downloads="9pt Iosevka Aile"
+c.fonts.hints="9pt Iosevka Aile"
+c.fonts.keyhint="9pt Iosevka Aile"
+c.fonts.messages.error="9pt Iosevka Aile"
+c.fonts.messages.info="9pt Iosevka Aile"
+c.fonts.messages.warning="9pt Iosevka Aile"
+c.fonts.prompts="9pt Iosevka Aile"
+c.fonts.statusbar="9pt Iosevka Aile"
+c.fonts.tabs.selected="9pt Iosevka Aile"
+c.fonts.tabs.unselected="9pt Iosevka Aile"
+c.fonts.web.size.default=14
+c.fonts.web.size.default_fixed=14
+c.fonts.web.size.minimum=12
+c.fonts.web.size.minimum_logical=9
