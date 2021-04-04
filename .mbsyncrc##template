@@ -14,8 +14,8 @@ Flatten .
 
 Channel fastmail
 Expunge Both
-Master :fastmail-remote:
-Slave :fastmail-local:
+Far :fastmail-remote:
+Near :fastmail-local:
 Patterns *
 Create Both
 Remove Both
