@@ -10,6 +10,7 @@
     "sway/window"
   ],
   "modules-right": [
+    "custom/email",
     "custom/room-lights",
     "custom/currency",
     "backlight",
@@ -23,6 +24,11 @@
 
   "sway/workspaces": {
     "disable-scroll": true
+  },
+
+  "custom/email": {
+    "format": "{} ",
+    "exec": "~/scripts/email_monitor"
   },
 
   "custom/switch-user": {

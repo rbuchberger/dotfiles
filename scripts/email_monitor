@@ -1,0 +1,27 @@
+#! /bin/bash
+# This is a constantly running script which returns the current number of new
+# emails. Used for the statusbar widget.
+
+new_email_dir="/home/robert/.local/share/mail/fastmail/INBOX/new"
+
+# There's probably a better way to do this, but it works fine.
+count_new_emails() {
+  ls $new_email_dir | wc --words
+}
+
+monitor() {
+inotifywait             \
+  --monitor             \
+  --quiet               \
+  --event move          \
+  --event create        \
+  --event delete        \
+  $new_email_dir
+}
+
+# For startup:
+count_new_emails
+
+monitor | while read line; do
+  count_new_emails
+done
