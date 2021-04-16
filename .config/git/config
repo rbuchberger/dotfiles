@@ -13,5 +13,5 @@
   gpgsign = true
 [merge]
 	ff = true
-[include]
-  path = /home/robert/.netlify/helper/git-config
+[init]
+	defaultBranch = main
