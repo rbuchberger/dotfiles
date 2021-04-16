@@ -81,7 +81,7 @@ tnoremap <esc> <C-\><C-n>
 nnoremap <leader>w :w<CR>
 
 " Input  behavior
-autocmd FileType * setlocal formatoptions=qnjc
+autocmd FileType * setlocal formatoptions=qnj
 set textwidth=80
 set tabstop=2
 set softtabstop=2
