@@ -1,0 +1,21 @@
+#! /bin/sh
+# This exists to solve a bug with goimapnotify. For some reason it calls the
+# script twice when new emails show up.
+# Set this to the 'onNewMail' script in imapnotify's config.
+
+lockfile=/tmp/email_debounce
+
+# If this file exists, we're the second invocation and should do nothing.
+[ -f $lockfile ] && exit 0
+
+touch $lockfile
+
+# Pull new emails
+mbsync --pull fastmail:INBOX
+
+# Send notification
+/home/robert/scripts/latest_email_notification
+
+# Wait awhile in the background, then remove lockfile
+
+(sleep 5 && rm $lockfile) &

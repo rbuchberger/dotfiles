@@ -1,0 +1,25 @@
+#! /bin/bash
+# Prints a nicely formatted desktop notification of the latest email
+
+new_email_dir="/home/robert/.local/share/mail/fastmail/INBOX/new/"
+email_icon="/usr/share/icons/breeze-dark/actions/32/mail-unread.svg"
+
+newest_email="$(ls -t $new_email_dir | head -1)"
+
+extract() {
+  grep "$1" "$new_email_dir$newest_email"
+}
+
+title() {
+  extract '^From:'
+}
+
+body() {
+  extract '^To:'
+  extract '^Subject:'
+}
+
+notify-send "$(title)" "$(body)" \
+  --icon $email_icon             \
+  --category 'email.arrived'     \
+  --expire-time 20000
