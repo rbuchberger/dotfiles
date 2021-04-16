@@ -27,3 +27,7 @@ border-color=#6d9cbe
 [category=translation]
 width=900
 height=1200
+
+[category=email.unread]
+width=600
+height=400
