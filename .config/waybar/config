@@ -33,7 +33,7 @@
   },
 
   "custom/room-lights": {
-    "format": "",
+    "format": "",
     "on-click": "hueadm group 1 on",
     "on-click-right": "hueadm group 1 off",
     "on-scroll-up": "hueadm group 1 +30",
@@ -96,7 +96,7 @@
   },
   "network": {
     "format-wifi": "{signalStrength}% ",
-    "format-ethernet": "{ipaddr} ",
+    "format-ethernet": "{ipaddr} ",
     "format-linked": "{ifname} (No IP) ",
     "format-disconnected": "Disconnected ⚠",
     "format-alt": "{ifname}: {ipaddr}/{cidr}",
