@@ -23,6 +23,7 @@ SyncState *
 {% if yadm.hostname == "charybdis" %}
 MaxMessages 0
 {% else %}
+ExpireUnread yes
 MaxMessages 200
 {% endif %}
 # End profile
