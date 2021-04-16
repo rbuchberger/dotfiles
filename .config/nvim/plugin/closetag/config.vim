@@ -1,1 +1,1 @@
-let g:closetag_filenames = '*.html, *.js, *.jsx, *.vue'
+let g:closetag_filenames = '*.html, *.js, *.jsx, *.vue, *.html.erb'
