@@ -91,6 +91,23 @@ settings:
     - +{line}
   editor.encoding:
     global: utf-8
+  fileselect.folder.command:
+    global:
+    - kitty
+    - ranger
+    - --choosedir={}
+  fileselect.handler:
+    global: external
+  fileselect.multiple_files.command:
+    global:
+    - kitty
+    - ranger
+    - --choosefiles={}
+  fileselect.single_file.command:
+    global:
+    - kitty
+    - ranger
+    - --choosefile={}
   fonts.completion.category:
     global: 11pt Iosevka Term SS05
   fonts.completion.entry:
