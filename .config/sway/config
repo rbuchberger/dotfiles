@@ -177,3 +177,4 @@ include ~/.config/sway/local_config
 
 exec "systemctl --user start sway-session.target"
 exec "blueman-tray"
+exec "(ping_wait fastmail.com && mbsync --pull fastmail:INBOX)&"
