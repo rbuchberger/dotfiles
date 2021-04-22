@@ -15,8 +15,6 @@ password=$(printf '%s\n' "${password_files[@]}" | \
 
 pass show "$password"      \
   | head -1                \
-  | wl-copy --trim-newline
+  | wl-copy --trim-newline --paste-once
 
-
-# Clear clipboard after 1 minute
-sleep 60 && wl-copy --clear &
+notify-send 'Password Copied' "$password\nYou can only paste it once." -t 3000

@@ -15,3 +15,5 @@ password=$(printf '%s\n' "${password_files[@]}" | \
 [[ -n $password ]] || exit
 
 pass otp "$password" | wl-copy --trim-newline
+
+notify-send 'OTP Copied' "$password" -t 3000
