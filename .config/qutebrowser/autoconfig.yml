@@ -45,7 +45,7 @@ settings:
     https://www.intercity.pl: false
     https://www.mec.ca: false
     https://www.monster.com: false
-  content.notifications:
+  content.notifications.enabled:
     https://barkingroyalty.com: false
     https://blankslateclimbing.myshopify.com: false
     https://blog.devolutions.net: false
@@ -64,6 +64,7 @@ settings:
     https://www.allrecipes.com: false
     https://www.decathlon.pl: false
     https://www.facebook.com: false
+    https://www.javatpoint.com: false
     https://www.jpost.com: false
     https://www.kartamultisport.pl: false
     https://www.komputronik.pl: false
