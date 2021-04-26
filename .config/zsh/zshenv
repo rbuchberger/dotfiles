@@ -20,6 +20,8 @@ export PATH=$HOME/.local/bin:$PATH
 # Aur utuils
 export AUR_PAGER=ranger
 
+export PAGER=nvimpager
+
 # FZF  setup
 export FZF_DEFAULT_COMMAND="rg --ignore-file $XDG_CONFIG_HOME/git/gitignore-global --files"
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
