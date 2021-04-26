@@ -14,6 +14,12 @@ type = calendar
 path = /home/robert/.local/share/calendars/c03e892d-27ef-735e-27cb-5c6c8a11f38f
 type = calendar
 
+[[family]]
+path = /home/robert/.local/share/calendars/7b1613be-6a11-51a0-9080-31bd99b2c05f
+
+[[work]]
+path = /home/robert/.local/share/calendars/15970096-ec21-b800-3a9f-7cd65b724da0
+
 [[contact birthdays]]
 path = /home/robert/.local/share/calendars/contact_birthdays
 type = calendar
