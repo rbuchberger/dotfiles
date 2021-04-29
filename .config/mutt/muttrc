@@ -10,7 +10,7 @@ set mailcap_path='~/.mailcap'
 # Interface
 set date_format="%y/%m/%d %I:%M%p"
 set index_format="%2C %Z %{%b %d} %-15.15L (%?l?%4l&%4c?) %s"
-set sort = 'reverse-date'
+set sort = 'threads'
 set sleep_time = 0		# Pause 0 seconds for informational messages
 set markers = no		# Disables the `+` displayed at line wraps
 set mark_old = no		# Unread mail stay unread until read
