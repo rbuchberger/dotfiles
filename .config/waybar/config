@@ -28,7 +28,7 @@
 
   "custom/email": {
     "format": "{} ",
-    "exec": "~/scripts/email_monitor"
+    "exec": "~/scripts/email_monitor",
   },
 
   "custom/switch-user": {
@@ -77,7 +77,8 @@
   },
   "clock#date": {
     "format": "{:%A, %B %d}",
-    "tooltip": false
+    "tooltip": true,
+    "tooltip-format": "{calendar}"
   },
 
   "backlight": {
