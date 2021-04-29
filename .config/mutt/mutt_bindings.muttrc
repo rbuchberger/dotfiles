@@ -53,7 +53,7 @@ bind index,pager C noop
 bind index gg first-entry
 bind pager gg top
 bind pager G bottom
-macro index o "<shell-escape>mbsync --all<enter>" "run mbsync to sync fastmail"
+macro index o "<shell-escape>mbsync --all && notmuch new<enter>" "run mbsync to sync fastmail"
 macro index,pager A "<save-message>=Archive<enter><enter>" "move mail to archive"
 
 bind index,pager D noop
