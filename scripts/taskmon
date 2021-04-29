@@ -1,6 +1,36 @@
 #!/bin/bash
 
-# This is a small script for keeping an up-to-date taskwarrior window open.
+# This is a small script for keeping an up-to-date todolist open
 
-echo '/home/robert/.task/pending.data' \
-  | entr -c ~/scripts/taskmon_update
+todo_dir=$XDG_DATA_HOME/calendars
+tmp_file=/tmp/taskmon_refresh
+
+monitor() {
+  inotifywait             \
+    --monitor             \
+    --quiet               \
+    --recursive           \
+    --event move          \
+    --event create        \
+    --event delete        \
+    $todo_dir
+}
+
+# temp file is required for debouncing. Inotify prints several lines for each
+# change.
+update_list() {
+  [ -f $tmp_file ] && return
+  touch $tmp_file
+  clear
+  todo list --priority low --startable --no-reverse
+  sleep 1
+  rm $tmp_file
+}
+
+# First paint
+update_list
+
+# Update whenever inotify prints output
+monitor | while read line; do
+  update_list &
+done
