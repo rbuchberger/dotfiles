@@ -66,6 +66,12 @@ input "0:0:Atmel_maXTouch_Touchscreen" {
   scroll_method two_finger
 }
 
+input 1:1:AT_Translated_Set_2_keyboard 
+{
+  # keybindings here: https://wiki.galliumos.org/Media_keys_and_default_keybindings
+  xkb_model "chromebook"
+}
+
 {% else %}
 # charybdis specific configs here
 
