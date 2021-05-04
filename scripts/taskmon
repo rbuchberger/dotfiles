@@ -16,6 +16,11 @@ monitor() {
     $todo_dir
 }
 
+rm_temp() {
+  sleep ${1:-1}
+  [ -f $tmp_file ] && rm $tmp_file
+}
+
 # temp file is required for debouncing. Inotify prints several lines for each
 # change.
 update_list() {
@@ -23,9 +28,11 @@ update_list() {
   touch $tmp_file
   clear
   todo list --priority low --startable --no-reverse
-  sleep 1
-  rm $tmp_file
+  rm_temp &
 }
+
+# In case we didn't shut down cleanly
+rm_temp 0
 
 # First paint
 update_list
