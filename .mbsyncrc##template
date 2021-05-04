@@ -24,6 +24,6 @@ SyncState *
 MaxMessages 0
 {% else %}
 ExpireUnread yes
-MaxMessages 200
+MaxMessages 1000
 {% endif %}
 # End profile
