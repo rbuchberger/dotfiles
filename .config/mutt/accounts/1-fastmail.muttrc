@@ -24,7 +24,3 @@ mailboxes \
   "=Archive" \
   "=Trash" \
   "=Spam"
-
-# List directories in mailbox folder, filter out current/new/tmp directories,
-# format them for mutt.
-# mailboxes `find /home/robert/.local/share/mail/fastmail/ -type d | sed -E -e '1 d' -e '/\/(cur|new|tmp)$/ d' -e 's_^/home/robert/.local/share/mail/fastmail/_"=_' -e 's_$_" \\_'`
