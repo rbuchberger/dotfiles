@@ -1,10 +1,10 @@
 
 # text/html; w3m -I %{charset} -T text/html; needsterminal;
-text/html; firefox %s;
+text/html; firefox %s &;
 text/html; w3m -I %{charset} -T text/html; copiousoutput;
 
 text/*; bat '%s'; copiousoutput;
 
-image/*; mimeopen %s; needsterminal;
+image/*; xdg-open %s &;
 
-application/*; mimeopen %s; needsterminal;
+application/*; xdg-open %s &;
