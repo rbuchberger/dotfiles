@@ -7,7 +7,7 @@ grim -g "$(slurp)" "$temp_image"
 # DPI of 120 seems to work OK for screenshots.
 source_text=$(tesseract "$temp_image" - --dpi 120 -l pol+deu) 
 
-translated_text=$(trans -no-warn --brief "$source_text")
+translated_text=$(~/scripts/translate "$source_text")
 
 wl-copy $translated_text
 
