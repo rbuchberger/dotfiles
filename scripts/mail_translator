@@ -1,0 +1,22 @@
+#! /bin/ruby
+# Takes an email from stdin, fishes out the body, translates it to english,
+# returns it to stdout.
+
+# require 'mail'
+require File.join(ENV['HOME'], 'development/translator/deepl_request')
+# 
+# mail = Mail.read_from_string(STDIN.read)
+# 
+# body = if mail.html_part
+#          `echo '#{mail.html_part.body}' | w3m -T text/html -dump`
+#        else
+#          mail.body
+#        end
+# 
+# raw = ["From: #{mail.from}", "To: #{mail.to}", "Subject: #{mail.subject}", body]
+
+# translation = Translator::DeeplRequest.new(raw.flatten.join("\n")).translation
+
+# puts translation
+
+puts Translator::DeeplRequest.new(STDIN.read).translation
