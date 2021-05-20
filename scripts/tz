@@ -8,7 +8,6 @@ if [ $# -gt 0 ]; then
 fi
 
 # tldr --list returns a comma separated list; fzf wants them on lines.
-tldr --list \
-  | sed 's/,/\n/g' \
-  | fzf $fzf_args --preview "echo {} | xargs tldr" \
+tldr --list                                                       \
+  | fzf $fzf_args --preview "echo {} | xargs tldr --color always" \
   | xargs -r tldr
