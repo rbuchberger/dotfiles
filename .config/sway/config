@@ -15,8 +15,9 @@
     repeat_rate 50
   }
 
-  input type:pointer {
-    scroll_factor 3
+  input "1133:45091:Logitech_Wireless_Mouse_MX_Master_3" {
+    accel_profile flat
+    pointer_accel 0
   }
 
 # Colors and Appearance

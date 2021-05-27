@@ -74,5 +74,12 @@ input 1:1:AT_Translated_Set_2_keyboard
 
 {% else %}
 # charybdis specific configs here
+input "1149:8257:Kensington_Slimblade_Trackball" {
+  accel_profile flat
+  pointer_accel 1
+  scroll_factor 3
+}
+
+
 
 {% endif %}
