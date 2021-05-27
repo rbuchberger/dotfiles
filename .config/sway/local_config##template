@@ -42,10 +42,6 @@ bindcode 75 XF86AudioLowerVolume exec amixer sset 'Master' 5%-
 # volume up
 bindcode 76 XF86AudioRaiseVolume exec amixer sset 'Master' 5%+
 
-# disable keyboard and trackbad in tablet mode
-# lock screen when closed
-bindswitch lid:on exec 'swaylock'
-
 input "0:0:Atmel_maXTouch_Touchpad" {
     dwt disabled # disabled while typing
     tap enabled
