@@ -8,6 +8,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
   Plug 'tpope/vim-unimpaired'
+  Plug 'preservim/nerdtree'
+  Plug 'ryanoasis/vim-devicons'
 
   " Text manipulation:
   Plug 'Shougo/context_filetype.vim' " Sets filetype by context. (Vue files)
@@ -19,12 +21,18 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tpope/vim-surround'
   Plug 'tyru/caw.vim' " Comment shortcuts
   Plug 'AndrewRadev/sideways.vim'
+  Plug 'jiangmiao/auto-pairs'
 
   " Code Completion and linting:
   Plug 'dense-analysis/ale'
   " Debugging
   " Plug 'vim-vdebug/vdebug' " Ruby, python, perl, and PHP, but convoluted setup.
   " Plug 'puremourning/vimspector'
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  " Plug 'autozimu/LanguageClient-neovim', {
+  "    \ 'branch': 'next',
+  "    \ 'do': 'bash install.sh',
+  "    \ }
 
   " Snippets
   Plug 'honza/vim-snippets'
@@ -43,6 +51,14 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tpope/vim-rails'
   Plug 'tpope/vim-bundler'
   Plug 'tpope/vim-endwise'
+
+  " React & Javascript
+  Plug 'MaxMEllon/vim-jsx-pretty'
+  Plug 'pangloss/vim-javascript'
+  " Plug 'leafgarland/typescript-vim'
+  Plug 'peitalin/vim-jsx-typescript'
+  Plug 'HerringtonDarkholme/yats.vim'
+  " Plug 'styled-components/vim-styled-components'
 
   " Rust
   Plug 'rust-lang/rust.vim'
@@ -72,13 +88,13 @@ call plug#end()
 " Set leader to spacebar
 let mapleader = " "
 " Cancel a search with leader+h:
-nnoremap <leader>/ :nohlsearch<CR>
+nnoremap <silent> <leader>/ :nohlsearch<CR>
 " Escape insert mode with jj:
 inoremap jj <esc>
 " Get out of terminal mode with escape:
 tnoremap <esc> <C-\><C-n>
 " Write
-nnoremap <leader>w :w<CR>
+nnoremap <silent> <leader>w :w<CR>
 
 " Input  behavior
 autocmd FileType * setlocal formatoptions=qnj
@@ -92,7 +108,8 @@ set ignorecase
 set smartcase
 set hidden
 " Update time in ms. Makes gitgutter signs react faster.
-set updatetime=500
+set updatetime=100
+set autoread " Auto-reload files when changed on disk
 
 " Persistent undo:
 set undofile
@@ -126,3 +143,21 @@ set termguicolors
 " let g:ruby_host_prog = '/home/robert/.rbenv/versions/2.5.3/bin/neovim-ruby-host'
 
 let g:vimspector_enable_mappings = 'HUMAN'
+
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  -- Modules and its options go here
+  highlight = { enable = true },
+  incremental_selection = {
+    enable = true,
+    keymaps = {
+      init_selection = "gnn",
+      node_incremental = "grn",
+      scope_incremental = "grc",
+      node_decremental = "grm",
+    },
+  },
+  textobjects = { enable = true },
+}
+
+EOF
