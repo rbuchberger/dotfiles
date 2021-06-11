@@ -97,6 +97,9 @@ tnoremap <esc> <C-\><C-n>
 " Write
 nnoremap <silent> <leader>w :w<CR>
 
+" Delete a buffer
+nmap <silent> <leader>x  :bdelete<CR>
+
 " Input  behavior
 autocmd FileType * setlocal formatoptions=qnj
 set textwidth=80
@@ -131,7 +134,7 @@ set splitbelow         "  open the horizontal split below
 set scrolloff=5        "  keep a 5 line padding when moving the cursor
 set showmatch          "  Shows matching parenthesis
 set number             "  Show current line number
-set relativenumber     "  Show relative line numbers
+" set relativenumber     "  Show relative line numbers
 set fcs=eob:\          "  Disable blank line tildes
 
 " Color Scheme config
