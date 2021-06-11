@@ -10,6 +10,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tpope/vim-unimpaired'
   Plug 'preservim/nerdtree'
   Plug 'ryanoasis/vim-devicons'
+  Plug 'morhetz/gruvbox'
 
   " Text manipulation:
   Plug 'Shougo/context_filetype.vim' " Sets filetype by context. (Vue files)
@@ -134,8 +135,11 @@ set relativenumber     "  Show relative line numbers
 set fcs=eob:\          "  Disable blank line tildes
 
 " Color Scheme config
-colorscheme base16-railscasts
 set termguicolors
+let g:gruvbox_italic = 1
+let g:grubox_italicize_strings = 1
+let g:gruvbox_undercurl = 0
+colorscheme gruvbox
 
 " autocmd FileType * set conceallevel=0
 

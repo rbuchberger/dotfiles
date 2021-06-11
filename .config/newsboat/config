@@ -13,11 +13,11 @@ miniflux-url "https://news.buchberger.cloud"
 miniflux-login "robert"
 miniflux-passwordfile "~/.config/newsboat/miniflux_password"
 
-color info black blue bold
-color listnormal blue black
-color listfocus blue color8
-color listnormal_unread white black bold
-color listfocus_unread white color8 bold
+color info black color7
+color listnormal color7 black
+color listfocus color15 color8
+color listnormal_unread color3 black bold
+color listfocus_unread color11 color8 bold
 
 bind-key l open
 bind-key k up
