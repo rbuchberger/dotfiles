@@ -40,12 +40,16 @@ settings:
   content.autoplay:
     global: false
   content.geolocation:
+    https://www.1mg.com: false
+    https://www.beko.com: false
     https://www.bestbuy.com: false
     https://www.ikea.com: false
     https://www.intercity.pl: false
     https://www.mec.ca: false
     https://www.monster.com: false
+    https://www.samsung.com: false
   content.notifications.enabled:
+    https://auto.economictimes.indiatimes.com: false
     https://barkingroyalty.com: false
     https://blankslateclimbing.myshopify.com: false
     https://blog.devolutions.net: false
