@@ -136,6 +136,7 @@ set showmatch          "  Shows matching parenthesis
 set number             "  Show current line number
 " set relativenumber     "  Show relative line numbers
 set fcs=eob:\          "  Disable blank line tildes
+set colorcolumn=80    " Add a mark at 80 characters
 
 " Color Scheme config
 set termguicolors
