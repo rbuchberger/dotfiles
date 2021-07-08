@@ -1,7 +1,9 @@
 browser "qutebrowser %u"
+articlelist-format "%D | %20a | %t"
+itemview-title-format "(%u unread) %F | %T"
+
 display-article-progress yes
 text-width 80
-always-display-description yes
 article-sort-order date-desc
 reload-threads 20
 bookmark-cmd ~/scripts/bookmark
@@ -13,11 +15,11 @@ miniflux-url "https://news.buchberger.cloud"
 miniflux-login "robert"
 miniflux-passwordfile "~/.config/newsboat/miniflux_password"
 
-color info black color7
-color listnormal color7 black
-color listfocus color15 color8
-color listnormal_unread color3 black bold
-color listfocus_unread color11 color8 bold
+color   info                black     color7
+color   listnormal          color15   black
+color   listnormal_unread   color12   black     bold
+color   listfocus           color15   color8
+color   listfocus_unread    color12   color8    bold
 
 bind-key l open
 bind-key k up
