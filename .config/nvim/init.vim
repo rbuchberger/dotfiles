@@ -9,6 +9,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'morhetz/gruvbox'
   Plug 'lukas-reineke/indent-blankline.nvim'
   Plug 'matbme/JABS.nvim'
+  Plug 'kevinhwang91/rnvimr'
 
   " Text manipulation:
   Plug 'Shougo/context_filetype.vim' " Sets filetype by context. (Vue files)
