@@ -11,6 +11,11 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'matbme/JABS.nvim'
   Plug 'kevinhwang91/rnvimr'
 
+  " File opening & Finding
+  Plug 'nvim-lua/popup.nvim'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope.nvim'
+
   " Text manipulation:
   Plug 'Shougo/context_filetype.vim' " Sets filetype by context. (Vue files)
   Plug 'alvan/vim-closetag'
