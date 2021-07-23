@@ -2,7 +2,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 
   " UI
   Plug 'chriskempson/base16-vim'
-  Plug 'junegunn/fzf.vim'
   Plug 'junegunn/goyo.vim'
   Plug 'junegunn/limelight.vim'
   Plug 'vim-airline/vim-airline'
