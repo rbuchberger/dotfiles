@@ -7,6 +7,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tpope/vim-unimpaired'
   Plug 'ryanoasis/vim-devicons'
   Plug 'morhetz/gruvbox'
+  Plug 'lukas-reineke/indent-blankline.nvim'
   Plug 'matbme/JABS.nvim'
 
   " Text manipulation:
