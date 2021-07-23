@@ -1,11 +1,9 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
   " UI
-  Plug 'chriskempson/base16-vim'
   Plug 'junegunn/goyo.vim'
   Plug 'junegunn/limelight.vim'
   Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
   Plug 'tpope/vim-unimpaired'
   Plug 'ryanoasis/vim-devicons'
   Plug 'morhetz/gruvbox'
@@ -24,14 +22,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'jiangmiao/auto-pairs'
 
   " Code Completion and linting:
-  " Debugging
-  " Plug 'vim-vdebug/vdebug' " Ruby, python, perl, and PHP, but convoluted setup.
-  " Plug 'puremourning/vimspector'
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-  " Plug 'autozimu/LanguageClient-neovim', {
-  "    \ 'branch': 'next',
-  "    \ 'do': 'bash install.sh',
-  "    \ }
   Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 
   " Snippets
@@ -55,16 +46,11 @@ call plug#begin('~/.local/share/nvim/plugged')
   " React & Javascript
   Plug 'MaxMEllon/vim-jsx-pretty'
   Plug 'pangloss/vim-javascript'
-  " Plug 'leafgarland/typescript-vim'
   Plug 'peitalin/vim-jsx-typescript'
   Plug 'HerringtonDarkholme/yats.vim'
-  " Plug 'styled-components/vim-styled-components'
 
   " Rust
   Plug 'rust-lang/rust.vim'
-
-  Plug 'chikamichi/mediawiki.vim'
-
 
   " Markdown-composer must be recompiled whenever it changes. If the compile
   " fails, run $ rustup --update
@@ -89,10 +75,7 @@ call plug#end()
 let mapleader = " "
 " Cancel a search with leader+h:
 nnoremap <silent> <leader>/ :nohlsearch<CR>
-" Escape insert mode with jj:
-inoremap jj <esc>
 " Get out of terminal mode with escape:
-tnoremap <esc> <C-\><C-n>
 " Write
 nnoremap <silent> <leader>w :w<CR>
 
@@ -133,38 +116,15 @@ set splitbelow         "  open the horizontal split below
 set scrolloff=5        "  keep a 5 line padding when moving the cursor
 set showmatch          "  Shows matching parenthesis
 set number             "  Show current line number
-" set relativenumber     "  Show relative line numbers
 set fcs=eob:\          "  Disable blank line tildes
 set colorcolumn=80    " Add a mark at 80 characters
 
-" Color Scheme config
+" Color config
 set termguicolors
 let g:gruvbox_italic = 1
 let g:grubox_italicize_strings = 1
 let g:gruvbox_undercurl = 0
 colorscheme gruvbox
 
-" autocmd FileType * set conceallevel=0
-
-" Ruby host
-" let g:ruby_host_prog = '/home/robert/.rbenv/versions/2.5.3/bin/neovim-ruby-host'
-
 let g:vimspector_enable_mappings = 'HUMAN'
 
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-  -- Modules and its options go here
-  highlight = { enable = true },
-  incremental_selection = {
-    enable = true,
-    keymaps = {
-      init_selection = "gnn",
-      node_incremental = "grn",
-      scope_incremental = "grc",
-      node_decremental = "grm",
-    },
-  },
-  textobjects = { enable = true },
-}
-
-EOF
