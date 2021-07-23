@@ -25,7 +25,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'jiangmiao/auto-pairs'
 
   " Code Completion and linting:
-  Plug 'dense-analysis/ale'
   " Debugging
   " Plug 'vim-vdebug/vdebug' " Ruby, python, perl, and PHP, but convoluted setup.
   " Plug 'puremourning/vimspector'
