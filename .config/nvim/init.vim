@@ -32,6 +32,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   "    \ 'branch': 'next',
   "    \ 'do': 'bash install.sh',
   "    \ }
+  Plug 'nvim-treesitter/nvim-treesitter-textobjects'
 
   " Snippets
   Plug 'honza/vim-snippets'
