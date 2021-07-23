@@ -31,6 +31,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   " Code Completion and linting:
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+  Plug 'neovim/nvim-lspconfig'
 
   " Snippets
   Plug 'honza/vim-snippets'
