@@ -32,6 +32,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'nvim-treesitter/nvim-treesitter-textobjects'
   Plug 'neovim/nvim-lspconfig'
+  Plug 'hrsh7th/nvim-compe'
 
   " Snippets
   Plug 'honza/vim-snippets'
