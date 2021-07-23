@@ -45,6 +45,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
   " Language Specific
   Plug 'cespare/vim-toml'
+  Plug 'chikamichi/mediawiki.vim'
 
   " Ruby
   Plug 'vim-ruby/vim-ruby'
@@ -78,6 +79,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 call plug#end()
 
+set completeopt=menuone,noselect
+
 " Keybindings
 
 " Set leader to spacebar
@@ -85,8 +88,12 @@ let mapleader = " "
 " Cancel a search with leader+h:
 nnoremap <silent> <leader>/ :nohlsearch<CR>
 " Get out of terminal mode with escape:
+tnoremap <silent> <esc> <C-\><C-n>
 " Write
 nnoremap <silent> <leader>w :w<CR>
+" Easier tab navigation
+nnoremap <silent> ]w :tabnext<CR>
+nnoremap <silent> [w :tabprev<CR>
 
 " Delete a buffer
 nmap <silent> <leader>x  :bdelete<CR>
@@ -105,10 +112,11 @@ set hidden
 " Update time in ms. Makes gitgutter signs react faster.
 set updatetime=100
 set autoread " Auto-reload files when changed on disk
+set signcolumn=yes " use number column for git signs and stuff
 
 " Persistent undo:
 set undofile
-set undodir=~/.config/nvim/undo
+set undodir=~/.local/share/nvim/undo
 
 filetype on
 filetype plugin on
@@ -126,7 +134,7 @@ set scrolloff=5        "  keep a 5 line padding when moving the cursor
 set showmatch          "  Shows matching parenthesis
 set number             "  Show current line number
 set fcs=eob:\          "  Disable blank line tildes
-set colorcolumn=80    " Add a mark at 80 characters
+set colorcolumn=80     "  Add a mark at 80 characters
 
 " Color config
 set termguicolors
@@ -136,4 +144,3 @@ let g:gruvbox_undercurl = 0
 colorscheme gruvbox
 
 let g:vimspector_enable_mappings = 'HUMAN'
-
