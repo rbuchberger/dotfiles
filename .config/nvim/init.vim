@@ -9,6 +9,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tpope/vim-unimpaired'
   Plug 'ryanoasis/vim-devicons'
   Plug 'morhetz/gruvbox'
+  Plug 'matbme/JABS.nvim'
 
   " Text manipulation:
   Plug 'Shougo/context_filetype.vim' " Sets filetype by context. (Vue files)
