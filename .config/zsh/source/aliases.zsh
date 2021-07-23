@@ -25,6 +25,8 @@ alias tdnw="todo new -l Work"
 alias tdnf="todo new -l Family"
 alias tdg="todo list --grep"
 
+alias lazyadm="yadm enter lazygit --work-tree ~/"
+
 # alias t="task"
 # alias ta="task add"
 # alias td="task done"
