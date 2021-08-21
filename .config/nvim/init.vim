@@ -9,12 +9,15 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'morhetz/gruvbox'
   Plug 'lukas-reineke/indent-blankline.nvim'
   Plug 'matbme/JABS.nvim'
-  Plug 'kevinhwang91/rnvimr'
+
+  " Tried it, it doesn't work right now. Check back later:
+  " Plug 'famiu/bufdelete.nvim' 
 
   " File opening & Finding
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
+  Plug 'kevinhwang91/rnvimr'
 
   " Text manipulation:
   Plug 'Shougo/context_filetype.vim' " Sets filetype by context. (Vue files)
@@ -87,16 +90,17 @@ set completeopt=menuone,noselect
 let mapleader = " "
 " Cancel a search with leader+h:
 nnoremap <silent> <leader>/ :nohlsearch<CR>
-" Get out of terminal mode with escape:
-tnoremap <silent> <esc> <C-\><C-n>
-" Write
+" Get out of terminal mode with ctrl+q:
+tnoremap <silent> <C-q> <C-\><C-n>
 nnoremap <silent> <leader>w :w<CR>
-" Easier tab navigation
 nnoremap <silent> ]w :tabnext<CR>
 nnoremap <silent> [w :tabprev<CR>
 
+" Select last pasted text
+nnoremap gp `[v`]
+
 " Delete a buffer
-nmap <silent> <leader>x  :bdelete<CR>
+nmap <silent> <leader>x :bdelete<CR>
 
 " Input  behavior
 autocmd FileType * setlocal formatoptions=qnj
