@@ -1,1 +1,4 @@
 neovim
+eslint
+eslint_d
+diagnostic-languageserver
