@@ -96,8 +96,9 @@ local linters = {
 }
 
 local formatters = {
-    eslint = {command = "eslint_d", args = {"--stdin", "--fix-to-stdout"}}
-}
+    eslint = {command = "eslint_d", args = {"--stdin", "--fix-to-stdout"}},
+    prettier = { command = "prettier", args = {"--stin-filepath", vim.api.nvim_buf_get_name(0) }}
+  }
 
 local formatFiletypes = {
     typescript = "eslint",
