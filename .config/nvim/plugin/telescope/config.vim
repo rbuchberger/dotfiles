@@ -45,6 +45,22 @@ require('telescope').setup{
     qflist_previewer = require'telescope.previewers'.vim_buffer_qflist.new,
 
     -- Developer configurations: Not meant for general override
-    buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker
+    buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker,
+    pickers = {
+      buffers = {
+       sort_lastused = true,
+        theme = "dropdown",
+        previewer = false,
+        mappings = {
+          i = {
+            ["<c-d>"] = "delete_buffer",
+          },
+          n = {
+            ["<c-d>"] = "delete_buffer",
+            ["dd"] = "delete_buffer",
+          }
+        }
+      }
+    }
   }
 }
