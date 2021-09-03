@@ -18,8 +18,8 @@ miniflux-passwordfile "~/.config/newsboat/miniflux_password"
 color   info                black     color7
 color   listnormal          color15   black
 color   listnormal_unread   color12   black     bold
-color   listfocus           color15   color8
-color   listfocus_unread    color12   color8    bold
+color   listfocus           color3   black
+color   listfocus_unread    color3   black    bold
 
 bind-key l open
 bind-key k up
