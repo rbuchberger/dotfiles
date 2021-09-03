@@ -1,33 +1,37 @@
-require'nvim-treesitter.configs'.setup {
-  highlight = {
-    enable = true
-  },
+require("nvim-treesitter.configs").setup({
+	highlight = {
+		enable = true,
+	},
 
-  indent = {
-    enable = false
-  },
+	indent = {
+		enable = false,
+	},
 
-  textobjects = {
-    select = {
-      lookahead = true,
-      keymaps = {
-        ["am"] = "@function.outer",
-        ["im"] = "@function.inner",
-        ["ac"] = "@comment.outer", -- does not work for ruby
-        ["ic"] = "@comment.inner", -- does not work for ruby
-        ["ib"] = "@block.inner",
-        ["ab"] = "@block.outer", -- does not work for ruby
-      },
-    },
-  },
+	textobjects = {
+		select = {
+			lookahead = true,
+			keymaps = {
+				["am"] = "@function.outer",
+				["im"] = "@function.inner",
+				["ac"] = "@comment.outer", -- does not work for ruby
+				["ic"] = "@comment.inner", -- does not work for ruby
+				["ib"] = "@block.inner",
+				["ab"] = "@block.outer", -- does not work for ruby
+			},
+		},
+	},
 
-  incremental_selection = {
-    enable = true,
-    keymaps = {
-      init_selection = "gnn",
-      node_incremental = "grn",
-      scope_incremental = "grc",
-      node_decremental = "grm",
-    }
-  }
-}
+	incremental_selection = {
+		enable = true,
+		keymaps = {
+			init_selection = "gnn",
+			node_incremental = "<C-n>",
+			scope_incremental = "<C-c>",
+			node_decremental = "<C-m>",
+		},
+	},
+
+	context_commentstring = {
+		enable = true,
+	},
+})

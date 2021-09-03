@@ -3,12 +3,14 @@ call plug#begin('~/.local/share/nvim/plugged')
   " UI
   Plug 'junegunn/goyo.vim'
   Plug 'junegunn/limelight.vim'
-  Plug 'vim-airline/vim-airline'
+  Plug 'hoob3rt/lualine.nvim'
+  Plug 'akinsho/bufferline.nvim'
   Plug 'tpope/vim-unimpaired'
   Plug 'ryanoasis/vim-devicons'
-  Plug 'morhetz/gruvbox'
+  Plug 'kyazdani42/nvim-web-devicons'
   Plug 'lukas-reineke/indent-blankline.nvim'
-  Plug 'matbme/JABS.nvim'
+  Plug 'rktjmp/lush.nvim'
+  Plug 'ellisonleao/gruvbox.nvim'
 
   " Tried it, it doesn't work right now. Check back later:
   " Plug 'famiu/bufdelete.nvim' 
@@ -18,28 +20,42 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
   Plug 'kevinhwang91/rnvimr'
+  Plug 'RishabhRD/popfix' " required for lsputils
+  Plug 'RishabhRD/nvim-lsputils'
 
   " Text manipulation:
-  Plug 'Shougo/context_filetype.vim' " Sets filetype by context. (Vue files)
   Plug 'alvan/vim-closetag'
   Plug 'andrewradev/splitjoin.vim'
   Plug 'godlygeek/tabular'
-  Plug 'tpope/vim-ragtag' " Shortcut mappings for useful tags
+  Plug 'tpope/vim-ragtag'
   Plug 'tpope/vim-repeat'
   Plug 'tpope/vim-surround'
-  Plug 'tyru/caw.vim' " Comment shortcuts
   Plug 'AndrewRadev/sideways.vim'
-  Plug 'jiangmiao/auto-pairs'
-
-  " Code Completion and linting:
-  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-  Plug 'nvim-treesitter/nvim-treesitter-textobjects'
-  Plug 'neovim/nvim-lspconfig'
-  Plug 'hrsh7th/nvim-compe'
+  Plug 'windwp/nvim-autopairs'
+  Plug 'windwp/nvim-ts-autotag'
+  Plug 'JoosepAlviste/nvim-ts-context-commentstring'
+  Plug 'tpope/vim-commentary'
 
   " Snippets
   Plug 'honza/vim-snippets'
   Plug 'SirVer/ultisnips'
+
+  " Linting
+  Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+  Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+  Plug 'neovim/nvim-lspconfig'
+  Plug 'onsails/lspkind-nvim'
+  Plug 'jose-elias-alvarez/null-ls.nvim'
+  Plug 'stevearc/aerial.nvim'
+
+  " cmp and its deps
+  Plug 'hrsh7th/nvim-cmp'
+  Plug 'hrsh7th/cmp-buffer'
+  Plug 'hrsh7th/cmp-nvim-lua'
+  Plug 'hrsh7th/cmp-nvim-lsp'
+  Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+  Plug 'hrsh7th/cmp-path'
+  Plug 'hrsh7th/cmp-calc'
 
   " Git
   Plug 'rhysd/git-messenger.vim'
@@ -52,9 +68,9 @@ call plug#begin('~/.local/share/nvim/plugged')
 
   " Ruby
   Plug 'vim-ruby/vim-ruby'
-  Plug 'tpope/vim-rails'
-  Plug 'tpope/vim-bundler'
-  Plug 'tpope/vim-endwise'
+  " Plug 'tpope/vim-rails'
+  " Plug 'tpope/vim-bundler'
+  " Plug 'tpope/vim-endwise'
 
   " React & Javascript
   Plug 'MaxMEllon/vim-jsx-pretty'
@@ -74,11 +90,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   endfunction
 
   Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
-  " Plug 'vim-pandoc/vim-pandoc-syntax' " This is the best markdown synax plugin.
   Plug 'plasticboy/vim-markdown'
-
-  " Plug 'posva/vim-vue'
-  " Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
