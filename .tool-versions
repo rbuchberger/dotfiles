@@ -3,3 +3,4 @@ ruby system
 nodejs system
 rust system
 direnv 2.27.0
+yarn system
