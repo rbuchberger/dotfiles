@@ -13,8 +13,8 @@ require("nvim-treesitter.configs").setup({
 			keymaps = {
 				["am"] = "@function.outer",
 				["im"] = "@function.inner",
-				["ac"] = "@comment.outer", -- does not work for ruby
-				["ic"] = "@comment.inner", -- does not work for ruby
+				["ac"] = "@comment.outer",
+				["ic"] = "@comment.inner",
 				["ib"] = "@block.inner",
 				["ab"] = "@block.outer", -- does not work for ruby
 			},
