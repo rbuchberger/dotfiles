@@ -34,4 +34,5 @@ require("lualine").setup({
 	},
 
 	tabline = {},
+  extensions = {'nvim-tree', 'quickfix'}
 })

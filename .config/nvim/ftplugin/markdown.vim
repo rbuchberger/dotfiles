@@ -1,8 +1,8 @@
-set tw=100
-set colorcolumn=100
+set textwidth=100
+set colorcolumn=101
 lua require("cmp").setup({completion = { autocomplete = false}})
 
-# Markdonw.vim plugin mappings
+# Markdown.vim plugin mappings
 imap <c-f> <esc>:TableFormat<cr>a	
 nmap <c-f> :TableFormat<cr>	
 nmap <silent> <c-i> :Toc<cr>	

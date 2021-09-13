@@ -1,12 +1,13 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
   " Appearance
-  Plug 'hoob3rt/lualine.nvim'
+  " Plug 'hoob3rt/lualine.nvim'
+  Plug 'shadmansaleh/lualine.nvim' " Fork with bugfixes
   Plug 'romgrk/barbar.nvim' 
   Plug 'ryanoasis/vim-devicons'
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'lukas-reineke/indent-blankline.nvim'
-  Plug 'savq/melange' " colorscheme
+  Plug 'sainnhe/gruvbox-material'
 
   " Keys
   Plug 'tpope/vim-unimpaired'
@@ -15,7 +16,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'nvim-lua/popup.nvim'
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope.nvim'
-  Plug 'ms-jpq/chadtree'
+  Plug 'kyazdani42/nvim-tree.lua'
 
   " Text manipulation:
   Plug 'tpope/vim-ragtag'
@@ -45,7 +46,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   " Completion (cmp and its dependencies)
   Plug 'hrsh7th/nvim-cmp'
   Plug 'hrsh7th/cmp-buffer'
-  Plug 'hrsh7th/cmp-nvim-lua'
+  Plug 'hrsh7th/cmp-nvim-lua', { 'for': 'lua' }
   Plug 'hrsh7th/cmp-nvim-lsp'
   Plug 'hrsh7th/cmp-path'
   Plug 'hrsh7th/cmp-calc'
@@ -57,25 +58,34 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'airblade/vim-gitgutter'
 
   " Language Specific
-  Plug 'cespare/vim-toml'
-  Plug 'chikamichi/mediawiki.vim'
-  Plug 'vim-ruby/vim-ruby'
-  Plug 'MaxMEllon/vim-jsx-pretty'
-  Plug 'pangloss/vim-javascript'
-  Plug 'peitalin/vim-jsx-typescript'
-  Plug 'HerringtonDarkholme/yats.vim'
-  Plug 'rust-lang/rust.vim'
-  Plug 'plasticboy/vim-markdown'
+  Plug 'cespare/vim-toml', { 'for': 'toml' }
+  Plug 'chikamichi/mediawiki.vim', { 'for': 'mediawiki' }
+  Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
+  Plug 'MaxMEllon/vim-jsx-pretty', { 'for': 'mediawiki' }
+  Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'jsx', 'javascriptreact']}
+  Plug 'peitalin/vim-jsx-typescript', { 'for': ['typescript', 'tsx', 'typescriptreact']}
+  Plug 'HerringtonDarkholme/yats.vim', { 'for': ['typescript', 'tsx', 'typescriptreact']}
+  Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+  Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 
 call plug#end()
 
-" Input
+" Bindings
 
 let mapleader = ' '
 nnoremap <silent> <leader>/ :nohlsearch<CR>
-tnoremap <silent> <C-q> <C-\><C-n>
 nnoremap <silent> <leader>w :w<CR>
-nnoremap <silent> <leader>t :CHADopen<CR>
+
+nnoremap <A-h> <C-w>h
+nnoremap <A-j> <C-w>j
+nnoremap <A-k> <C-w>k
+nnoremap <A-l> <C-w>l
+nnoremap <A-x> <C-w>c
+nnoremap <silent> <A-[> :BufferPrevious<cr>
+nnoremap <silent> <A-]> :BufferNext<cr>
+
+nnoremap <silent> <A-CR> :terminal<CR>
+tnoremap <A-ESC> <C-\><C-n>
 
 if has('mouse') | set mouse=a | endif
 
@@ -86,6 +96,10 @@ filetype plugin indent on
 augroup formatting
   autocmd FileType * setlocal formatoptions=qnj
 augroup END
+
+augroup terminal
+  autocmd TermOpen * set filetype=terminal
+augroup endEND
 
 set signcolumn=yes
 set textwidth=80
@@ -100,7 +114,7 @@ set hidden
 set autoread
 set undofile
 set undodir=~/.local/share/nvim/undo
-set updatetime=100
+set updatetime=50
 set completeopt=menuone,noselect
 
 set splitright
@@ -109,7 +123,14 @@ set scrolloff=5
 set showmatch
 set number
 set fillchars=eob:\
-set colorcolumn=80
+set colorcolumn=81
 
 set termguicolors
-colorscheme melange
+
+let g:gruvbox_material_ui_contrast='high' " low, high
+let g:gruvbox_material_transparent_background=1
+let g:gruvbox_material_better_performance=1
+let g:gruvbox_material_show_eob=0
+let g:gruvbox_material_palette='original' " original, mix, or material.
+
+colorscheme gruvbox-material
