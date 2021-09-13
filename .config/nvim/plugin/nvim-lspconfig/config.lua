@@ -1,4 +1,4 @@
-local nvim_lsp = require("lspconfig")
+local lspconfig = require("lspconfig")
 local null_ls = require("null-ls")
 local aerial = require("aerial")
 
@@ -91,7 +91,7 @@ null_ls.config({
 	},
 })
 
-nvim_lsp.tsserver.setup({
+lspconfig.tsserver.setup({
 	on_attach = function(client)
 		-- Disable formatting to avoid conflict with eslint
 		client.resolved_capabilities.document_formatting = false
@@ -99,11 +99,12 @@ nvim_lsp.tsserver.setup({
 	end,
 })
 
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches
-local servers = { "solargraph", "null-ls" }
+local servers = { "null-ls", "solargraph" }
+
+-- vim.lsp.set_log_level("debug")
+
 for _, lsp in ipairs(servers) do
-	nvim_lsp[lsp].setup({
+	lspconfig[lsp].setup({
 		on_attach = on_attach,
 		flags = {
 			debounce_text_changes = 150,
