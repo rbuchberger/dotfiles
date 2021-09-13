@@ -7,6 +7,8 @@ local on_attach = function(client, bufnr)
 		vim.api.nvim_buf_set_keymap(bufnr, ...)
 	end
 
+	vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync(nil, 500)]])
+
 	local opts = { noremap = true, silent = true }
 
 	buf_set_keymap("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts)
