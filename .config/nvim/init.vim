@@ -113,7 +113,7 @@ set hidden
 set autoread
 set undofile
 set undodir=~/.local/share/nvim/undo
-set updatetime=50
+set updatetime=150
 set completeopt=menuone,noselect
 
 set splitright
