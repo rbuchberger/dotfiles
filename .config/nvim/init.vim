@@ -6,7 +6,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'romgrk/barbar.nvim' 
   Plug 'ryanoasis/vim-devicons'
   Plug 'kyazdani42/nvim-web-devicons'
-  Plug 'lukas-reineke/indent-blankline.nvim'
   Plug 'sainnhe/gruvbox-material'
 
   " Keys
