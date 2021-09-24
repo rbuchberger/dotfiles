@@ -7,6 +7,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'ryanoasis/vim-devicons'
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'sainnhe/gruvbox-material'
+  Plug 'sindrets/winshift.nvim'
 
   " Keys
   Plug 'tpope/vim-unimpaired'
@@ -41,6 +42,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'onsails/lspkind-nvim'
   Plug 'jose-elias-alvarez/null-ls.nvim'
   Plug 'stevearc/aerial.nvim'
+  Plug 'rmagatti/goto-preview'
 
   " Completion (cmp and its dependencies)
   Plug 'hrsh7th/nvim-cmp'
@@ -67,7 +69,12 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'rust-lang/rust.vim', { 'for': 'rust' }
   Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 
+  " Other
+  Plug 'lewis6991/impatient.nvim' " Remove when released in nvim core
+
 call plug#end()
+
+lua require('impatient')
 
 " Bindings
 
