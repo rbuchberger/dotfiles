@@ -93,6 +93,8 @@ nnoremap <silent> <A-]> :BufferNext<cr>
 nnoremap <silent> <A-CR> :terminal<CR>
 tnoremap <A-ESC> <C-\><C-n>
 
+inoremap jk <ESC>
+
 if has('mouse') | set mouse=a | endif
 
 filetype on
@@ -105,7 +107,7 @@ augroup END
 
 augroup terminal
   autocmd TermOpen * set filetype=terminal
-augroup endEND
+augroup END
 
 set signcolumn=yes
 set textwidth=80

@@ -2,7 +2,7 @@ local cmp = require("cmp")
 local lspkind = require("lspkind")
 
 cmp.setup({
-	completion = { keyword_length = 1 },
+	completion = { keyword_length = 3 },
 
 	snippet = {
 		expand = function(args)
