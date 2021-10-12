@@ -42,3 +42,5 @@ alias ssh="kitty +kitten ssh"
 
 # Units defaults are dumb.
 alias units="units --verbose --digits 4"
+
+alias glances="glances --disable-bg --disable-check-update"
