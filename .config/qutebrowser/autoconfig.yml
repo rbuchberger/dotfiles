@@ -68,6 +68,7 @@ settings:
     https://www.allrecipes.com: false
     https://www.decathlon.pl: false
     https://www.facebook.com: false
+    https://www.headphonezone.in: false
     https://www.javatpoint.com: false
     https://www.jpost.com: false
     https://www.kartamultisport.pl: false
@@ -145,7 +146,7 @@ settings:
   fonts.tabs.unselected:
     global: 11pt Iosevka Term SS05
   fonts.web.size.default:
-    global: 14
+    global: 15
   fonts.web.size.default_fixed:
     global: 14
   fonts.web.size.minimum:
@@ -179,7 +180,7 @@ settings:
   tabs.select_on_remove:
     global: next
   tabs.show:
-    global: switching
+    global: multiple
   tabs.show_switching_delay:
     global: 2000
   tabs.title.alignment:
