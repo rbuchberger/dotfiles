@@ -34,6 +34,7 @@
     border pixel 1
   }
   for_window [title="Origin"] floating enable
+  for_window [title="Sharing Indicator"] floating enable
 
   font pango:Fira Code Retina 0
 
@@ -97,13 +98,17 @@
   bindsym XF86AudioNext exec playerctl next
   bindsym XF86AudioPrev exec playerctl previous
 
+  bindsym $mod+XF86AudioPlay exec ~/scripts/timew_toggle
+  bindsym $mod+XF86AudioNext exec ~/scripts/timew_notify
+
   # System state controls
   bindsym $mod+up exec 'swaymsg "output * dpms on"'
   bindsym $mod+down exec 'swaymsg "output * dpms off"'
-  bindsym $mod+ctrl+down exec 'systemctl suspend'
-  bindsym $mod+ctrl+left exec 'shutdown'
-  bindsym $mod+ctrl+right exec 'reboot'
-  bindsym $mod+left exec 'dm-tool switch-to-greeter'
+  bindsym $mod+ctrl+left exec 'systemctl hibernate'
+  bindsym $mod+ctrl+right exec 'systemctl suspend'
+  bindsym $mod+ctrl+down exec 'shutdown'
+  bindsym $mod+ctrl+up exec 'reboot'
+  # bindsym $mod+left exec 'dm-tool switch-to-greeter'
   bindsym $mod+backspace exec 'makoctl dismiss'
 
   # Focus manipulation
