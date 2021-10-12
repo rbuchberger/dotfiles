@@ -30,17 +30,12 @@ rehash_precmd() {
 
 add-zsh-hook -Uz precmd rehash_precmd
 
-# asdf version manager
 if [ -f /opt/asdf-vm/asdf.sh ]; then
   export ASDF_DIR=/opt/asdf-vm
   export ASDF_CONFIG_FILE=$XDG_CONFIG_HOME/asdf/asdfrc
   export ASDF_DATA_DIR=$XDG_DATA_HOME/asdf
 
   source $ASDF_DIR/asdf.sh
-
-  # initialise completions with ZSH's compinit
-  autoload -Uz compinit
-  compinit
 fi
 
 # asdf managed direnv

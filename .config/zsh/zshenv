@@ -29,6 +29,10 @@ export FZF_CTRL_T_OPTS='--preview "bat --style=numbers --color=always {} | head 
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
 export FZF_ALT_C_COMMAND="fd --type d --ignore-file $XDG_CONFIG_HOME/git/gitignore-global"
 
+# Grim
+
+export GRIM_DEFAULT_DIR="$HOME/screenshots"
+
 # GPG key setting for package builds
 export GPGKEY=8C29272B84A3CC1BD7CBBCF218B7E45B74319F2C
 
