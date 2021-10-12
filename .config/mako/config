@@ -31,3 +31,7 @@ height=1200
 [category=email.unread]
 width=600
 height=400
+
+[category=timew]
+width=450
+height=600

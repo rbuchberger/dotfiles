@@ -1,0 +1,15 @@
+#! /bin/ruby
+
+tracking = `timew` != "There is no active time tracking.\n"
+
+hours = `timew summary`.split.last
+
+message = <<~EOF
+
+  #{tracking ? "Stopped" : "Started"} tracking learnlife. 
+  Today's total: #{hours}
+EOF
+
+tracking ? `timew stop` : `timew start Learnlife`
+
+`notify-send "Timewarrior:" "#{message}"`
