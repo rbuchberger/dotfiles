@@ -1,8 +1,0 @@
-colors.scheme=default
-
-visualizer.spectrum.smoothing.mode=none
-visualizer.spectrum.bar.width=1
-visualizer.spectrum.bar.spacing=1
-visualizer.fps=60
-
-audio.stereo.enabled=false
