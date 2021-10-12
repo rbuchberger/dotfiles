@@ -43,11 +43,12 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'jose-elias-alvarez/null-ls.nvim'
   Plug 'stevearc/aerial.nvim'
   Plug 'rmagatti/goto-preview'
+  Plug 'weilbith/nvim-code-action-menu'
 
   " Completion (cmp and its dependencies)
   Plug 'hrsh7th/nvim-cmp'
   Plug 'hrsh7th/cmp-buffer'
-  Plug 'hrsh7th/cmp-nvim-lua', { 'for': 'lua' }
+  Plug 'hrsh7th/cmp-nvim-lua', { 'for': [ 'lua', 'vim' ] }
   Plug 'hrsh7th/cmp-nvim-lsp'
   Plug 'hrsh7th/cmp-path'
   Plug 'hrsh7th/cmp-calc'
@@ -82,16 +83,17 @@ let mapleader = ' '
 nnoremap <silent> <leader>/ :nohlsearch<CR>
 nnoremap <silent> <leader>w :w<CR>
 
-nnoremap <A-h> <C-w>h
-nnoremap <A-j> <C-w>j
-nnoremap <A-k> <C-w>k
-nnoremap <A-l> <C-w>l
-nnoremap <A-x> <C-w>c
+nnoremap <A-h> <ESC><C-w>h
+nnoremap <A-j> <ESC><C-w>j
+nnoremap <A-k> <ESC><C-w>k
+nnoremap <A-l> <ESC><C-w>l
+nnoremap <A-x> <ESC><C-w>c
 nnoremap <silent> <A-[> :BufferPrevious<cr>
 nnoremap <silent> <A-]> :BufferNext<cr>
 
 nnoremap <silent> <A-CR> :terminal<CR>
-tnoremap <A-ESC> <C-\><C-n>
+tnoremap <A-ESC> <ESC>
+tnoremap <ESC> <C-\><C-n>
 
 inoremap jk <ESC>
 

@@ -1,0 +1,41 @@
+snippet Interactor "Learninx interactor" b
+# frozen_string_literal: true
+
+module Learninx
+  module ${1:Concept}
+    class ${2:ClassName} < Interactors::Base
+			schema do
+			  ${3}
+			end
+
+      def call
+        ${4}
+      end
+    end
+  end
+end
+endsnippet
+
+snippet Organizer "Learninx organizer"
+# frozen_string_literal: true
+
+module Learninx
+  module ${1:Concept}
+    class ${2:ClassName}
+      include Interactor::Organizer
+
+      organize [
+        ${3:Stuff}
+      ]
+    end
+  end
+end
+endsnippet
+
+snippet a11y "Accessibility shared example"
+include_examples "a11y"
+endsnippet
+
+snippet --- "Long line for easy console reading"
+puts "*" * 80
+endsnippet
