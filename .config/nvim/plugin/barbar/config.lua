@@ -1,5 +1,5 @@
 local function nmap(binding, command)
-	vim.api.nvim_set_keymap("n", binding, command, { noremap = true, silent = true })
+  vim.api.nvim_set_keymap("n", binding, command, { noremap = true, silent = true })
 end
 
 nmap("<leader>x", ":BufferClose<CR>")

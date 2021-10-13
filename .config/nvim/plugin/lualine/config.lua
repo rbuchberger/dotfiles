@@ -1,38 +1,38 @@
 require("lualine").setup({
-	options = {
-		theme = "gruvbox-material",
-	},
+  options = {
+    theme = "gruvbox-material",
+  },
 
-	sections = {
-		lualine_a = { {
-			"filename",
-			path = 1,
-		} },
-		lualine_b = { "filetype" },
-		lualine_c = { "branch", "diff" },
-		lualine_x = {},
-		lualine_y = { {
-			"diagnostics",
-			sources = { "nvim_lsp" },
-		} },
-		lualine_z = { "mode" },
-	},
+  sections = {
+    lualine_a = { {
+      "filename",
+      path = 1,
+    } },
+    lualine_b = { "filetype" },
+    lualine_c = { "branch", "diff" },
+    lualine_x = {},
+    lualine_y = { {
+      "diagnostics",
+      sources = { "nvim_lsp" },
+    } },
+    lualine_z = { "mode" },
+  },
 
-	inactive_sections = {
-		lualine_a = { {
-			"filename",
-			path = 1,
-		} },
-		lualine_b = {},
-		lualine_c = { "diff" },
-		lualine_x = {},
-		lualine_y = { {
-			"diagnostics",
-			sources = { "nvim_lsp" },
-		} },
-		lualine_z = {},
-	},
+  inactive_sections = {
+    lualine_a = { {
+      "filename",
+      path = 1,
+    } },
+    lualine_b = {},
+    lualine_c = { "diff" },
+    lualine_x = {},
+    lualine_y = { {
+      "diagnostics",
+      sources = { "nvim_lsp" },
+    } },
+    lualine_z = {},
+  },
 
-	tabline = {},
+  tabline = {},
   extensions = {'nvim-tree', 'quickfix'}
 })

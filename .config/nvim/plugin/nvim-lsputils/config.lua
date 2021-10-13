@@ -12,9 +12,9 @@
 -- vim.lsp.handlers["workspace/symbol"] = symbols.workspace_handler
 
 -- vim.g.lsp_location_opts = {
--- 	height = 48,
+--   height = 48,
 -- }
 
 -- vim.g.lsp_symbols_opts = {
--- 	height = 48,
+--   height = 48,
 -- }

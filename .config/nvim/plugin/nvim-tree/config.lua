@@ -10,12 +10,12 @@ vim.g.nvim_tree_highlight_opened_files = 1
 vim.g.nvim_tree_add_trailing = 1
 
 nvim_tree.setup({
-	auto_close = false,
+  auto_close = false,
   update_cwd = true,
-	diagnostics = {
+  diagnostics = {
     enable = true
   },
-	view = {
-		width = 40,
-	},
+  view = {
+    width = 40,
+  },
 })
