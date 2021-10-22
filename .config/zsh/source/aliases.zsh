@@ -8,6 +8,9 @@ alias m="neomutt"
 alias n="newsboat"
 alias c="ikhal"
 
+alias zd="lazydocker"
+alias zg="lazygit"
+
 alias vds="vdirsyncer sync"
 
 alias td="todo"
