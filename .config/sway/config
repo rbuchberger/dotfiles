@@ -106,7 +106,7 @@
   bindsym $mod+down exec 'swaymsg "output * dpms off"'
   bindsym $mod+ctrl+left exec 'systemctl hibernate'
   bindsym $mod+ctrl+right exec 'systemctl suspend'
-  bindsym $mod+ctrl+down exec 'shutdown'
+  bindsym $mod+ctrl+down exec 'shutdown now'
   bindsym $mod+ctrl+up exec 'reboot'
   # bindsym $mod+left exec 'dm-tool switch-to-greeter'
   bindsym $mod+backspace exec 'makoctl dismiss'
