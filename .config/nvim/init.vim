@@ -1,8 +1,7 @@
 call plug#begin('~/.local/share/nvim/plugged')
 
   " Appearance
-  " Plug 'hoob3rt/lualine.nvim'
-  Plug 'shadmansaleh/lualine.nvim' " Fork with bugfixes
+  Plug 'nvim-lualine/lualine.nvim'
   Plug 'romgrk/barbar.nvim' 
   Plug 'ryanoasis/vim-devicons'
   Plug 'kyazdani42/nvim-web-devicons'

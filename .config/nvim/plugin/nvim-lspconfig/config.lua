@@ -89,6 +89,9 @@ null_ls.config({
 
     -- SQL
     formatting.sqlformat,
+
+    -- YAML
+    diagnostics.yamllint
   },
 })
 
