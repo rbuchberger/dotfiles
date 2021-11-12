@@ -1,6 +1,23 @@
 # Note! Don't edit local_config, those changes will be overwritten. edit 
 # local_config##template instead.
 
+{% if yadm.hostname == "hippo" %}
+
+input "2:14:ETPS/2_Elantech_Touchpad" {
+    dwt disabled # disabled while typing
+    tap enabled
+    accel_profile adaptive
+    pointer_accel .5
+    scroll_method two_finger
+    scroll_factor 3
+    click_method clickfinger
+    drag enabled
+    natural_scroll enabled
+    middle_emulation enabled
+}
+
+{% endif %}
+
 {% if yadm.hostname == "caroline" %}
 
 # Output config
