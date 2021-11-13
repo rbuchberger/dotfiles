@@ -7,6 +7,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'sainnhe/gruvbox-material'
   Plug 'sindrets/winshift.nvim'
+  " Plug 'luukvbaal/stabilize.nvim'
 
   " Keys
   Plug 'tpope/vim-unimpaired'
@@ -29,6 +30,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'windwp/nvim-autopairs'
   Plug 'windwp/nvim-ts-autotag'
   Plug 'JoosepAlviste/nvim-ts-context-commentstring'
+  Plug 'ggandor/lightspeed.nvim'
 
   " Snippets
   Plug 'honza/vim-snippets'
@@ -44,7 +46,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'rmagatti/goto-preview'
   Plug 'weilbith/nvim-code-action-menu'
 
-  " Completion (cmp and its dependencies)
+  " Completion
   Plug 'hrsh7th/nvim-cmp'
   Plug 'hrsh7th/cmp-buffer'
   Plug 'hrsh7th/cmp-nvim-lua', { 'for': [ 'lua', 'vim' ] }
@@ -68,6 +70,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'HerringtonDarkholme/yats.vim', { 'for': ['typescript', 'tsx', 'typescriptreact']}
   Plug 'rust-lang/rust.vim', { 'for': 'rust' }
   Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
+  Plug 'isobit/vim-caddyfile', { 'for': 'caddyfile' }
 
   " Other
   Plug 'lewis6991/impatient.nvim' " Remove when released in nvim core
