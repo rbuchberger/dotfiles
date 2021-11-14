@@ -88,9 +88,9 @@
   bindsym $mod+t exec ~/scripts/screenshot_translate
 
   # Media volume controls
-  bindsym XF86AudioMute exec amixer sset 'Master' toggle
-  bindsym XF86AudioLowerVolume exec amixer sset 'Master' 5%-
-  bindsym XF86AudioRaiseVolume exec amixer sset 'Master' 5%+
+  bindsym XF86AudioMute exec pulsemixer --toggle-mute
+  bindsym XF86AudioLowerVolume exec pulsemixer --change-volume -10
+  bindsym XF86AudioRaiseVolume exec pulsemixer --change-volume 10
 
   # Media player controls
   bindsym XF86AudioPlay exec playerctl play-pause
@@ -187,5 +187,5 @@ include ~/.config/sway/local_config
 
 exec "systemctl --user start sway-session.target"
 exec "blueman-tray"
-exec "(ping_wait fastmail.com && mbsync --pull fastmail:INBOX)&"
+# exec "(ping_wait fastmail.com && mbsync --pull fastmail:INBOX)&"
 

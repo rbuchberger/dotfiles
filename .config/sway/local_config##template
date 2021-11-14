@@ -3,7 +3,11 @@
 
 {% if yadm.hostname == "hippo" %}
 
-input "2:14:ETPS/2_Elantech_Touchpad" {
+input type:keyboard {
+  xkb_options caps:super,shift:both_capslock
+}
+
+input type:touchpad {
     dwt disabled # disabled while typing
     tap enabled
     accel_profile adaptive
@@ -16,6 +20,10 @@ input "2:14:ETPS/2_Elantech_Touchpad" {
     middle_emulation enabled
 }
 
+bindsym XF86MonBrightnessDown exec light -U 10
+bindsym XF86MonBrightnessUp exec light -A 10
+# bindsym XF86Search exec bemenu-run
+
 {% endif %}
 
 {% if yadm.hostname == "caroline" %}
@@ -24,7 +32,7 @@ input "2:14:ETPS/2_Elantech_Touchpad" {
 # Built-in monitor
 output eDP-1 {
   scale 1.5
-  position 0,0
+    position 0,0
 }
 
 # External monitor
@@ -60,7 +68,7 @@ bindcode 75 XF86AudioLowerVolume exec amixer sset 'Master' 5%-
 bindcode 76 XF86AudioRaiseVolume exec amixer sset 'Master' 5%+
 
 input "0:0:Atmel_maXTouch_Touchpad" {
-    dwt disabled # disabled while typing
+  dwt disabled # disabled while typing
     tap enabled
     accel_profile adaptive
     pointer_accel .5
@@ -73,24 +81,25 @@ input "0:0:Atmel_maXTouch_Touchpad" {
 }
 
 input "0:0:Atmel_maXTouch_Touchscreen" {
-  # click_method clickfinger
-  # drag enabled
-  # scroll_factor 2
+# click_method clickfinger
+# drag enabled
+# scroll_factor 2
   scroll_method two_finger
 }
 
 input 1:1:AT_Translated_Set_2_keyboard 
 {
-  # keybindings here: https://wiki.galliumos.org/Media_keys_and_default_keybindings
+# keybindings here: https://wiki.galliumos.org/Media_keys_and_default_keybindings
   xkb_model "chromebook"
 }
 
-{% else %}
+{% if yadm.hostname == "charybdis" %}
+
 # charybdis specific configs here
 input "1149:8257:Kensington_Slimblade_Trackball" {
   accel_profile flat
-  pointer_accel 1
-  scroll_factor 3
+    pointer_accel 1
+    scroll_factor 3
 }
 
 # Prior & next are pgup and pgdown
