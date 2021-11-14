@@ -33,7 +33,7 @@ path=/home/robert/.local/share/mail
 [user]
 name=Robert Buchberger
 primary_email=robert@buchberger.cc
-other_email=rbuchberger@gmail.com;traches@fastmail.com;
+other_email=rbuchberger@gmail.com;traches@fastmail.com;business@robert.buchberger.cc;
 
 # Configuration for "notmuch new"
 #
