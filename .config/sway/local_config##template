@@ -20,8 +20,8 @@ input type:touchpad {
     middle_emulation enabled
 }
 
-bindsym XF86MonBrightnessDown exec light -U 10
-bindsym XF86MonBrightnessUp exec light -A 10
+bindsym XF86MonBrightnessDown exec light -U 5
+bindsym XF86MonBrightnessUp exec light -A 5
 # bindsym XF86Search exec bemenu-run
 
 {% endif %}

@@ -89,8 +89,8 @@
 
   # Media volume controls
   bindsym XF86AudioMute exec pulsemixer --toggle-mute
-  bindsym XF86AudioLowerVolume exec pulsemixer --change-volume -10
-  bindsym XF86AudioRaiseVolume exec pulsemixer --change-volume 10
+  bindsym XF86AudioLowerVolume exec pulsemixer --change-volume -5
+  bindsym XF86AudioRaiseVolume exec pulsemixer --change-volume 5
 
   # Media player controls
   bindsym XF86AudioPlay exec playerctl play-pause
@@ -108,7 +108,7 @@
   bindsym $mod+ctrl+right exec 'systemctl suspend'
   bindsym $mod+ctrl+down exec 'shutdown now'
   bindsym $mod+ctrl+up exec 'reboot'
-  # bindsym $mod+left exec 'dm-tool switch-to-greeter'
+  bindsym $mod+left exec 'swaymsg exit'
   bindsym $mod+backspace exec 'makoctl dismiss'
 
   # Focus manipulation
