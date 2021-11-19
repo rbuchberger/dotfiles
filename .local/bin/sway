@@ -1,0 +1,17 @@
+#! /bin/bash
+# Launch sway, setting env first
+
+export TERMINAL=kitty
+export ELM_ENGINE=wayland_egl
+export MOZ_ENABLE_WAYLAND=1
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
+export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
+export SDL_VIDEODRIVER=wayland
+export XDG_SESSION_TYPE=wayland
+export XDG_CURRENT_DESKTOP=Unity
+# export XDG_CURRENT_DESKTOP=Sway
+# export QT_QPA_PLATFORM=wayland
+# export QT_QPA_PLATFORM=qt5ct
+# export QT_WAYLAND_FORCE_DPI=physical
+
+exec /usr/bin/sway

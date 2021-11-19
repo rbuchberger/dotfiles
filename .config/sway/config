@@ -186,6 +186,8 @@ include /etc/sway/config.d/*
 include ~/.config/sway/local_config
 
 exec "systemctl --user start sway-session.target"
-exec "blueman-tray"
-# exec "(ping_wait fastmail.com && mbsync --pull fastmail:INBOX)&"
+exec_always "killall waybar"
+exec_always "/usr/bin/waybar &"
 
+exec "blueman-applet &"
+exec "(ping_wait fastmail.com && mbsync --pull fastmail:INBOX)&"

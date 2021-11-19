@@ -5,15 +5,14 @@
   "modules-left": [
     "sway/workspaces",
     "idle_inhibitor",
-    "custom/switch-user",
     "sway/mode",
     "sway/window"
   ],
   "modules-right": [
     "custom/email",
     "custom/room-lights",
-    "custom/currency",
     "backlight",
+    "custom/music",
     "pulseaudio",
     "battery",
     "network",
@@ -29,28 +28,29 @@
   "custom/email": {
     "format": "{} ",
     "exec": "~/scripts/email_monitor",
+    "tooltip": false
   },
 
-  "custom/switch-user": {
-    "format": "❤",
-    "on-click": "dm-tool switch-to-greeter",
-    "rotate": 345,
-    "tooltip": "false"
+  "custom/music": {
+    "exec": "~/.local/bin/now_playing",
+    "exec-if": "playerctl metadata &> /dev/null",
+    "format": "{}",
+    "interval": 1,
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl next",
+    "on-click-middle": "playerctl previous",
+    "on-scroll-up": "playerctl position +10",
+    "on-scroll-down": "playerctl position -10",
+    "tooltip": false,
   },
 
   "custom/room-lights": {
+    "exec-if": "hueadm lights &> /dev/null",
     "format": "",
     "on-click": "hueadm group 1 on",
     "on-click-right": "hueadm group 1 off",
     "on-scroll-up": "hueadm group 1 +30",
     "on-scroll-down": "hueadm group 1 -30",
-
-  },
-
-  "custom/currency": {
-    "exec": "/usr/bin/units --verbose -1 -d 3 USD PLN | sed -e 's/^[ \t]*/1 /'",
-    "interval": 3600,
-    "tooltip": false
   },
 
   "sway/window": {
@@ -92,14 +92,15 @@
   },
   "battery": {
     "states": {
+      "full": 99,
       "warning": 30,
       "critical": 15
     },
     "format": "{time} {icon}",
     "format-alt": "{capacity}% {icon}",
-    "format-charging": "{capacity}% ",
+    "format-charging": "{time}% ",
+    "format-full": "{capacity}% ",
     "format-icons": ["", "", "", "", ""],
-    "tooltip": false
   },
   "network": {
     "format-wifi": "{signalStrength}% ",
@@ -113,19 +114,19 @@
     "format": "{volume}% {icon}",
     "format-bluetooth": "{volume}% {icon}",
     "format-bluetooth-muted": " {icon}",
-    "format-muted": "",
+    "format-muted": "",
     "format-source": "{volume}% ",
     "format-source-muted": "",
     "format-icons": {
       "headphones": "",
-      "handsfree": "",
-      "headset": "",
+      "handsfree": "",
+      "headset": "",
       "phone": "",
       "portable": "",
       "car": "",
       "default": ["", "", ""]
     },
-    "on-click": "pavucontrol",
+    "on-click": "pulsemixer --toggle-mute",
     "tooltip": false
   }
 }

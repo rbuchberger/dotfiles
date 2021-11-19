@@ -34,12 +34,11 @@
 /* gold/brown              */
 /* #bc9458                 */
 
-
 /* actually has pretty high specificity */
 * {
   border-radius: 0;
-  font-family: Iosevka Term SS05;
-  font-size: 14px;
+  font-family: Iosevka Aile;
+  font-size: 13px;
   font-weight: 400;
   border-radius: 0;
 }
@@ -73,6 +72,7 @@ window {
 #custom-currency,
 #custom-room-lights,
 #custom-email,
+#custom-music,
 #custom-switch-user {
   /* color: #e6e1dc; */
   color: rgba(230,225,220,.9);
@@ -101,7 +101,7 @@ window {
   color: #e6e1dc;
   border: 1px solid rgba(0,0,0,0);
   padding: 0 4px;
-  font-family: Iosevka Term SS05 Heavy;
+  font-family: Iosevka Aile Heavy;
 }
 
 #workspaces button.focused,
@@ -115,11 +115,6 @@ window {
   color: #cc7833;
 }
 
-#custom-switch-user {
-  color: #cc6666;
-  font-size: 18px;
-}
-
 #battery.discharging {
   color: #bc9458;
 }
@@ -131,7 +126,6 @@ window {
 #battery.warning:not(.charging) {
   color: #cc6666;
 }
-
 
 #idle_inhibitor.activated,
 #network.disconnected,

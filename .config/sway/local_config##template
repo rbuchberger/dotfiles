@@ -22,7 +22,18 @@ input type:touchpad {
 
 bindsym XF86MonBrightnessDown exec light -U 5
 bindsym XF86MonBrightnessUp exec light -A 5
-# bindsym XF86Search exec bemenu-run
+bindsym $mod+KP_Add exec playerctl next
+bindsym $mod+KP_Subtract exec playerctl play-pause
+
+exec_always killall swayidle
+exec_always /usr/bin/swayidle                    \
+  timeout 300 'swaymsg "output * dpms off"'      \
+  resume 'swaymsg "output * dpms on"'            \
+  timeout 600 'systemctl suspend-then-hibernate' \
+  resume 'swaymsg "output * dpms on"'            \
+  lock 'swaylock --daemonize; sleep 1'           \
+  before-sleep 'swaylock --daemonize; sleep 1'   \
+  &
 
 {% endif %}
 

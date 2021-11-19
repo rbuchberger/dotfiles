@@ -1,0 +1,10 @@
+#! /bin/bash
+# Returns a reasonably formatted indicator showing play status
+
+symbol () {
+  [[ $(playerctl status) == "Playing" ]] && echo "" || echo " "
+}
+
+playerctl metadata &> /dev/null && echo \
+  "$(playerctl metadata artist) - $(playerctl metadata title) $(symbol)" \
+  || exit 1
