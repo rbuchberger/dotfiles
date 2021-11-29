@@ -61,3 +61,19 @@ if autopairs_ok then
 else
 	print("autopairs.completion.cmp not found")
 end
+
+-- Completion menu type highlighting
+vim.cmd [[highlight! link CmpItemAbbrMatchFuzzy Aqua]]
+vim.cmd [[highlight! link CmpItemKindText Fg]]
+vim.cmd [[highlight! link CmpItemKindMethod Purple]]
+vim.cmd [[highlight! link CmpItemKindFunction Purple]]
+vim.cmd [[highlight! link CmpItemKindConstructor Green]]
+vim.cmd [[highlight! link CmpItemKindField Aqua]]
+vim.cmd [[highlight! link CmpItemKindVariable Blue]]
+vim.cmd [[highlight! link CmpItemKindClass Green]]
+vim.cmd [[highlight! link CmpItemKindInterface Green]]
+vim.cmd [[highlight! link CmpItemKindValue Orange]]
+vim.cmd [[highlight! link CmpItemKindKeyword Keyword]]
+vim.cmd [[highlight! link CmpItemKindSnippet Red]]
+vim.cmd [[highlight! link CmpItemKindFile Orange]]
+vim.cmd [[highlight! link CmpItemKindFolder Orange]]
