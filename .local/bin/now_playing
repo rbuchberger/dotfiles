@@ -2,7 +2,7 @@
 # Returns a reasonably formatted indicator showing play status
 
 symbol () {
-  [[ $(playerctl status) == "Playing" ]] && echo "" || echo " "
+  [[ $(playerctl status) == "Playing" ]] && echo " " || echo ""
 }
 
 playerctl metadata &> /dev/null && echo \

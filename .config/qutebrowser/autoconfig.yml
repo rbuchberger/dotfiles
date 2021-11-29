@@ -190,7 +190,7 @@ settings:
   tabs.width:
     global: 200
   url.default_page:
-    global: ' https://buchberger.cloud'
+    global: http://pestka.cloud
   url.start_pages:
     global: https://buchberger.cloud
   zoom.default:
