@@ -1,3 +1,5 @@
+scriptencoding utf-8
+
 call plug#begin('~/.local/share/nvim/plugged')
 
   " Appearance
@@ -106,12 +108,14 @@ filetype plugin on
 filetype plugin indent on
 
 augroup formatting
-  autocmd FileType * setlocal formatoptions=qnj
+  autocmd FileType * setlocal formatoptions=qnjlc
 augroup END
 
 augroup terminal
   autocmd TermOpen * set filetype=terminal
 augroup END
+
+
 
 set signcolumn=yes
 set textwidth=80
@@ -122,13 +126,14 @@ set autoindent
 set expandtab
 set ignorecase
 set smartcase
-set hidden
 set autoread
 set undofile
 set undodir=~/.local/share/nvim/undo
 set updatetime=150
 set completeopt=menuone,noselect
 
+" eol:¬
+set list listchars=trail:·,tab:-❱
 set splitright
 set splitbelow
 set scrolloff=5
@@ -146,3 +151,6 @@ let g:gruvbox_material_show_eob=0
 let g:gruvbox_material_palette='original' " original, mix, or material.
 
 colorscheme gruvbox-material
+
+" Highlight trailing whitespace
+match WarningMsg '\s\+$'

@@ -13,7 +13,7 @@ require("lualine").setup({
     lualine_x = {},
     lualine_y = { {
       "diagnostics",
-      sources = { "nvim_lsp" },
+      sources = { "nvim_diagnostic" },
     } },
     lualine_z = { "mode" },
   },
@@ -28,7 +28,7 @@ require("lualine").setup({
     lualine_x = {},
     lualine_y = { {
       "diagnostics",
-      sources = { "nvim_lsp" },
+      sources = { "nvim_diagnostic" },
     } },
     lualine_z = {},
   },
