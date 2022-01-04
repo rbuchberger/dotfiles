@@ -9,7 +9,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'sainnhe/gruvbox-material'
   Plug 'sindrets/winshift.nvim'
-  " Plug 'luukvbaal/stabilize.nvim'
+  Plug 'luukvbaal/stabilize.nvim'
+  Plug 'sunjon/Shade.nvim'
 
   " Keys
   Plug 'tpope/vim-unimpaired'
@@ -46,7 +47,9 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'jose-elias-alvarez/null-ls.nvim'
   Plug 'stevearc/aerial.nvim'
   Plug 'rmagatti/goto-preview'
-  Plug 'weilbith/nvim-code-action-menu'
+  " Plug 'weilbith/nvim-code-action-menu'
+  Plug 'RishabhRD/popfix'
+  Plug 'RishabhRD/nvim-lsputils'
 
   " Completion
   Plug 'hrsh7th/nvim-cmp'
@@ -115,8 +118,6 @@ augroup terminal
   autocmd TermOpen * set filetype=terminal
 augroup END
 
-
-
 set signcolumn=yes
 set textwidth=80
 set tabstop=2
@@ -145,7 +146,7 @@ set colorcolumn=81
 set termguicolors
 
 let g:gruvbox_material_ui_contrast='high' " low, high
-let g:gruvbox_material_transparent_background=1
+" let g:gruvbox_material_transparent_background=1
 let g:gruvbox_material_better_performance=1
 let g:gruvbox_material_show_eob=0
 let g:gruvbox_material_palette='original' " original, mix, or material.
