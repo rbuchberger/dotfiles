@@ -122,7 +122,7 @@ settings:
   fonts.debug_console:
     global: 12pt Iosevka Term SS05
   fonts.default_family:
-    global: 13pt Iosevka Aile
+    global: 12pt Overpass
   fonts.default_size:
     global: 13pt
   fonts.downloads:
@@ -192,6 +192,6 @@ settings:
   url.default_page:
     global: http://pestka.cloud
   url.start_pages:
-    global: https://buchberger.cloud
+    global: http://pestka.cloud
   zoom.default:
     global: 100%
