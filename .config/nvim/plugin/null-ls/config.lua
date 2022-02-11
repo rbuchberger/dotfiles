@@ -10,7 +10,7 @@ local npm_config = {
 }
 
 null_ls.setup({
-  debug = true,
+	debug = true,
 	diagnostics_format = "#{m} [#{s}]",
 	on_attach = on_attach,
 
@@ -21,7 +21,7 @@ null_ls.setup({
 		code_actions.eslint_d.with(npm_config),
 		-- diagnostics.eslint,
 		-- formatting.eslint,
-		-- formatting.prettier,
+		formatting.prettier_d_slim.with({ filetypes = { "css", "scss" } }),
 
 		-- css
 		formatting.stylelint,

@@ -18,8 +18,6 @@ lspconfig.tsserver.setup({
 
 local servers = { "solargraph", "tailwindcss" }
 
--- vim.lsp.set_log_level("debug")
-
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup({
     on_attach = on_attach,
