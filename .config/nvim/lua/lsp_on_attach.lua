@@ -1,4 +1,4 @@
-local aerial = require("aerial")
+-- local aerial = require("aerial")
 
 local on_attach = function(client, bufnr)
 	local function buf_set_keymap(...)
@@ -15,8 +15,8 @@ local on_attach = function(client, bufnr)
 	buf_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
 	buf_set_keymap("n", "<leader>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
 	buf_set_keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-	buf_set_keymap("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
-	-- buf_set_keymap("n", "<leader>ca", "<cmd>CodeActionMenu<CR>", opts)
+	-- buf_set_keymap("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
+	buf_set_keymap("n", "<leader>ca", "<cmd>CodeActionMenu<CR>", opts)
 	buf_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
 	buf_set_keymap("n", "<C-k>", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
 	buf_set_keymap("n", "<C-j>", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
@@ -34,8 +34,6 @@ local on_attach = function(client, bufnr)
 		signs = true,
 		underline = true,
 	})
-
-	aerial.on_attach(client)
 end
 
 return on_attach

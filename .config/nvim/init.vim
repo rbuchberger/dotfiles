@@ -45,11 +45,11 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'neovim/nvim-lspconfig'
   Plug 'onsails/lspkind-nvim'
   Plug 'jose-elias-alvarez/null-ls.nvim'
-  Plug 'stevearc/aerial.nvim'
+  " Plug 'stevearc/aerial.nvim'
   Plug 'rmagatti/goto-preview'
-  " Plug 'weilbith/nvim-code-action-menu'
+  Plug 'weilbith/nvim-code-action-menu'
   Plug 'RishabhRD/popfix'
-  Plug 'RishabhRD/nvim-lsputils'
+  " Plug 'RishabhRD/nvim-lsputils'
 
   " Completion
   Plug 'hrsh7th/nvim-cmp'
@@ -76,6 +76,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'rust-lang/rust.vim', { 'for': 'rust' }
   Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
   Plug 'isobit/vim-caddyfile', { 'for': 'caddyfile' }
+  Plug 'jose-elias-alvarez/nvim-lsp-ts-utils', { 'for': ['typescript', 'tsx', 'typescriptreact']}
 
   " Other
   Plug 'lewis6991/impatient.nvim' " Remove when released in nvim core
