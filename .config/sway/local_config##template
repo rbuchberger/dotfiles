@@ -115,10 +115,10 @@ input "1149:8257:Kensington_Slimblade_Trackball" {
 
 # Prior & next are pgup and pgdown
 # Adjust brightness
-bindsym $mod+prior exec 'ddcutil setvcp 10 + 20'
-bindsym $mod+next exec 'ddcutil setvcp 10 - 20'
+bindsym $mod+prior exec 'light -A 20'
+bindsym $mod+next exec 'light -U 20'
 
-bindsym $mod+ctrl+prior exec 'ddcutil setvcp 10 100'
-bindsym $mod+ctrl+next exec 'ddcutil setvcp 10 0'
+bindsym $mod+ctrl+prior exec 'light -S 100'
+bindsym $mod+ctrl+next exec 'light -S 0'
 
 {% endif %}

@@ -6,10 +6,11 @@
   focus_follows_mouse no
   for_window [title="."] inhibit_idle fullscreen
   seat 0 hide_cursor 10
+  seat seat0 xcursor_theme phinger-cursors 32
   xwayland enable
 
-  # output DP-3 {
-  #   scale 1.1
+  # output DP-2 {
+  #   scale 1.5
   # }
 
 # input
@@ -36,7 +37,7 @@
   for_window [title="Origin"] floating enable
   for_window [title="Sharing Indicator"] floating enable
 
-  font pango:Fira Code Retina 0
+  font pango:Overpass Regular 0
 
   # Base16 Railscasts
   # Author: Ryan Bates (http://railscasts.com)
@@ -186,8 +187,10 @@ include /etc/sway/config.d/*
 include ~/.config/sway/local_config
 
 exec "systemctl --user start sway-session.target"
-exec_always "killall waybar"
-exec_always "/usr/bin/waybar &"
 
-exec "blueman-applet &"
 exec "(ping_wait fastmail.com && mbsync --pull fastmail:INBOX)&"
+
+exec_always "systemctl --user restart waybar.service"
+exec_always "systemctl --user restart mako.service"
+# exec_always "killall waybar"
+# exec_always "sleep 1 && /usr/bin/waybar &"
