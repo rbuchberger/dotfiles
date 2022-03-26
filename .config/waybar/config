@@ -10,8 +10,6 @@
   ],
   "modules-right": [
     "custom/email",
-    "custom/room-lights",
-    "backlight",
     "custom/music",
     "pulseaudio",
     "battery",
@@ -42,15 +40,6 @@
     "on-scroll-up": "playerctl position +10",
     "on-scroll-down": "playerctl position -10",
     "tooltip": false,
-  },
-
-  "custom/room-lights": {
-    "exec-if": "hueadm lights &> /dev/null",
-    "format": "",
-    "on-click": "hueadm group 1 on",
-    "on-click-right": "hueadm group 1 off",
-    "on-scroll-up": "hueadm group 1 +30",
-    "on-scroll-down": "hueadm group 1 -30",
   },
 
   "sway/window": {
@@ -90,6 +79,7 @@
     "format-icons": ["", ""],
     "interval": 30
   },
+
   "battery": {
     "states": {
       "full": 99,
