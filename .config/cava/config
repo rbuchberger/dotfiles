@@ -11,12 +11,12 @@
 # 'autosens' will attempt to decrease sensitivity if the bars peak. 1 = on, 0 = off
 # new as of 0.6.0 autosens of low values (dynamic range)
 # 'overshoot' allows bars to overshoot (in % of terminal height) without initiating autosens. DEPRECATED as of 0.6.0
-autosens = 1
+autosens = 0
 ; overshoot = 20
 
 # Manual sensitivity in %. Autosens must be turned off for this to take effect.
 # 200 means double height. Accepts only non-negative values.
-# sensitivity = 100
+sensitivity = 50
 
 # The number of bars (0-200). 0 sets it to auto (fill up console).
 # Bars' width and space between bars in number of characters.
@@ -42,11 +42,12 @@ higher_cutoff_freq = 20000
 #
 # For pulseaudio 'source' will be the source. Default: 'auto', which uses the monitor source of the default sink
 # (all pulseaudio sinks(outputs) have 'monitor' sources(inputs) associated with them).
-# 
+#
 # For alsa 'source' will be the capture device.
 # For fifo 'source' will be the path to fifo-file.
 ; method = alsa
 # source = alsa_output.usb-TAGA_TAGA_Harmony_THDA-500T-01.iec958-stereo.monitor
+source = alsa_output.usb-TAGA_TAGA_Harmony_THDA-500T-01.pro-output-0.monitor
 
 ; method = alsa
 ; source = hw:Loopback,1
@@ -56,7 +57,7 @@ higher_cutoff_freq = 20000
 
 [output]
 
-# Ouput method. Can be 'ncurses', 'noncurses' or 'raw'. 
+# Ouput method. Can be 'ncurses', 'noncurses' or 'raw'.
 # 'noncurses' is for systems that does not suport ncurses.
 # 'raw' is a 16 bit data stream of the bar heights that can be used to send to other applications.
 # 'raw' defaults to 200 bars, which can be adjusted in the 'bars' option above.
@@ -138,7 +139,7 @@ foreground = '#fe8019'
 # Higher values means smoother, but less precise. 0 to disable.
 integral = 0
 
-# Disables or enables the so-called "Monstercat smoothing" with or without "waves". Set to 0 to disable. 
+# Disables or enables the so-called "Monstercat smoothing" with or without "waves". Set to 0 to disable.
 monstercat = 0
 waves = 0;
 
