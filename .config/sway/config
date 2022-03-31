@@ -74,8 +74,11 @@
   set $term kitty
 
   # set $menu wofi --show drun --prompt="Launch"
-  set $menu 'bemenu-run --ignorecase --list 12 --prompt="Launch" --fn "Iosevka Aile 14" --tf="#da4939" --tb="#2b2b2b" --ff="#e6e1dc"--fb="5a647e" --nf="#e6e1dc" --nb="#2b2b2b" --hf="#a5c261" --hb="#5a647e" --sb="#5a647e" --sf="#a5c261"'
+  # set $menu 'bemenu-run --ignorecase --list 12 --prompt="Launch" --fn "Iosevka Aile 14" --tf="#da4939" --tb="#2b2b2b" --ff="#e6e1dc"--fb="5a647e" --nf="#e6e1dc" --nb="#2b2b2b" --hf="#a5c261" --hb="#5a647e" --sb="#5a647e" --sf="#a5c261"'
   # set $menu 'bemenu-run --ignorecase --list 12'
+
+  for_window [app_id="^launcher$"] floating enable, sticky enable, resize set 30 ppt 60 ppt
+  set $menu exec $term --class=launcher -e sway-launcher-desktop
   # program shortcuts
   bindsym $mod+Return exec $term
   bindsym $mod+apostrophe exec firefox
