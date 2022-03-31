@@ -46,10 +46,12 @@ cmp.setup({
 
 	sources = {
 		{ name = "nvim_lsp" },
+		{ name = "treesitter" },
 		{ name = "ultisnips" },
 		{ name = "buffer" },
 		{ name = "path" },
 		{ name = "calc" },
+		{ name = "nvim_lua" },
 	},
 })
 

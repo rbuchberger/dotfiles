@@ -4,7 +4,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
   " Appearance
   Plug 'nvim-lualine/lualine.nvim'
-  Plug 'romgrk/barbar.nvim' 
+  Plug 'romgrk/barbar.nvim'
   Plug 'ryanoasis/vim-devicons'
   Plug 'kyazdani42/nvim-web-devicons'
   Plug 'sainnhe/gruvbox-material'
@@ -33,7 +33,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'windwp/nvim-autopairs'
   Plug 'windwp/nvim-ts-autotag'
   Plug 'JoosepAlviste/nvim-ts-context-commentstring'
-  Plug 'ggandor/lightspeed.nvim'
 
   " Snippets
   Plug 'honza/vim-snippets'
@@ -45,14 +44,14 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'neovim/nvim-lspconfig'
   Plug 'onsails/lspkind-nvim'
   Plug 'jose-elias-alvarez/null-ls.nvim'
-  " Plug 'stevearc/aerial.nvim'
   Plug 'rmagatti/goto-preview'
   Plug 'weilbith/nvim-code-action-menu'
   Plug 'RishabhRD/popfix'
-  " Plug 'RishabhRD/nvim-lsputils'
+  Plug 'ray-x/lsp_signature.nvim'
 
   " Completion
   Plug 'hrsh7th/nvim-cmp'
+  Plug 'ray-x/cmp-treesitter'
   Plug 'hrsh7th/cmp-buffer'
   Plug 'hrsh7th/cmp-nvim-lua', { 'for': [ 'lua', 'vim' ] }
   Plug 'hrsh7th/cmp-nvim-lsp'
