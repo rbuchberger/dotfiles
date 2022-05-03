@@ -11,10 +11,10 @@ end
 
 lspconfig.tsserver.setup({
 	init_options = ts_utils.init_options,
-	on_attach = function(client)
+	on_attach = function(client, bufnr)
 		-- Disable formatting to avoid conflict with eslint
 		client.resolved_capabilities.document_formatting = false
-		on_attach(client)
+		on_attach(client, bufnr)
 
 		ts_utils.setup({
 			debug = false,
@@ -32,30 +32,9 @@ lspconfig.tsserver.setup({
 			},
 			import_all_scan_buffers = 100,
 			import_all_select_source = false,
-			-- if false will avoid organizing imports
 			always_organize_imports = true,
 
-			-- filter diagnostics
-			filter_out_diagnostics_by_severity = {},
-			filter_out_diagnostics_by_code = {},
-
-			-- inlay hints
 			auto_inlay_hints = false,
-			inlay_hints_highlight = "Comment",
-			inlay_hints_priority = 200, -- priority of the hint extmarks
-			inlay_hints_throttle = 150, -- throttle the inlay hint request
-			inlay_hints_format = { -- format options for individual hint kind
-				Type = {},
-				Parameter = {},
-				Enum = {},
-				-- Example format customization for `Type` kind:
-				-- Type = {
-				--     highlight = "Comment",
-				--     text = function(text)
-				--         return "->" .. text:sub(2)
-				--     end,
-				-- },
-			},
 
 			-- update imports on file move
 			update_imports_on_move = false,

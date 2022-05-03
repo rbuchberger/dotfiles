@@ -23,9 +23,9 @@ local on_attach = function(client, bufnr)
 	buf_set_keymap("n", "<leader>q", "<cmd>lua vim.diagnostic.set_loclist()<CR>", opts)
 	buf_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 
-	buf_set_keymap("n", "<Tab>", "<cmd>AerialToggle! right<CR>", opts)
-	buf_set_keymap("n", "{", "<cmd>AerialPrev<CR>", opts)
-	buf_set_keymap("n", "}", "<cmd>AerialNext<CR>", opts)
+	-- buf_set_keymap("n", "<Tab>", "<cmd>AerialToggle! right<CR>", opts)
+	-- buf_set_keymap("n", "{", "<cmd>AerialPrev<CR>", opts)
+	-- buf_set_keymap("n", "}", "<cmd>AerialNext<CR>", opts)
 	buf_set_keymap("n", "<Leader>k", '<cmd> lua require("peek_definition")()<CR>', opts)
 
 	vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {

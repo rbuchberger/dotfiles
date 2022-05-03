@@ -4,6 +4,9 @@ end
 
 nmap("<leader>x", ":BufferClose<CR>")
 nmap("<leader>d", ":BufferPick<CR>")
+nmap("<leader>bb", ":BufferOrderByBufferNumber<CR>")
+nmap("<leader>bd", ":BufferOrderByDirectory<CR>")
+nmap("<leader>bl", ":BufferOrderByLanguage<CR>")
 nmap("[b", ":BufferPrevious<CR>")
 nmap("]b", ":BufferNext<CR>")
 
@@ -26,7 +29,7 @@ vim.g.bufferline = {
   clickable = true,
 
   -- Excludes buffers from the tabline
-  exclude_ft = {},
+  exclude_ft = { qf },
   exclude_name = {},
 
   -- Enable/disable icons
