@@ -114,53 +114,57 @@ settings:
     - ranger
     - --choosefile={}
   fonts.completion.category:
-    global: 11pt Iosevka Term SS05
+    global: 10pt Overpass Bold
   fonts.completion.entry:
-    global: 11pt Iosevka Term SS05
+    global: 10pt Overpass
   fonts.contextmenu:
     global: 11pt Iosevka Term SS05
   fonts.debug_console:
-    global: 12pt Iosevka Term SS05
+    global: 10pt Overpass
   fonts.default_family:
     global: 12pt Overpass
   fonts.default_size:
     global: 13pt
   fonts.downloads:
-    global: 11pt Iosevka Term SS05
+    global: 10pt Overpass
   fonts.hints:
-    global: 12pt Iosevka Term SS05
+    global: 10pt Overpass
   fonts.keyhint:
-    global: 12pt Iosevka Term SS05
+    global: 10pt Overpass
   fonts.messages.error:
-    global: 11pt Iosevka Term SS05
+    global: 10pt Overpass
   fonts.messages.info:
-    global: 11pt Iosevka Term SS05
+    global: 10pt Overpass
   fonts.messages.warning:
-    global: 11pt Iosevka Term SS05
+    global: 10pt Overpass
   fonts.prompts:
-    global: 11pt Iosevka Term SS05
+    global: 10pt Overpass
   fonts.statusbar:
-    global: 11pt Iosevka Term SS05
+    global: 10pt Overpass
   fonts.tabs.selected:
-    global: 11pt Iosevka Term SS05
+    global: 10pt Overpass
   fonts.tabs.unselected:
-    global: 11pt Iosevka Term SS05
+    global: 10pt Overpass
   fonts.web.size.default:
     global: 15
   fonts.web.size.default_fixed:
     global: 14
   fonts.web.size.minimum:
     global: 13
+  fonts.web.size.minimum_logical:
+    global: 10
+  hints.border:
+    global: '1px solid #E3BE23'
   hints.chars:
     global: asdfghjkl
   hints.uppercase:
     global: true
+  qt.chromium.low_end_device_mode:
+    global: auto
   qt.force_platformtheme:
     global: null
   qt.highdpi:
-    global: false
-  qt.low_end_device_mode:
-    global: auto
+    global: true
   scrolling.smooth:
     global: false
   statusbar.show:
