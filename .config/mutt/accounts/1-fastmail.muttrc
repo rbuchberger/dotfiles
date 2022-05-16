@@ -22,5 +22,6 @@ mailboxes \
   "=Drafts" \
   "=Sent" \
   "=Archive" \
+  "=paperless" \
   "=Trash" \
   "=Spam"
