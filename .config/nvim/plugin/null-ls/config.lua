@@ -19,8 +19,6 @@ null_ls.setup({
 		diagnostics.eslint_d.with(npm_config),
 		formatting.eslint_d.with(npm_config),
 		code_actions.eslint_d.with(npm_config),
-		-- diagnostics.eslint,
-		-- formatting.eslint,
 		formatting.prettier_d_slim.with({ filetypes = { "css", "scss" } }),
 
 		-- css
@@ -45,17 +43,8 @@ null_ls.setup({
 		-- dockerfiles:
 		diagnostics.hadolint,
 
-		-- nginx configs
-		formatting.nixfmt,
-
-		-- SQL
-		formatting.sqlformat,
-
 		-- YAML
 		diagnostics.yamllint,
-
-		-- TOML
-		formatting.taplo,
 
 		-- Markdown
 		formatting.markdownlint.with({ line_length = false }),
