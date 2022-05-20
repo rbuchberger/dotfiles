@@ -10,7 +10,7 @@ bookmark-cmd ~/scripts/bookmark
 show-read-articles no
 
 urls-source "miniflux"
-miniflux-url "https://news.buchberger.cloud"
+miniflux-url "http://news.pestka.cloud"
 
 miniflux-login "robert"
 miniflux-passwordfile "~/.config/newsboat/miniflux_password"
