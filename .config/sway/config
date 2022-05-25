@@ -86,6 +86,7 @@
   bindsym $mod+p exec ~/scripts/passmenu
   bindsym $mod+o exec ~/scripts/passmenu-otp
   bindsym $mod+u exec ~/scripts/passmenu-username
+  bindsym $mod+Shift+u exec wofi-emoji
   bindsym $mod+d exec $menu
   bindsym $mod+Ctrl+comma exec ~/scripts/select_area_screenshot
   bindsym $mod+Ctrl+period exec grim
