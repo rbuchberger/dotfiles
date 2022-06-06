@@ -67,7 +67,7 @@ lspconfig.rust_analyzer.setup({
     }
 })
 
-local servers = { "solargraph", "tailwindcss" }
+local servers = { "solargraph", "tailwindcss", "vls" }
 
 for _, lsp in ipairs(servers) do
 	lspconfig[lsp].setup({
