@@ -38,10 +38,5 @@ if [ -f /opt/asdf-vm/asdf.sh ]; then
   source $ASDF_DIR/asdf.sh
 fi
 
-# asdf managed direnv
-[ -f /usr/bin/direnv ]                       \
-  && [ $(asdf --version) ]                   \
-  && [ $(asdf plugin list | grep 'direnv') ] \
-  && eval "$(asdf exec direnv hook zsh)"
-
-direnv() { asdf exec direnv "$@"; }
+# direnv
+source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
