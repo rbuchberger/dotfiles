@@ -70,7 +70,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
   Plug 'MaxMEllon/vim-jsx-pretty', { 'for': 'mediawiki' }
   Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'jsx', 'javascriptreact']}
-  Plug 'peitalin/vim-jsx-typescript', { 'for': ['typescript', 'tsx', 'typescriptreact']}
   Plug 'HerringtonDarkholme/yats.vim', { 'for': ['typescript', 'tsx', 'typescriptreact']}
   Plug 'rust-lang/rust.vim', { 'for': 'rust' }
   Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
