@@ -4,7 +4,7 @@
 
 # Smoothing mode. Can be 'normal', 'scientific' or 'waves'. DEPRECATED as of 0.6.0
 ; mode = normal
- 
+
 # Accepts only non-negative values.
 ; framerate = 60
 
@@ -16,7 +16,7 @@ autosens = 0
 
 # Manual sensitivity in %. Autosens must be turned off for this to take effect.
 # 200 means double height. Accepts only non-negative values.
-sensitivity = 50
+sensitivity = 25
 
 # The number of bars (0-200). 0 sets it to auto (fill up console).
 # Bars' width and space between bars in number of characters.
@@ -47,7 +47,7 @@ higher_cutoff_freq = 20000
 # For fifo 'source' will be the path to fifo-file.
 ; method = alsa
 # source = alsa_output.usb-TAGA_TAGA_Harmony_THDA-500T-01.iec958-stereo.monitor
-source = alsa_output.usb-TAGA_TAGA_Harmony_THDA-500T-01.pro-output-0.monitor
+source = alsa_output.usb-xDuoo_USB_Audio_2.0_TA-10_PRO-00.analog-stereo.monitor
 
 ; method = alsa
 ; source = hw:Loopback,1
