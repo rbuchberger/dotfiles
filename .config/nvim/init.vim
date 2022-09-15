@@ -11,6 +11,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'sindrets/winshift.nvim'
   Plug 'luukvbaal/stabilize.nvim'
   Plug 'sunjon/Shade.nvim'
+  Plug 'goolord/alpha-nvim'
 
   " Keys
   Plug 'tpope/vim-unimpaired'
@@ -24,8 +25,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   " Text manipulation:
   Plug 'tpope/vim-ragtag'
   Plug 'tpope/vim-repeat'
-  Plug 'tpope/vim-surround'
-  Plug 'tpope/vim-commentary'
+  Plug 'kylechui/nvim-surround'
+  Plug 'numToStr/Comment.nvim'
   Plug 'alvan/vim-closetag'
   Plug 'godlygeek/tabular'
   Plug 'andrewradev/splitjoin.vim'
@@ -33,6 +34,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'windwp/nvim-autopairs'
   Plug 'windwp/nvim-ts-autotag'
   Plug 'JoosepAlviste/nvim-ts-context-commentstring'
+  Plug 'chentoast/marks.nvim'
 
   " Snippets
   Plug 'honza/vim-snippets'
@@ -48,6 +50,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'weilbith/nvim-code-action-menu'
   Plug 'RishabhRD/popfix'
   Plug 'ray-x/lsp_signature.nvim'
+  Plug 'j-hui/fidget.nvim'
 
   " Completion
   Plug 'hrsh7th/nvim-cmp'
@@ -133,7 +136,7 @@ set updatetime=150
 set completeopt=menuone,noselect
 
 " eol:¬
-set list listchars=trail:·,tab:-❱
+" set list listchars=trail:·,tab:-❱
 set splitright
 set splitbelow
 set scrolloff=5

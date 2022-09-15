@@ -18,3 +18,9 @@ nvim_tree.setup({
 		add_trailing = false,
 	},
 })
+
+local api = require("nvim-tree.api")
+
+api.events.subscribe(api.events.Event.FileCreated, function(filename)
+  api.tree.open(filename)
+end)
