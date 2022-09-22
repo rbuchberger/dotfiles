@@ -121,7 +121,15 @@ bindsym $mod+next exec 'light -U 20'
 bindsym $mod+ctrl+prior exec 'light -S 100'
 bindsym $mod+ctrl+next exec 'light -S 0'
 
+bindsym $mod+comma gaps horizontal current plus 250
+bindsym $mod+period gaps horizontal current minus 250
+
 # Core Control
 exec "/usr/bin/corectrl &"
 
+{% endif %}
+
+{% if yadm.hostname == "hippo" %}
+bindsym $mod+comma gaps horizontal current plus 100
+bindsym $mod+period gaps horizontal current minus 100
 {% endif %}

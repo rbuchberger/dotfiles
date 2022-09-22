@@ -161,9 +161,6 @@
   bindsym $mod+e layout toggle split
   bindsym $mod+Ctrl+space floating toggle
 
-  bindsym $mod+comma gaps horizontal current plus 500
-  bindsym $mod+period gaps horizontal current minus 500
-
   bindsym $mod+Ctrl+$left move left
   bindsym $mod+Ctrl+$down move down
   bindsym $mod+Ctrl+$up move up
