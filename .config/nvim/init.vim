@@ -51,6 +51,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'RishabhRD/popfix'
   Plug 'ray-x/lsp_signature.nvim'
   Plug 'j-hui/fidget.nvim'
+  Plug 'github/copilot.vim'
 
   " Completion
   Plug 'hrsh7th/nvim-cmp'
