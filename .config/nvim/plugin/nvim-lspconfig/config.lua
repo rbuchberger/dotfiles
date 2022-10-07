@@ -2,18 +2,20 @@ local lspconfig = require("lspconfig")
 local on_attach = require("lsp_on_attach")
 local ts_utils = require("nvim-lsp-ts-utils")
 
-local function preview_location_callback(_, _, result)
-	if result == nil or vim.tbl_isempty(result) then
-		return nil
-	end
-	vim.lsp.util.preview_location(result[1])
-end
+-- local function preview_location_callback(_, _, result)
+-- 	if result == nil or vim.tbl_isempty(result) then
+-- 		return nil
+-- 	end
+-- 	vim.lsp.util.preview_location(result[1])
+-- end
 
 lspconfig.tsserver.setup({
 	init_options = ts_utils.init_options,
 	on_attach = function(client, bufnr)
 		-- Disable formatting to avoid conflict with eslint
-		client.resolved_capabilities.document_formatting = false
+		-- client.server_capabilities.document_formatting = false
+		client.server_capabilities.documentFormattingProvider = false
+		client.server_capabilities.documentRangeFormattingProvider = false
 		on_attach(client, bufnr)
 
 		ts_utils.setup({
@@ -50,21 +52,21 @@ lspconfig.tsserver.setup({
 })
 
 lspconfig.rust_analyzer.setup({
-    on_attach=on_attach,
-    settings = {
-        ["rust-analyzer"] = {
-            assist = {
-                importGranularity = "module",
-                importPrefix = "self",
-            },
-            cargo = {
-                loadOutDirsFromCheck = true
-            },
-            procMacro = {
-                enable = true
-            },
-        }
-    }
+	on_attach = on_attach,
+	settings = {
+		["rust-analyzer"] = {
+			assist = {
+				importGranularity = "module",
+				importPrefix = "self",
+			},
+			cargo = {
+				loadOutDirsFromCheck = true,
+			},
+			procMacro = {
+				enable = true,
+			},
+		},
+	},
 })
 
 local servers = { "solargraph", "tailwindcss", "vls" }
