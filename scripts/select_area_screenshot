@@ -1,4 +1,5 @@
 #! /bin/zsh
 # Meant for a sway keybinding
-# Select an area, save a screenshot to my home dir.
-grim -c -g "$(slurp)"
+# Select an area, save a screenshot to clipboard.
+# grim -c -g "$(slurp)"
+grim -c -g "$(slurp)" - | wl-copy
