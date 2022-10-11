@@ -34,7 +34,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'windwp/nvim-autopairs'
   Plug 'windwp/nvim-ts-autotag'
   Plug 'JoosepAlviste/nvim-ts-context-commentstring'
-  Plug 'chentoast/marks.nvim'
+  " Plug 'chentoast/marks.nvim'
 
   " Snippets
   Plug 'honza/vim-snippets'
@@ -49,19 +49,22 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'rmagatti/goto-preview'
   Plug 'weilbith/nvim-code-action-menu'
   Plug 'RishabhRD/popfix'
-  Plug 'ray-x/lsp_signature.nvim'
   Plug 'j-hui/fidget.nvim'
   Plug 'github/copilot.vim'
 
   " Completion
-  Plug 'hrsh7th/nvim-cmp'
-  Plug 'ray-x/cmp-treesitter'
   Plug 'hrsh7th/cmp-buffer'
-  Plug 'hrsh7th/cmp-nvim-lua', { 'for': [ 'lua', 'vim' ] }
-  Plug 'hrsh7th/cmp-nvim-lsp'
-  Plug 'hrsh7th/cmp-path'
   Plug 'hrsh7th/cmp-calc'
+  Plug 'hrsh7th/cmp-cmdline'
+  Plug 'hrsh7th/cmp-nvim-lsp'
+  Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
+  Plug 'hrsh7th/cmp-nvim-lua', { 'for': [ 'lua', 'vim' ] }
+  Plug 'hrsh7th/cmp-path'
+  Plug 'hrsh7th/nvim-cmp'
+  Plug 'dmitmel/cmp-cmdline-history'
+  Plug 'lukas-reineke/cmp-rg'
   Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+  Plug 'ray-x/cmp-treesitter'
 
   " Git
   Plug 'tpope/vim-fugitive'

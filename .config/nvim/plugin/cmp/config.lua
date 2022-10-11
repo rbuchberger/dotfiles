@@ -1,18 +1,30 @@
 local cmp_ok, cmp = pcall(require, "cmp")
-local lspkind_ok, lspkind = pcall(require, "lspkind")
+local _lspkind_ok, lspkind = pcall(require, "lspkind")
 
 if not cmp_ok then
 	print("cmp missing. Pluginstall?")
 	return
 end
 
-local formatting
+-- local formatting
 
 -- if lspkind_ok then
 --   formatting
 -- else
 --   print("lspkind missing. PlugInstall?")
 -- end
+
+local select_next_item = function()
+	cmp.select_next_item({ cmp.SelectBehavior.Insert })
+end
+
+local select_prev_item = function()
+	cmp.select_prev_item({ cmp.SelectBehavior.Insert })
+end
+
+local confirm = function()
+	cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true })
+end
 
 cmp.setup({
 	snippet = {
@@ -35,23 +47,38 @@ cmp.setup({
 	},
 
 	mapping = {
-		["<C-p>"] = cmp.mapping.select_prev_item({ cmp.SelectBehavior.Insert }),
-		["<C-n>"] = cmp.mapping.select_next_item({ cmp.SelectBehavior.Insert }),
-		["<C-e>"] = cmp.mapping.abort(),
-		["<C-Space>"] = cmp.mapping.confirm({
-			behavior = cmp.ConfirmBehavior.Replace,
-			select = true,
-		}),
+		["<C-p>"] = cmp.mapping(select_prev_item, { "i", "c" }),
+		["<C-n>"] = cmp.mapping(select_next_item, { "i", "c" }),
+		["<C-e>"] = cmp.mapping(cmp.abort, { "i", "c" }),
+		["<C-Space>"] = cmp.mapping(confirm, { "i", "c" }),
+    ["<C-d>"] = cmp.mapping.scroll_docs(-4),
+    ["<C-f>"] = cmp.mapping.scroll_docs(4),
 	},
 
 	sources = {
 		{ name = "nvim_lsp" },
+		{ name = "nvim_lua" },
 		{ name = "treesitter" },
 		{ name = "ultisnips" },
+		{ name = "nvim_lsp_signature_help" },
 		{ name = "buffer" },
 		{ name = "path" },
+		{ name = "rg", keyword_length = 3 },
 		{ name = "calc" },
-		{ name = "nvim_lua" },
+	},
+})
+
+cmp.setup.cmdline(":", {
+	sources = {
+		{ name = "cmdline" },
+		{ name = "cmdline_history" },
+	},
+})
+
+cmp.setup.cmdline("/", {
+	sources = {
+		{ name = "buffer" },
+		{ name = "cmdline_history" },
 	},
 })
 
