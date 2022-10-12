@@ -138,6 +138,7 @@ set undofile
 set undodir=~/.local/share/nvim/undo
 set updatetime=150
 set completeopt=menuone,noselect
+set nowrap
 
 " eol:¬
 " set list listchars=trail:·,tab:-❱

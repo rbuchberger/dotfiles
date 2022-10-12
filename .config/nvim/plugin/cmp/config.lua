@@ -6,13 +6,6 @@ if not cmp_ok then
 	return
 end
 
--- local formatting
-
--- if lspkind_ok then
---   formatting
--- else
---   print("lspkind missing. PlugInstall?")
--- end
 
 local select_next_item = function()
 	cmp.select_next_item({ cmp.SelectBehavior.Insert })
@@ -51,8 +44,8 @@ cmp.setup({
 		["<C-n>"] = cmp.mapping(select_next_item, { "i", "c" }),
 		["<C-e>"] = cmp.mapping(cmp.abort, { "i", "c" }),
 		["<C-Space>"] = cmp.mapping(confirm, { "i", "c" }),
-    ["<C-d>"] = cmp.mapping.scroll_docs(-4),
-    ["<C-f>"] = cmp.mapping.scroll_docs(4),
+		["<C-d>"] = cmp.mapping.scroll_docs(-4),
+		["<C-f>"] = cmp.mapping.scroll_docs(4),
 	},
 
 	sources = {
