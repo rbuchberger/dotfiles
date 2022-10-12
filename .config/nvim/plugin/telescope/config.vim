@@ -6,5 +6,7 @@ nmap <silent> <leader>b :Telescope buffers<cr>
 nmap <silent> <C-g> :Telescope<cr>
 
 lua << EOF
-require('telescope').setup{}
+  require("if_installed")("telescope", function(telescope)
+    telescope.setup()
+  end)
 EOF

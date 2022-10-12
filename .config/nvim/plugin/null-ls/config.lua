@@ -1,52 +1,54 @@
-local null_ls = require("null-ls")
-local on_attach = require("lsp_on_attach")
+-- local null_ls = require("null-ls")
+require("if_installed")("null-ls", function(null_ls)
+	local diagnostics = null_ls.builtins.diagnostics
+	local formatting = null_ls.builtins.formatting
+	local code_actions = null_ls.builtins.code_actions
 
-local diagnostics = null_ls.builtins.diagnostics
-local formatting = null_ls.builtins.formatting
-local code_actions = null_ls.builtins.code_actions
+	local npm_config = {
+		-- prefer_local = "node_modules/.bin",
+	}
 
-local npm_config = {
-	-- prefer_local = "node_modules/.bin",
-}
+	null_ls.setup({
+		debug = true,
+		diagnostics_format = "#{m} [#{s}]",
+		on_attach = require("lsp_on_attach"),
 
-null_ls.setup({
-	debug = true,
-	diagnostics_format = "#{m} [#{s}]",
-	on_attach = on_attach,
+		sources = {
+			-- Javascript:
+			diagnostics.eslint_d.with(npm_config),
+			formatting.eslint_d.with(npm_config),
+			code_actions.eslint_d.with(npm_config),
+			formatting.prettier_d_slim.with({ filetypes = { "css", "scss" } }),
 
-	sources = {
-		-- Javascript:
-		diagnostics.eslint_d.with(npm_config),
-		formatting.eslint_d.with(npm_config),
-		code_actions.eslint_d.with(npm_config),
-		formatting.prettier_d_slim.with({ filetypes = { "css", "scss" } }),
+			-- css
+			formatting.stylelint,
 
-		-- css
-		formatting.stylelint,
+			-- JSON
+			formatting.fixjson,
 
-		-- JSON
-		formatting.fixjson,
+			-- Shell scripts
+			diagnostics.shellcheck,
+			code_actions.shellcheck,
+			formatting.shfmt,
+			formatting.shellharden,
 
-		-- Shell scripts
-		diagnostics.shellcheck,
-		code_actions.shellcheck,
-		formatting.shfmt,
-		formatting.shellharden,
+			-- Lua:
+			formatting.stylua,
+			diagnostics.luacheck.with({
+				extra_args = { "--globals", "vim" },
+			}),
 
-		-- Lua:
-		formatting.stylua,
-		diagnostics.luacheck,
+			-- vimscript:
+			diagnostics.vint,
 
-		-- vimscript:
-		diagnostics.vint,
+			-- dockerfiles:
+			diagnostics.hadolint,
 
-		-- dockerfiles:
-		diagnostics.hadolint,
+			-- YAML
+			diagnostics.yamllint,
 
-		-- YAML
-		diagnostics.yamllint,
-
-		-- Markdown
-		formatting.markdownlint.with({ line_length = false }),
-	},
-})
+			-- Markdown
+			formatting.markdownlint.with({ line_length = false }),
+		},
+	})
+end)

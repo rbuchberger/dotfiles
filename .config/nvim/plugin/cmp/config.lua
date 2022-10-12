@@ -1,11 +1,11 @@
 local cmp_ok, cmp = pcall(require, "cmp")
-local _lspkind_ok, lspkind = pcall(require, "lspkind")
+local lspkind_ok, lspkind = pcall(require, "lspkind")
 
-if not cmp_ok then
-	print("cmp missing. Pluginstall?")
+if not (cmp_ok and lspkind_ok) then
 	return
 end
 
+lspkind.init()
 
 local select_next_item = function()
 	cmp.select_next_item({ cmp.SelectBehavior.Insert })
@@ -56,7 +56,7 @@ cmp.setup({
 		{ name = "nvim_lsp_signature_help" },
 		{ name = "buffer" },
 		{ name = "path" },
-		{ name = "rg", keyword_length = 3 },
+		-- { name = "rg", keyword_length = 3 },
 		{ name = "calc" },
 	},
 })

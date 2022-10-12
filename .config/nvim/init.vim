@@ -51,6 +51,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'RishabhRD/popfix'
   Plug 'j-hui/fidget.nvim'
   Plug 'github/copilot.vim'
+  Plug 'folke/trouble.nvim'
 
   " Completion
   Plug 'hrsh7th/cmp-buffer'
@@ -88,7 +89,7 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 call plug#end()
 
-lua require('impatient')
+lua pcall(require, 'impatient')
 
 " Bindings
 
@@ -152,13 +153,17 @@ set colorcolumn=81
 
 set termguicolors
 
-let g:gruvbox_material_ui_contrast='high' " low, high
-" let g:gruvbox_material_transparent_background=1
-let g:gruvbox_material_better_performance=1
-let g:gruvbox_material_show_eob=0
-let g:gruvbox_material_palette='original' " original, mix, or material.
+if globpath(&runtimepath, 'colors/gruvbox-material.vim') !=? ''
+  let g:gruvbox_material_ui_contrast='high' " low, high
+  " let g:gruvbox_material_transparent_background=1
+  let g:gruvbox_material_better_performance=1
+  let g:gruvbox_material_show_eob=0
+  let g:gruvbox_material_palette='original' " original, mix, or material.
 
-colorscheme gruvbox-material
+  colorscheme gruvbox-material
+else
+  colorscheme slate
+end
 
 " Highlight trailing whitespace
 match WarningMsg '\s\+$'

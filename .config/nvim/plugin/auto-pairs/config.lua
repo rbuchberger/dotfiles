@@ -1,10 +1,8 @@
--- also configured after cmp
+require("if_installed")("nvim-autopairs", function(autopairs)
+	autopairs.setup({
+		ignored_next_char = "[%w%.]",
+	})
 
-autopairs = require("nvim-autopairs")
-
-autopairs.setup({
-  ignored_next_char = "[%w%.]",
-})
-
-autopairs.add_rules(require("nvim-autopairs.rules.endwise-lua"))
-autopairs.add_rules(require("nvim-autopairs.rules.endwise-ruby"))
+	autopairs.add_rules(require("nvim-autopairs.rules.endwise-lua"))
+	autopairs.add_rules(require("nvim-autopairs.rules.endwise-ruby"))
+end)

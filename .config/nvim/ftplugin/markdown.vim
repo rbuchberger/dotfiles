@@ -1,7 +1,16 @@
 set textwidth=100
 set colorcolumn=101
-lua require("cmp").setup({completion = { autocomplete = false}})
 set wrap
+
+lua << EOF
+  require("if_installed")("cmp", function()
+    require("cmp").setup({
+      completion = {
+        autocomplete = false
+      }
+    })
+  end)
+EOF
 
 " Markdown.vim plugin mappings
 nmap <c-f> :TableFormat<cr>

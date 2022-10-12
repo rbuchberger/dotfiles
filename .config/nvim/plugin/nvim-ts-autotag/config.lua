@@ -1,1 +1,3 @@
-require("nvim-ts-autotag").setup()
+require("if_installed")("nvim-ts-autotag", function(autotag)
+	autotag.setup()
+end)
