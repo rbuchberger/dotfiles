@@ -84,7 +84,11 @@
   for_window [app_id="zoom"] floating enable
   for_window [app_id="opentrack"] floating enable
   for_window [app_id="qv4l2"] floating enable
-  for_window [class="Plexamp"] floating enable
+  for_window [class="Plexamp"] {
+    floating enable
+    move window to scratchpad
+    scratchpad show
+  }
 
   set $menu exec $term --class=launcher -e sway-launcher-desktop
 
@@ -203,5 +207,6 @@ exec "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1&"
 exec "(ping_wait fastmail.com && mbsync --pull fastmail:INBOX)&"
 exec_always "systemctl --user restart waybar.service"
 exec_always "systemctl --user restart mako.service"
+exec_always "sway-launcher-desktop purge"
 # exec_always "killall waybar"
 # exec_always "sleep 1 && /usr/bin/waybar &"

@@ -64,4 +64,5 @@ umask 077
 
 if [ -z $DISPLAY ] && [ "$TTY" = "/dev/tty1" ]; then
   exec sway; exit
+  # exec startx; exit
 fi
