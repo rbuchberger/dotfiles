@@ -35,7 +35,7 @@
     border pixel 1
   }
 
-  font pango:Overpass Regular 0
+  font pango:Overpass Regular 11
 
   # Base16 Railscasts
   # Author: Ryan Bates (http://railscasts.com)
