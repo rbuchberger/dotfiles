@@ -35,7 +35,8 @@
     border pixel 1
   }
 
-  font pango:Overpass Regular 11
+  # Disable title bars
+  font Overpass Regular 0.1
 
   # Base16 Railscasts
   # Author: Ryan Bates (http://railscasts.com)
