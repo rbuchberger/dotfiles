@@ -126,6 +126,7 @@ augroup terminal
 augroup END
 
 set signcolumn=yes
+set cursorline
 set textwidth=80
 set tabstop=2
 set softtabstop=2
