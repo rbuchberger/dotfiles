@@ -2,212 +2,224 @@
 
 # Behavior
 
-  focus_wrapping no
-  focus_follows_mouse no
-  for_window [title="."] inhibit_idle fullscreen
-  seat 0 hide_cursor 10
-  seat seat0 xcursor_theme phinger-cursors 32
-  xwayland enable
+focus_wrapping no
+focus_follows_mouse no
+for_window [title="."] inhibit_idle fullscreen
+seat 0 hide_cursor 10
+seat seat0 xcursor_theme phinger-cursors 32
+xwayland enable
 
-  # output DP-2 {
-  #   scale 1.5
-  # }
+# output DP-2 {
+#   scale 1.5
+# }
 
 # input
-  input type:keyboard {
-    xkb_layout pl
-    repeat_delay 250
-    repeat_rate 50
-  }
+input type:keyboard {
+  xkb_layout pl
+    repeat_delay 200
+    repeat_rate 60
+}
 
-  input "1133:45091:Logitech_Wireless_Mouse_MX_Master_3" {
-    accel_profile flat
+input "1133:16514:Logitech_MX_Master_3" {
+  accel_profile flat
     pointer_accel 0
-  }
+}
+
+input "1133:45091:Logitech_Wireless_Mouse_MX_Master_3" {
+  accel_profile flat
+    pointer_accel 0
+}
+
+input "1133:16514:input-remapper_Logitech_MX_Master_3_forwarded" {
+  accel_profile flat
+    pointer_accel 0
+}
+
 
 # Colors and Appearance
 
-  exec ~/.azotebg
+exec ~/.azotebg
 
-  default_border pixel 1
-  gaps inner 10
-  for_window [title="."] {
-    border pixel 1
-  }
+default_border pixel 1
+gaps inner 10
+for_window [title="."] {
+  border pixel 1
+}
 
-  # Disable title bars
-  font Overpass Regular 0.1
+# Disable title bars
+font Overpass Regular 0.1
 
-  # Base16 Railscasts
-  # Author: Ryan Bates (http://railscasts.com)
-  set $base00 #2b2b2b
-  set $base01 #272935
-  set $base02 #3a4055
-  set $base03 #5a647e
-  set $base04 #d4cfc9
-  set $base05 #e6e1dc
-  set $base06 #f4f1ed
-  set $base07 #f9f7f3
-  set $base08 #da4939
-  set $base09 #cc7833
-  set $base0A #ffc66d
-  set $base0B #a5c261
-  set $base0C #519f50
-  set $base0D #6d9cbe
-  set $base0E #b6b3eb
-  set $base0F #bc9458
+# Base16 Railscasts
+# Author: Ryan Bates (http://railscasts.com)
+set $base00 #2b2b2b
+set $base01 #272935
+set $base02 #3a4055
+set $base03 #5a647e
+set $base04 #d4cfc9
+set $base05 #e6e1dc
+set $base06 #f4f1ed
+set $base07 #f9f7f3
+set $base08 #da4939
+set $base09 #cc7833
+set $base0A #ffc66d
+set $base0B #a5c261
+set $base0C #519f50
+set $base0D #6d9cbe
+set $base0E #b6b3eb
+set $base0F #bc9458
 
-  # Property Name         Border  BG      Text    Indicator Border
-  client.focused          $base04 $base04 $base04 $base04 $base04
-  client.focused_inactive $base02 $base02 $base05 $base02 $base02
-  client.urgent           $base08 $base08 $base07 $base08 $base08
-  client.unfocused        $base02 $base02 $base05 $base02 $base02
+# Property Name         Border  BG      Text    Indicator Border
+client.focused          $base04 $base04 $base04 $base04 $base04
+client.focused_inactive $base02 $base02 $base05 $base02 $base02
+client.urgent           $base08 $base08 $base07 $base08 $base08
+client.unfocused        $base02 $base02 $base05 $base02 $base02
 # Key bindings
 
-  # Variables
-  set $mod Mod4
-  set $left h
-  set $down j
-  set $up k
-  set $right l
-  set $term kitty
+# Variables
+set $mod Mod4
+set $left h
+set $down j
+set $up k
+set $right l
+# set $term kitty
+set $term alacritty
 
-  # set $menu wofi --show drun --prompt="Launch"
-  # set $menu 'bemenu-run --ignorecase --list 12 --prompt="Launch" --fn "Iosevka Aile 14" --tf="#da4939" --tb="#2b2b2b" --ff="#e6e1dc"--fb="5a647e" --nf="#e6e1dc" --nb="#2b2b2b" --hf="#a5c261" --hb="#5a647e" --sb="#5a647e" --sf="#a5c261"'
-  # set $menu 'bemenu-run --ignorecase --list 12'
+# set $menu wofi --show drun --prompt="Launch"
+# set $menu 'bemenu-run --ignorecase --list 12 --prompt="Launch" --fn "Iosevka Aile 14" --tf="#da4939" --tb="#2b2b2b" --ff="#e6e1dc"--fb="5a647e" --nf="#e6e1dc" --nb="#2b2b2b" --hf="#a5c261" --hb="#5a647e" --sb="#5a647e" --sf="#a5c261"'
+# set $menu 'bemenu-run --ignorecase --list 12'
 
-  # App specific tweaks
-  for_window [app_id="^launcher$"] floating enable, sticky enable, resize set 30 ppt 60 ppt
-  for_window [title="Origin"] floating enable
-  for_window [title="Sharing Indicator"] floating enable
-  # X-plane
-  for_window [title="X-System"] move window to workspace 8
-  for_window [app_id="zoom"] floating enable
-  for_window [app_id="opentrack"] floating enable
-  for_window [app_id="qv4l2"] floating enable
-  for_window [class="Plexamp"] {
-    floating enable
+# App specific tweaks
+for_window [app_id="^launcher$"] floating enable, sticky enable, resize set 30 ppt 60 ppt
+for_window [title="Origin"] floating enable
+for_window [title="Sharing Indicator"] floating enable
+# X-plane
+for_window [title="X-System"] move window to workspace 8
+for_window [app_id="zoom"] floating enable
+for_window [app_id="opentrack"] floating enable
+for_window [app_id="qv4l2"] floating enable
+for_window [class="Plexamp"] {
+  floating enable
     move window to scratchpad
     scratchpad show
-  }
+}
 
-  set $menu exec $term --class=launcher -e sway-launcher-desktop
+set $menu exec $term --class=launcher -e sway-launcher-desktop
 
-  # program shortcuts
-  bindsym $mod+Return exec $term
-  bindsym $mod+apostrophe exec firefox
-  bindsym $mod+semicolon exec qutebrowser
-  bindsym $mod+p exec ~/scripts/passmenu
-  bindsym $mod+o exec ~/scripts/passmenu-otp
-  bindsym $mod+u exec ~/scripts/passmenu-username
-  bindsym $mod+Shift+u exec wofi-emoji
-  bindsym $mod+d exec $menu
-  bindsym $mod+Ctrl+comma exec ~/scripts/select_area_screenshot
-  bindsym $mod+Ctrl+period exec grim
-  bindsym $mod+t exec ~/scripts/screenshot_translate
+# program shortcuts
+bindsym $mod+Return exec $term
+bindsym $mod+apostrophe exec firefox
+bindsym $mod+semicolon exec qutebrowser
+bindsym $mod+p exec ~/scripts/passmenu
+bindsym $mod+o exec ~/scripts/passmenu-otp
+bindsym $mod+u exec ~/scripts/passmenu-username
+bindsym $mod+Shift+u exec wofi-emoji
+bindsym $mod+d exec $menu
+bindsym $mod+Ctrl+comma exec ~/scripts/select_area_screenshot
+bindsym $mod+Ctrl+period exec grim
+bindsym $mod+t exec ~/scripts/screenshot_translate
 
-  # Media volume controls
-  bindsym XF86AudioMute exec pulsemixer --toggle-mute
-  bindsym XF86AudioLowerVolume exec pulsemixer --change-volume -5
-  bindsym XF86AudioRaiseVolume exec pulsemixer --change-volume 5
+# Media volume controls
+bindsym XF86AudioMute exec pulsemixer --toggle-mute
+bindsym XF86AudioLowerVolume exec pulsemixer --change-volume -5
+bindsym XF86AudioRaiseVolume exec pulsemixer --change-volume 5
 
-  # Media player controls
-  bindsym XF86AudioPlay exec playerctl play-pause
-  bindsym XF86AudioStop exec playerctl stop
-  bindsym XF86AudioNext exec playerctl next
-  bindsym XF86AudioPrev exec playerctl previous
+# Media player controls
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioStop exec playerctl stop
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
 
-  bindsym $mod+XF86AudioPlay exec ~/scripts/timew_toggle
-  bindsym $mod+XF86AudioNext exec ~/scripts/timew_notify
+bindsym $mod+XF86AudioPlay exec ~/scripts/timew_toggle
+bindsym $mod+XF86AudioNext exec ~/scripts/timew_notify
 
-  # System state controls
-  bindsym $mod+up exec 'swaymsg "output * power on"'
-  bindsym $mod+down exec 'swaymsg "output * power off"'
-  bindsym $mod+ctrl+left exec 'systemctl hibernate'
-  bindsym $mod+ctrl+right exec 'systemctl suspend'
-  bindsym $mod+ctrl+down exec 'shutdown now'
-  bindsym $mod+ctrl+up exec 'reboot'
-  bindsym $mod+left exec 'swaymsg exit'
-  bindsym $mod+backspace exec 'makoctl dismiss'
+# System state controls
+bindsym $mod+up exec 'swaymsg "output * power on"'
+bindsym $mod+down exec 'swaymsg "output * power off"'
+bindsym $mod+ctrl+left exec 'systemctl hibernate'
+bindsym $mod+ctrl+right exec 'systemctl suspend'
+bindsym $mod+ctrl+down exec 'shutdown now'
+bindsym $mod+ctrl+up exec 'reboot'
+bindsym $mod+left exec 'swaymsg exit'
+bindsym $mod+backspace exec 'makoctl dismiss'
 
-  # Focus manipulation
-  bindsym $mod+c focus child
-  bindsym $mod+a focus parent
-  bindsym $mod+space focus mode_toggle
-  bindsym $mod+minus scratchpad show
+# Focus manipulation
+bindsym $mod+c focus child
+bindsym $mod+a focus parent
+bindsym $mod+space focus mode_toggle
+bindsym $mod+minus scratchpad show
 
-  bindsym $mod+$left focus left
-  bindsym $mod+$down focus down
-  bindsym $mod+$up focus up
-  bindsym $mod+$right focus right
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
 
-  bindsym $mod+1 workspace 1
-  bindsym $mod+2 workspace 2
-  bindsym $mod+3 workspace 3
-  bindsym $mod+4 workspace 4
-  bindsym $mod+5 workspace 5
-  bindsym $mod+6 workspace 6
-  bindsym $mod+7 workspace 7
-  bindsym $mod+8 workspace 8
-  bindsym $mod+9 workspace 9
-  bindsym $mod+0 workspace 10
+bindsym $mod+1 workspace 1
+bindsym $mod+2 workspace 2
+bindsym $mod+3 workspace 3
+bindsym $mod+4 workspace 4
+bindsym $mod+5 workspace 5
+bindsym $mod+6 workspace 6
+bindsym $mod+7 workspace 7
+bindsym $mod+8 workspace 8
+bindsym $mod+9 workspace 9
+bindsym $mod+0 workspace 10
 
-  # Window Manipulation
-  floating_modifier $mod normal
+# Window Manipulation
+floating_modifier $mod normal
 
-  bindsym $mod+x kill
-  bindsym $mod+f fullscreen
-  bindsym $mod+Ctrl+minus move scratchpad
-  bindsym $mod+ctrl+s sticky toggle
+bindsym $mod+x kill
+bindsym $mod+f fullscreen
+bindsym $mod+Ctrl+minus move scratchpad
+bindsym $mod+ctrl+s sticky toggle
 
-  bindsym $mod+g splith
-  bindsym $mod+v splitv
-  bindsym $mod+s layout stacking
-  bindsym $mod+w layout tabbed
-  bindsym $mod+e layout toggle split
-  bindsym $mod+Ctrl+space floating toggle
+bindsym $mod+g splith
+bindsym $mod+v splitv
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+bindsym $mod+Ctrl+space floating toggle
 
-  bindsym $mod+Ctrl+$left move left
-  bindsym $mod+Ctrl+$down move down
-  bindsym $mod+Ctrl+$up move up
-  bindsym $mod+Ctrl+$right move right
+bindsym $mod+Ctrl+$left move left
+bindsym $mod+Ctrl+$down move down
+bindsym $mod+Ctrl+$up move up
+bindsym $mod+Ctrl+$right move right
 
-  bindsym $mod+Ctrl+1 move container to workspace 1
-  bindsym $mod+Ctrl+2 move container to workspace 2
-  bindsym $mod+Ctrl+3 move container to workspace 3
-  bindsym $mod+Ctrl+4 move container to workspace 4
-  bindsym $mod+Ctrl+5 move container to workspace 5
-  bindsym $mod+Ctrl+6 move container to workspace 6
-  bindsym $mod+Ctrl+7 move container to workspace 7
-  bindsym $mod+Ctrl+8 move container to workspace 8
-  bindsym $mod+Ctrl+9 move container to workspace 9
-  bindsym $mod+Ctrl+0 move container to workspace 10
+bindsym $mod+Ctrl+1 move container to workspace 1
+bindsym $mod+Ctrl+2 move container to workspace 2
+bindsym $mod+Ctrl+3 move container to workspace 3
+bindsym $mod+Ctrl+4 move container to workspace 4
+bindsym $mod+Ctrl+5 move container to workspace 5
+bindsym $mod+Ctrl+6 move container to workspace 6
+bindsym $mod+Ctrl+7 move container to workspace 7
+bindsym $mod+Ctrl+8 move container to workspace 8
+bindsym $mod+Ctrl+9 move container to workspace 9
+bindsym $mod+Ctrl+0 move container to workspace 10
 
-  bindsym $mod+r mode "resize"
-  mode "resize" {
-    bindsym $left resize shrink width 10px
+bindsym $mod+r mode "resize"
+mode "resize" {
+  bindsym $left resize shrink width 10px
     bindsym $down resize grow height 10px
     bindsym $up resize shrink height 10px
     bindsym $right resize grow width 10px
 
     bindsym Return mode "default"
     bindsym Escape mode "default"
-  }
+}
 
-  # Sway Commands
-  bindsym $mod+Ctrl+r reload
-  bindsym $mod+Shift+e exec swaynag -t warning -m \
-    'Do you really want to quit sway?' -b 'Yes, exit sway' 'swaymsg exit'
+# Sway Commands
+bindsym $mod+Ctrl+r reload
+bindsym $mod+Shift+e exec swaynag -t warning -m \
+          'Do you really want to quit sway?' -b 'Yes, exit sway' 'swaymsg exit'
 
-include /etc/sway/config.d/*
-include ~/.config/sway/local_config
+          include /etc/sway/config.d/*
+                                       include ~/.config/sway/local_config
 
-exec "systemctl --user start sway-session.target"
-exec "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1&"
+                                       exec "systemctl --user start sway-session.target"
+                                       exec "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1&"
 
-exec "(ping_wait fastmail.com && mbsync --pull fastmail:INBOX)&"
-exec_always "systemctl --user restart waybar.service"
-exec_always "systemctl --user restart mako.service"
-exec_always "sway-launcher-desktop purge"
+                                       exec "(ping_wait fastmail.com && mbsync --pull fastmail:INBOX)&"
+                                       exec_always "systemctl --user restart waybar.service"
+                                       exec_always "systemctl --user restart mako.service"
+                                       exec_always "sway-launcher-desktop purge"
 # exec_always "killall waybar"
 # exec_always "sleep 1 && /usr/bin/waybar &"
