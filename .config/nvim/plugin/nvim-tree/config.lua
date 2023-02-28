@@ -7,7 +7,7 @@ require("if_installed")("nvim-tree", function(nvim_tree)
 	set_map("n", "gt", ":NvimTreeFindFile<CR>", map_opts)
 
 	nvim_tree.setup({
-		update_cwd = true,
+		sync_root_with_cwd = true,
 		diagnostics = {
 			enable = true,
 		},
@@ -16,7 +16,19 @@ require("if_installed")("nvim-tree", function(nvim_tree)
 		},
 		renderer = {
 			highlight_opened_files = "all",
-			add_trailing = false,
+			add_trailing = true,
+			highlight_git = true,
+			highlight_modified = "icon",
+			icons = {
+				glyphs = {
+					folder = {
+						default = "",
+						open = "🗁",
+						empty = "⦰",
+						empty_open = "⦲",
+					},
+				},
+			},
 		},
 	})
 

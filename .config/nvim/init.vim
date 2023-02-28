@@ -1,5 +1,8 @@
 scriptencoding utf-8
 
+" recommended by nvim-tree to avoid race conditions
+let g:loaded_netrw = 1
+let g:loaded_netrwPlugin = 1
 call plug#begin('~/.local/share/nvim/plugged')
 
   " Appearance
