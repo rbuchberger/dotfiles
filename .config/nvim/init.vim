@@ -3,6 +3,7 @@ scriptencoding utf-8
 " recommended by nvim-tree to avoid race conditions
 let g:loaded_netrw = 1
 let g:loaded_netrwPlugin = 1
+
 call plug#begin('~/.local/share/nvim/plugged')
 
   " Appearance
@@ -15,6 +16,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'luukvbaal/stabilize.nvim'
   Plug 'sunjon/Shade.nvim'
   Plug 'goolord/alpha-nvim'
+  Plug 'anuvyklack/pretty-fold.nvim'
 
   " Keys
   Plug 'tpope/vim-unimpaired'
@@ -99,7 +101,6 @@ lua pcall(require, 'impatient')
 let mapleader = ' '
 nnoremap <silent> <leader>/ :nohlsearch<CR>
 nnoremap <silent> <leader>w :w<CR>
-
 nnoremap <A-h> <ESC><C-w>h
 nnoremap <A-j> <ESC><C-w>j
 nnoremap <A-k> <ESC><C-w>k
@@ -107,11 +108,9 @@ nnoremap <A-l> <ESC><C-w>l
 nnoremap <A-x> <ESC><C-w>c
 nnoremap <silent> <A-[> :BufferPrevious<cr>
 nnoremap <silent> <A-]> :BufferNext<cr>
-
 nnoremap <silent> <A-CR> :terminal<CR>
 tnoremap <A-ESC> <ESC>
 tnoremap <ESC> <C-\><C-n>
-
 inoremap jk <ESC>
 
 if has('mouse') | set mouse=a | endif
@@ -145,8 +144,14 @@ set updatetime=150
 set completeopt=menuone,noselect
 set nowrap
 
+set foldopen&
+set foldclose=all
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+set foldlevelstart=3
+
 " eol:¬
-" set list listchars=trail:·,tab:-❱
+set list listchars=trail:·
 set splitright
 set splitbelow
 set scrolloff=5
