@@ -20,13 +20,20 @@ call plug#begin('~/.local/share/nvim/plugged')
 
   " Keys
   Plug 'tpope/vim-unimpaired'
+  Plug 'sudormrfbin/cheatsheet.nvim'
 
   " File opening & Finding
   Plug 'nvim-lua/popup.nvim'
-  Plug 'nvim-lua/plenary.nvim'
-  Plug 'nvim-telescope/telescope.nvim'
   Plug 'kyazdani42/nvim-tree.lua'
 
+  " Telescope
+  Plug 'nvim-telescope/telescope.nvim'
+  Plug 'nvim-lua/plenary.nvim'
+  Plug 'nvim-telescope/telescope-ui-select.nvim'
+  Plug 'crispgm/telescope-heading.nvim'
+  Plug 'fhill2/telescope-ultisnips.nvim'
+  Plug 'debugloop/telescope-undo.nvim'
+  " Plug 'danielvolchek/tailiscope.nvim' " Doesn't work. Keep an eye on it.
   " Text manipulation:
   Plug 'tpope/vim-ragtag'
   Plug 'tpope/vim-repeat'
@@ -52,7 +59,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'onsails/lspkind-nvim'
   Plug 'jose-elias-alvarez/null-ls.nvim'
   Plug 'rmagatti/goto-preview'
-  Plug 'weilbith/nvim-code-action-menu'
   Plug 'RishabhRD/popfix'
   Plug 'j-hui/fidget.nvim'
   Plug 'github/copilot.vim'
