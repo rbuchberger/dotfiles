@@ -1,0 +1,7 @@
+snippet trap "Exit trap - always run some code before exiting"
+${1:finish}() {
+	${2:# important cleanup code here}
+}
+
+trap $1 EXIT
+endsnippet

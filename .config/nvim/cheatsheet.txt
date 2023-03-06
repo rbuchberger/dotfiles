@@ -1,0 +1,24 @@
+## Telescope @telescope @mappings
+Find Files | <C-p>
+Live Grep | <leader>p
+Buffers | <leader>b
+Fuzzy find current buffer | <M-p>
+Telescope builtins | <C-g>
+Vim Help | <F1>
+Resume | <M-z>
+Tagstack | <M-t>
+Diagnostics | <leader>i
+Marks | <leader>`
+LSP Document Symbols | <leader>gc
+Treesitter symbols | <leader>gt
+Spell Suggest current word | <Leader>=
+Cheatsheet | <F2>
+Edit Cheatsheet | g<F2>
+Commands | <leader>;
+Registers | <leader>'
+Git Status (telescope) | <leader>gs
+Fugitive | <leader>s
+Git History | <leader>gh
+Git Branches | <leader>gb
+Goto References | gr
+Goto Definition | gd

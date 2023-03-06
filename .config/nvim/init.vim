@@ -17,6 +17,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'sunjon/Shade.nvim'
   Plug 'goolord/alpha-nvim'
   Plug 'anuvyklack/pretty-fold.nvim'
+  " Progress indicator on bottom right, not Git
+  Plug 'j-hui/fidget.nvim'
 
   " Keys
   Plug 'tpope/vim-unimpaired'
@@ -34,19 +36,19 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'fhill2/telescope-ultisnips.nvim'
   Plug 'debugloop/telescope-undo.nvim'
   " Plug 'danielvolchek/tailiscope.nvim' " Doesn't work. Keep an eye on it.
+
   " Text manipulation:
   Plug 'tpope/vim-ragtag'
   Plug 'tpope/vim-repeat'
   Plug 'kylechui/nvim-surround'
   Plug 'numToStr/Comment.nvim'
-  Plug 'alvan/vim-closetag'
+  " Plug 'alvan/vim-closetag'
   Plug 'godlygeek/tabular'
-  Plug 'andrewradev/splitjoin.vim'
-  Plug 'andrewradev/sideways.vim'
+  Plug 'Wansmer/treesj'
+  Plug 'Wansmer/sibling-swap.nvim'
   Plug 'windwp/nvim-autopairs'
   Plug 'windwp/nvim-ts-autotag'
   Plug 'JoosepAlviste/nvim-ts-context-commentstring'
-  " Plug 'chentoast/marks.nvim'
 
   " Snippets
   Plug 'honza/vim-snippets'
@@ -60,9 +62,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'jose-elias-alvarez/null-ls.nvim'
   Plug 'rmagatti/goto-preview'
   Plug 'RishabhRD/popfix'
-  Plug 'j-hui/fidget.nvim'
   Plug 'github/copilot.vim'
-  Plug 'folke/trouble.nvim'
 
   " Completion
   Plug 'hrsh7th/cmp-buffer'
@@ -151,10 +151,10 @@ set completeopt=menuone,noselect
 set nowrap
 
 set foldopen&
-set foldclose=all
+" set foldclose=all
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
-set foldlevelstart=3
+set foldlevelstart=6
 
 " eol:¬
 set list listchars=trail:·

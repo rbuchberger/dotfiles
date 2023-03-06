@@ -3,10 +3,10 @@ local function nmap(binding, command)
 end
 
 nmap("<leader>x", ":BufferClose<CR>")
-nmap("<leader>d", ":BufferPick<CR>")
-nmap("<leader>bb", ":BufferOrderByBufferNumber<CR>")
-nmap("<leader>bd", ":BufferOrderByDirectory<CR>")
-nmap("<leader>bl", ":BufferOrderByLanguage<CR>")
+-- nmap("<leader>d", ":BufferPick<CR>")
+-- nmap("<leader>bb", ":BufferOrderByBufferNumber<CR>")
+-- nmap("<leader>bd", ":BufferOrderByDirectory<CR>")
+-- nmap("<leader>bl", ":BufferOrderByLanguage<CR>")
 nmap("[b", ":BufferPrevious<CR>")
 nmap("]b", ":BufferNext<CR>")
 

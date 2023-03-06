@@ -15,7 +15,12 @@ require("if_installed")("null-ls", function(null_ls)
 
 		sources = {
 			-- Javascript:
-			diagnostics.eslint_d.with(npm_config),
+			diagnostics.eslint_d.with({
+        -- ignore prettier warnings from eslint-plugin-prettier
+        filter = function(diagnostic)
+            return diagnostic.code ~= "prettier/prettier"
+        end,
+      }),
 			formatting.eslint_d.with(npm_config),
 			code_actions.eslint_d.with(npm_config),
 			formatting.prettier_d_slim.with({ filetypes = { "css", "scss" } }),
