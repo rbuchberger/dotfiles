@@ -1,5 +1,4 @@
 require("if_installed")("sibling-swap", function(sibling_swap)
-  print("sibling-swap found")
 	sibling_swap.setup({
     -- This doesn't mean use the built-in keymaps, it means sibling-swap should
     -- set keymaps defined below.
