@@ -39,7 +39,7 @@ alias lazyadm="yadm enter lazygit --work-tree ~/"
 alias zoom='QT_QPA_PLATFORM="" zoom'
 
 # This fixes terminfo problems over ssh
-alias ssh="kitty +kitten ssh"
+# alias ssh="kitty +kitten ssh"
 
 # Spin down hard drives
 # alias shush="sudo hdparm -y /dev/sd{a,b,c,d}"
