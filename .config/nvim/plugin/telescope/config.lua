@@ -19,6 +19,7 @@ require("if_installed")("telescope", function(telescope)
   telescope.load_extension("heading")
   telescope.load_extension("ultisnips")
   telescope.load_extension("undo")
+  telescope.load_extension("aerial")
 
   local builtin = require("telescope.builtin")
   local map = require("map")
@@ -44,4 +45,6 @@ require("if_installed")("telescope", function(telescope)
   map("n", "<leader>gb", builtin.git_branches) -- mnemonic: git branch
   map("n", "gr", builtin.lsp_references) -- mnemonic: goto references
   map("n", "gd", builtin.lsp_definitions) -- mnemonic: goto definition
+  map("n", "gd", builtin.lsp_definitions) -- mnemonic: goto definition
+  map("n", "g<Tab>", telescope.extensions.aerial.aerial) -- mnemonic: goto definition
 end)

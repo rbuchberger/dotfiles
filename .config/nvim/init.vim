@@ -19,6 +19,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'anuvyklack/pretty-fold.nvim'
   " Progress indicator on bottom right, not Git
   Plug 'j-hui/fidget.nvim'
+  Plug 'code-biscuits/nvim-biscuits'
 
   " Keys
   Plug 'tpope/vim-unimpaired'
@@ -36,6 +37,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'fhill2/telescope-ultisnips.nvim'
   Plug 'debugloop/telescope-undo.nvim'
   " Plug 'danielvolchek/tailiscope.nvim' " Doesn't work. Keep an eye on it.
+  Plug 'stevearc/aerial.nvim'
 
   " Text manipulation:
   Plug 'tpope/vim-ragtag'
@@ -47,7 +49,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'Wansmer/treesj'
   Plug 'Wansmer/sibling-swap.nvim'
   Plug 'windwp/nvim-autopairs'
-  Plug 'windwp/nvim-ts-autotag'
+  " Plug 'windwp/nvim-ts-autotag'
   Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 
   " Snippets

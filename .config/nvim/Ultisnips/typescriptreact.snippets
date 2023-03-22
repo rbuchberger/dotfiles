@@ -5,3 +5,27 @@ export const `!p snip.rv = snip.basename`: FunctionComponent = () => {
 	return <></>
 }
 endsnippet
+
+snippet useEffect "react useEffect hook"
+useEffect(() => {
+	${1}
+}, [${2}])
+endsnippet
+
+snippet useState "react useState hook"
+const [$1, set$2] = useState(() => {
+	${3}
+}, [${4}])
+endsnippet
+
+snippet useCallback "react useCallback hook"
+const $1 = useCallback((${2}) => {
+	${3}
+}, [${4}])
+endsnippet
+
+snippet useMemo "react useCallback hook"
+const $1 = useMemo(() => {
+	${2}
+}, [${3}])
+endsnippet

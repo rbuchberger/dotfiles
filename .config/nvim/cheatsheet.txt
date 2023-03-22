@@ -22,3 +22,6 @@ Git History | <leader>gh
 Git Branches | <leader>gb
 Goto References | gr
 Goto Definition | gd
+
+## Alpha (launcher)
+Alpha | <leader>l
