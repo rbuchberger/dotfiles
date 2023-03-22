@@ -1,10 +1,11 @@
 #! /bin/zsh
 
 geometry=$(slurp)
-filename="~/${1:$(date %s)}.mkv"
+filename="${1:$(date %s)}.mkv"
 
 wf-recorder              \
-  --filename "$filename" \
+  -f "$filename" \
   --geometry "$geometry" \
-  --audio                \
-  --codec-param crf=18
+  --preset=slower        \
+  --tune=animation       \
+  --codec-param crf=10
