@@ -20,6 +20,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   " Progress indicator on bottom right, not Git
   Plug 'j-hui/fidget.nvim'
   Plug 'code-biscuits/nvim-biscuits'
+  " Plug 'lewis6991/nvim-treesitter-context'
 
   " Keys
   Plug 'tpope/vim-unimpaired'
@@ -28,6 +29,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   " File opening & Finding
   Plug 'nvim-lua/popup.nvim'
   Plug 'kyazdani42/nvim-tree.lua'
+  Plug 'antosha417/nvim-lsp-file-operations'
 
   " Telescope
   Plug 'nvim-telescope/telescope.nvim'
