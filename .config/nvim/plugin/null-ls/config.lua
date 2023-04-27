@@ -1,59 +1,61 @@
--- local null_ls = require("null-ls")
-require("if_installed")("null-ls", function(null_ls)
-	local diagnostics = null_ls.builtins.diagnostics
-	local formatting = null_ls.builtins.formatting
-	local code_actions = null_ls.builtins.code_actions
+local ireq = require("if_installed")
+ireq("null-ls", function(null_ls)
+  local diagnostics = null_ls.builtins.diagnostics
+  local formatting = null_ls.builtins.formatting
+  local code_actions = null_ls.builtins.code_actions
 
-	local npm_config = {
-		-- prefer_local = "node_modules/.bin",
-	}
+  local npm_config = {
+    -- prefer_local = "node_modules/.bin",
+  }
 
-	null_ls.setup({
-		debug = true,
-		diagnostics_format = "#{m} [#{s}]",
-		on_attach = require("lsp_on_attach"),
-
-		sources = {
-			-- Javascript:
-			diagnostics.eslint_d.with({
+  null_ls.setup({
+    debug = true,
+    diagnostics_format = "#{m} [#{s}]",
+    on_attach = require("lsp_on_attach"),
+    sources = {
+      -- Javascript:
+      diagnostics.eslint_d.with({
         -- ignore prettier warnings from eslint-plugin-prettier
         filter = function(diagnostic)
-            return diagnostic.code ~= "prettier/prettier"
+          return diagnostic.code ~= "prettier/prettier"
         end,
       }),
-			formatting.eslint_d.with(npm_config),
-			code_actions.eslint_d.with(npm_config),
-			formatting.prettier_d_slim.with({ filetypes = { "css", "scss" } }),
+      formatting.eslint_d.with(npm_config),
+      code_actions.eslint_d.with(npm_config),
+      formatting.prettier_d_slim.with({ filetypes = { "css", "scss" } }),
 
-			-- css
-			formatting.stylelint,
+      --Typescript
+      require("typescript.extensions.null-ls.code-actions"),
 
-			-- JSON
-			formatting.fixjson,
+      -- css
+      formatting.stylelint,
 
-			-- Shell scripts
-			diagnostics.shellcheck,
-			code_actions.shellcheck,
-			formatting.shfmt,
-			formatting.shellharden,
+      -- JSON
+      formatting.fixjson,
 
-			-- Lua:
-			formatting.stylua,
-			diagnostics.luacheck.with({
-				extra_args = { "--globals", "vim" },
-			}),
+      -- Shell scripts
+      diagnostics.shellcheck,
+      code_actions.shellcheck,
+      formatting.shfmt,
+      formatting.shellharden,
 
-			-- vimscript:
-			diagnostics.vint,
+      -- Lua:
+      formatting.stylua,
+      diagnostics.luacheck.with({
+        extra_args = { "--globals", "vim" },
+      }),
 
-			-- dockerfiles:
-			diagnostics.hadolint,
+      -- vimscript:
+      diagnostics.vint,
 
-			-- YAML
-			diagnostics.yamllint,
+      -- dockerfiles:
+      diagnostics.hadolint,
 
-			-- Markdown
-			formatting.markdownlint.with({ line_length = false }),
-		},
-	})
+      -- YAML
+      diagnostics.yamllint,
+
+      -- Markdown
+      formatting.markdownlint.with({ line_length = false }),
+    },
+  })
 end)

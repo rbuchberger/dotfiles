@@ -93,11 +93,10 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
   Plug 'MaxMEllon/vim-jsx-pretty', { 'for': 'mediawiki' }
   Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'jsx', 'javascriptreact']}
-  Plug 'HerringtonDarkholme/yats.vim', { 'for': ['typescript', 'tsx', 'typescriptreact']}
   Plug 'rust-lang/rust.vim', { 'for': 'rust' }
   Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
   Plug 'isobit/vim-caddyfile', { 'for': 'caddyfile' }
-  Plug 'jose-elias-alvarez/nvim-lsp-ts-utils', { 'for': ['typescript', 'tsx', 'typescriptreact']}
+  Plug 'jose-elias-alvarez/typescript.nvim', { 'for': ['typescript', 'tsx', 'typescriptreact']}
 
   " Other
   Plug 'lewis6991/impatient.nvim' " Remove when released in nvim core
