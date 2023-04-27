@@ -1,7 +1,8 @@
 #! /bin/bash
 # Launch sway, setting env first
 
-export TERMINAL=kitty
+export TERMINAL=alacritty
+export BROWSER=firefox
 export ELM_ENGINE=wayland_egl
 export MOZ_ENABLE_WAYLAND=1
 export MOZ_DBUS_REMOTE=1

@@ -97,11 +97,7 @@ for_window [title="X-System"] move window to workspace 8
 for_window [app_id="zoom"] floating enable
 for_window [app_id="opentrack"] floating enable
 for_window [app_id="qv4l2"] floating enable
-for_window [class="Plexamp"] {
-  floating enable
-    move window to scratchpad
-    scratchpad show
-}
+for_window [class="Plexamp"] floating enable
 
 set $menu exec $term --class=launcher -e sway-launcher-desktop
 
