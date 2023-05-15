@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+# Popup menu, Select an item from bitwarden, return value for passed key
+# Usage: bwmenu [key (username, password, etc)]
+
+vault=$(bw list items)
+
+# Will not work if we have two items with the same name.
+result=$(echo "$vault" | jq '.[].name' | rofi -dmenu)
+
+echo "$vault" | jq --join-output ".[] | select(.name == $result) | .login.${1:-username}"

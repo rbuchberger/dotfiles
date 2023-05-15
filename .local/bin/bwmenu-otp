@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+set -euo pipefail
+IFS=$'\n\t'
+
+# Use bwmenu to select an item from bitwarden, return OTP for selected item
+# Presumes everything is default (base32, totp, 30 seconds, 6 digits, etc)
+bwmenu totp |
+	xargs trurl --get '{query:secret}' --url |
+	oathtool --totp --base32 -
