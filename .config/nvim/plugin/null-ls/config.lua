@@ -27,6 +27,10 @@ ireq("null-ls", function(null_ls)
       --Typescript
       require("typescript.extensions.null-ls.code-actions"),
 
+      --Ruby
+      diagnostics.rubocop,
+      formatting.rubocop,
+
       -- css
       formatting.stylelint,
 
