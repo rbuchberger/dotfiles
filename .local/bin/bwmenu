@@ -3,10 +3,36 @@ set -euo pipefail
 IFS=$'\n\t'
 # Popup menu, Select an item from bitwarden, return value for passed key
 # Usage: bwmenu [key (username, password, etc)]
+#
+# bw list items takes a few seconds, so we cache the list of names. This way
+# the menu is instant and we can fetch the vault while the user is selecting
+# an input.
+
+query=${1:-username}
+cache_file="$XDG_CACHE_HOME/bwmenu"
+
+tempfile=$(mktemp)
+trap 'rm -f $tempfile' EXIT SIGINT SIGTERM SIGQUIT
+
+if [ -f "$cache_file" ]; then
+	names=$(<"$cache_file")
+else
+	notify-send "First run, building cache. Try again in a few seconds."
+	vault=$(bw list items)
+	echo "$vault" | jq '.[].name' >"$cache_file"
+	exit
+fi
+
+(echo "$names" | rofi -dmenu >"$tempfile") &
+input_pid=$!
 
 vault=$(bw list items)
+echo "$vault" | jq '.[].name' >"$cache_file"
 
-# Will not work if we have two items with the same name.
-result=$(echo "$vault" | jq '.[].name' | rofi -dmenu)
+wait "$input_pid"
 
-echo "$vault" | jq --join-output ".[] | select(.name == $result) | .login.${1:-username}"
+result=$(<"$tempfile")
+[ ! "$result" = "" ]
+
+echo "$vault" | jq --join-output ".[] | select(.name == $result) | .login.$query"
+notify-send "Copied $query for $result to clipboard" "Cache updated"
