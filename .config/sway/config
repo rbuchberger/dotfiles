@@ -20,21 +20,10 @@ input type:keyboard {
     repeat_rate 60
 }
 
-input "1133:16514:Logitech_MX_Master_3" {
+input type:pointer {
   accel_profile flat
     pointer_accel 0
 }
-
-input "1133:45091:Logitech_Wireless_Mouse_MX_Master_3" {
-  accel_profile flat
-    pointer_accel 0
-}
-
-input "1133:16514:input-remapper_Logitech_MX_Master_3_forwarded" {
-  accel_profile flat
-    pointer_accel 0
-}
-
 
 # Colors and Appearance
 
