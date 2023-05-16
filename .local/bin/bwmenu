@@ -2,37 +2,69 @@
 set -euo pipefail
 IFS=$'\n\t'
 # Popup menu, Select an item from bitwarden, return value for passed key
-# Usage: bwmenu [key (username, password, etc)]
+# Usage: bwmenu [key (username, password, etc; something on the login object)]
 #
 # bw list items takes a few seconds, so we cache the list of names. This way
 # the menu is instant and we can fetch the vault while the user is selecting
 # an input.
 
 query=${1:-username}
-cache_file="$XDG_CACHE_HOME/bwmenu"
 
-tempfile=$(mktemp)
-trap 'rm -f $tempfile' EXIT SIGINT SIGTERM SIGQUIT
+cache_dir=${XDG_CACHE_HOME:-$HOME/.cache}/bwmenu
+mkdir -p "$cache_dir"
 
-if [ -f "$cache_file" ]; then
-	names=$(<"$cache_file")
+# List of item names. Storing this allows us to show the menu instantly.
+name_file="$cache_dir/names"
+
+# Index of last used item
+index_file="$cache_dir/index"
+touch "$index_file" # ensure it exists before we try to read it
+last_index=$(<"$index_file")
+
+function menu() {
+	echo "$1" |
+		bemenu --index "$last_index" --prompt="$query" --ignorecase --prefix '🙮🙮🙮' \
+			--list 20 --margin 800 --line-height 45 --fn "Iosevka Term SS05 Expanded 14" \
+			--tf="#da4939" --tb="#2b2b2b" --ff="#e6e1dc" --fb="5a647e" --nf="#e6e1dc" \
+			--nb="#2b2b2b" --hf="#a5c261" --hb="#5a647e" --sb="#5a647e" --sf="#a5c261"
+}
+
+# Check if cache exists, if not, build it
+if [ -f "$name_file" ]; then
+	names=$(<"$name_file")
 else
-	notify-send "First run, building cache. Try again in a few seconds."
 	vault=$(bw list items)
-	echo "$vault" | jq '.[].name' >"$cache_file"
-	exit
+	echo "$vault" | jq '.[].name' >"$name_file"
+	echo "First run, building cache. Please run again."
+	exit 1
 fi
 
-(echo "$names" | rofi -dmenu >"$tempfile") &
+# Prompt user for input, store result in temp file and background
+temp_name_file=$(mktemp)
+trap 'rm -f $temp_name_file' EXIT SIGINT SIGTERM SIGQUIT
+menu "$names" >"$temp_name_file" &
 input_pid=$!
 
+# Fetch vault while user is selecting an input
 vault=$(bw list items)
-echo "$vault" | jq '.[].name' >"$cache_file"
 
+# Cache names for later use
+echo "$vault" | jq --raw-output '.[].name' >"$name_file"
+
+# Wait for user input
 wait "$input_pid"
 
-result=$(<"$tempfile")
-[ ! "$result" = "" ]
+# Read selected item name from temp file
+item_name=$(<"$temp_name_file")
 
-echo "$vault" | jq --join-output ".[] | select(.name == $result) | .login.$query"
-notify-send "Copied $query for $result to clipboard" "Cache updated"
+# Exit if user pressed escape
+[ ! "$item_name" = "" ]
+
+# Get index of selected item
+current_index=$(echo "$vault" | jq "map(.name == \"$item_name\") | index(true)")
+
+# Cache index of last selected item, so it will be highlighted next time
+echo "$current_index" >"$index_file"
+
+# Return value for selected item
+echo "$vault" | jq --join-output ".[] | select(.name == \"$item_name\") | .login.$query"
