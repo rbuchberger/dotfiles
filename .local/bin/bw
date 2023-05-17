@@ -2,47 +2,13 @@
 set -euo pipefail
 IFS=$'\n\t'
 
-# This script is a wrapper for the Bitwarden CLI.
-# It handles the creation of a session key, encrypting it with GPG
-# Holy fuck shit jesus is pinentry a pain in the ass to use, who the hell
-# designed this shit? Just let me ask for a fucking password and print the
-# result to STDOUT, christ.
+# Bitwarden CLI wrapper to expose the session key.
+# If it's prompting you for the master pw, rerun bw-unlock
 
-# Also, pinentry doesn't concern itself with such basic considerations as man
-# pages. No, you need to use the far shittier 'info' command, to get any
-# actual documentation (which still sucks). This is written nowhere.
+session_file="${XDG_CACHE_HOME:-$HOME/.cache}/bw_session.gpg"
 
-create_session() {
-	# WHO THE FUCK ACCEPTS ARGUMENTS THIS WAY FUCK YOU
-	pinentry_result=$(
-		pinentry <<EOL
-SETTITLE Bitwarden CLI
-SETPROMPT Master Password:
-GETPIN
-EOL
-	)
+BW_SESSION=$(gpg --output - --quiet --decrypt "$session_file") ||
+	(echo "You need to run bw-unlock" && exit 1)
 
-	# First we have to pick the line we actually give a shit about from a bunch of
-	# extraneous pointless bullshit
-	pinentry_line=$(echo "$pinentry_result" | grep D)
-	# THEN we have to fucking strip the pointless fucking prefix becuase I guess
-	# without it we couldn't have accomplished the previous step, which WOULDN'T
-	# HAVE BEEN NECESSARY IN THE FIRST PLACE IF THIS FUKCING TOOL MADE ANY SENSE
-	master_pw=${pinentry_line#"D "}
-
-	# And then we can actually fucking use the thing. Fuck this is why I hate the
-	# GNU coreutils. Everything is so much harder than it needs to be.
-	session_key=$(/usr/bin/bw unlock --raw "$master_pw")
-	[ ! "$session_key" = "" ] && echo "$session_key" |
-		gpg --encrypt --recipient "$GPGKEY" >"$session_file"
-}
-
-session_file="$HOME"/.bw_session.gpg
-
-[ -f "$session_file" ] || create_session
-[ -f "$session_file" ]
-
-BW_SESSION=$(gpg --output - --quiet --decrypt "$session_file")
 export BW_SESSION
-
 exec /usr/bin/bw "$@"

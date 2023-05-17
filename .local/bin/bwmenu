@@ -1,70 +1,64 @@
 #!/usr/bin/env bash
 set -euo pipefail
 IFS=$'\n\t'
-# Popup menu, Select an item from bitwarden, return value for passed key
-# Usage: bwmenu [key (username, password, etc; something on the login object)]
+# Select an item from bitwarden with bemenu, return value for passed query
 #
-# bw list items takes a few seconds, so we cache the list of names. This way
-# the menu is instant and we can fetch the vault while the user is selecting
-# an input.
+# Usage: bwmenu [query]
+#   query: anything on the login object; username, password, totp, etc
+#   default: username
+#
+# Dependencies: bemenu, jq, bitwarden-cli, a working private gpg key
+#
+# `bw list items` takes a few seconds, so we cache names. This way the menu is
+# instant and we can fetch the vault while the user is selecting an input.
 
 query=${1:-username}
+items_file=${XDG_CACHE_HOME:-$HOME/.cache}/bwmenu_items
 
-cache_dir=${XDG_CACHE_HOME:-$HOME/.cache}/bwmenu
-mkdir -p "$cache_dir"
-
-# List of item names. Storing this allows us to show the menu instantly.
-name_file="$cache_dir/names"
-
-# Index of last used item
-index_file="$cache_dir/index"
-touch "$index_file" # ensure it exists before we try to read it
-last_index=$(<"$index_file")
-
-function menu() {
-	echo "$1" |
-		bemenu --index "$last_index" --prompt="$query" --ignorecase --prefix '🙮🙮🙮' \
-			--list 20 --margin 800 --line-height 45 --fn "Iosevka Term SS05 Expanded 14" \
-			--tf="#da4939" --tb="#2b2b2b" --ff="#e6e1dc" --fb="5a647e" --nf="#e6e1dc" \
-			--nb="#2b2b2b" --hf="#a5c261" --hb="#5a647e" --sb="#5a647e" --sf="#a5c261"
+# Names are stored as tab separated values, name & id
+cache_names() {
+	echo "$vault" | jq --raw-output '.[] | [.name, .id] | @tsv' >"$items_file"
 }
 
 # Check if cache exists, if not, build it
-if [ -f "$name_file" ]; then
-	names=$(<"$name_file")
-else
+if [ ! -f "$items_file" ]; then
 	vault=$(bw list items)
-	echo "$vault" | jq '.[].name' >"$name_file"
-	echo "First run, building cache. Please run again."
+	cache_names
+
+	# This only happens on the first run, so we can just bail
+	echo "First run, building cache. Please try again."
 	exit 1
 fi
 
-# Prompt user for input, store result in temp file and background
-temp_name_file=$(mktemp)
-trap 'rm -f $temp_name_file' EXIT SIGINT SIGTERM SIGQUIT
-menu "$names" >"$temp_name_file" &
-input_pid=$!
+names=$(<"$items_file")
+
+chosen_item_file=$(mktemp)
+trap 'rm -f $chosen_item_file' EXIT SIGINT SIGTERM SIGQUIT
+
+# In the background, Prompt user for input and store result in temp file
+# echo "$names" |
+echo "$names" | wofi --dmenu --matching fuzzy --insensitive --prompt "$query" \
+	>"$chosen_item_file" &
+
+picker_pid=$!
 
 # Fetch vault while user is selecting an input
 vault=$(bw list items)
 
-# Cache names for later use
-echo "$vault" | jq --raw-output '.[].name' >"$name_file"
+# Cache name & ids for later use
+cache_names
 
 # Wait for user input
-wait "$input_pid"
+wait "$picker_pid"
 
 # Read selected item name from temp file
-item_name=$(<"$temp_name_file")
+chosen_item=$(<"$chosen_item_file")
 
 # Exit if user pressed escape
-[ ! "$item_name" = "" ]
+[ ! "$chosen_item" = "" ]
 
-# Get index of selected item
-current_index=$(echo "$vault" | jq "map(.name == \"$item_name\") | index(true)")
+chosen_id=$(echo "$chosen_item" | cut -f2)
 
-# Cache index of last selected item, so it will be highlighted next time
-echo "$current_index" >"$index_file"
-
-# Return value for selected item
-echo "$vault" | jq --join-output ".[] | select(.name == \"$item_name\") | .login.$query"
+# Return value for selected item & query
+echo "$vault" |
+	jq --join-output ".[] | select(.id == \"$chosen_id\") | .login.$query"
