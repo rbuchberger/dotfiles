@@ -94,9 +94,9 @@ set $menu exec $term --class=launcher -e sway-launcher-desktop
 bindsym $mod+Return exec $term
 bindsym $mod+apostrophe exec firefox
 bindsym $mod+semicolon exec qutebrowser
-bindsym $mod+p exec ~/.local/bin/bwmenu password | wl-copy && notify-send "Bitwarden" "Password copied to clipboard"
-bindsym $mod+u exec ~/.local/bin/bwmenu username | wl-copy && notify-send "Bitwarden" "Username copied to clipboard"
-bindsym $mod+o exec ~/.local/bin/bwmenu totp | gen-otp | wl-copy && notify-send "Bitwarden" "TOTP copied to clipboard"
+bindsym $mod+p exec bww-menu password | wl-copy
+bindsym $mod+u exec bww-menu username | wl-copy
+bindsym $mod+o exec bww-menu totp | gen-otp | wl-copy
 bindsym $mod+Shift+u exec wofi-emoji
 bindsym $mod+d exec $menu
 bindsym $mod+Ctrl+comma exec ~/scripts/select_area_screenshot
@@ -199,11 +199,11 @@ bindsym $mod+Shift+e exec swaynag -t warning -m \
 include /etc/sway/config.d/*
 include ~/.config/sway/local_config
 
-exec "systemctl --user start sway-session.target"
+exec "systemctl --user start sway-session.target&"
 exec "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1&"
 
-exec "(ping_wait fastmail.com && mbsync --pull fastmail:INBOX)&"
-exec_always "ping_wait buchberger.cloud && bw sync || notify-send 'bw sync failed' &"
-exec_always "systemctl --user restart waybar.service"
-exec_always "systemctl --user restart mako.service"
-exec_always "sway-launcher-desktop purge"
+exec_always "systemctl --user restart waybar.service&"
+exec_always "systemctl --user restart mako.service&"
+exec_always "sway-launcher-desktop purge&"
+# exec "(ping_wait fastmail.com && mbsync --pull fastmail:INBOX)&"
+# exec_always "ping_wait buchberger.cloud && bw sync || notify-send 'bw sync failed' &"
