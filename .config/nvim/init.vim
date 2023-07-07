@@ -17,10 +17,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'sunjon/Shade.nvim'
   Plug 'goolord/alpha-nvim'
   Plug 'anuvyklack/pretty-fold.nvim'
-  " Progress indicator on bottom right, not Git
   Plug 'j-hui/fidget.nvim'
-  Plug 'code-biscuits/nvim-biscuits'
-  " Plug 'lewis6991/nvim-treesitter-context'
 
   " Keys
   Plug 'tpope/vim-unimpaired'
@@ -46,12 +43,10 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'tpope/vim-repeat'
   Plug 'kylechui/nvim-surround'
   Plug 'numToStr/Comment.nvim'
-  " Plug 'alvan/vim-closetag'
   Plug 'godlygeek/tabular'
   Plug 'Wansmer/treesj'
   Plug 'Wansmer/sibling-swap.nvim'
   Plug 'windwp/nvim-autopairs'
-  " Plug 'windwp/nvim-ts-autotag'
   Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 
   " Snippets
@@ -98,12 +93,9 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'isobit/vim-caddyfile', { 'for': 'caddyfile' }
   Plug 'jose-elias-alvarez/typescript.nvim', { 'for': ['typescript', 'tsx', 'typescriptreact']}
 
-  " Other
-  Plug 'lewis6991/impatient.nvim' " Remove when released in nvim core
-
 call plug#end()
 
-lua pcall(require, 'impatient')
+lua vim.loader.enable()
 
 " Bindings
 
@@ -157,7 +149,7 @@ set foldopen&
 " set foldclose=all
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
-set foldlevelstart=6
+set foldlevelstart=8
 
 " eol:¬
 set list listchars=trail:·
