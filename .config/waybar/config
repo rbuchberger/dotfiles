@@ -9,7 +9,6 @@
     "sway/window"
   ],
   "modules-right": [
-    "custom/email",
     "custom/music",
     "pulseaudio",
     "battery",
