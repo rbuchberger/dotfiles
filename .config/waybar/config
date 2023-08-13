@@ -81,15 +81,17 @@
 
   "battery": {
     "states": {
-      "full": 99,
+      "full": 100,
+      "discharging": 95,
       "warning": 30,
       "critical": 15
     },
     "format": "{time} {icon}",
     "format-alt": "{capacity}% {icon}",
-    "format-charging": "{time}% ",
-    "format-full": "{capacity}% ",
+    "format-time": "{H}h {M}m",
+    "format-charging": "{timeTo} {capacity}% ",
     "format-icons": ["", "", "", "", ""],
+    "tooltip-format": "{power}W",
   },
   "network": {
     "format-wifi": "{signalStrength}% ",
