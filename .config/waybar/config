@@ -1,5 +1,5 @@
 {
-  "layer": "top", 
+  "layer": "top",
   "position": "bottom",
   "height": 40,
   "modules-left": [
@@ -12,22 +12,21 @@
     "custom/music",
     "pulseaudio",
     "battery",
+    "backlight",
+    "memory",
     "network",
     "clock#date",
     "clock#time",
     "tray"
   ],
-
   "sway/workspaces": {
     "disable-scroll": true
   },
-
   "custom/email": {
     "format": "{} ",
     "exec": "~/scripts/email_monitor",
     "tooltip": false
   },
-
   "custom/music": {
     "exec": "~/.local/bin/now_playing",
     "exec-if": "playerctl metadata &> /dev/null",
@@ -38,17 +37,14 @@
     "on-click-middle": "playerctl previous",
     "on-scroll-up": "playerctl position +10",
     "on-scroll-down": "playerctl position -10",
-    "tooltip": false,
+    "tooltip": false
   },
-
   "sway/window": {
     "tooltip": false
   },
-
   "sway/mode": {
     "format": "<span>{}</span>"
   },
-
   "idle_inhibitor": {
     "format": "{icon}",
     "format-icons": {
@@ -68,17 +64,18 @@
     "tooltip": true,
     "tooltip-format": "{calendar}"
   },
-
   "backlight": {
     "format": "{percent}% {icon}",
     "on-scroll-up": "light -U 2",
     "on-scroll-down": "light -A 2",
     "on-click": "light -S 100",
     "on-click-right": "light -S 20",
-    "format-icons": ["", ""],
-    "interval": 30
+    "format-icons": [
+      "",
+      ""
+    ],
+    "tooltip": false
   },
-
   "battery": {
     "states": {
       "full": 100,
@@ -88,10 +85,17 @@
     },
     "format": "{time} {icon}",
     "format-alt": "{capacity}% {icon}",
-    "format-time": "{H}h {M}m",
-    "format-charging": "{timeTo} {capacity}% ",
-    "format-icons": ["", "", "", "", ""],
-    "tooltip-format": "{power}W",
+    "format-time": "{H}h{M}m",
+    "format-charging": "{capacity}% {icon}",
+    "format-full": "{icon} ",
+    "format-icons": [
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    "tooltip-format": "{power}W"
   },
   "network": {
     "format-wifi": "{signalStrength}% ",
@@ -100,6 +104,11 @@
     "format-disconnected": "Disconnected ⚠",
     "format-alt": "{ifname}: {ipaddr}/{cidr}",
     "tooltip": false
+  },
+  "memory": {
+    "format": "{used}/{total}Gib ",
+    "tooltip": false,
+    "interval": 5
   },
   "pulseaudio": {
     "format": "{volume}% {icon}",
@@ -115,7 +124,11 @@
       "phone": "",
       "portable": "",
       "car": "",
-      "default": ["", "", ""]
+      "default": [
+        "",
+        "",
+        ""
+      ]
     },
     "on-click": "pulsemixer --toggle-mute",
     "tooltip": false
