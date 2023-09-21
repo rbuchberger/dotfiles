@@ -94,9 +94,9 @@ set $menu exec $term --class=launcher -e sway-launcher-desktop
 bindsym $mod+Return exec $term
 bindsym $mod+apostrophe exec firefox
 bindsym $mod+semicolon exec qutebrowser
-bindsym $mod+p exec bww-menu password | wl-copy
-bindsym $mod+u exec bww-menu username | wl-copy
-bindsym $mod+o exec bww-menu totp | gen-otp | wl-copy
+bindsym $mod+p exec rbw-menu password | wl-copy
+bindsym $mod+u exec rbw-menu username | wl-copy
+bindsym $mod+o exec rbw-menu code | wl-copy
 bindsym $mod+Shift+u exec wofi-emoji
 bindsym $mod+d exec $menu
 bindsym $mod+Ctrl+comma exec ~/scripts/select_area_screenshot

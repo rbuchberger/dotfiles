@@ -10,12 +10,13 @@ export QT_AUTO_SCREEN_SCALE_FACTOR=1
 export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 export SDL_VIDEODRIVER=wayland
 export XDG_SESSION_TYPE=wayland
-export XDG_CURRENT_DESKTOP=Unity
+# export XDG_CURRENT_DESKTOP=Unity
+export XDG_CURRENT_DESKTOP=Sway
 export GTK_THEME=Arc:dark
 # export XDG_CURRENT_DESKTOP=Sway
 # export QT_QPA_PLATFORM=wayland
-export QT_QPA_PLATFORMTHEME=qt5ct
 # export QT_WAYLAND_FORCE_DPI=physical
+export QT_QPA_PLATFORM=wayland
 
 # Enable flatpak desktop entries
 source /etc/profile.d/flatpak.sh
