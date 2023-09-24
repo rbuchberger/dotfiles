@@ -1,3 +1,5 @@
 #!/bin/bash
 # Remove packages from custom repo
-repo-remove $(aur repo).tar $@
+REPO=$(aur repo | grep path | cut -d ':' -f 2)
+
+repo-remove "$REPO" "$@"
