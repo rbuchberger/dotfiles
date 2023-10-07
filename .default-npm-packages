@@ -1,4 +1,5 @@
 neovim
 eslint
 eslint_d
+prettier_d_slim
 @tailwindcss/language-server

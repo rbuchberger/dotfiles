@@ -118,8 +118,8 @@ bindsym $mod+XF86AudioPlay exec ~/scripts/timew_toggle
 bindsym $mod+XF86AudioNext exec ~/scripts/timew_notify
 
 # System state controls
-bindsym $mod+up exec 'swaymsg "output * power on"; hampman on'
-bindsym $mod+down exec 'swaymsg "output * power off"; hampman off'
+# bindsym $mod+up exec 'swaymsg "output * power on"; hampman on'
+# bindsym $mod+down exec 'swaymsg "output * power off"; hampman off'
 bindsym $mod+ctrl+left exec 'systemctl hibernate'
 bindsym $mod+ctrl+right exec 'systemctl suspend'
 bindsym $mod+ctrl+down exec 'shutdown now'
