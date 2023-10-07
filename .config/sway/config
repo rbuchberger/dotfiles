@@ -118,8 +118,8 @@ bindsym $mod+XF86AudioPlay exec ~/scripts/timew_toggle
 bindsym $mod+XF86AudioNext exec ~/scripts/timew_notify
 
 # System state controls
-bindsym $mod+up exec 'swaymsg "output * power on"'
-bindsym $mod+down exec 'swaymsg "output * power off"'
+bindsym $mod+up exec 'swaymsg "output * power on"; hampman on'
+bindsym $mod+down exec 'swaymsg "output * power off"; hampman off'
 bindsym $mod+ctrl+left exec 'systemctl hibernate'
 bindsym $mod+ctrl+right exec 'systemctl suspend'
 bindsym $mod+ctrl+down exec 'shutdown now'
@@ -205,5 +205,3 @@ exec "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1&"
 exec_always "systemctl --user restart waybar.service&"
 exec_always "systemctl --user restart mako.service&"
 exec_always "sway-launcher-desktop purge&"
-# exec "(ping_wait fastmail.com && mbsync --pull fastmail:INBOX)&"
-# exec_always "ping_wait buchberger.cloud && bw sync || notify-send 'bw sync failed' &"

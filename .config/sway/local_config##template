@@ -124,8 +124,13 @@ bindsym $mod+ctrl+next exec 'light -S 0'
 bindsym $mod+comma gaps horizontal current plus 250
 bindsym $mod+period gaps horizontal current minus 250
 
-# Core Control - radeon profile
-# exec "/usr/bin/corectrl &"
+bindsym $mod+up exec 'swaymsg "output * power on"; hampman on'
+bindsym $mod+down exec 'swaymsg "output * power off"; hampman off'
+
+{% else %}
+
+bindsym $mod+up exec 'swaymsg "output * power on"'
+bindsym $mod+down exec 'swaymsg "output * power off"'
 
 {% endif %}
 
