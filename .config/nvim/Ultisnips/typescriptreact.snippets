@@ -1,8 +1,12 @@
 snippet fcp "React TSX FunctionComponent scaffold"
-import React, { FunctionComponent } from 'react'
+${1:export }const ${2:`!p snip.rv = snip.basename`}: React.FC<{$3}> = ({$4}) => {
+	return ${5:<></>}
+}
+endsnippet
 
-export const `!p snip.rv = snip.basename`: FunctionComponent = () => {
-	return <></>
+snippet njp "Next JS page scaffold"
+export default function Page() {
+	return ${4:<></>}
 }
 endsnippet
 
@@ -13,9 +17,7 @@ useEffect(() => {
 endsnippet
 
 snippet useState "react useState hook"
-const [$1, set$2] = useState(() => {
-	${3}
-}, [${4}])
+const [$1, set$1] = useState$2($3)
 endsnippet
 
 snippet useCallback "react useCallback hook"

@@ -14,7 +14,7 @@ Treesitter symbols | <leader>gt
 Spell Suggest current word | <Leader>=
 Cheatsheet | <F2>
 Edit Cheatsheet | g<F2>
-Commands | <leader>;
+Plugin Commands | <leader>;
 Registers | <leader>'
 Git Status (telescope) | <leader>gs
 Fugitive | <leader>s
@@ -25,3 +25,7 @@ Goto Definition | gd
 
 ## Alpha (launcher)
 Alpha | <leader>l
+
+## ReactExtract
+Extract Component to new file | <leader>re
+Extract Component to current file | <leader>rc

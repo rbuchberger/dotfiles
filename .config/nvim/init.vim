@@ -17,7 +17,10 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'sunjon/Shade.nvim'
   Plug 'goolord/alpha-nvim'
   Plug 'anuvyklack/pretty-fold.nvim'
-  Plug 'j-hui/fidget.nvim'
+  " Pair highlighting:
+  Plug 'utilyre/sentiment.nvim'
+  " Tailwind & hex code colors:
+  Plug 'NvChad/nvim-colorizer.lua'
 
   " Keys
   Plug 'tpope/vim-unimpaired'
@@ -44,9 +47,11 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'kylechui/nvim-surround'
   Plug 'numToStr/Comment.nvim'
   Plug 'godlygeek/tabular'
+  " splitjoin:
   Plug 'Wansmer/treesj'
   Plug 'Wansmer/sibling-swap.nvim'
   Plug 'windwp/nvim-autopairs'
+  Plug 'windwp/nvim-ts-autotag'
   Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 
   " Snippets
@@ -76,6 +81,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'lukas-reineke/cmp-rg'
   Plug 'quangnguyen30192/cmp-nvim-ultisnips'
   Plug 'ray-x/cmp-treesitter'
+  Plug 'roobert/tailwindcss-colorizer-cmp.nvim'
 
   " Git
   Plug 'tpope/vim-fugitive'
@@ -86,12 +92,12 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'cespare/vim-toml', { 'for': 'toml' }
   Plug 'chikamichi/mediawiki.vim', { 'for': 'mediawiki' }
   Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
-  Plug 'MaxMEllon/vim-jsx-pretty', { 'for': 'mediawiki' }
   Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'jsx', 'javascriptreact']}
   Plug 'rust-lang/rust.vim', { 'for': 'rust' }
   Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
   Plug 'isobit/vim-caddyfile', { 'for': 'caddyfile' }
   Plug 'jose-elias-alvarez/typescript.nvim', { 'for': ['typescript', 'tsx', 'typescriptreact']}
+  Plug 'napmn/react-extract.nvim', { 'for' : ['tsx', 'typescriptreact', 'javascriptreact']}
 
 call plug#end()
 
@@ -175,5 +181,5 @@ else
   colorscheme slate
 end
 
-" Highlight trailing whitespace
+" Highlight trailin " Pair highlightingg whitespace
 match WarningMsg '\s\+$'

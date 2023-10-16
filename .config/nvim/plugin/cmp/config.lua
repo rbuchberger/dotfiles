@@ -7,6 +7,11 @@ end
 
 lspkind.init()
 
+-- Set up tailwind colorizer
+require("tailwindcss-colorizer-cmp").setup({
+  color_square_width = 2,
+})
+
 local select_next_item = function()
   cmp.select_next_item({ cmp.SelectBehavior.Insert })
 end
@@ -26,12 +31,12 @@ cmp.setup({
     end,
   },
   mapping = {
-        ["<C-p>"] = cmp.mapping(select_prev_item, { "i", "c" }),
-        ["<C-n>"] = cmp.mapping(select_next_item, { "i", "c" }),
-        ["<C-e>"] = cmp.mapping(cmp.abort, { "i", "c" }),
-        ["<C-Space>"] = cmp.mapping(confirm, { "i", "c" }),
-        ["<C-d>"] = cmp.mapping.scroll_docs(-4),
-        ["<C-f>"] = cmp.mapping.scroll_docs(4),
+    ["<C-p>"] = cmp.mapping(select_prev_item, { "i", "c" }),
+    ["<C-n>"] = cmp.mapping(select_next_item, { "i", "c" }),
+    ["<C-e>"] = cmp.mapping(cmp.abort, { "i", "c" }),
+    ["<C-Space>"] = cmp.mapping(confirm, { "i", "c" }),
+    ["<C-d>"] = cmp.mapping.scroll_docs(-4),
+    ["<C-f>"] = cmp.mapping.scroll_docs(4),
   },
   sources = {
     { name = "nvim_lsp_signature_help" },
@@ -43,6 +48,10 @@ cmp.setup({
     { name = "path" },
     -- { name = "rg", keyword_length = 3 },
     { name = "calc" },
+  },
+
+  formatting = {
+    format = require("tailwindcss-colorizer-cmp").formatter,
   },
 })
 
@@ -68,3 +77,14 @@ if autopairs_ok then
 else
   print("autopairs.completion.cmp not found")
 end
+
+-- not strictly cmp related but whatever
+require("if_installed")("colorizer", function(colorizer)
+  colorizer.setup({
+    user_default_options = {
+      tailwind = true,
+      mode = "virtualtext",
+      virtualtext = "⬤"
+    },
+  })
+end)
