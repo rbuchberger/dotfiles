@@ -1,27 +1,10 @@
 local cmp_ok, cmp = pcall(require, "cmp")
 local lspkind_ok, lspkind = pcall(require, "lspkind")
+local tailwind_css_colorizer_ok, tailwind_css_colorizer = pcall(require, "tailwindcss-colorizer-cmp")
+local autopairs_ok, autopairs = pcall(require, "nvim-autopairs.completion.cmp")
 
-if not (cmp_ok and lspkind_ok) then
+if not (cmp_ok and lspkind_ok and tailwind_css_colorizer_ok and autopairs_ok) then
   return
-end
-
-lspkind.init()
-
--- Set up tailwind colorizer
-require("tailwindcss-colorizer-cmp").setup({
-  color_square_width = 2,
-})
-
-local select_next_item = function()
-  cmp.select_next_item({ cmp.SelectBehavior.Insert })
-end
-
-local select_prev_item = function()
-  cmp.select_prev_item({ cmp.SelectBehavior.Insert })
-end
-
-local confirm = function()
-  cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true })
 end
 
 cmp.setup({
@@ -31,12 +14,12 @@ cmp.setup({
     end,
   },
   mapping = {
-    ["<C-p>"] = cmp.mapping(select_prev_item, { "i", "c" }),
-    ["<C-n>"] = cmp.mapping(select_next_item, { "i", "c" }),
-    ["<C-e>"] = cmp.mapping(cmp.abort, { "i", "c" }),
-    ["<C-Space>"] = cmp.mapping(confirm, { "i", "c" }),
+    ["<C-p>"] = cmp.mapping.select_prev_item(),
+    ["<C-n>"] = cmp.mapping.select_next_item(),
     ["<C-d>"] = cmp.mapping.scroll_docs(-4),
     ["<C-f>"] = cmp.mapping.scroll_docs(4),
+    ["<C-e>"] = cmp.mapping.abort(),
+    ["<C-Space>"] = cmp.mapping.confirm({ select = true }),
   },
   sources = {
     { name = "nvim_lsp_signature_help" },
@@ -63,28 +46,13 @@ cmp.setup.cmdline(":", {
 })
 
 cmp.setup.cmdline("/", {
-  sources = {
+  sources = cmp.config.sources({
+    { name = "nvim_lsp_document_symbol" },
+  }, {
     { name = "buffer" },
-    { name = "cmdline_history" },
-  },
+  }),
 })
 
--- set up autopairs
-local autopairs_ok, autopairs = pcall(require, "nvim-autopairs.completion.cmp")
-
-if autopairs_ok then
-  cmp.event:on("confirm_done", autopairs.on_confirm_done())
-else
-  print("autopairs.completion.cmp not found")
-end
-
--- not strictly cmp related but whatever
-require("if_installed")("colorizer", function(colorizer)
-  colorizer.setup({
-    user_default_options = {
-      tailwind = true,
-      mode = "virtualtext",
-      virtualtext = "⬤"
-    },
-  })
-end)
+cmp.event:on("confirm_done", autopairs.on_confirm_done())
+lspkind.init()
+tailwind_css_colorizer.setup({ color_square_width = 2 })

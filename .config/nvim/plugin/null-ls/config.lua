@@ -1,5 +1,6 @@
-local ireq = require("if_installed")
-ireq("null-ls", function(null_ls)
+-- This plugin is archived by the author, but it still works ok for now.
+-- If that changes, look into none-ls: https://github.com/nvimtools/none-ls.nvim
+require("if_installed")("null-ls", function(null_ls)
   local diagnostics = null_ls.builtins.diagnostics
   local formatting = null_ls.builtins.formatting
   local code_actions = null_ls.builtins.code_actions
@@ -25,7 +26,7 @@ ireq("null-ls", function(null_ls)
       formatting.prettier_d_slim.with({ filetypes = { "css", "scss" } }),
 
       --Typescript
-      require("typescript.extensions.null-ls.code-actions"),
+      -- require("typescript.extensions.null-ls.code-actions"),
 
       --Ruby
       diagnostics.rubocop,

@@ -1,6 +1,7 @@
 local if_installed = require("if_installed")
 local on_attach = require("lsp_on_attach")
 
+-- This one is archived. Keeping config for now, but I'm testing replacements.
 if_installed("typescript", function(typescript)
   typescript.setup({
     server = {
@@ -41,6 +42,30 @@ if_installed("typescript", function(typescript)
         vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>cfa", ":TypescriptFixAll<CR>", {})
         vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", ":TypescriptGoToSourceDefinition<CR>", {})
       end,
+    },
+  })
+end)
+
+-- Candidate replacement: pmizio/typescript-tools.nvim
+if_installed("typescript-tools", function(ts_tools)
+  ts_tools.setup({
+    on_attach = function(client, bufnr)
+      -- Disable formatting to avoid conflict with eslint
+      client.server_capabilities.documentFormattingProvider = false
+      client.server_capabilities.documentRangeFormattingProvider = false
+      on_attach(client, bufnr)
+
+      vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>rnf", ":TSToolsRenameFile<CR>", {})
+      vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ci", ":TSToolsAddMissingImports<CR>", {})
+      vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>cfa", ":TSToolsFixAll<CR>", {})
+      vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", ":TSToolsGoToSourceDefinition<CR>", {})
+    end,
+    settings = {
+      expose_as_code_action = {
+        "add_missing_imports",
+        "remove_unused_imports",
+        "organize_imports",
+      },
     },
   })
 end)

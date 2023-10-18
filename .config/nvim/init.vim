@@ -76,6 +76,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
   Plug 'hrsh7th/cmp-nvim-lua', { 'for': [ 'lua', 'vim' ] }
   Plug 'hrsh7th/cmp-path'
+  Plug 'hrsh7th/cmp-nvim-lsp-document-symbol'
   Plug 'hrsh7th/nvim-cmp'
   Plug 'dmitmel/cmp-cmdline-history'
   Plug 'lukas-reineke/cmp-rg'
@@ -96,7 +97,9 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'rust-lang/rust.vim', { 'for': 'rust' }
   Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
   Plug 'isobit/vim-caddyfile', { 'for': 'caddyfile' }
-  Plug 'jose-elias-alvarez/typescript.nvim', { 'for': ['typescript', 'tsx', 'typescriptreact']}
+  " the following plugin is archived, but it works. Testing replacements.
+  " Plug 'jose-elias-alvarez/typescript.nvim', { 'for': ['typescript', 'tsx', 'typescriptreact']}
+  Plug 'pmizio/typescript-tools.nvim', { 'for': ['typescript', 'tsx', 'typescriptreact']}
   Plug 'napmn/react-extract.nvim', { 'for' : ['tsx', 'typescriptreact', 'javascriptreact']}
 
 call plug#end()

@@ -42,8 +42,39 @@ if_installed("lspconfig", function(lspconfig)
       },
     },
   })
+  lspconfig.tailwindcss.setup({
+    on_attach = on_attach,
+    flags = {
+      debounce_text_changes = 150,
+    },
+    settings = {
+      tailwindCSS = {
+        classAttributes = {
+          "class",
+          "className",
+          "class:list",
+          "classList",
+          "ngClass",
+          "tw",
+          "twx",
+          "twMerge",
+          ".*Classes",
+        },
+        lint = {
+          cssConflict = "warning",
+          invalidApply = "error",
+          invalidConfigPath = "error",
+          invalidScreen = "error",
+          invalidTailwindDirective = "error",
+          invalidVariant = "error",
+          recommendedVariantOrder = "warning",
+        },
+        validate = true,
+      },
+    },
+  })
 
-  local servers = { "solargraph", "tailwindcss", "vls" }
+  local servers = { "solargraph", "vls" }
 
   for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup({
