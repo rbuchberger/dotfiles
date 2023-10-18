@@ -100,7 +100,7 @@ bindsym $mod+o exec rbw-menu code | wl-copy
 bindsym $mod+Shift+u exec wofi-emoji
 bindsym $mod+d exec $menu
 bindsym $mod+Ctrl+comma exec ~/scripts/select_area_screenshot
-bindsym $mod+Ctrl+period exec grim
+bindsym $mod+Ctrl+period exec grim - | wl-copy
 bindsym $mod+t exec ~/scripts/screenshot_translate
 
 # Media volume controls
