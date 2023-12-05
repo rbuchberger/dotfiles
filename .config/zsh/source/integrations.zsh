@@ -39,4 +39,5 @@ if [ -f /opt/asdf-vm/asdf.sh ]; then
 fi
 
 # direnv
-source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
+[ -f  "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc" ] && \
+  source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
