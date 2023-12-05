@@ -22,8 +22,8 @@ cmp.setup({
     ["<C-Space>"] = cmp.mapping.confirm({ select = true }),
   },
   sources = {
-    { name = "nvim_lsp_signature_help" },
     { name = "nvim_lsp" },
+    { name = "nvim_lsp_signature_help" },
     { name = "nvim_lua" },
     { name = "treesitter" },
     { name = "ultisnips" },
