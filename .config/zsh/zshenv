@@ -78,3 +78,6 @@ export WEGORC=$XDG_CONFIG_HOME/wego/wegorc
 export WGETRC=$XDG_CONFIG_HOME/wgetrc
 export WINEPREFIX=$XDG_DATA_HOME/wineprefixes/default
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh
+
+# So rails app:update works nicely
+export THOR_MERGE="nvim -d"

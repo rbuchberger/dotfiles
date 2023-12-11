@@ -4,7 +4,7 @@ alias cat="bat"
 alias be="bundle exec"
 alias bejs="bundle exec jekyll serve --livereload"
 
-alias ls="exa --icons"
+alias ls="eza"
 
 alias m="neomutt"
 alias n="newsboat"
