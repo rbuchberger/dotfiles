@@ -26,10 +26,10 @@ cmp.setup({
     { name = "nvim_lsp_signature_help" },
     { name = "nvim_lua" },
     { name = "treesitter" },
-    { name = "ultisnips" },
+    -- { name = "ultisnips" },
     { name = "buffer" },
     { name = "path" },
-    -- { name = "rg", keyword_length = 3 },
+    { name = "rg", keyword_length = 3 },
     { name = "calc" },
   },
 
