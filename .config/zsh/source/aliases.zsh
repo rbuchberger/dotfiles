@@ -31,3 +31,5 @@ alias record="wf-recorder -p preset=slower -p crf=10 -p tune=animation"
 
 alias copy="wl-copy"
 alias paste="wl-paste"
+
+alias gs="gh copilot suggest"
