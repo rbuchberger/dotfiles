@@ -1,5 +1,7 @@
 #Read `man 5 sway` for a complete reference.
 
+# https://wiki.linuxquestions.org/wiki/List_of_Keysyms_Recognised_by_Xmodmap
+
 # Behavior
 
 focus_wrapping no
@@ -101,8 +103,6 @@ bindsym $mod+u exec rbw-menu username | wl-copy
 bindsym $mod+o exec rbw-menu code | wl-copy
 bindsym $mod+Shift+u exec wofi-emoji
 bindsym $mod+d exec $menu
-bindsym $mod+Ctrl+comma exec ~/scripts/select_area_screenshot
-bindsym $mod+Ctrl+period exec grim - | wl-copy
 bindsym $mod+t exec ~/scripts/screenshot_translate
 
 # Media volume controls
@@ -207,3 +207,13 @@ exec "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1&"
 exec_always "systemctl --user restart waybar.service&"
 exec_always "systemctl --user restart mako.service&"
 exec_always "sway-launcher-desktop purge&"
+
+# Screenshots
+bindsym $mod+Ctrl+comma exec flameshot gui
+bindsym $mod+Ctrl+period exec grim - | wl-copy
+
+# Cliphist
+exec wl-paste --watch cliphist store &
+bindsym $mod+bracketleft exec 'cliphist list | wofi --dmenu | cliphist decode | wl-copy'
+bindsym $mod+bracketright exec 'cliphist list | wofi --dmenu | cliphist delete'
+bindsym $mod+Ctrl+bracketright exec 'cliphist wipe'
