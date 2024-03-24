@@ -1,4 +1,3 @@
-browser "qutebrowser %u"
 articlelist-format "%D | %20a | %t"
 itemview-title-format "(%u unread) %F | %T"
 
@@ -10,7 +9,7 @@ bookmark-cmd ~/scripts/bookmark
 show-read-articles no
 
 urls-source "miniflux"
-miniflux-url "http://news.pestka.cloud"
+miniflux-url "https://news.pestka.cloud"
 
 miniflux-login "robert"
 miniflux-passwordfile "~/.config/newsboat/miniflux_password"
