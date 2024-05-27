@@ -32,12 +32,6 @@ require("if_installed")("nvim-treesitter.configs", function(treesitter)
       },
     },
 
-    context_commentstring = {
-      enable = true,
-    },
-
-    autotag = {
-      enable = true,
-    },
+    context_commentstring = { enable = true },
   })
 end)

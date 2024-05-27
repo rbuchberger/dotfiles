@@ -1,8 +1,11 @@
 local if_installed = require("if_installed")
 local on_attach = require("lsp_on_attach")
+local cmp_capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 if_installed("typescript-tools", function(ts_tools)
   ts_tools.setup({
+    capabilities = cmp_capabilities,
+
     on_attach = function(client, bufnr)
       -- Disable formatting to avoid conflict with eslint
       client.server_capabilities.documentFormattingProvider = false
@@ -16,6 +19,7 @@ if_installed("typescript-tools", function(ts_tools)
       vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>cf", ":TSToolsFixAll<CR>", {})
       vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", ":TSToolsGoToSourceDefinition<CR>", {})
     end,
+
     settings = {
       expose_as_code_action = {
         "add_missing_imports",
@@ -23,5 +27,17 @@ if_installed("typescript-tools", function(ts_tools)
         "organize_imports",
       },
     },
+  })
+end)
+
+if_installed("ts-error-translator", function(error_translator)
+  error_translator.setup()
+end)
+
+if_installed("tsc", function(tsc)
+  tsc.setup({
+    auto_close_qflist = true,
+    auto_start_watch_mode = true,
+    flags = { watch = true },
   })
 end)

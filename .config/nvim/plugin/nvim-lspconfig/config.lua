@@ -1,8 +1,10 @@
 local if_installed = require("if_installed")
 local on_attach = require("lsp_on_attach")
+local cmp_capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 if_installed("lspconfig", function(lspconfig)
   lspconfig.lua_ls.setup({
+    capabilities = cmp_capabilities,
     settings = {
       Lua = {
         runtime = {
@@ -27,6 +29,7 @@ if_installed("lspconfig", function(lspconfig)
 
   lspconfig.rust_analyzer.setup({
     on_attach = on_attach,
+    capabilities = cmp_capabilities,
     settings = {
       ["rust-analyzer"] = {
         assist = {
@@ -42,8 +45,10 @@ if_installed("lspconfig", function(lspconfig)
       },
     },
   })
+
   lspconfig.tailwindcss.setup({
     on_attach = on_attach,
+    capabilities = cmp_capabilities,
     flags = {
       debounce_text_changes = 150,
     },
@@ -79,6 +84,7 @@ if_installed("lspconfig", function(lspconfig)
   for _, lsp in ipairs(servers) do
     lspconfig[lsp].setup({
       on_attach = on_attach,
+      capabilities = cmp_capabilities,
       flags = {
         debounce_text_changes = 150,
       },

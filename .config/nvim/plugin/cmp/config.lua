@@ -13,14 +13,17 @@ cmp.setup({
       vim.fn["UltiSnips#Anon"](args.body)
     end,
   },
+
   mapping = {
     ["<C-p>"] = cmp.mapping.select_prev_item(),
     ["<C-n>"] = cmp.mapping.select_next_item(),
     ["<C-d>"] = cmp.mapping.scroll_docs(-4),
     ["<C-f>"] = cmp.mapping.scroll_docs(4),
     ["<C-e>"] = cmp.mapping.abort(),
-    ["<C-Space>"] = cmp.mapping.confirm({ select = true }),
+    ["<C-Space>"] = cmp.mapping.complete(),
+    ["<CR>"] = cmp.mapping.confirm({ select = true }),
   },
+
   sources = {
     { name = "nvim_lsp" },
     { name = "nvim_lsp_signature_help" },
@@ -29,7 +32,7 @@ cmp.setup({
     -- { name = "ultisnips" },
     { name = "buffer" },
     { name = "path" },
-    { name = "rg", keyword_length = 3 },
+    -- { name = "rg", keyword_length = 3 },
     { name = "calc" },
   },
 

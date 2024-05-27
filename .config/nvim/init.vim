@@ -38,7 +38,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'crispgm/telescope-heading.nvim'
   Plug 'fhill2/telescope-ultisnips.nvim'
   Plug 'debugloop/telescope-undo.nvim'
-  " Plug 'danielvolchek/tailiscope.nvim' " Doesn't work. Keep an eye on it.
   Plug 'stevearc/aerial.nvim'
 
   " Text manipulation:
@@ -80,10 +79,10 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'hrsh7th/cmp-nvim-lsp-document-symbol'
   Plug 'hrsh7th/nvim-cmp'
   Plug 'dmitmel/cmp-cmdline-history'
-  Plug 'lukas-reineke/cmp-rg'
-  Plug 'quangnguyen30192/cmp-nvim-ultisnips'
+  " Plug 'lukas-reineke/cmp-rg'
+  " Plug 'quangnguyen30192/cmp-nvim-ultisnips'
   Plug 'ray-x/cmp-treesitter'
-  Plug 'roobert/tailwindcss-colorizer-cmp.nvim'
+  Plug 'roobert/tailwindcss-colorizer-cmp.nvim', { 'for': ['css', 'scss', 'html', 'javascript', 'typescript', 'javascriptreact', 'typescriptreact'] }
 
   " Git
   Plug 'tpope/vim-fugitive'
@@ -98,10 +97,10 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'rust-lang/rust.vim', { 'for': 'rust' }
   Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
   Plug 'isobit/vim-caddyfile', { 'for': 'caddyfile' }
-  " the following plugin is archived, but it works. Testing replacements.
-  " Plug 'jose-elias-alvarez/typescript.nvim', { 'for': ['typescript', 'tsx', 'typescriptreact']}
   Plug 'pmizio/typescript-tools.nvim', { 'for': ['typescript', 'tsx', 'typescriptreact']}
   Plug 'napmn/react-extract.nvim', { 'for' : ['tsx', 'typescriptreact', 'javascriptreact']}
+  Plug 'dmmulroy/ts-error-translator.nvim', { 'for': ['typescript', 'tsx', 'typescriptreact']}
+  " Plug 'dmmulroy/tsc.nvim', { 'for': ['typescript', 'tsx', 'typescriptreact']}
 
 call plug#end()
 

@@ -1,5 +1,4 @@
 require("if_installed")("nvim-ts-autotag", function(autotag)
-  autotag.setup({
-    enable_close_on_slash = false,
-  })
+  -- Rename doesn't work. May uninstall.
+  autotag.setup()
 end)
