@@ -16,7 +16,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'luukvbaal/stabilize.nvim'
   Plug 'sunjon/Shade.nvim'
   Plug 'goolord/alpha-nvim'
-  Plug 'anuvyklack/pretty-fold.nvim'
+  " Plug 'anuvyklack/pretty-fold.nvim'
   " Pair highlighting:
   Plug 'utilyre/sentiment.nvim'
   " Tailwind & hex code colors:
@@ -96,7 +96,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'cespare/vim-toml', { 'for': 'toml' }
   Plug 'chikamichi/mediawiki.vim', { 'for': 'mediawiki' }
   Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
-  Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'jsx', 'javascriptreact']}
+  " Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'jsx', 'javascriptreact']}
   Plug 'rust-lang/rust.vim', { 'for': 'rust' }
   Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
   Plug 'isobit/vim-caddyfile', { 'for': 'caddyfile' }
