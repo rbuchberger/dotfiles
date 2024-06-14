@@ -69,8 +69,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'github/copilot.vim'
 
   " Completion
-  Plug 'hrsh7th/cmp-buffer'
-  Plug 'hrsh7th/cmp-calc'
+  " Plug 'hrsh7th/cmp-buffer'
+  " Plug 'hrsh7th/cmp-calc'
   Plug 'hrsh7th/cmp-cmdline'
   Plug 'hrsh7th/cmp-nvim-lsp'
   Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
@@ -82,7 +82,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   " Plug 'lukas-reineke/cmp-rg'
   " Plug 'quangnguyen30192/cmp-nvim-ultisnips'
   Plug 'ray-x/cmp-treesitter'
-  Plug 'roobert/tailwindcss-colorizer-cmp.nvim', { 'for': ['css', 'scss', 'html', 'javascript', 'typescript', 'javascriptreact', 'typescriptreact'] }
+  " Plug 'roobert/tailwindcss-colorizer-cmp.nvim', { 'for': ['css', 'scss', 'html', 'javascript', 'typescript', 'javascriptreact', 'typescriptreact'] }
 
   " Git
   Plug 'tpope/vim-fugitive'

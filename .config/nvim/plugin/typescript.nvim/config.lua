@@ -1,10 +1,10 @@
 local if_installed = require("if_installed")
 local on_attach = require("lsp_on_attach")
-local cmp_capabilities = require("cmp_nvim_lsp").default_capabilities()
+-- local cmp_capabilities = require("cmp_nvim_lsp").default_capabilities()
 
 if_installed("typescript-tools", function(ts_tools)
   ts_tools.setup({
-    capabilities = cmp_capabilities,
+    -- capabilities = cmp_capabilities,
 
     on_attach = function(client, bufnr)
       -- Disable formatting to avoid conflict with eslint
