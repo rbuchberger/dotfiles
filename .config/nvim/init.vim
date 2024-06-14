@@ -66,7 +66,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   " Plug 'jose-elias-alvarez/null-ls.nvim'
   Plug 'rmagatti/goto-preview'
   Plug 'RishabhRD/popfix'
-  Plug 'github/copilot.vim'
+  " Plug 'github/copilot.vim'
+  Plug 'supermaven-inc/supermaven-nvim'
   Plug 'stevearc/conform.nvim'
   Plug 'mfussenegger/nvim-lint'
 
