@@ -36,7 +36,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'nvim-lua/plenary.nvim'
   Plug 'nvim-telescope/telescope-ui-select.nvim'
   Plug 'crispgm/telescope-heading.nvim'
-  Plug 'fhill2/telescope-ultisnips.nvim'
+  " Plug 'fhill2/telescope-ultisnips.nvim'
   Plug 'debugloop/telescope-undo.nvim'
   Plug 'stevearc/aerial.nvim'
 
@@ -55,8 +55,8 @@ call plug#begin('~/.local/share/nvim/plugged')
   " Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 
   " Snippets
-  Plug 'honza/vim-snippets'
-  Plug 'SirVer/ultisnips'
+  " Plug 'honza/vim-snippets'
+  " Plug 'SirVer/ultisnips'
 
   " LSP & Linting
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}

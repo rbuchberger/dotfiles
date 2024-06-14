@@ -17,7 +17,7 @@ require("if_installed")("telescope", function(telescope)
 
   telescope.load_extension("ui-select")
   telescope.load_extension("heading")
-  telescope.load_extension("ultisnips")
+  -- telescope.load_extension("ultisnips")
   telescope.load_extension("undo")
   telescope.load_extension("aerial")
 
