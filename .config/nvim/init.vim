@@ -58,15 +58,17 @@ call plug#begin('~/.local/share/nvim/plugged')
   " Plug 'honza/vim-snippets'
   " Plug 'SirVer/ultisnips'
 
-  " LSP & Linting
+  " LSP, Linting linting, formatting
   Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
   Plug 'nvim-treesitter/nvim-treesitter-textobjects'
   Plug 'neovim/nvim-lspconfig'
   Plug 'onsails/lspkind-nvim'
-  Plug 'jose-elias-alvarez/null-ls.nvim'
+  " Plug 'jose-elias-alvarez/null-ls.nvim'
   Plug 'rmagatti/goto-preview'
   Plug 'RishabhRD/popfix'
   Plug 'github/copilot.vim'
+  Plug 'stevearc/conform.nvim'
+  Plug 'mfussenegger/nvim-lint'
 
   " Completion
   " Plug 'hrsh7th/cmp-buffer'
