@@ -17,7 +17,7 @@ require("if_installed")("conform", function(conform)
 	vim.api.nvim_set_keymap(
 		"n",
 		"<leader>f",
-		':lua require("conform").format({ bufnr = vim.api.nvim_get_current_buf() })<CR>',
+		':lua require("conform").format({ bufnr = vim.api.nvim_get_current_buf(), timeout_ms = 1000, async = true })<CR>',
 		{ noremap = true, silent = true }
 	)
 	-- vim.api.nvim_create_autocmd("BufWritePre", {

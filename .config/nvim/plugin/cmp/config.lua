@@ -1,14 +1,14 @@
 local cmp_ok, cmp = pcall(require, "cmp")
 local lspkind_ok, lspkind = pcall(require, "lspkind")
--- local tailwind_css_colorizer_ok, tailwind_css_colorizer = pcall(require, "tailwindcss-colorizer-cmp")
+local tailwind_css_colorizer_ok, tailwind_css_colorizer = pcall(require, "tailwindcss-colorizer-cmp")
 local autopairs_ok, autopairs = pcall(require, "nvim-autopairs.completion.cmp")
 
 cmp.setup({
-  -- snippet = {
-  --   expand = function(args)
-  --     vim.fn["UltiSnips#Anon"](args.body)
-  --   end,
-  -- },
+  snippet = {
+    expand = function(args)
+      vim.fn["UltiSnips#Anon"](args.body)
+    end,
+  },
 
   mapping = {
     ["<C-p>"] = cmp.mapping.select_prev_item(),
@@ -25,16 +25,16 @@ cmp.setup({
     { name = "nvim_lsp_signature_help" },
     { name = "nvim_lua" },
     { name = "treesitter" },
-    -- { name = "ultisnips" },
+    { name = "ultisnips" },
     -- { name = "buffer" },
     { name = "path" },
     -- { name = "rg", keyword_length = 3 },
     -- { name = "calc" },
   },
 
-  -- formatting = {
-  --   format = require("tailwindcss-colorizer-cmp").formatter,
-  -- },
+  formatting = {
+    format = require("tailwindcss-colorizer-cmp").formatter,
+  },
 })
 
 cmp.setup.cmdline(":", {
@@ -54,4 +54,4 @@ cmp.setup.cmdline("/", {
 
 cmp.event:on("confirm_done", autopairs.on_confirm_done())
 lspkind.init()
--- tailwind_css_colorizer.setup({ color_square_width = 2 })
+tailwind_css_colorizer.setup({ color_square_width = 2 })
