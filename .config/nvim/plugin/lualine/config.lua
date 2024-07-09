@@ -27,7 +27,7 @@ require("if_installed")("lualine", function(lualine)
 			} },
 			lualine_b = {},
 			lualine_c = { "diff" },
-			lualine_x = {},
+			lualine_x = { "location" },
 			lualine_y = { {
 				"diagnostics",
 				sources = { "nvim_diagnostic" },

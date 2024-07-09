@@ -14,13 +14,14 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'sainnhe/gruvbox-material'
   Plug 'sindrets/winshift.nvim'
   Plug 'luukvbaal/stabilize.nvim'
-  Plug 'sunjon/Shade.nvim'
+  " Plug 'sunjon/Shade.nvim'
   Plug 'goolord/alpha-nvim'
   " Plug 'anuvyklack/pretty-fold.nvim'
   " Pair highlighting:
   Plug 'utilyre/sentiment.nvim'
   " Tailwind & hex code colors:
   Plug 'NvChad/nvim-colorizer.lua'
+  Plug 'gorbit99/codewindow.nvim'
 
   " Keys
   Plug 'tpope/vim-unimpaired'
@@ -51,7 +52,6 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'Wansmer/sibling-swap.nvim'
   Plug 'windwp/nvim-autopairs'
   Plug 'windwp/nvim-ts-autotag'
-
   Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 
   " Snippets
@@ -162,16 +162,14 @@ set foldopen&
 " set foldclose=all
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()
-set foldlevelstart=8
+set foldlevelstart=12
 
 " eol:¬
-set list listchars=trail:·
 set splitright
 set splitbelow
 set scrolloff=5
 set showmatch
 set number
-set fillchars=eob:\
 set colorcolumn=81
 
 set termguicolors
@@ -187,6 +185,3 @@ if globpath(&runtimepath, 'colors/gruvbox-material.vim') !=? ''
 else
   colorscheme slate
 end
-
-" Highlight trailin " Pair highlightingg whitespace
-match WarningMsg '\s\+$'
