@@ -1,0 +1,11 @@
+snippet sleep "sleep some amount of time"
+await new Promise(resolve => setTimeout(resolve, ${1:1000})
+endsnippet
+
+snippet typeof "Better typeof check"
+Object.prototype.toString.call(${1:var})
+endsnippet
+
+snippet iife
+(() => {${1}})()
+endsnippet
