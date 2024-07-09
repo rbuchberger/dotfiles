@@ -52,7 +52,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'windwp/nvim-autopairs'
   Plug 'windwp/nvim-ts-autotag'
 
-  " Plug 'JoosepAlviste/nvim-ts-context-commentstring'
+  Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 
   " Snippets
   " Plug 'honza/vim-snippets'

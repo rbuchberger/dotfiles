@@ -49,7 +49,5 @@ require("if_installed")("nvim-treesitter.configs", function(treesitter)
 				node_decremental = "<C-m>",
 			},
 		},
-
-		context_commentstring = { enable = true },
 	})
 end)

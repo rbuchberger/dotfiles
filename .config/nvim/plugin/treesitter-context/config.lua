@@ -1,6 +1,3 @@
-require("if_installed")("treesitter-context", function(ts_context)
-  ts_context.setup {
-    enable = true,
-    -- throttle = true,
-  }
+require("if_installed")("ts_context_commentstring", function(ts_context)
+	ts_context.setup({})
 end)
