@@ -104,6 +104,7 @@ call plug#begin('~/.local/share/nvim/plugged')
   Plug 'napmn/react-extract.nvim', { 'for' : ['tsx', 'typescriptreact', 'javascriptreact']}
   Plug 'dmmulroy/ts-error-translator.nvim', { 'for': ['typescript', 'tsx', 'typescriptreact']}
   " Plug 'dmmulroy/tsc.nvim', { 'for': ['typescript', 'tsx', 'typescriptreact']}
+  Plug 'b0o/schemastore.nvim'
 
 call plug#end()
 
