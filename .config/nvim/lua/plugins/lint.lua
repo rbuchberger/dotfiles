@@ -1,6 +1,7 @@
 return {
 	{
 		"mfussenegger/nvim-lint",
+		dependencies = { "williamboman/mason.nvim" },
 
 		config = function()
 			local lint = require("lint")
@@ -11,7 +12,7 @@ return {
 				javascriptreact = { "eslint_d" },
 				typescriptreact = { "eslint_d" },
 				json = { "jsonlint" },
-				markdown = { "markdownlint" },
+				-- markdown = { "markdownlint" },
 				yaml = { "yamllint" },
 				css = { "stylelint" },
 				html = { "stylelint" },

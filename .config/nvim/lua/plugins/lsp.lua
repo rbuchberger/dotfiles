@@ -33,6 +33,8 @@ return {
 		dependencies = {
 			"b0o/schemastore.nvim",
 			"hrsh7th/nvim-cmp",
+			"williamboman/mason.nvim",
+			"williamboman/mason-lspconfig.nvim",
 			{
 				"folke/lazydev.nvim",
 				ft = "lua",
@@ -46,6 +48,9 @@ return {
 		},
 
 		config = function()
+      require("mason").setup()
+      require("mason-lspconfig").setup({})
+
 			local lspconfig = require("lspconfig")
 
 			lspconfig.lua_ls.setup(build_config({
