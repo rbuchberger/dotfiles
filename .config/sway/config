@@ -5,8 +5,14 @@
 # Behavior
 
 focus_wrapping no
+no_focus [class="steam"]
+
 focus_follows_mouse no
-for_window [title="."] inhibit_idle fullscreen
+focus_on_window_activation none
+
+for_window [title="."] {
+  inhibit_idle fullscreen
+}
 seat 0 hide_cursor 10
 seat seat0 xcursor_theme phinger-cursors 32
 xwayland enable
@@ -81,7 +87,12 @@ set $term footclient
 # set $menu 'bemenu-run --ignorecase --list 12'
 
 # App specific tweaks
-for_window [app_id="^launcher$"] floating enable, sticky enable, resize set 30 ppt 60 ppt
+for_window [app_id="^launcher$"]  {
+  floating enable
+  sticky enable
+  resize set 30 ppt 60 ppt
+}
+
 for_window [title="Origin"] floating enable
 for_window [title="Sharing Indicator"] floating enable
 # X-plane
@@ -91,6 +102,8 @@ for_window [app_id="opentrack"] floating enable
 for_window [app_id="qv4l2"] floating enable
 for_window [class="Plexamp"] floating enable
 for_window [title="sway-launcher-desktop"] floating enable
+for_window [app_id="de.haeckerfelix.Shortwave"] floating enable
+for_window [title="Extension: \(Bitwarden Password Manager\) - Bitwarden — Mozilla Firefox"] floating enable
 
 set $menu exec footclient --title="sway-launcher-desktop" sway-launcher-desktop
 

@@ -29,8 +29,7 @@
   },
   "custom/music": {
     "exec": "~/.local/bin/now_playing",
-    "exec-if": "playerctl metadata &> /dev/null",
-    "format": "{}",
+    "exec-if": "playerctl status",
     "interval": 1,
     "on-click": "playerctl play-pause",
     "on-click-right": "playerctl next",
