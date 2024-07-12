@@ -1,5 +1,11 @@
 return {
 	{ "luukvbaal/stabilize.nvim", opts = {} },
+	{ "karb94/neoscroll.nvim", opts = { easing = "cubic" } },
+	{
+		"lukas-reineke/indent-blankline.nvim",
+		main = "ibl",
+		opts = { scope = { show_end = false, show_start = false } },
+	},
 
 	{
 		"sainnhe/gruvbox-material",

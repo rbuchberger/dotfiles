@@ -4,6 +4,8 @@ return {
 		opts = {
 			keymaps = { accept_word = "<A-space>" },
 			ignore_filetypes = { markdown = true, gitcommit = true },
+      -- disable annoying startup message
+      log_level = "off",
 		},
 	},
 

@@ -29,6 +29,11 @@ end
 
 return {
 	{
+		-- LSP status indicator
+		"j-hui/fidget.nvim",
+		opts = {},
+	},
+	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
 			"b0o/schemastore.nvim",
@@ -48,8 +53,8 @@ return {
 		},
 
 		config = function()
-      require("mason").setup()
-      require("mason-lspconfig").setup({})
+			require("mason").setup()
+			require("mason-lspconfig").setup({})
 
 			local lspconfig = require("lspconfig")
 

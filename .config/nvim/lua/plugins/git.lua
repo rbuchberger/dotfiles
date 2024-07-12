@@ -10,9 +10,12 @@ return {
 	},
 
 	{
-		"tpope/vim-fugitive",
+		"NeogitOrg/neogit",
+		dependencies = { "nvim-lua/plenary.nvim", "sindrets/diffview.nvim", "nvim-telescope/telescope.nvim" },
 		config = function()
-			vim.api.nvim_set_keymap("n", "<leader>s", ":Git<CR>", { noremap = true, silent = true })
+			require("neogit").setup()
+
+			vim.api.nvim_set_keymap("n", "<leader>s", ":Neogit<CR>", { noremap = true, silent = true })
 		end,
 	},
 
