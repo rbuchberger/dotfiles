@@ -87,7 +87,6 @@
     "format-alt": "{capacity}% {icon}",
     "format-time": "{H}h{M}m",
     "format-charging": "{capacity}% {icon}",
-    "format-full": "{icon} ",
     "format-icons": [
       "",
       "",
