@@ -93,6 +93,8 @@ for_window [app_id="^launcher$"]  {
   resize set 30 ppt 60 ppt
 }
 
+for_window [app_id="org.pulseaudio.pavucontrol"] floating enable
+
 for_window [title="Origin"] floating enable
 for_window [title="Sharing Indicator"] floating enable
 # X-plane

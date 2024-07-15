@@ -130,6 +130,7 @@
       ]
     },
     "on-click": "pulsemixer --toggle-mute",
+    "on-click-middle": "pavucontrol",
     "tooltip": false
   }
 }
