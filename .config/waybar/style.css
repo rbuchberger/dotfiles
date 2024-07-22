@@ -60,7 +60,7 @@ window {
 #clock,
 #jgmenu,
 #idle_inhibitor,
-#pulseaudio,
+#wireplumber,
 #cpu,
 #memory,
 #network,
@@ -73,6 +73,7 @@ window {
 #custom-room-lights,
 #custom-email,
 #custom-music,
+#custom-easyswitch,
 #custom-switch-user {
   /* color: #e6e1dc; */
   color: rgba(230,225,220,.9);

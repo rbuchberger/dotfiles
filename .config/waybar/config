@@ -9,8 +9,9 @@
     "sway/window"
   ],
   "modules-right": [
+    "custom/easyswitch",
     "custom/music",
-    "pulseaudio",
+    "wireplumber",
     "battery",
     "backlight",
     "memory",
@@ -109,20 +110,17 @@
     "tooltip": false,
     "interval": 5
   },
-  "pulseaudio": {
-    "format": "{volume}% {icon}",
+  "wireplumber": {
+    "format": "{node_name} {volume}% {icon}",
     "format-bluetooth": "{volume}% {icon}",
     "format-bluetooth-muted": " {icon}",
-    "format-muted": "",
+    "format-muted": "{node_name} {volume}% ",
     "format-source": "{volume}% ",
     "format-source-muted": "",
     "format-icons": {
       "headphones": "",
       "handsfree": "",
       "headset": "",
-      "phone": "",
-      "portable": "",
-      "car": "",
       "default": [
         "",
         "",
@@ -131,6 +129,14 @@
     },
     "on-click": "pulsemixer --toggle-mute",
     "on-click-middle": "pavucontrol",
-    "tooltip": false
+    "on-click-right": "~/.local/share/cargo/bin/easyswitch audiosink next"
+  }, 
+
+  "custom/easyswitch": {
+    "exec": "sleep 0.1; ~/.local/share/cargo/bin/easyswitch easyeffects get",
+    "exec-if": "test -f ~/.local/share/cargo/bin/easyswitch",
+    "interval": 60,
+    "format": "{} 𝄞",
+    "on-click-right": "~/.local/share/cargo/bin/easyswitch easyeffects next"
   }
 }
