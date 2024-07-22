@@ -45,6 +45,7 @@ return {
 				yaml = { "yamllint" },
 				html = { "prettier" },
 				css = { "prettier" },
+				rust = { "rustfmt" },
 			},
 		},
 
