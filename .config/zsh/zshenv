@@ -29,6 +29,9 @@ export FZF_CTRL_T_OPTS='--preview "bat --style=numbers --color=always {} | head 
 export FZF_ALT_C_OPTS="--preview 'tree -C {} | head -200'"
 export FZF_ALT_C_COMMAND="fd --type d --ignore-file $XDG_CONFIG_HOME/git/gitignore-global"
 
+# Set up SSH agent
+export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
+
 # Grim
 
 export GRIM_DEFAULT_DIR="$HOME/screenshots"
