@@ -77,3 +77,6 @@ vim.api.nvim_create_autocmd("TermOpen", {
 })
 
 require("config.lazy")
+
+-- Has to be at the end or it doesn't work
+vim.g.maplocalleader = ","

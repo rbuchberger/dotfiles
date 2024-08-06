@@ -3,7 +3,7 @@ return {
 		"supermaven-inc/supermaven-nvim",
 		opts = {
 			keymaps = { accept_word = "<A-space>" },
-			ignore_filetypes = { markdown = true, gitcommit = true },
+			ignore_filetypes = { markdown = true, gitcommit = true, norg = true },
       -- disable annoying startup message
       log_level = "off",
 		},
