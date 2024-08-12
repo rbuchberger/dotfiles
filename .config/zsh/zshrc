@@ -82,3 +82,6 @@ function chpwd-osc7-pwd() {
 
 add-zsh-hook -Uz chpwd chpwd-osc7-pwd
 source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
+
+# Set up ssh agent
+# eval "$(ssh-agent -s)"
