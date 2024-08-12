@@ -13,7 +13,7 @@ export MANWIDTH=80
 export ZIM_HOME=$XDG_CONFIG_HOME/zim/
 
 # export PATH=/home/robert/.config/composer/vendor/bin:$PATH
-export PATH=$HOME/.local/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/.local/share/cargo/bin:$PATH
 
 # export RIPGREP_CONFIG_PATH=$XDG_CONFIG_HOME/rg/config
 
