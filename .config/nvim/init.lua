@@ -3,13 +3,14 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 vim.g.mapleader = " "
+vim.g.maplocalleader = ","
 
 -- Key mappings
 local map = vim.api.nvim_set_keymap
 local opts = { noremap = true, silent = true }
 
 map("n", "<leader>/", ":nohlsearch<CR>", opts)
-map("n", "<leader>w", ":w<CR>", opts)
+map("n", "<leader>w", ":w!<CR>", opts)
 map("n", "<A-h>", "<C-w>h", opts)
 map("n", "<A-j>", "<C-w>j", opts)
 map("n", "<A-k>", "<C-w>k", opts)
@@ -77,6 +78,3 @@ vim.api.nvim_create_autocmd("TermOpen", {
 })
 
 require("config.lazy")
-
--- Has to be at the end or it doesn't work
-vim.g.maplocalleader = ","

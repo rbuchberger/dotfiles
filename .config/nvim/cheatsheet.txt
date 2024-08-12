@@ -29,3 +29,32 @@ Alpha | <leader>l
 ## ReactExtract
 Extract Component to new file | <leader>re
 Extract Component to current file | <leader>rc
+
+## Neorg
+Neorg index | <LocalLeader>ni
+Neorg new file | <LocalLeader>nn
+-- Note that this breaks supermaven.
+Neorg journal today | <LocalLeader>jt
+Neorg journal yesterday | <LocalLeader>jy
+Neorg journal tomorrow | <LocalLeader>jm
+Neorg journal custom | <LocalLeader>jc
+Generate-workspace-summary | <LocalLeader>ns
+Inject metadata | <LocalLeader>nm
+Update metadata | <LocalLeader>nu
+Table of contents | <LocalLeader>tab
+Insert another list item (insert mode) | <M-CR>
+Insert a date link (insert mode) | <M-d>
+Promote a list item non-recursively | <,
+Demote a list item non-recursively | >.
+Switch task status | <C-Space>
+Magnify Code block in a separate buffer | <LocalLeader>cm
+Invert a list | <LocalLeader>li
+Toggle a list from ordered <-> unordered | <LocalLeader>lt
+Mark a task as ambiguous | <LocalLeader>ta
+Mark a task as cancelled | <LocalLeader>tc
+Mark a task as done | <LocalLeader>td
+Mark a task as on-hold | <LocalLeader>th
+Mark a task as important | <LocalLeader>ti
+Mark a task as pending | <LocalLeader>tp
+Mark a task as recurring | <LocalLeader>tr
+Mark a task as undone | <LocalLeader>tu

@@ -3,9 +3,9 @@ return {
 		"supermaven-inc/supermaven-nvim",
 		opts = {
 			keymaps = { accept_word = "<A-space>" },
-			ignore_filetypes = { markdown = true, gitcommit = true, norg = true },
-      -- disable annoying startup message
-      log_level = "off",
+			ignore_filetypes = { markdown = true, gitcommit = true, norg = true, NeogitCommitMessage = true },
+			-- disable annoying startup message
+			log_level = "off",
 		},
 	},
 
@@ -60,6 +60,7 @@ return {
 				sources = {
 					{ name = "nvim_lsp_signature_help" },
 					{ name = "nvim_lsp" },
+					{ name = "neorg" },
 					{ name = "lazydev" },
 					{ name = "treesitter" },
 					{ name = "nvim_lua" },
