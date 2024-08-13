@@ -78,7 +78,6 @@ export TASKDATA="$XDG_DATA_HOME"/task
 export TASKRC="$XDG_CONFIG_HOME"/task/taskrc
 export VIT_DIR="$XDG_CONFIG_HOME"/vit
 export WEGORC=$XDG_CONFIG_HOME/wego/wegorc
-export WGETRC=$XDG_CONFIG_HOME/wgetrc
 export WINEPREFIX=$XDG_DATA_HOME/wineprefixes/default
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh
 
