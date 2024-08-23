@@ -9,3 +9,8 @@ endsnippet
 snippet iife
 (() => {${1}})()
 endsnippet
+
+snippet Pretty
+import { Prettify } from '~/lib/utils'
+type ${2:Pretty} = Prettify<${1:MyType}>
+endsnippet
