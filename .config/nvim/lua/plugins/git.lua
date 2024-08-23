@@ -17,6 +17,8 @@ return {
 
 			vim.api.nvim_set_keymap("n", "<leader>s", ":Neogit<CR>", { noremap = true, silent = true })
 		end,
+    keys = { "<leader>s" },
+    cmd = { "Neogit" },
 	},
 
 	{
