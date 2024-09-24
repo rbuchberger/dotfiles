@@ -1,0 +1,15 @@
+#! /bin/zsh
+# Select an area of the screen, Screenhot, OCR, and copy the result to the
+# clipboard.
+
+temp_image=$(mktemp --suffix '.png')
+grim -g "$(slurp)" "$temp_image"
+
+# DPI of 120 seems to work OK for screenshots.
+text=$(tesseract "$temp_image" - --dpi 120 -l pol+deu)
+
+wl-copy $text
+
+notify-send 'OCR: ' "$text" --expire-time=60000 --category 'translation'
+
+rm $temp_image

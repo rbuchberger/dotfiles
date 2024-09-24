@@ -119,6 +119,7 @@ bindsym $mod+o exec rbw-menu code | wl-copy
 bindsym $mod+Shift+u exec wofi-emoji
 bindsym $mod+d exec $menu
 bindsym $mod+t exec ~/scripts/screenshot_translate
+bindsym $mod+ctrl+o exec ~/.local/bin/screenshot_ocr
 
 # Media volume controls
 bindsym XF86AudioMute exec pulsemixer --toggle-mute
@@ -232,3 +233,6 @@ exec wl-paste --watch cliphist store &
 bindsym $mod+bracketleft exec 'cliphist list | wofi --dmenu | cliphist decode | wl-copy'
 bindsym $mod+bracketright exec 'cliphist list | wofi --dmenu | cliphist delete'
 bindsym $mod+Ctrl+bracketright exec 'cliphist wipe'
+
+# Color picker
+bindsym $mod+Shift+p exec grim -g "$(slurp -p)" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:- | tail -n 1 | cut -d ' ' -f 4 | wl-copy 
