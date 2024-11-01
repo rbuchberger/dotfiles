@@ -1,140 +1,141 @@
 # Note! Don't edit local_config, those changes will be overwritten. edit 
 # local_config##template instead.
 
+{% if yadm.hostname == "charybdis" %}
+  output DP-1 {
+    color_profile icc ~/.config/sway/2024-profile.icc
+  }
+
+  # charybdis specific configs here
+  input "1149:8257:Kensington_Slimblade_Trackball" {
+    accel_profile flat
+      pointer_accel 1
+      scroll_factor 2
+  }
+
+  # Prior & next are pgup and pgdown
+  # Adjust brightness
+  bindsym $mod+prior exec 'light -A 20'
+  bindsym $mod+next exec 'light -U 20'
+
+  bindsym $mod+ctrl+prior exec 'light -S 100'
+  bindsym $mod+ctrl+next exec 'light -S 0'
+
+  bindsym $mod+comma gaps horizontal current plus 250
+  bindsym $mod+period gaps horizontal current minus 250
+
+  bindsym $mod+up exec 'swaymsg "output * power on"; hampman on'
+  bindsym $mod+down exec 'swaymsg "output * power off"; hampman off'
+
+{% else %}
+
+  bindsym $mod+up exec 'swaymsg "output * power on"'
+  bindsym $mod+down exec 'swaymsg "output * power off"'
+
+{% endif %}
+
 {% if yadm.hostname == "hippo" %}
+  output DP-1 {
+    color_profile icc ~/.config/sway/2024-profile-1.icc
+  }
 
-input type:keyboard {
-  xkb_options caps:super,shift:both_capslock
-}
+  input type:keyboard {
+    xkb_options caps:super,shift:both_capslock
+  }
 
-input type:touchpad {
-    dwt disabled # disabled while typing
-    tap enabled
-    accel_profile adaptive
-    pointer_accel .5
-    scroll_method two_finger
-    scroll_factor 3
-    click_method clickfinger
-    drag enabled
-    natural_scroll enabled
-    middle_emulation enabled
-}
+  input type:touchpad {
+      dwt disabled # disabled while typing
+      tap enabled
+      accel_profile adaptive
+      pointer_accel .5
+      scroll_method two_finger
+      scroll_factor 3
+      click_method clickfinger
+      drag enabled
+      natural_scroll enabled
+      middle_emulation enabled
+  }
 
-bindsym XF86MonBrightnessDown exec light -U 5
-bindsym XF86MonBrightnessUp exec light -A 5
-bindsym $mod+KP_Add exec playerctl next
-bindsym $mod+KP_Subtract exec playerctl play-pause
+  bindsym XF86MonBrightnessDown exec light -U 5
+  bindsym XF86MonBrightnessUp exec light -A 5
+  bindsym $mod+KP_Add exec playerctl next
+  bindsym $mod+KP_Subtract exec playerctl play-pause
+  bindsym $mod+comma gaps horizontal current plus 100
+  bindsym $mod+period gaps horizontal current minus 100
 
-exec_always killall swayidle
-exec_always /usr/bin/swayidle                    \
-  timeout 300 'swaymsg "output * dpms off"'      \
-  resume 'swaymsg "output * dpms on"'            \
-  timeout 600 'systemctl suspend-then-hibernate' \
-  resume 'swaymsg "output * dpms on"'            \
-  lock 'swaylock --daemonize; sleep 1'           \
-  before-sleep 'swaylock --daemonize; sleep 1'   \
-  &
+  exec_always killall swayidle
+  exec_always /usr/bin/swayidle                    \
+    timeout 300 'swaymsg "output * dpms off"'      \
+    resume 'swaymsg "output * dpms on"'            \
+    timeout 600 'systemctl suspend-then-hibernate' \
+    resume 'swaymsg "output * dpms on"'            \
+    lock 'swaylock --daemonize; sleep 1'           \
+    before-sleep 'swaylock --daemonize; sleep 1'   \
+    &
+
 
 {% endif %}
 
 {% if yadm.hostname == "caroline" %}
+  output eDP-1 {
+    scale 1.5
+      position 0,0
+  }
 
-# Output config
-# Built-in monitor
-output eDP-1 {
-  scale 1.5
-    position 0,0
-}
+  # External monitor
+  output DP-2 {
+    position 1600,-800
+  }
 
-# External monitor
-output DP-2 {
-  position 1600,-800
-}
+  # Mouse cursor theme and size
+  seat seat0 xcursor_theme default 18
 
-# Mouse cursor theme and size
-seat seat0 xcursor_theme default 18
+  # Lock button
+  bindcode 191 exec swaylock
 
-# Lock button
-bindcode 191 exec swaylock
+  # fullscreen
+  bindcode 70 fullscreen
 
-# fullscreen
-bindcode 70 fullscreen
+  # switch keyboard
+  bindcode 71 input "1:1:AT_Translated_Set_2_keyboard" xkb_switch_layout
 
-# switch keyboard
-bindcode 71 input "1:1:AT_Translated_Set_2_keyboard" xkb_switch_layout
+  # brightness down
+  bindcode 72 exec light -U 10
 
-# brightness down
-bindcode 72 exec light -U 10
+  # brightness up
+  bindcode 73 exec light -A 10
 
-# brightness up
-bindcode 73 exec light -A 10
+  # mute
+  bindcode 74 exec amixer sset 'Master' toggle
 
-# mute
-bindcode 74 exec amixer sset 'Master' toggle
+  # volume down
+  bindcode 75 XF86AudioLowerVolume exec amixer sset 'Master' 5%-
 
-# volume down
-bindcode 75 XF86AudioLowerVolume exec amixer sset 'Master' 5%-
+  # volume up
+  bindcode 76 XF86AudioRaiseVolume exec amixer sset 'Master' 5%+
 
-# volume up
-bindcode 76 XF86AudioRaiseVolume exec amixer sset 'Master' 5%+
+  input "0:0:Atmel_maXTouch_Touchpad" {
+    dwt disabled # disabled while typing
+      tap enabled
+      accel_profile adaptive
+      pointer_accel .5
+      scroll_method two_finger
+      scroll_factor 3
+      click_method clickfinger
+      drag enabled
+      natural_scroll enabled
+      middle_emulation enabled
+  }
 
-input "0:0:Atmel_maXTouch_Touchpad" {
-  dwt disabled # disabled while typing
-    tap enabled
-    accel_profile adaptive
-    pointer_accel .5
+  input "0:0:Atmel_maXTouch_Touchscreen" {
+  # click_method clickfinger
+  # drag enabled
+  # scroll_factor 2
     scroll_method two_finger
-    scroll_factor 3
-    click_method clickfinger
-    drag enabled
-    natural_scroll enabled
-    middle_emulation enabled
-}
+  }
 
-input "0:0:Atmel_maXTouch_Touchscreen" {
-# click_method clickfinger
-# drag enabled
-# scroll_factor 2
-  scroll_method two_finger
-}
-
-input 1:1:AT_Translated_Set_2_keyboard 
-{
-# keybindings here: https://wiki.galliumos.org/Media_keys_and_default_keybindings
-  xkb_model "chromebook"
-}
-
-{% if yadm.hostname == "charybdis" %}
-
-# charybdis specific configs here
-input "1149:8257:Kensington_Slimblade_Trackball" {
-  accel_profile flat
-    pointer_accel 1
-    scroll_factor 2
-}
-
-# Prior & next are pgup and pgdown
-# Adjust brightness
-bindsym $mod+prior exec 'light -A 20'
-bindsym $mod+next exec 'light -U 20'
-
-bindsym $mod+ctrl+prior exec 'light -S 100'
-bindsym $mod+ctrl+next exec 'light -S 0'
-
-bindsym $mod+comma gaps horizontal current plus 250
-bindsym $mod+period gaps horizontal current minus 250
-
-bindsym $mod+up exec 'swaymsg "output * power on"; hampman on'
-bindsym $mod+down exec 'swaymsg "output * power off"; hampman off'
-
-{% else %}
-
-bindsym $mod+up exec 'swaymsg "output * power on"'
-bindsym $mod+down exec 'swaymsg "output * power off"'
-
-{% endif %}
-
-{% if yadm.hostname == "hippo" %}
-bindsym $mod+comma gaps horizontal current plus 100
-bindsym $mod+period gaps horizontal current minus 100
-{% endif %}
+  input 1:1:AT_Translated_Set_2_keyboard 
+  {
+  # keybindings here: https://wiki.galliumos.org/Media_keys_and_default_keybindings
+    xkb_model "chromebook"
+  }
