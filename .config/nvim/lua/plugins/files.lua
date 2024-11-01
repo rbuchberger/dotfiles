@@ -1,11 +1,11 @@
 return {
 	{
 		"sudormrfbin/cheatsheet.nvim",
+    keys = { "<F2>", "g<F2>" },
 		config = function()
 			vim.keymap.set("n", "<F2>", "<cmd>Cheatsheet<cr>")
 			vim.keymap.set("n", "g<F2>", "<cmd>CheatsheetEdit<cr>")
 		end,
-    keys = { "<F2>", "g<F2>" },
     cmd = { "Cheatsheet", "CheatsheetEdit" },
 	},
 

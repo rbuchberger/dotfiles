@@ -58,3 +58,19 @@ Mark a task as important | <LocalLeader>ti
 Mark a task as pending | <LocalLeader>tp
 Mark a task as recurring | <LocalLeader>tr
 Mark a task as undone | <LocalLeader>tu
+
+## Gitsigns
+
+Stage hunk | <leader>hs
+Reset hunk | <leader>hr
+Stage buffer | <leader>hS
+Undo stage hunk | <leader>hu
+Reset buffer | <leader>hR
+Preview hunk | <leader>hp
+Blame line | <leader>hb
+Toggle current line blame | <leader>tb
+Diff this | <leader>hd
+Toggle deleted | <leader>td
+
+## Neogit
+Neogit | <leader>s

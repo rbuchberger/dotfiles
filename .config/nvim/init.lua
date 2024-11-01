@@ -6,17 +6,17 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = ","
 
 -- Key mappings
-local map = vim.api.nvim_set_keymap
+local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
-map("n", "<leader>/", ":nohlsearch<CR>", opts)
-map("n", "<leader>w", ":w!<CR>", opts)
+map("n", "<leader>/", "<cmd>nohlsearch<CR>", opts)
+map("n", "<leader>w", "<cmd>w!<CR>", opts)
 map("n", "<A-h>", "<C-w>h", opts)
 map("n", "<A-j>", "<C-w>j", opts)
 map("n", "<A-k>", "<C-w>k", opts)
 map("n", "<A-l>", "<C-w>l", opts)
 map("n", "<A-x>", "<C-w>c", opts)
-map("n", "<A-CR>", ":terminal<CR>", opts)
+map("n", "<A-CR>", "<cmd>terminal<CR>", opts)
 map("t", "<A-ESC>", "<ESC>", { noremap = true })
 map("t", "<ESC>", "<C-\\><C-n>", { noremap = true })
 map("i", "jk", "<ESC>", { noremap = true })

@@ -1,8 +1,13 @@
 return {
 	{ "luukvbaal/stabilize.nvim", opts = {} },
-	{ "karb94/neoscroll.nvim", opts = { easing = "cubic" } },
+	{
+		"karb94/neoscroll.nvim",
+		event = "VeryLazy",
+		opts = { easing = "cubic" },
+	},
 	{
 		"lukas-reineke/indent-blankline.nvim",
+		event = "VeryLazy",
 		main = "ibl",
 		opts = { scope = { show_end = false, show_start = false } },
 	},
@@ -66,6 +71,8 @@ return {
 	{
 		"sindrets/winshift.nvim",
 
+		keys = { "<A-w>" },
+
 		opts = {
 			highlight_moving_win = true,
 			focused_hl_group = "Visual",
@@ -88,6 +95,7 @@ return {
 		"nvim-lualine/lualine.nvim",
 
 		dependencies = { "nvim-tree/nvim-web-devicons", "sainnhe/gruvbox-material" },
+		lazy = false,
 
 		opts = {
 			options = { theme = "gruvbox-material", globalstatus = true },
@@ -118,6 +126,8 @@ return {
 	{
 		"romgrk/barbar.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons", "lewis6991/gitsigns.nvim" },
+
+		lazy = false,
 
 		opts = { animation = false, auto_hide = true },
 

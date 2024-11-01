@@ -1,28 +1,26 @@
 return {
 	{
-		"rhysd/git-messenger.vim",
-		init = function()
-			vim.api.nvim_set_keymap("n", "<C-b>", "<Plug>(git-messenger)", { noremap = true, silent = true })
-
-			vim.g.git_messenger_include_diff = "current"
-			vim.g.git_messenger_always_into_popup = "true"
-		end,
-	},
-
-	{
 		"NeogitOrg/neogit",
 		dependencies = { "nvim-lua/plenary.nvim", "sindrets/diffview.nvim", "nvim-telescope/telescope.nvim" },
-		config = function()
-			require("neogit").setup()
-
-			vim.api.nvim_set_keymap("n", "<leader>s", ":Neogit<CR>", { noremap = true, silent = true })
-		end,
-    keys = { "<leader>s" },
+		event = "VeryLazy",
     cmd = { "Neogit" },
+
+		config = function()
+			require("neogit").setup({
+				disable_insert_on_commit = true,
+				graph_style = "unicode",
+				commit_editor = {
+					spell_check = false,
+				},
+			})
+
+			vim.keymap.set("n", "<leader>s", "<cmd>Neogit<CR>", { noremap = true, silent = true })
+		end,
 	},
 
 	{
 		"lewis6991/gitsigns.nvim",
+		event = "VeryLazy",
 		opts = {
 			on_attach = function(bufnr)
 				local gitsigns = require("gitsigns")
@@ -74,7 +72,7 @@ return {
 				map("n", "<leader>td", gitsigns.toggle_deleted)
 
 				-- Text object
-				map({ "o", "x" }, "ih", ":<C-U>Gitsigns select_hunk<CR>")
+				map({ "o", "x" }, "ih", "<Cmd><C-U>Gitsigns select_hunk<CR>")
 			end,
 		},
 	},

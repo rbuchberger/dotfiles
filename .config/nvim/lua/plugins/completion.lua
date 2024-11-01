@@ -2,7 +2,10 @@ return {
 	{
 		"supermaven-inc/supermaven-nvim",
 		opts = {
-			keymaps = { accept_word = "<A-space>" },
+			keymaps = {
+        accept_word = "<A-space>",
+        accept_suggestion = "<C-Space>",
+      },
 			ignore_filetypes = { markdown = true, gitcommit = true, norg = true, NeogitCommitMessage = true },
 			-- disable annoying startup message
 			log_level = "off",
@@ -53,7 +56,9 @@ return {
 					["<C-d>"] = cmp.mapping.scroll_docs(-4),
 					["<C-f>"] = cmp.mapping.scroll_docs(4),
 					["<C-e>"] = cmp.mapping.abort(),
-					["<C-Space>"] = cmp.mapping.complete(),
+					-- ["<C-Space>"] = cmp.mapping.complete(),
+					["<A-n>"] = cmp.mapping.complete(),
+
 					["<C-CR>"] = cmp.mapping.confirm({ select = false }),
 				},
 
