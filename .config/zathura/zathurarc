@@ -35,3 +35,5 @@ set recolor                     "false"
 set recolor-keephue             "false"
 
 set selection-clipboard clipboard
+
+set database sqlite
