@@ -57,7 +57,8 @@
     "spacing": 10
   },
   "clock#time": {
-    "tooltip": false
+    "tooltip": false,
+    "timezone": "Europe/Warsaw"
   },
   "clock#date": {
     "format": "{:%A, %B %d}",
