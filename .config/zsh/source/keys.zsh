@@ -26,7 +26,7 @@ function ranger-cd {
     rm -f -- "$tempfile"
 }
 
-bindkey -s '^O' 'ranger-cd\n'
+bindkey -s '^O' 'y\n'
 
 # ZSH specific keys have to come after zsh is initialized
 # zsh-history-substring-search
