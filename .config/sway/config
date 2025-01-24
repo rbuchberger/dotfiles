@@ -13,7 +13,7 @@ focus_on_window_activation none
 for_window [title="."] {
   inhibit_idle fullscreen
 }
-seat 0 hide_cursor 10
+# seat 0 hide_cursor 10
 seat seat0 xcursor_theme phinger-cursors-light 32
 xwayland enable
 
@@ -24,8 +24,8 @@ xwayland enable
 # input
 input type:keyboard {
   xkb_layout pl
-    repeat_delay 200
-    repeat_rate 60
+  repeat_delay 200
+  repeat_rate 60
 }
 
 input type:pointer {
@@ -111,8 +111,11 @@ set $menu exec footclient --title="sway-launcher-desktop" sway-launcher-desktop
 
 # program shortcuts
 bindsym $mod+Return exec $term
-bindsym $mod+apostrophe exec firefox
-bindsym $mod+semicolon exec qutebrowser
+
+bindsym $mod+apostrophe exec zen-browser
+bindsym $mod+semicolon exec firefox
+# bindsym $mod+apostrophe exec firefox
+# bindsym $mod+semicolon exec qutebrowser
 bindsym $mod+p exec rbw-menu password | wl-copy
 bindsym $mod+u exec rbw-menu username | wl-copy
 bindsym $mod+o exec rbw-menu code | wl-copy
@@ -223,6 +226,10 @@ exec "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1&"
 exec_always "systemctl --user restart waybar.service&"
 exec_always "systemctl --user restart mako.service&"
 exec_always "sway-launcher-desktop purge&"
+
+# Gnome keyring
+exec_always dbus-update-activation-environment --all
+exec_always gnome-keyring-daemon --start --components=secrets
 
 # Screenshots
 bindsym $mod+Ctrl+comma exec flameshot gui
