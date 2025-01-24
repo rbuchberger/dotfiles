@@ -14,3 +14,15 @@ snippet Pretty
 import { Prettify } from '~/lib/utils'
 type ${2:Pretty} = Prettify<${1:MyType}>
 endsnippet
+
+snippet rt "next-typesafe-url routeType.ts definition"
+import { type DynamicRoute } from 'next-typesafe-url'
+import { z } from 'zod'
+
+export const Route = {
+  routeParams: z.object({ ${1} }),
+	searchParams: z.object({ ${2} }),
+} satisfies DynamicRoute
+
+export type RouteType = typeof Route
+endsnippet

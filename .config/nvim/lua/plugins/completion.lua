@@ -65,11 +65,10 @@ return {
 				sources = {
 					{ name = "nvim_lsp_signature_help" },
 					{ name = "nvim_lsp" },
-					{ name = "neorg" },
 					{ name = "lazydev" },
 					{ name = "treesitter" },
 					{ name = "nvim_lua" },
-					{ name = "nvim_lsp_document_symbol" },
+					-- { name = "nvim_lsp_document_symbol" },
 					-- { name = "ultisnips" },
 					{ name = "path" },
 				},

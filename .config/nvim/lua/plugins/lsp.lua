@@ -151,6 +151,7 @@ return {
 		"pmizio/typescript-tools.nvim",
 		lazy = true,
 		ft = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
+		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
 
 		opts = build_config({
 			on_attach = function(client, bufnr)
@@ -169,8 +170,44 @@ return {
 			end,
 
 			settings = {
-				expose_as_code_action = { "add_missing_imports", "remove_unused_imports", "organize_imports" },
+				expose_as_code_action = {
+					"add_missing_imports",
+					"fix_all",
+					"remove_unused_imports",
+					"organize_imports",
+				},
+				tsserver_file_preferences = {
+					autoImportFileExcludePatterns = {
+						"@radix-ui/**/*",
+						"lucide-react",
+						"postcss",
+						"react-hook-form",
+						"next/router",
+					},
+					includeCompletionsForModuleExports = false,
+				},
+				tsserver_format_options = {},
 			},
 		}),
+	},
+
+	{
+		"dmmulroy/tsc.nvim",
+		dependencies = { { "rcarriga/nvim-notify", config = {} } },
+		ft = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
+		config = {
+			flags = { watch = true },
+		},
+	},
+
+	{
+		"OlegGulevskyy/better-ts-errors.nvim",
+		dependencies = { "MunifTanjim/nui.nvim" },
+		config = {
+			keymaps = {
+				toggle = "<leader>ee", -- default '<leader>dd'
+				go_to_definition = "<leader>ed", -- default '<leader>dx'
+			},
+		},
 	},
 }

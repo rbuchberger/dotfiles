@@ -1,3 +1,4 @@
+local javascriptFormatters = { "prettierd" }
 return {
 	{
 		"mfussenegger/nvim-lint",
@@ -25,7 +26,7 @@ return {
 
 			vim.api.nvim_create_autocmd({ "BufEnter", "InsertLeave", "BufWritePost", "TextChanged" }, {
 				callback = function()
-					require("lint").try_lint()
+					lint.try_lint()
 				end,
 			})
 		end,
@@ -37,14 +38,14 @@ return {
 			formatters_by_ft = {
 				lua = { "stylua" },
 				markdown = { "markdownlint" },
-				typescript = { "prettier" },
-				javascript = { "prettier" },
-				typescriptreact = { "prettier" },
-				javascriptreact = { "prettier" },
+				typescript = javascriptFormatters,
+				javascript = javascriptFormatters,
+				typescriptreact = javascriptFormatters,
+				javascriptreact = javascriptFormatters,
 				json = { "prettier" },
 				yaml = { "yamllint" },
 				html = { "prettier" },
-				css = { "prettier" },
+				css = { "prettierd" },
 				rust = { "rustfmt" },
 			},
 		},
@@ -52,16 +53,20 @@ return {
 		config = function(_, opts)
 			require("conform").setup(opts)
 
-			local function format(bufnr)
-				require("conform").format({
+			local function format(bufnr, overrides)
+				require("conform").format(vim.tbl_extend("force", {
 					bufnr = bufnr,
-					timeout_ms = 1000,
+					timeout_ms = 500,
 					async = true,
-				})
+				}, overrides or {}))
 			end
 
 			vim.keymap.set("n", "<leader>f", function()
 				format(vim.api.nvim_get_current_buf())
+			end, { noremap = true })
+
+			vim.keymap.set("n", "<leader>ef", function()
+				format(vim.api.nvim_get_current_buf(), { formatters = { "eslint_d" } })
 			end, { noremap = true })
 
 			-- vim.api.nvim_create_autocmd("BufWritePre", {
@@ -71,5 +76,45 @@ return {
 			-- 	end,
 			-- })
 		end,
+	},
+	{
+		"piersolenski/wtf.nvim",
+		dependencies = {
+			"MunifTanjim/nui.nvim",
+		},
+		keys = {
+			{
+				"<leader>ai",
+				mode = { "n", "x" },
+				function()
+					require("wtf").ai()
+				end,
+				desc = "Debug diagnostic with AI",
+			},
+			{
+				mode = { "n" },
+				"<leader>as",
+				function()
+					require("wtf").search()
+				end,
+				desc = "Search diagnostic with Google",
+			},
+			{
+				mode = { "n" },
+				"<leader>ah",
+				function()
+					require("wtf").history()
+				end,
+				desc = "Populate the quickfix list with previous chat history",
+			},
+			{
+				mode = { "n" },
+				"<leader>ag",
+				function()
+					require("wtf").grep_history()
+				end,
+				desc = "Grep previous chat history with Telescope",
+			},
+		},
 	},
 }
