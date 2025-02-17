@@ -139,3 +139,4 @@
   # keybindings here: https://wiki.galliumos.org/Media_keys_and_default_keybindings
     xkb_model "chromebook"
   }
+{% endif %}
