@@ -1,7 +1,7 @@
 #! /bin/bash
 # Launch sway, setting env first
 
-export TERMINAL=alacritty
+# export TERMINAL=alacritty
 export BROWSER=firefox
 export ELM_ENGINE=wayland_egl
 # export MOZ_ENABLE_WAYLAND=1
@@ -11,7 +11,7 @@ export QT_WAYLAND_DISABLE_WINDOWDECORATION=1
 export SDL_VIDEODRIVER=wayland
 export XDG_SESSION_TYPE=wayland
 # export XDG_CURRENT_DESKTOP=Unity
-export XDG_CURRENT_DESKTOP=sway
+export XDG_CURRENT_DESKTOP=sway:wlroots
 export GTK_THEME=Arc:dark
 export QT_QPA_PLATFORM=wayland
 # export QT_QPA_PLATFORMTHEME=qt5ct
