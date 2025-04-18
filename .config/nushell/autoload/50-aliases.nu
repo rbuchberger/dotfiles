@@ -7,6 +7,8 @@ alias zg = lazygit
 
 alias lazyadm = yadm enter lazygit --work-tree ~/
 
+alias yeet = git push --force-with-lease --set-upstream
+
 alias dim = ddcutil setvcp 10 70
 alias bright = ddcutil setvcp 10 100
 

@@ -7,7 +7,7 @@ load-env {
   "DIFFPROG": 'nvim -d',
   "MANWIDTH": 80,
 
-  "AUR_PAGER": ranger,
+  "AUR_PAGER": yazi,
   "PAGER": nvimpager,
 
   "BROWSER": 'zen-bin',

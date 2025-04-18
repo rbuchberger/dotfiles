@@ -1,4 +1,4 @@
-source ~/.config/nushell/themes/gruvbox-material-dark-medium.nu
+source ~/.config/nushell/themes/gruvbox-custom.nu
 
 # Starship (prompt)
 mkdir ($nu.data-dir | path join "vendor/autoload")
