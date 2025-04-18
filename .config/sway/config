@@ -220,6 +220,9 @@ bindsym $mod+Shift+e exec swaynag -t warning -m \
 include /etc/sway/config.d/*
 include ~/.config/sway/local_config
 
+# Import environment variables
+exec systemctl --user import-environment WAYLAND_DISPLAY DISPLAY XDG_CURRENT_DESKTOP SWAYSOCK I3SOCK XCURSOR_SIZE XCURSOR_THEME
+
 exec "systemctl --user start sway-session.target&"
 exec "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1&"
 
@@ -236,10 +239,10 @@ bindsym $mod+Ctrl+comma exec flameshot gui
 bindsym $mod+Ctrl+period exec grim - | wl-copy
 
 # Cliphist
-exec wl-paste --watch cliphist store &
-bindsym $mod+bracketleft exec 'cliphist list | wofi --dmenu | cliphist decode | wl-copy'
-bindsym $mod+bracketright exec 'cliphist list | wofi --dmenu | cliphist delete'
-bindsym $mod+Ctrl+bracketright exec 'cliphist wipe'
+# exec wl-paste --watch cliphist store &
+# bindsym $mod+bracketleft exec 'cliphist list | wofi --dmenu | cliphist decode | wl-copy'
+# bindsym $mod+bracketright exec 'cliphist list | wofi --dmenu | cliphist delete'
+# bindsym $mod+Ctrl+bracketright exec 'cliphist wipe'
 
 # Color picker
 bindsym $mod+Shift+p exec grim -g "$(slurp -p)" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:- | tail -n 1 | cut -d ' ' -f 4 | wl-copy 
