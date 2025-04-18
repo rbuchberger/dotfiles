@@ -22,7 +22,7 @@ end
 
 local build_config = function(config)
 	return vim.tbl_deep_extend("keep", config, {
-		capabilities = require("cmp_nvim_lsp").default_capabilities(),
+		-- capabilities = require("cmp_nvim_lsp").default_capabilities(),
 		on_attach = on_attach,
 	})
 end
@@ -144,6 +144,19 @@ return {
 
 			lspconfig.solargraph.setup(build_config({}))
 			lspconfig.vls.setup(build_config({}))
+
+			-- Typescript language server
+			-- lspconfig.vtsls.setup(build_config({}))
+
+			lspconfig.eslint.setup(build_config({}))
+
+			-- Doesn't work, exits immediately.
+			-- lspconfig.nushell.setup(build_config({
+			-- 	cmd = { "nu", "--lsp" },
+			-- 	filetypes = { "nu" },
+			-- 	root_dir = require("lspconfig.util").find_git_ancestor,
+			-- 	single_file_support = true,
+			-- }))
 		end,
 	},
 
@@ -163,10 +176,10 @@ return {
 
 				vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>rnf", ":TSToolsRenameFile<CR>", {})
 				vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ci", ":TSToolsAddMissingImports<CR>", {})
-				vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>co", ":TSToolsOrganizeImports<CR>", {})
-				vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>cr", ":TSToolsRemoveUnused<CR>", {})
+				-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>co", ":TSToolsOrganizeImports<CR>", {})
+				-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>cr", ":TSToolsRemoveUnused<CR>", {})
 				vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>cf", ":TSToolsFixAll<CR>", {})
-				vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", ":TSToolsGoToSourceDefinition<CR>", {})
+				-- vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", ":TSToolsGoToSourceDefinition<CR>", {})
 			end,
 
 			settings = {
@@ -176,6 +189,7 @@ return {
 					"remove_unused_imports",
 					"organize_imports",
 				},
+
 				tsserver_file_preferences = {
 					autoImportFileExcludePatterns = {
 						"@radix-ui/**/*",
@@ -193,21 +207,19 @@ return {
 
 	{
 		"dmmulroy/tsc.nvim",
-		dependencies = { { "rcarriga/nvim-notify", config = {} } },
+		lazy = true,
 		ft = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
-		config = {
-			flags = { watch = true },
-		},
+		opts = {},
 	},
 
-	{
-		"OlegGulevskyy/better-ts-errors.nvim",
-		dependencies = { "MunifTanjim/nui.nvim" },
-		config = {
-			keymaps = {
-				toggle = "<leader>ee", -- default '<leader>dd'
-				go_to_definition = "<leader>ed", -- default '<leader>dx'
-			},
-		},
-	},
+	-- {
+	-- 	"OlegGulevskyy/better-ts-errors.nvim",
+	-- 	dependencies = { "MunifTanjim/nui.nvim" },
+	-- 	opts = {
+	-- 		keymaps = {
+	-- 			toggle = "<leader>ee", -- default '<leader>dd'
+	-- 			go_to_definition = "<leader>ed", -- default '<leader>dx'
+	-- 		},
+	-- 	},
+	-- },
 }

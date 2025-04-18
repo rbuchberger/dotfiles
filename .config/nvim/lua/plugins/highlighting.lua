@@ -36,6 +36,7 @@ return {
 					"javascript",
 					"json",
 					"markdown_inline",
+          "nu",
 					"ruby",
 					"rust",
 					"sql",

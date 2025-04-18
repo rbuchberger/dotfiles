@@ -1,21 +1,21 @@
 return {
 	{
 		"sudormrfbin/cheatsheet.nvim",
-    keys = { "<F2>", "g<F2>" },
+		keys = { "<F2>", "g<F2>" },
 		config = function()
 			vim.keymap.set("n", "<F2>", "<cmd>Cheatsheet<cr>")
 			vim.keymap.set("n", "g<F2>", "<cmd>CheatsheetEdit<cr>")
 		end,
-    cmd = { "Cheatsheet", "CheatsheetEdit" },
+		cmd = { "Cheatsheet", "CheatsheetEdit" },
 	},
 
 	{
 		"nvim-telescope/telescope.nvim",
-    branch = '0.1.x',
+		branch = "0.1.x",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons",
-      "nvim-treesitter/nvim-treesitter",
+			"nvim-tree/nvim-web-devicons",
+			"nvim-treesitter/nvim-treesitter",
 			"nvim-telescope/telescope-ui-select.nvim",
 			"crispgm/telescope-heading.nvim",
 			"fhill2/telescope-ultisnips.nvim",
@@ -44,7 +44,7 @@ return {
 			"<leader>gd",
 			"<leader>gi",
 		},
-    cmd = { "Telescope" },
+		cmd = { "Telescope" },
 		config = function()
 			local telescope = require("telescope")
 			telescope.setup({
@@ -97,7 +97,7 @@ return {
 		lazy = true,
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		keys = { "<leader>t", "gt" },
-    cmd = { "NvimTreeToggle", "NvimTreeFindFile" },
+		cmd = { "NvimTreeToggle", "NvimTreeFindFile" },
 
 		opts = {
 			sync_root_with_cwd = true,
@@ -130,5 +130,35 @@ return {
 				api.tree.open(filename)
 			end)
 		end,
+	},
+
+	-- lazy.nvim
+	{
+		"sontungexpt/buffer-closer",
+		event = "VeryLazy",
+		opts = {
+			min_remaining_buffers = 7, -- can not be less than 1
+			retirement_minutes = 10, -- can not be less than 1
+
+			-- close the buffer when the given events are triggered (see :h autocmd-events)
+			-- if the value is "default", the plugin will use the default events
+			-- if the value is "disabled", the plugin will not use any events
+			-- if the value is a table, the plugin will use the given events
+			events = "default", -- (table, "default", "disabled"):
+
+			timed_check = {
+				enabled = false,
+				interval_minutes = 1, -- can not be less than 1
+			},
+
+			excluded = {
+				filetypes = { "lazy", "NvimTree", "mason" },
+				buftypes = { "terminal", "nofile", "quickfix", "prompt", "help" },
+				filenames = {},
+			},
+
+			-- it means that a buffer will not be closed if it is opened in a window
+			ignore_working_windows = true,
+		},
 	},
 }

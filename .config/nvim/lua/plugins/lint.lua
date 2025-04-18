@@ -1,4 +1,6 @@
 local javascriptFormatters = { "prettierd" }
+-- local javascriptLinters = { "eslint" }
+
 return {
 	{
 		"mfussenegger/nvim-lint",
@@ -8,10 +10,10 @@ return {
 			local lint = require("lint")
 			lint.linters_by_ft = {
 				lua = { "luacheck" },
-				typescript = { "eslint_d" },
-				javascript = { "eslint_d" },
-				javascriptreact = { "eslint_d" },
-				typescriptreact = { "eslint_d" },
+				-- typescript = javascriptLinters,
+				-- javascript = javascriptLinters,
+				-- javascriptreact = javascriptLinters,
+				-- typescriptreact = javascriptLinters,
 				json = { "jsonlint" },
 				-- markdown = { "markdownlint" },
 				yaml = { "yamllint" },

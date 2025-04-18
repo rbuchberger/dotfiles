@@ -1,15 +1,25 @@
 return {
+	-- {
+	-- 	"supermaven-inc/supermaven-nvim",
+	-- 	opts = {
+	-- 		keymaps = {
+	--        accept_word = "<A-space>",
+	--        accept_suggestion = "<C-Space>",
+	--      },
+	-- 		ignore_filetypes = { markdown = true, gitcommit = true, norg = true, NeogitCommitMessage = true },
+	-- 		-- disable annoying startup message
+	-- 		log_level = "off",
+	-- 	},
+	-- },
+
 	{
-		"supermaven-inc/supermaven-nvim",
+		"zbirenbaum/copilot.lua",
+		cmd = { "Copilot" },
 		opts = {
-			keymaps = {
-        accept_word = "<A-space>",
-        accept_suggestion = "<C-Space>",
-      },
-			ignore_filetypes = { markdown = true, gitcommit = true, norg = true, NeogitCommitMessage = true },
-			-- disable annoying startup message
-			log_level = "off",
-		},
+      keymap = {
+        accept = "<a-n>"
+      }
+    },
 	},
 
 	{
@@ -81,6 +91,15 @@ return {
 			})
 
 			cmp.setup.filetype({ "markdown", "gitcommit" }, { enabled = false })
+
+			-- Only used when copilot is showing virtual text
+			-- cmp.event:on("menu_opened", function()
+			-- 	vim.b.copilot_suggestion_hidden = true
+			-- end)
+			--
+			-- cmp.event:on("menu_closed", function()
+			-- 	vim.b.copilot_suggestion_hidden = false
+			-- end)
 		end,
 	},
 }

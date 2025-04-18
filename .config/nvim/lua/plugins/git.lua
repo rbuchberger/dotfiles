@@ -3,7 +3,7 @@ return {
 		"NeogitOrg/neogit",
 		dependencies = { "nvim-lua/plenary.nvim", "sindrets/diffview.nvim", "nvim-telescope/telescope.nvim" },
 		event = "VeryLazy",
-    cmd = { "Neogit" },
+		cmd = { "Neogit" },
 
 		config = function()
 			require("neogit").setup({
@@ -74,6 +74,23 @@ return {
 				-- Text object
 				map({ "o", "x" }, "ih", "<Cmd><C-U>Gitsigns select_hunk<CR>")
 			end,
+		},
+	},
+
+	{
+		"pwntester/octo.nvim",
+		event = "VeryLazy",
+		dependencies = {
+			"nvim-lua/plenary.nvim",
+			"nvim-telescope/telescope.nvim",
+			"nvim-tree/nvim-web-devicons",
+		},
+
+		opts = {
+			enable_builtin = true,
+			-- ui = {
+			-- 	use_signstatus = false, -- show "modified" marks on the status column
+			-- },
 		},
 	},
 }
