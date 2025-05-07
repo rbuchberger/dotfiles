@@ -26,7 +26,7 @@ return {
 				args = { "--globals", "vim", "--" },
 			})
 
-			vim.api.nvim_create_autocmd({ "BufEnter", "InsertLeave", "BufWritePost", "TextChanged" }, {
+			vim.api.nvim_create_autocmd({ "BufEnter", "InsertLeave", "BufWritePost" }, {
 				callback = function()
 					lint.try_lint()
 				end,
@@ -49,6 +49,7 @@ return {
 				html = { "prettier" },
 				css = { "prettierd" },
 				rust = { "rustfmt" },
+				sql = { "sleek" },
 			},
 		},
 
@@ -66,19 +67,9 @@ return {
 			vim.keymap.set("n", "<leader>f", function()
 				format(vim.api.nvim_get_current_buf())
 			end, { noremap = true })
-
-			vim.keymap.set("n", "<leader>ef", function()
-				format(vim.api.nvim_get_current_buf(), { formatters = { "eslint_d" } })
-			end, { noremap = true })
-
-			-- vim.api.nvim_create_autocmd("BufWritePre", {
-			-- 	pattern = "*",
-			-- 	callback = function(args)
-			-- 		format(args.buf)
-			-- 	end,
-			-- })
 		end,
 	},
+
 	{
 		"piersolenski/wtf.nvim",
 		dependencies = {
