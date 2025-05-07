@@ -3,7 +3,8 @@
 font=iosevka 11
 
 # Given in milliseconds
-default-timeout=10000
+default-timeout=0
+max-history=30
 
 ## Base16 Railscasts
 # Author: Ryan Bates (http://railscasts.com)
