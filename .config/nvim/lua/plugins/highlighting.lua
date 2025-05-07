@@ -7,7 +7,10 @@ return {
 
 	{
 		"nvim-treesitter/nvim-treesitter",
-		dependencies = { "nvim-treesitter/nvim-treesitter-textobjects" },
+		dependencies = {
+			{ "nvim-treesitter/nvim-treesitter-textobjects" },
+			-- { "m-demare/hlargs.nvim", opts = {} },
+		},
 
 		build = function()
 			vim.cmd("TSUpdate")
@@ -36,7 +39,7 @@ return {
 					"javascript",
 					"json",
 					"markdown_inline",
-          "nu",
+					"nu",
 					"ruby",
 					"rust",
 					"sql",
