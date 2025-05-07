@@ -16,10 +16,10 @@ return {
 		"zbirenbaum/copilot.lua",
 		cmd = { "Copilot" },
 		opts = {
-      keymap = {
-        accept = "<a-n>"
-      }
-    },
+			keymap = {
+				accept = "<a-n>",
+			},
+		},
 	},
 
 	{
@@ -39,12 +39,10 @@ return {
 			"hrsh7th/cmp-cmdline",
 			"hrsh7th/cmp-nvim-lsp",
 			"hrsh7th/cmp-nvim-lsp-signature-help",
-			"hrsh7th/cmp-nvim-lua",
 			"hrsh7th/cmp-path",
 			"hrsh7th/cmp-nvim-lsp-document-symbol",
 			"dmitmel/cmp-cmdline-history",
-			"folke/lazydev.nvim",
-			-- "quangnguyen30192/cmp-nvim-ultisnips",
+			"quangnguyen30192/cmp-nvim-ultisnips",
 			{ "ray-x/cmp-treesitter", dependencies = { "nvim-treesitter/nvim-treesitter" } },
 			"roobert/tailwindcss-colorizer-cmp.nvim",
 			"onsails/lspkind.nvim",
@@ -59,6 +57,10 @@ return {
 						vim.fn["UltiSnips#Anon"](args.body)
 					end,
 				},
+				window = {
+					completion = cmp.config.window.bordered(),
+					documentation = cmp.config.window.bordered(),
+				},
 
 				mapping = {
 					["<C-p>"] = cmp.mapping.select_prev_item(),
@@ -66,7 +68,6 @@ return {
 					["<C-d>"] = cmp.mapping.scroll_docs(-4),
 					["<C-f>"] = cmp.mapping.scroll_docs(4),
 					["<C-e>"] = cmp.mapping.abort(),
-					-- ["<C-Space>"] = cmp.mapping.complete(),
 					["<A-n>"] = cmp.mapping.complete(),
 
 					["<C-CR>"] = cmp.mapping.confirm({ select = false }),
@@ -75,11 +76,8 @@ return {
 				sources = {
 					{ name = "nvim_lsp_signature_help" },
 					{ name = "nvim_lsp" },
-					{ name = "lazydev" },
+					{ name = "ultisnips" },
 					{ name = "treesitter" },
-					{ name = "nvim_lua" },
-					-- { name = "nvim_lsp_document_symbol" },
-					-- { name = "ultisnips" },
 					{ name = "path" },
 				},
 
@@ -91,6 +89,24 @@ return {
 			})
 
 			cmp.setup.filetype({ "markdown", "gitcommit" }, { enabled = false })
+
+      -- doesn't work :(
+			-- cmp.setup.cmdline({ "/", "?" }, {
+			-- 	mapping = cmp.mapping.preset.cmdline(),
+			-- 	sources = {
+			-- 		{ name = "buffer" },
+			-- 	},
+			-- })
+
+			cmp.setup.cmdline(":", {
+				mapping = cmp.mapping.preset.cmdline(),
+				sources = cmp.config.sources({
+					{ name = "path" },
+				}, {
+					{ name = "cmdline" },
+				}),
+				matching = { disallow_symbol_nonprefix_matching = false },
+			})
 
 			-- Only used when copilot is showing virtual text
 			-- cmp.event:on("menu_opened", function()
