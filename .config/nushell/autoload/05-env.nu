@@ -8,7 +8,7 @@ load-env {
   "MANWIDTH": 80,
 
   "AUR_PAGER": yazi,
-  "PAGER": nvimpager,
+  "MANPAGER": 'nvim +Man!'
 
   "BROWSER": 'zen-bin',
 }
