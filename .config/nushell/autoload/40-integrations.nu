@@ -9,15 +9,17 @@ if ('~/.asdf/completions/nushell.nu' | path exists) {
   source ~/.asdf/completions/nushell.nu
 }
 
-$env.config.hooks.env_change = $env.config.hooks.env_change | upsert PWD [
-  ...($env.config.hooks.env_change.PWD? | default [])
-
-  # Direnv
-  { 
-    condition: { which direnv | is-not-empty }
-    code: { direnv export json | from json | default {} | load-env }
+# Direnv
+$env.config = ($env.config | upsert hooks {
+  env_change: {
+    PWD: [
+      {
+        condition: { || which direnv | is-not-empty }
+        code: { || direnv export json | from json | default {} | load-env }
+      }
+    ]
   }
-]
+})
 
 # yazi cd
 def --env yazi-cd [...args] {
