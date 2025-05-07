@@ -1,86 +1,144 @@
-local on_attach = function(_, bufnr)
-	local function buf_set_keymap(...)
-		vim.api.nvim_buf_set_keymap(bufnr, ...)
-	end
-
-	local opts = { noremap = true, silent = true }
-
-	-- Using telescope for some of these
-	buf_set_keymap("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts)
-	-- buf_set_keymap("n", "gd", "<Cmd>lua vim.lsp.buf.definition()<CR>", opts)
-	-- buf_set_keymap("n", "K", "<Cmd>lua vim.lsp.buf.hover()<CR>", opts)
-	buf_set_keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
-	buf_set_keymap("n", "<leader>D", "<cmd>lua vim.lsp.buf.type_definition()<CR>", opts)
-	buf_set_keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-	buf_set_keymap("n", "<Leader>k", "<cmd> lua vim.lsp.buf.signature_help()<CR>", opts)
-	buf_set_keymap("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
-	-- buf_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
-	buf_set_keymap("n", "<C-k>", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opts)
-	buf_set_keymap("n", "<C-j>", "<cmd>lua vim.diagnostic.goto_next()<CR>", opts)
-	-- buf_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.format({ async = true })<CR>", opts)
-end
-
-local build_config = function(config)
-	return vim.tbl_deep_extend("keep", config, {
-		-- capabilities = require("cmp_nvim_lsp").default_capabilities(),
-		on_attach = on_attach,
-	})
-end
-
 return {
+	-- LSP status indicator
+	{ "j-hui/fidget.nvim", opts = {} },
+
 	{
-		-- LSP status indicator
-		"j-hui/fidget.nvim",
-		opts = {},
+		"pmizio/typescript-tools.nvim",
+		lazy = true,
+		ft = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
+		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+
+		opts = {
+			on_attach = function(client, bufnr)
+				-- Disable formatting to avoid conflict with prettier
+				client.server_capabilities.documentFormattingProvider = false
+				client.server_capabilities.documentRangeFormattingProvider = false
+
+				vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>rnf", ":TSToolsRenameFile<CR>", {})
+				vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ci", ":TSToolsAddMissingImports<CR>", {})
+				vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>cf", ":TSToolsFixAll<CR>", {})
+
+				-- vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", ":TSToolsGoToSourceDefinition<CR>", {})
+				-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>co", ":TSToolsOrganizeImports<CR>", {})
+				-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>cr", ":TSToolsRemoveUnused<CR>", {})
+			end,
+
+			settings = {
+				expose_as_code_action = {
+					"add_missing_imports",
+					"fix_all",
+					"remove_unused_imports",
+					"organize_imports",
+				},
+
+				tsserver_file_preferences = {
+					autoImportFileExcludePatterns = {
+						"@radix-ui/**/*",
+						"lucide-react",
+						"postcss",
+						"react-hook-form",
+						"next/router",
+					},
+					includeCompletionsForModuleExports = false,
+				},
+				tsserver_format_options = {},
+			},
+		},
 	},
+
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
 			"b0o/schemastore.nvim",
 			"hrsh7th/nvim-cmp",
 			"williamboman/mason.nvim",
-			"williamboman/mason-lspconfig.nvim",
-			{
-				"folke/lazydev.nvim",
-				ft = "lua",
-				dependencies = { "Bilal2453/luvit-meta" },
-				opts = {
-					library = {
-						{ path = "luvit-meta/library", words = { "vim%.uv" } },
-					},
-				},
-			},
+			-- "williamboman/mason-lspconfig.nvim",
+			-- {
+			-- 	"folke/lazydev.nvim",
+			-- 	ft = "lua",
+			-- 	dependencies = { "Bilal2453/luvit-meta" },
+			-- 	opts = {
+			-- 		library = {
+			-- 			{ path = "luvit-meta/library", words = { "vim%.uv" } },
+			-- 		},
+			-- 	},
+			-- },
 		},
 
 		config = function()
 			require("mason").setup()
-			require("mason-lspconfig").setup({})
+			vim.api.nvim_create_autocmd("LspAttach", {
+				callback = function()
+					local opts = { noremap = true, silent = true, buffer = true }
+					-- telescope handles some of this functionality
+					vim.keymap.set("n", "gD", vim.lsp.buf.declaration, opts)
+					-- vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
+					-- vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+					vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
+					vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, opts)
+					vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
+					vim.keymap.set("n", "<Leader>k", vim.lsp.buf.signature_help, opts)
+					vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+					-- vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
+					vim.keymap.set("n", "<C-k>", function()
+						vim.diagnostic.jump({ count = -1, float = true })
+					end, opts)
+					vim.keymap.set("n", "<C-j>", function()
+						vim.diagnostic.jump({ count = 1, float = true })
+					end, opts)
+					-- vim.keymap.set("n", "<leader>f", "vim.lsp.buf.format({ async = true })<CR>", opts)
+				end,
+			})
 
-			local lspconfig = require("lspconfig")
+			vim.lsp.config("lua_ls", {
+				on_init = function(client)
+					if client.workspace_folders then
+						local path = client.workspace_folders[1].name
+						if
+							path ~= vim.fn.stdpath("config")
+							and (vim.uv.fs_stat(path .. "/.luarc.json") or vim.uv.fs_stat(path .. "/.luarc.jsonc"))
+						then
+							return
+						end
+					end
 
-			lspconfig.lua_ls.setup(build_config({
-				settings = {
-					Lua = {
+					client.config.settings.Lua = vim.tbl_deep_extend("force", client.config.settings.Lua, {
 						runtime = {
-							-- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+							-- Tell the language server which version of Lua you're using (most
+							-- likely LuaJIT in the case of Neovim)
 							version = "LuaJIT",
+							-- Tell the language server how to find Lua modules same way as Neovim
+							-- (see `:h lua-module-load`)
+							path = {
+								"lua/?.lua",
+								"lua/?/init.lua",
+							},
 						},
-						diagnostics = { globals = { "vim" } },
+						-- Make the server aware of Neovim runtime files
 						workspace = {
 							checkThirdParty = false,
 							library = {
-								-- vim.api.nvim_get_runtime_file("", true),
-								vim.env.VIMRUNTIME .. "/lua",
-								-- Depending on the usage, you might want to add additional paths here.
-								-- "${3rd}/luv/library"
-								-- "${3rd}/busted/library",
+								vim.env.VIMRUNTIME,
+								-- Depending on the usage, you might want to add additional paths
+								-- here.
+								-- '${3rd}/luv/library'
+								-- '${3rd}/busted/library'
 							},
+							-- Or pull in all of 'runtimepath'.
+							-- NOTE: this is a lot slower and will cause issues when working on
+							-- your own configuration.
+							-- See https://github.com/neovim/nvim-lspconfig/issues/3189
+							-- library = {
+							--   vim.api.nvim_get_runtime_file('', true),
+							-- }
 						},
-					},
-				},
-			}))
+					})
+				end,
+				settings = { Lua = {} },
+			})
+			vim.lsp.enable("lua_ls")
 
-			lspconfig.rust_analyzer.setup(build_config({
+			vim.lsp.config("rust_analyzer", {
 				settings = {
 					["rust-analyzer"] = {
 						assist = { importGranularity = "module", importPrefix = "self" },
@@ -88,9 +146,10 @@ return {
 						procMacro = { enable = true },
 					},
 				},
-			}))
+			})
+			vim.lsp.enable("rust_analyzer")
 
-			lspconfig.tailwindcss.setup(build_config({
+			vim.lsp.config("tailwindcss", {
 				settings = {
 					tailwindCSS = {
 						classAttributes = {
@@ -116,18 +175,19 @@ return {
 						validate = true,
 					},
 				},
-			}))
+			})
+			vim.lsp.enable("tailwindcss")
 
-			lspconfig.jsonls.setup(build_config({
+			vim.lsp.config("jsonls", {
 				settings = {
 					json = {
 						schemas = require("schemastore").json.schemas(),
 						validate = { enable = true },
 					},
 				},
-			}))
+			})
 
-			lspconfig.yamlls.setup(build_config({
+			vim.lsp.config("yamlls", {
 				settings = {
 					yaml = {
 						schemaStore = {
@@ -140,69 +200,17 @@ return {
 						schemas = require("schemastore").yaml.schemas(),
 					},
 				},
-			}))
+			})
+			vim.lsp.enable("yamlls")
 
-			lspconfig.solargraph.setup(build_config({}))
-			lspconfig.vls.setup(build_config({}))
+			vim.lsp.enable("solargraph")
+			vim.lsp.enable("vls")
+			vim.lsp.enable("eslint")
+			vim.lsp.enable("nushell")
 
 			-- Typescript language server
-			-- lspconfig.vtsls.setup(build_config({}))
-
-			lspconfig.eslint.setup(build_config({}))
-
-			-- Doesn't work, exits immediately.
-			-- lspconfig.nushell.setup(build_config({
-			-- 	cmd = { "nu", "--lsp" },
-			-- 	filetypes = { "nu" },
-			-- 	root_dir = require("lspconfig.util").find_git_ancestor,
-			-- 	single_file_support = true,
-			-- }))
+			-- vim.lsp.enable("vtsls")
 		end,
-	},
-
-	{
-		"pmizio/typescript-tools.nvim",
-		lazy = true,
-		ft = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
-		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-
-		opts = build_config({
-			on_attach = function(client, bufnr)
-				-- Disable formatting to avoid conflict with prettier
-				client.server_capabilities.documentFormattingProvider = false
-				client.server_capabilities.documentRangeFormattingProvider = false
-
-				on_attach(client, bufnr)
-
-				vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>rnf", ":TSToolsRenameFile<CR>", {})
-				vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ci", ":TSToolsAddMissingImports<CR>", {})
-				-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>co", ":TSToolsOrganizeImports<CR>", {})
-				-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>cr", ":TSToolsRemoveUnused<CR>", {})
-				vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>cf", ":TSToolsFixAll<CR>", {})
-				-- vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", ":TSToolsGoToSourceDefinition<CR>", {})
-			end,
-
-			settings = {
-				expose_as_code_action = {
-					"add_missing_imports",
-					"fix_all",
-					"remove_unused_imports",
-					"organize_imports",
-				},
-
-				tsserver_file_preferences = {
-					autoImportFileExcludePatterns = {
-						"@radix-ui/**/*",
-						"lucide-react",
-						"postcss",
-						"react-hook-form",
-						"next/router",
-					},
-					includeCompletionsForModuleExports = false,
-				},
-				tsserver_format_options = {},
-			},
-		}),
 	},
 
 	{
