@@ -1,0 +1,30 @@
+# Note! Don't edit local_config, those changes will be overwritten. edit 
+# local_config##template instead.
+
+  output DP-1 {
+    color_profile icc ~/.config/sway/2024-profile.icc
+  }
+
+  # charybdis specific configs here
+  input "1149:8257:Kensington_Slimblade_Trackball" {
+    accel_profile flat
+      pointer_accel 1
+      scroll_factor 2
+  }
+
+  # Prior & next are pgup and pgdown
+  # Adjust brightness
+  bindsym $mod+prior exec 'light -A 20'
+  bindsym $mod+next exec 'light -U 20'
+
+  bindsym $mod+ctrl+prior exec 'light -S 100'
+  bindsym $mod+ctrl+next exec 'light -S 0'
+
+  bindsym $mod+comma gaps horizontal current plus 250
+  bindsym $mod+period gaps horizontal current minus 250
+
+  bindsym $mod+up exec 'swaymsg "output * power on"; hampman on'
+  bindsym $mod+down exec 'swaymsg "output * power off"; hampman off'
+
+
+

@@ -30,7 +30,12 @@ input type:keyboard {
 
 input type:pointer {
   accel_profile flat
-    pointer_accel 0
+  pointer_accel 0
+}
+
+input 1149:8257:Kensington_Slimblade_Trackball {
+  accel_profile adaptive
+  pointer_accel -0.4
 }
 
 # Colors and Appearance
@@ -112,10 +117,9 @@ set $menu exec footclient --title="sway-launcher-desktop" sway-launcher-desktop
 # program shortcuts
 bindsym $mod+Return exec $term
 
-bindsym $mod+apostrophe exec zen-browser
-bindsym $mod+semicolon exec firefox
-# bindsym $mod+apostrophe exec firefox
-# bindsym $mod+semicolon exec qutebrowser
+bindsym $mod+apostrophe exec firefox
+bindsym $mod+semicolon exec qutebrowser
+# bindsym $mod+semicolon exec firefox
 bindsym $mod+p exec rbw-menu password | wl-copy
 bindsym $mod+u exec rbw-menu username | wl-copy
 bindsym $mod+o exec rbw-menu code | wl-copy
@@ -246,3 +250,32 @@ bindsym $mod+Ctrl+period exec grim - | wl-copy
 
 # Color picker
 bindsym $mod+Shift+p exec grim -g "$(slurp -p)" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:- | tail -n 1 | cut -d ' ' -f 4 | wl-copy 
+
+# Mouse Mode
+mode Mouse {
+    bindsym a mode default, exec 'wl-kbptr-sway-active-win; swaymsg mode Mouse'
+    bindsym Shift+a mode default, exec 'wl-kbptr; swaymsg mode Mouse'
+
+    # Mouse move
+    bindsym h seat seat0 cursor move -15 0
+    bindsym j seat seat0 cursor move 0 15
+    bindsym k seat seat0 cursor move 0 -15
+    bindsym l seat seat0 cursor move 15 0
+
+    # Left button
+    bindsym s seat seat0 cursor press button1
+    bindsym --release s seat seat0 cursor release button1
+
+    # Middle button
+    bindsym d seat seat0 cursor press button2
+    bindsym --release d seat seat0 cursor release button2
+
+    # Right button
+    bindsym f seat seat0 cursor press button3
+    bindsym --release f seat seat0 cursor release button3
+
+    bindsym Escape mode default
+}
+
+bindsym $mod+m exec wl-kbptr-sway-active-win -o modes=floating','click -o mode_floating.source=detect
+bindsym $mod+Shift+m mode Mouse
