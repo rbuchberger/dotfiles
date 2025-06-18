@@ -30,8 +30,8 @@ width=900
 height=1200
 
 [category=email.unread]
-width=600
-height=400
+width=900
+height=500
 
 [category=timew]
 width=450

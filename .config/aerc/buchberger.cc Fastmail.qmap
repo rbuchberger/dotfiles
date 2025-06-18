@@ -1,0 +1,1 @@
+INBOX = tag:inbox and not tag:archived

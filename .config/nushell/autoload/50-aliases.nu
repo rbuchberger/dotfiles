@@ -1,4 +1,4 @@
-alias m = neomutt
+alias m = aerc
 alias n = newsboat
 alias c = ikhal
 

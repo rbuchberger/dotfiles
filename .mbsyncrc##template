@@ -3,7 +3,7 @@ Host imap.fastmail.com
 Port  993
 User robert@buchberger.cc
 PassCmd "cat ~/.fastmail_pw || pass mutt-wizard-fastmail"
-SSLType IMAPS
+TLSType IMAPS
 CertificateFile /etc/ssl/certs/ca-certificates.crt
 
 MaildirStore fastmail-local
