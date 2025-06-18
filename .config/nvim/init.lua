@@ -17,8 +17,8 @@ map("n", "<A-k>", "<C-w>k", opts)
 map("n", "<A-l>", "<C-w>l", opts)
 map("n", "<A-x>", "<C-w>c", opts)
 map("n", "<A-CR>", "<cmd>terminal<CR>", opts)
-map("t", "<A-ESC>", "<ESC>", { noremap = true })
-map("t", "<ESC>", "<C-\\><C-n>", { noremap = true })
+-- map("t", "<A-ESC>", "<ESC>", { noremap = true })
+map("t", "<A-ESC>", "<C-\\><C-n>", { noremap = true })
 map("i", "jk", "<ESC>", { noremap = true })
 
 -- Enable mouse support if available
@@ -60,6 +60,17 @@ vim.opt.number = true
 vim.opt.colorcolumn = "81"
 
 vim.opt.termguicolors = true
+
+local toggle_diagnostics = function()
+	-- local new_config = not vim.diagnostic.config().virtual_lines
+	-- vim.diagnostic.config({ virtual_lines = new_config })
+	vim.diagnostic.config({
+		virtual_lines = not vim.diagnostic.config().virtual_lines,
+	})
+end
+
+map("i", "<C-i>", toggle_diagnostics, { desc = "Toggle diagnostic virtual_lines" })
+map("n", "<C-i>", toggle_diagnostics, { desc = "Toggle diagnostic virtual_lines" })
 
 -- Formatting autocmd
 vim.api.nvim_create_augroup("formatting", { clear = true })

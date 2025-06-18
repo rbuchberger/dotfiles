@@ -1,11 +1,10 @@
 return {
 	{
 		"sudormrfbin/cheatsheet.nvim",
-		keys = { "<F2>", "g<F2>" },
-		config = function()
-			vim.keymap.set("n", "<F2>", "<cmd>Cheatsheet<cr>")
-			vim.keymap.set("n", "g<F2>", "<cmd>CheatsheetEdit<cr>")
-		end,
+		keys = {
+			{ "<F2>", "<cmd>Cheatsheet<cr>", mode = "n" },
+			{ "g<F2>", "<cmd>CheatsheetEdit<cr>", "n" },
+		},
 		cmd = { "Cheatsheet", "CheatsheetEdit" },
 	},
 
@@ -81,7 +80,6 @@ return {
 			vim.keymap.set("n", "<leader>`", builtin.marks)
 			vim.keymap.set("n", "<leader>gc", builtin.lsp_document_symbols) -- mnemonic: code or constants
 			vim.keymap.set("n", "<leader>gt", builtin.treesitter) -- mnemonic: code or constants
-
 			vim.keymap.set("n", "<Leader>=", builtin.spell_suggest)
 			vim.keymap.set("n", "<leader>gs", builtin.git_status) -- mnemonic: git status
 			vim.keymap.set("n", "<leader>gh", builtin.git_bcommits) -- mnemonic: git history

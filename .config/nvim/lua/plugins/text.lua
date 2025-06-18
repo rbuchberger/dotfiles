@@ -1,28 +1,18 @@
 return {
 	{ "tpope/vim-unimpaired" },
-	{ "nvim-lua/popup.nvim" },
 	{ "tpope/vim-ragtag" },
 	{ "tpope/vim-repeat" },
-	{ "godlygeek/tabular" },
-	{ "RishabhRD/popfix" },
 	{ "windwp/nvim-autopairs", opts = {} },
 	{ "utilyre/sentiment.nvim", opts = {} },
 	{ "kylechui/nvim-surround", opts = {} },
 	{
-    "windwp/nvim-ts-autotag",
-    filetypes = {
-      "html",
-      "xml",
-      "typescriptreact",
-      "javascriptreact",
-      "vue",
-      "svelte",
-    },
-    opts = {},
-  },
+		"windwp/nvim-ts-autotag",
+		filetypes = { "html", "xml", "typescriptreact", "javascriptreact", "vue", "svelte" },
+		opts = {},
+	},
 	{
 		"numToStr/Comment.nvim",
-    event = "VeryLazy",
+		event = "VeryLazy",
 		dependencies = { { "JoosepAlviste/nvim-ts-context-commentstring", opts = {} } },
 		config = function()
 			require("Comment").setup({
@@ -51,50 +41,34 @@ return {
 
 	{
 		"Wansmer/treesj",
-		lazy = true,
-		keys = { "gS", "gJ" },
 		opts = { use_default_keymaps = false, max_join_length = 99999 },
-		config = function(_, opts)
-			require("treesj").setup(opts)
-
-			vim.keymap.set("n", "gS", "<cmd>TSJSplit<CR>", { silent = true })
-			vim.keymap.set("n", "gJ", "<cmd>TSJJoin<CR>", { silent = true })
-		end,
-	},
-
-	{
-		"johmsalas/text-case.nvim",
-		opts = {},
-
 		keys = {
-			"ga", -- Default invocation prefix
-			{ "ga.", "<cmd>TextCaseOpenTelescope<CR>", mode = { "n", "x" }, desc = "Telescope" },
+			{ "gS", "<cmd>TSJSplit<CR>", { silent = true } },
+			{ "gJ", "<cmd>TSJJoin<CR>", { silent = true } },
 		},
-		cmd = {
-			-- NOTE: The Subs command name can be customized via the option "substitude_command_name"
-			"Subs",
-			"TextCaseOpenTelescope",
-			"TextCaseOpenTelescopeQuickChange",
-			"TextCaseOpenTelescopeLSPChange",
-			"TextCaseStartReplacingCommand",
-		},
-		-- If you want to use the interactive feature of the `Subs` command right away, text-case.nvim
-		-- has to be loaded on startup. Otherwise, the interactive feature of the `Subs` will only be
-		-- available after the first executing of it or after a keymap of text-case.nvim has been used.
-		lazy = false,
 	},
 
 	{
-		"gbprod/substitute.nvim",
-		opts = {},
-		config = function(opts)
-			local substitute = require("substitute")
-			substitute.setup(opts)
-
-			vim.keymap.set("n", "s", substitute.operator, { noremap = true })
-			vim.keymap.set("n", "ss", substitute.line, { noremap = true })
-			vim.keymap.set("n", "S", substitute.eol, { noremap = true })
-			vim.keymap.set("x", "s", substitute.visual, { noremap = true })
-		end,
+		"folke/flash.nvim",
+		event = "VeryLazy",
+		opts = {
+			highlight = {
+				backdrop = false,
+			},
+			modes = {
+				char = {
+          enabled = false
+					-- highlight = { backdrop = false },
+				},
+			},
+		},
+  -- stylua: ignore
+    keys = {
+      { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+      -- { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+      { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
+      { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+      { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+    },
 	},
 }

@@ -1,25 +1,9 @@
 return {
-	-- {
-	-- 	"supermaven-inc/supermaven-nvim",
-	-- 	opts = {
-	-- 		keymaps = {
-	--        accept_word = "<A-space>",
-	--        accept_suggestion = "<C-Space>",
-	--      },
-	-- 		ignore_filetypes = { markdown = true, gitcommit = true, norg = true, NeogitCommitMessage = true },
-	-- 		-- disable annoying startup message
-	-- 		log_level = "off",
-	-- 	},
-	-- },
-
 	{
+		enabled = false,
 		"zbirenbaum/copilot.lua",
 		cmd = { "Copilot" },
-		opts = {
-			keymap = {
-				accept = "<a-n>",
-			},
-		},
+		opts = { keymap = { accept = "<a-n>" } },
 	},
 
 	{
@@ -51,6 +35,10 @@ return {
 		config = function()
 			local cmp = require("cmp")
 
+			vim.lsp.config("*", {
+				capabilities = require("cmp_nvim_lsp").default_capabilities(),
+			})
+
 			cmp.setup({
 				snippet = {
 					expand = function(args)
@@ -70,7 +58,7 @@ return {
 					["<C-e>"] = cmp.mapping.abort(),
 					["<A-n>"] = cmp.mapping.complete(),
 
-					["<C-CR>"] = cmp.mapping.confirm({ select = false }),
+					["<C-CR>"] = cmp.mapping.confirm(),
 				},
 
 				sources = {
@@ -90,14 +78,6 @@ return {
 
 			cmp.setup.filetype({ "markdown", "gitcommit" }, { enabled = false })
 
-      -- doesn't work :(
-			-- cmp.setup.cmdline({ "/", "?" }, {
-			-- 	mapping = cmp.mapping.preset.cmdline(),
-			-- 	sources = {
-			-- 		{ name = "buffer" },
-			-- 	},
-			-- })
-
 			cmp.setup.cmdline(":", {
 				mapping = cmp.mapping.preset.cmdline(),
 				sources = cmp.config.sources({
@@ -107,15 +87,6 @@ return {
 				}),
 				matching = { disallow_symbol_nonprefix_matching = false },
 			})
-
-			-- Only used when copilot is showing virtual text
-			-- cmp.event:on("menu_opened", function()
-			-- 	vim.b.copilot_suggestion_hidden = true
-			-- end)
-			--
-			-- cmp.event:on("menu_closed", function()
-			-- 	vim.b.copilot_suggestion_hidden = false
-			-- end)
 		end,
 	},
 }

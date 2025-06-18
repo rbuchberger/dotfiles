@@ -1,10 +1,6 @@
 return {
 	{ "luukvbaal/stabilize.nvim", opts = {} },
-	{
-		"karb94/neoscroll.nvim",
-		event = "VeryLazy",
-		opts = { easing = "cubic" },
-	},
+	{ "karb94/neoscroll.nvim", event = "VeryLazy", opts = { easing = "cubic" } },
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		event = "VeryLazy",
@@ -43,35 +39,38 @@ return {
 
 	{
 		"goolord/alpha-nvim",
+		keys = { { "<leader>l", "<cmd>Alpha<cr>", mode = "n", { noremap = true } } },
 		config = function()
 			require("alpha").setup(require("alpha.themes.startify").config)
-			vim.keymap.set("n", "<leader>l", "<cmd>Alpha<cr>", { noremap = true })
 		end,
 		priority = 1000, -- It's the startup screen
+		lazy = false,
 	},
 
 	{
 		"gorbit99/codewindow.nvim",
-		keys = { "<leader>m" },
-		config = function()
-			local codewindow = require("codewindow")
+		keys = {
+			{
+				"<leader>m",
+				function()
+					local codewindow = require("codewindow")
 
-			codewindow.setup()
-			vim.keymap.set("n", "<leader>m", function()
-				if require("codewindow.window").is_minimap_open() then
-					codewindow.close_minimap()
-				else
-					codewindow.open_minimap()
-					codewindow.toggle_focus()
-				end
-			end, { noremap = true })
-		end,
+					if require("codewindow.window").is_minimap_open() then
+						codewindow.close_minimap()
+					else
+						codewindow.open_minimap()
+						codewindow.toggle_focus()
+					end
+				end,
+				mode = "n",
+				noremap = true,
+			},
+		},
 	},
 
 	{
 		"sindrets/winshift.nvim",
-
-		keys = { "<A-w>" },
+		keys = { { "<A-w>", "<cmd>WinShift<CR>", mode = "n", noremap = true } },
 
 		opts = {
 			highlight_moving_win = true,
@@ -83,12 +82,6 @@ return {
 				colorcolumn = "",
 			},
 		},
-
-		config = function(_, opts)
-			vim.keymap.set("n", "<A-w>", "<cmd>WinShift<CR>", { noremap = true })
-
-			require("winshift").setup(opts)
-		end,
 	},
 
 	{
@@ -126,18 +119,16 @@ return {
 	{
 		"romgrk/barbar.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons", "lewis6991/gitsigns.nvim" },
-
 		lazy = false,
 
 		opts = { animation = false, auto_hide = true },
 
-		config = function(_, opts)
-			require("barbar").setup(opts)
-			vim.keymap.set("n", "<leader>x", "<cmd>BufferClose<CR>", { noremap = true })
-			vim.keymap.set("n", "[b", "<cmd>BufferPrevious<CR>", { noremap = true })
-			vim.keymap.set("n", "<A-[>", "<cmd>BufferPrevious<CR>", { noremap = true })
-			vim.keymap.set("n", "]b", "<cmd>BufferNext<CR>", { noremap = true })
-			vim.keymap.set("n", "<A-]>", "<cmd>BufferNext<CR>", { noremap = true })
-		end,
+		keys = {
+			{ "<leader>x", "<cmd>BufferClose<CR>", mode = "n", { noremap = true } },
+			{ "[b", "<cmd>BufferPrevious<CR>", mode = "n", { noremap = true } },
+			{ "<A-[>", "<cmd>BufferPrevious<CR>", mode = "n", { noremap = true } },
+			{ "]b", "<cmd>BufferNext<CR>", mode = "n", { noremap = true } },
+			{ "<A-]>", "<cmd>BufferNext<CR>", mode = "n", { noremap = true } },
+		},
 	},
 }

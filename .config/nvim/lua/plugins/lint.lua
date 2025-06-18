@@ -20,6 +20,7 @@ return {
 				css = { "stylelint" },
 				html = { "stylelint" },
 				scss = { "stylelint" },
+				-- rust = { "clippy" },
 			}
 
 			lint.linters.luacheck = vim.tbl_extend("force", lint.linters.luacheck, {
@@ -49,7 +50,7 @@ return {
 				html = { "prettier" },
 				css = { "prettierd" },
 				rust = { "rustfmt" },
-				sql = { "sleek" },
+				sql = { "sql_formatter" },
 			},
 		},
 

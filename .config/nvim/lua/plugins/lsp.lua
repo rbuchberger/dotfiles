@@ -80,14 +80,20 @@ return {
 					vim.keymap.set("n", "<Leader>k", vim.lsp.buf.signature_help, opts)
 					vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
 					-- vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
-					vim.keymap.set("n", "<C-k>", function()
-						vim.diagnostic.jump({ count = -1, float = true })
+					vim.keymap.set("n", "[i", function()
+						vim.diagnostic.jump({ count = -1 })
 					end, opts)
-					vim.keymap.set("n", "<C-j>", function()
-						vim.diagnostic.jump({ count = 1, float = true })
+					vim.keymap.set("n", "]i", function()
+						vim.diagnostic.jump({ count = 1 })
 					end, opts)
 					-- vim.keymap.set("n", "<leader>f", "vim.lsp.buf.format({ async = true })<CR>", opts)
 				end,
+			})
+
+			vim.lsp.config("*", {
+				server = {
+					capabilities = require("cmp_nvim_lsp").default_capabilities(),
+				},
 			})
 
 			vim.lsp.config("lua_ls", {
@@ -144,6 +150,7 @@ return {
 						assist = { importGranularity = "module", importPrefix = "self" },
 						cargo = { loadOutDirsFromCheck = true },
 						procMacro = { enable = true },
+						check = { command = "clippy" },
 					},
 				},
 			})
