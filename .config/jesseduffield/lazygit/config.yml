@@ -1,0 +1,10 @@
+gui:
+  skipRewordInEditorWarning: true
+  showNumstatInFilesView: true
+
+notARepository: 'quit'
+promptToReturnFromSubprocess: false
+
+git:
+  paging:
+    externalDiffCommand: difft --color=always
