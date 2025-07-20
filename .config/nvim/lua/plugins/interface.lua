@@ -1,6 +1,5 @@
 return {
 	{ "luukvbaal/stabilize.nvim", opts = {} },
-	{ "karb94/neoscroll.nvim", event = "VeryLazy", opts = { easing = "cubic" } },
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		event = "VeryLazy",
@@ -47,26 +46,26 @@ return {
 		lazy = false,
 	},
 
-	{
-		"gorbit99/codewindow.nvim",
-		keys = {
-			{
-				"<leader>m",
-				function()
-					local codewindow = require("codewindow")
-
-					if require("codewindow.window").is_minimap_open() then
-						codewindow.close_minimap()
-					else
-						codewindow.open_minimap()
-						codewindow.toggle_focus()
-					end
-				end,
-				mode = "n",
-				noremap = true,
-			},
-		},
-	},
+	-- {
+	-- 	"gorbit99/codewindow.nvim",
+	-- 	keys = {
+	-- 		{
+	-- 			"<leader>m",
+	-- 			function()
+	-- 				local codewindow = require("codewindow")
+	--
+	-- 				if require("codewindow.window").is_minimap_open() then
+	-- 					codewindow.close_minimap()
+	-- 				else
+	-- 					codewindow.open_minimap()
+	-- 					codewindow.toggle_focus()
+	-- 				end
+	-- 			end,
+	-- 			mode = "n",
+	-- 			noremap = true,
+	-- 		},
+	-- 	},
+	-- },
 
 	{
 		"sindrets/winshift.nvim",

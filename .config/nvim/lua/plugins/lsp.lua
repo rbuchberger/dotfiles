@@ -3,66 +3,11 @@ return {
 	{ "j-hui/fidget.nvim", opts = {} },
 
 	{
-		"pmizio/typescript-tools.nvim",
-		lazy = true,
-		ft = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
-		dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-
-		opts = {
-			on_attach = function(client, bufnr)
-				-- Disable formatting to avoid conflict with prettier
-				client.server_capabilities.documentFormattingProvider = false
-				client.server_capabilities.documentRangeFormattingProvider = false
-
-				vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>rnf", ":TSToolsRenameFile<CR>", {})
-				vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>ci", ":TSToolsAddMissingImports<CR>", {})
-				vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>cf", ":TSToolsFixAll<CR>", {})
-
-				-- vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", ":TSToolsGoToSourceDefinition<CR>", {})
-				-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>co", ":TSToolsOrganizeImports<CR>", {})
-				-- vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>cr", ":TSToolsRemoveUnused<CR>", {})
-			end,
-
-			settings = {
-				expose_as_code_action = {
-					"add_missing_imports",
-					"fix_all",
-					"remove_unused_imports",
-					"organize_imports",
-				},
-
-				tsserver_file_preferences = {
-					autoImportFileExcludePatterns = {
-						"@radix-ui/**/*",
-						"lucide-react",
-						"postcss",
-						"react-hook-form",
-						"next/router",
-					},
-					includeCompletionsForModuleExports = false,
-				},
-				tsserver_format_options = {},
-			},
-		},
-	},
-
-	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
 			"b0o/schemastore.nvim",
 			"hrsh7th/nvim-cmp",
 			"williamboman/mason.nvim",
-			-- "williamboman/mason-lspconfig.nvim",
-			-- {
-			-- 	"folke/lazydev.nvim",
-			-- 	ft = "lua",
-			-- 	dependencies = { "Bilal2453/luvit-meta" },
-			-- 	opts = {
-			-- 		library = {
-			-- 			{ path = "luvit-meta/library", words = { "vim%.uv" } },
-			-- 		},
-			-- 	},
-			-- },
 		},
 
 		config = function()
@@ -211,13 +156,19 @@ return {
 			vim.lsp.enable("yamlls")
 
 			vim.lsp.enable("solargraph")
-			vim.lsp.enable("vls")
 			vim.lsp.enable("eslint")
 			vim.lsp.enable("nushell")
 
 			-- Typescript language server
-			-- vim.lsp.enable("vtsls")
+			vim.lsp.enable("vtsls")
 		end,
+	},
+
+	{
+		"antosha417/nvim-lsp-file-operations",
+		dependencies = { "nvim-lua/plenary.nvim", "nvim-tree/nvim-tree.lua" },
+
+		opts = {},
 	},
 
 	{
@@ -226,15 +177,4 @@ return {
 		ft = { "typescript", "typescriptreact", "javascript", "javascriptreact" },
 		opts = {},
 	},
-
-	-- {
-	-- 	"OlegGulevskyy/better-ts-errors.nvim",
-	-- 	dependencies = { "MunifTanjim/nui.nvim" },
-	-- 	opts = {
-	-- 		keymaps = {
-	-- 			toggle = "<leader>ee", -- default '<leader>dd'
-	-- 			go_to_definition = "<leader>ed", -- default '<leader>dx'
-	-- 		},
-	-- 	},
-	-- },
 }

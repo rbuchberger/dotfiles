@@ -1,20 +1,38 @@
 return {
+	-- {
+	-- 	"kdheepak/lazygit.nvim",
+	-- 	lazy = true,
+	-- 	cmd = {
+	-- 		"LazyGit",
+	-- 		"LazyGitConfig",
+	-- 		"LazyGitCurrentFile",
+	-- 		"LazyGitFilter",
+	-- 		"LazyGitFilterCurrentFile",
+	-- 	},
+	-- 	-- optional for floating window border decoration
+	-- 	dependencies = { "nvim-lua/plenary.nvim" },
+	-- 	-- setting the keybinding for LazyGit with 'keys' is recommended in
+	-- 	-- order to load the plugin when the command is run for the first time
+	-- 	keys = {
+	-- 		{ "<leader>s", "<cmd>LazyGit<cr>", desc = "LazyGit" },
+	-- 	},
+	-- },
 	{
-		"kdheepak/lazygit.nvim",
-		lazy = true,
-		cmd = {
-			"LazyGit",
-			"LazyGitConfig",
-			"LazyGitCurrentFile",
-			"LazyGitFilter",
-			"LazyGitFilterCurrentFile",
+		"NeogitOrg/neogit",
+		dependencies = {
+			"nvim-lua/plenary.nvim", -- required
+			"sindrets/diffview.nvim", -- optional - Diff integration
+
+			-- Only one of these is needed.
+			"nvim-telescope/telescope.nvim", -- optional
 		},
-		-- optional for floating window border decoration
-		dependencies = { "nvim-lua/plenary.nvim" },
-		-- setting the keybinding for LazyGit with 'keys' is recommended in
-		-- order to load the plugin when the command is run for the first time
+
 		keys = {
-			{ "<leader>s", "<cmd>LazyGit<cr>", desc = "LazyGit" },
+			{ "<leader>s", "<cmd>Neogit<cr>", desc = "NeoGit" },
+		},
+
+		opts = {
+			disable_insert_on_commit = true,
 		},
 	},
 
@@ -64,12 +82,14 @@ return {
 				map("n", "<leader>hb", function()
 					gitsigns.blame_line({ full = true })
 				end)
-				map("n", "<leader>tb", gitsigns.toggle_current_line_blame)
 				map("n", "<leader>hd", gitsigns.diffthis)
 				map("n", "<leader>hD", function()
 					gitsigns.diffthis("~")
 				end)
-				map("n", "<leader>td", gitsigns.toggle_deleted)
+				map("n", "<leader>htd", gitsigns.toggle_deleted)
+				map("n", "<leader>hq", function()
+					gitsigns.setqflist("all")
+				end)
 
 				-- Text object
 				map({ "o", "x" }, "ih", "<Cmd><C-U>Gitsigns select_hunk<CR>")

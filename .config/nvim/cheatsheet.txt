@@ -16,25 +16,23 @@ Cheatsheet | <F2>
 Edit Cheatsheet | g<F2>
 Plugin Commands | <leader>;
 Registers | <leader>'
-Git Status (telescope) | <leader>gs
-Fugitive | <leader>s
-Git History | <leader>gh
-Git Branches | <leader>gb
 Goto References | gr
 Goto Definition | gd
 
 ## Gitsigns
 
 Stage hunk | <leader>hs
+Unstage hunk | <leader>hu
 Reset hunk | <leader>hr
-Stage buffer | <leader>hS
-Undo stage hunk | <leader>hu
-Reset buffer | <leader>hR
 Preview hunk | <leader>hp
 Blame line | <leader>hb
-Toggle current line blame | <leader>tb
 Diff this | <leader>hd
-Toggle deleted | <leader>td
+Toggle deleted | <leader>htd
+
+Load qflist | <leader>hq
+Stage buffer | <leader>hS
+Reset buffer | <leader>hR
+Hunk text object | ih
 
 ## Neogit
 Neogit | <leader>s

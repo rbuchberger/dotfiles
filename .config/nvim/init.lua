@@ -17,8 +17,13 @@ map("n", "<A-k>", "<C-w>k", opts)
 map("n", "<A-l>", "<C-w>l", opts)
 map("n", "<A-x>", "<C-w>c", opts)
 map("n", "<A-CR>", "<cmd>terminal<CR>", opts)
--- map("t", "<A-ESC>", "<ESC>", { noremap = true })
 map("t", "<A-ESC>", "<C-\\><C-n>", { noremap = true })
+map("t", "<A-h>", "<C-\\><C-n><C-w>h", { noremap = true })
+map("t", "<A-j>", "<C-\\><C-n><C-w>j", { noremap = true })
+map("t", "<A-k>", "<C-\\><C-n><C-w>k", { noremap = true })
+map("t", "<A-l>", "<C-\\><C-n><C-w>l", { noremap = true })
+-- map("t", "<A-ESC>", "<ESC>", { noremap = true })
+-- map("t", "<ESC>", "<C-\\><C-n>", { noremap = true })
 map("i", "jk", "<ESC>", { noremap = true })
 
 -- Enable mouse support if available
@@ -43,11 +48,11 @@ vim.opt.smartcase = true
 vim.opt.autoread = true
 vim.opt.undofile = true
 vim.opt.undodir = vim.fn.expand("~/.local/share/nvim/undo")
-vim.opt.updatetime = 150
+vim.opt.updatetime = 1000
 vim.opt.completeopt = { "menuone", "noselect" }
 vim.opt.wrap = false
 
-vim.opt.foldopen = vim.opt.foldopen + "all"
+-- vim.opt.foldopen = vim.opt.foldopen + "all"
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldlevelstart = 12
