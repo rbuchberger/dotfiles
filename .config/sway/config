@@ -111,6 +111,7 @@ for_window [class="Plexamp"] floating enable
 for_window [title="sway-launcher-desktop"] floating enable
 for_window [app_id="de.haeckerfelix.Shortwave"] floating enable
 for_window [title="Extension: \(Bitwarden Password Manager\) - Bitwarden — Mozilla Firefox"] floating enable
+for_window [app_id="flameshot"] floating enable
 
 set $menu exec footclient --title="sway-launcher-desktop" sway-launcher-desktop
 
