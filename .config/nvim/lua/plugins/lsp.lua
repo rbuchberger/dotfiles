@@ -2,6 +2,8 @@ return {
 	-- LSP status indicator
 	{ "j-hui/fidget.nvim", opts = {} },
 
+	{ "dmmulroy/ts-error-translator.nvim", opts = {} },
+
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = {
@@ -32,6 +34,7 @@ return {
 						vim.diagnostic.jump({ count = 1 })
 					end, opts)
 					-- vim.keymap.set("n", "<leader>f", "vim.lsp.buf.format({ async = true })<CR>", opts)
+					vim.keymap.set("n", "<leader>ef", ":LspEslintFixAll<CR>")
 				end,
 			})
 

@@ -97,7 +97,7 @@ return {
 		keys = {
 			{ "<leader>a", nil, desc = "AI/Claude Code" },
 			{ "<leader>ac", "<cmd>ClaudeCode<cr>", mode = { "n" }, desc = "Toggle Claude" },
-			{ "<C-a>", "<cmd>ClaudeCode<cr>", mode = { "t", "n" }, desc = "Toggle Claude" },
+			{ "<A-a>", "<cmd>ClaudeCode<cr>", mode = { "t", "n" }, desc = "Toggle Claude" },
 			{ "<leader>af", "<cmd>ClaudeCodeFocus<cr>", desc = "Focus Claude" },
 			{ "<leader>ar", "<cmd>ClaudeCode --resume<cr>", desc = "Resume Claude" },
 			{ "<leader>aC", "<cmd>ClaudeCode --continue<cr>", desc = "Continue Claude" },
