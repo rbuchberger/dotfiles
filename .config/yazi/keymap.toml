@@ -1,0 +1,5 @@
+# keymap.toml
+[[mgr.prepend_keymap]]
+on   = "i"
+run  = "plugin toggle-pane max-preview"
+desc = "Maximize or restore the preview pane"
