@@ -164,6 +164,9 @@ return {
 
 			-- Typescript language server
 			vim.lsp.enable("vtsls")
+
+      -- Incoming in a future version
+			-- vim.lsp.on_type_formatting.enable()
 		end,
 	},
 

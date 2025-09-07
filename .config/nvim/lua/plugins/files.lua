@@ -23,25 +23,18 @@ return {
 
 		lazy = true,
 		keys = {
+			"<C-g>",
 			"<C-p>",
 			"<leader>p",
 			"<M-p>",
 			"<leader>b",
-			"<C-g>",
 			"<F1>",
-			"<M-z>",
-			"<M-t>",
-			"<leader>i",
+			"<M-i>",
 			"<leader>`",
-			"<leader>gc",
-			"<leader>gt",
-			"<leader>gs",
-			"<leader>gh",
 			"<leader>gb",
 			"<leader>=",
 			"<leader>gr",
 			"<leader>gd",
-			"<leader>gi",
 		},
 		cmd = { "Telescope" },
 		config = function()
@@ -68,25 +61,18 @@ return {
 
 			local builtin = require("telescope.builtin")
 
+			vim.keymap.set("n", "<C-g>", builtin.builtin)
 			vim.keymap.set("n", "<C-p>", builtin.find_files)
 			vim.keymap.set("n", "<leader>p", builtin.live_grep)
 			vim.keymap.set("n", "<M-p>", builtin.current_buffer_fuzzy_find)
 			vim.keymap.set("n", "<leader>b", builtin.buffers)
-			vim.keymap.set("n", "<C-g>", builtin.builtin)
 			vim.keymap.set("n", "<F1>", builtin.help_tags)
-			vim.keymap.set("n", "<M-z>", builtin.resume)
-			vim.keymap.set("n", "<M-t>", builtin.tagstack)
-			vim.keymap.set("n", "<leader>i", builtin.diagnostics) -- mnemonic: issues
+			vim.keymap.set("n", "<M-i>", builtin.diagnostics) -- mnemonic: issues
 			vim.keymap.set("n", "<leader>`", builtin.marks)
-			vim.keymap.set("n", "<leader>gc", builtin.lsp_document_symbols) -- mnemonic: code or constants
-			vim.keymap.set("n", "<leader>gt", builtin.treesitter) -- mnemonic: code or constants
 			vim.keymap.set("n", "<Leader>=", builtin.spell_suggest)
-			vim.keymap.set("n", "<leader>gs", builtin.git_status) -- mnemonic: git status
-			vim.keymap.set("n", "<leader>gh", builtin.git_bcommits) -- mnemonic: git history
 			vim.keymap.set("n", "<leader>gb", builtin.git_branches) -- mnemonic: git branch
 			vim.keymap.set("n", "gr", builtin.lsp_references) -- mnemonic: goto references
 			vim.keymap.set("n", "gd", builtin.lsp_definitions) -- mnemonic: goto definition
-			vim.keymap.set("n", "g<Tab>", telescope.extensions.aerial.aerial) -- mnemonic: goto definition
 		end,
 	},
 

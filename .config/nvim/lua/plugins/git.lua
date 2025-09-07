@@ -28,11 +28,22 @@ return {
 		},
 
 		keys = {
-			{ "<leader>s", "<cmd>Neogit<cr>", desc = "NeoGit" },
+			{ "<leader>gs", "<cmd>Neogit<cr>", desc = "NeoGit" },
 		},
 
 		opts = {
 			disable_insert_on_commit = true,
+		},
+	},
+
+	{
+		"sindrets/diffview.nvim",
+		opts = {},
+		keys = {
+			{ "<leader>gx", "<cmd>DiffviewClose<cr>", desc = "DiffView close" },
+			{ "<leader>gd", "<cmd>DiffviewOpen<cr>", desc = "DiffView open" },
+			{ "<leader>gh", "<cmd>DiffviewFileHistory %<cr>", desc = "DiffView file history - current file" },
+			{ "<leader>gH", "<cmd>DiffviewFileHistory<cr>", desc = "DiffView file history - branch" },
 		},
 	},
 
