@@ -15,3 +15,13 @@ def wwatch [
     sleep $interval
   }
 }
+
+def clock [
+  --interval (-n): duration = 0.1sec
+] {
+  loop {
+      clear 
+      print (date now) 
+      sleep $interval
+    }
+}
