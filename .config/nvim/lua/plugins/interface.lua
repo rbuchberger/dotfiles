@@ -1,5 +1,6 @@
 return {
 	{ "luukvbaal/stabilize.nvim", opts = {} },
+
 	{
 		"lukas-reineke/indent-blankline.nvim",
 		event = "VeryLazy",
@@ -129,5 +130,11 @@ return {
 			{ "]b", "<cmd>BufferNext<CR>", mode = "n", { noremap = true } },
 			{ "<A-]>", "<cmd>BufferNext<CR>", mode = "n", { noremap = true } },
 		},
+	},
+
+	{
+		"dimtion/guttermarks.nvim",
+		event = "VeryLazy",
+		opts = {},
 	},
 }

@@ -17,9 +17,9 @@ return {
 				json = { "jsonlint" },
 				-- markdown = { "markdownlint" },
 				yaml = { "yamllint" },
-				css = { "stylelint" },
-				html = { "stylelint" },
-				scss = { "stylelint" },
+				-- css = { "stylelint" },
+				-- html = { "stylelint" },
+				-- scss = { "stylelint" },
 				-- rust = { "clippy" },
 			}
 

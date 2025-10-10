@@ -9,6 +9,7 @@ return {
 	{
 		"SirVer/ultisnips",
 		dependencies = { "honza/vim-snippets" },
+		lazy = false,
 		init = function()
 			vim.g.UltiSnipsExpandTrigger = "<c-l>"
 			vim.g.UltiSnipsJumpForwardTrigger = "<c-j>"
