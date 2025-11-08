@@ -51,6 +51,7 @@ return {
 				css = { "prettierd" },
 				rust = { "rustfmt" },
 				sql = { "sql_formatter" },
+				astro = { "prettierd" },
 			},
 		},
 

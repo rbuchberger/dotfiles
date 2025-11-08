@@ -57,9 +57,10 @@ return {
 					"sql",
 					"tsx",
 					"typescript",
-					-- "typescriptreact",
 					"vimdoc",
 					"yaml",
+					-- "typescriptreact",
+					"gotmpl",
 				},
 			})
 		end,
