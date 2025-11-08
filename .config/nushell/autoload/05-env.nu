@@ -9,6 +9,4 @@ load-env {
 
   "AUR_PAGER": yazi,
   "MANPAGER": 'nvim +Man!'
-
-  "BROWSER": 'zen-bin',
 }
