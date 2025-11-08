@@ -13,25 +13,15 @@
 - If I appear to be unaware of a relevant convention or standard and am giving you instructions that
   conflict with it, please question me about it.
 
-## Self Review
-
-After you have produced code, but before you consider a task complete, stop and review what you have
-created with a focus on how well you have managed complexity. If you see any of the following, think
-hard about ways you can refactor to better follow the guidance you've been given:
-
-- Deep indentation or nesting, more than about 5 levels.
-- Large files, more than about 150 lines.
-- Long functions that do multiple "things".
-- Chunks of code repeated more than ~3 times.
-- Solutions to general problems in context-specific locations that aren't available for easy reuse.
-
 ## Tool Usage
 
-- You are encouraged to freely and frequently consult any relevant documentation.
+- You are encouraged to freely and frequently consult any relevant documentation, release notes, or
+  other online resources.
 - You are limited to read-only git commands.
   - You are forbidden to change the state of the repository. Do not use `git commit`, `git
     rebase`, `git add`, etc. Don't even THINK about changing history.
-  - You are welcome to review git history (`git log`, `git reflog`, `git status`, etc) to build context.
+  - You are encouraged to review git history (`git log`, `git reflog`, `git status`, etc) to build
+    understanding.
 
 ## Code Style
 
@@ -71,6 +61,16 @@ hard about ways you can refactor to better follow the guidance you've been given
 - Never use a nested ternary. Generally avoid multiline ternaries.
 - Use guard clauses to avoid repeated checks within a function body.
 
+## Code Smells
+
+Please avoid creating the following:
+
+- Deep indentation or nesting, more than about 5 levels.
+- Large files, more than about 150 lines.
+- Long functions that do multiple "things".
+- Chunks of code repeated more than ~3 times.
+- Solutions to general problems in context-specific locations that aren't available for easy reuse.
+
 ## Context-specific Instructions
 
 ### HTML
@@ -93,6 +93,11 @@ When working with HTML and CSS (and code that produces them):
 - Generally avoid pulling in complex types from external libraries. Define or reuse your own, using
   only the necessary fields we care about.
 
+### Tailwind
+
+- Tailwind is meant to be used with components. If you are writing the same set of classes
+  repeatedly, extract a component.
+
 ### React
 
 - Perform existence checks once, near the top of the component.
@@ -101,7 +106,5 @@ When working with HTML and CSS (and code that produces them):
   data is present, pass to child component who can then assume its presence and use hooks freely.)
 - Try to reduce or avoid logic inside JSX template code.
 - Fetch data near the top of the component tree, ideally at the page level. Pass down as props.
-- Tailwind is meant to be used with components. If you are writing the same set of classes
-  repeatedly, extract a component.
 - It's ok to put multiple components in one file, though don't let the file get too big. This can be
   useful when creating components not intended for use elsewhere.
