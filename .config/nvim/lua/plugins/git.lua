@@ -42,7 +42,7 @@ return {
 		lazy = false,
 		keys = {
 			{ "<leader>gx", "<cmd>DiffviewClose<cr>", desc = "DiffView close" },
-			{ "<leader>gd", "<cmd>DiffviewOpen<cr>", desc = "DiffView open" },
+			{ "<leader>gv", "<cmd>DiffviewOpen<cr>", desc = "DiffView open" },
 			{ "<leader>gh", "<cmd>DiffviewFileHistory %<cr>", desc = "DiffView file history - current file" },
 			{ "<leader>gH", "<cmd>DiffviewFileHistory<cr>", desc = "DiffView file history - branch" },
 		},
