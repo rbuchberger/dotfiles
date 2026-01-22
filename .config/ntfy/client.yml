@@ -1,0 +1,8 @@
+default-host: https://ntfy.sh
+
+subscribe:
+- topic: squinklebutt
+- topic: squinklebutt-homelab
+- topic: learnlife-dev-alerts
+# - topic: alerts
+#   command: notify-send -i /usr/share/ntfy/logo.png "Important" "$m"
