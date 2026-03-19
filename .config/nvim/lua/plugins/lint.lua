@@ -52,6 +52,14 @@ return {
 				rust = { "rustfmt" },
 				sql = { "sql_formatter" },
 				astro = { "prettierd" },
+				caddy = { "caddy_fmt" },
+			},
+			formatters = {
+				caddy_fmt = {
+					command = "caddy",
+					args = { "fmt", "-" },
+					stdin = true,
+				},
 			},
 		},
 
