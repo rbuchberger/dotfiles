@@ -23,46 +23,8 @@ return {
 
 	{
 		"nvim-treesitter/nvim-treesitter",
-
-		build = function()
-			vim.cmd("TSUpdate")
-		end,
-
-		config = function()
-			local configs = require("nvim-treesitter.configs")
-
-			configs.setup({
-				modules = {},
-				highlight = { enable = true },
-				indent = { enable = true },
-				auto_install = true,
-				sync_install = false,
-				ignore_install = { "" },
-				ensure_installed = {
-					"bash",
-					"css",
-					"diff",
-					"dockerfile",
-					"git_rebase",
-					"gitattributes",
-					"gitcommit",
-					"gitignore",
-					"html",
-					"javascript",
-					"json",
-					"markdown_inline",
-					"nu",
-					"ruby",
-					"rust",
-					"sql",
-					"tsx",
-					"typescript",
-					"vimdoc",
-					"yaml",
-					-- "typescriptreact",
-					"gotmpl",
-				},
-			})
-		end,
+		branch = "main",
+		lazy = false,
+		build = ":TSUpdate",
 	},
 }
