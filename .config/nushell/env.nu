@@ -16,3 +16,8 @@
 #
 # You can remove these comments if you want or leave
 # them for future reference.
+
+# pnpm
+$env.PNPM_HOME = "/home/robert/.local/share/pnpm"
+$env.PATH = ($env.PATH | split row (char esep) | prepend $env.PNPM_HOME )
+# pnpm end
