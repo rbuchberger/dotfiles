@@ -10,13 +10,13 @@ hash = "4761fffb60a12d37096c34a356380cdf"
 
 [[plugin.deps]]
 use = "boydaihungst/mediainfo"
-rev = "af8bdf4"
-hash = "43fa632820cc91919c4e713652140b48"
+rev = "49f5ab7"
+hash = "6e3b5e58f985cc2d625e0030dc35b1b2"
 
 [[plugin.deps]]
 use = "yazi-rs/plugins:toggle-pane"
-rev = "19dc890"
-hash = "8a7c58225816a163a6e8730c0adafbc8"
+rev = "5d5c480"
+hash = "9c7987da2d2a2120dac33abb64132004"
 
 [[flavor.deps]]
 use = "bennyyip/gruvbox-dark"
