@@ -186,6 +186,7 @@ return {
 
 			-- Typescript language server
 			vim.lsp.enable("vtsls")
+      -- vim.lsp.enable("tsgo")
 
 			vim.lsp.enable("cssls")
 

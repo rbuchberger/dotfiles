@@ -10,13 +10,14 @@ return {
 
 	{
 		"nvim-telescope/telescope.nvim",
-		branch = "0.1.x",
+		version = "*",
 		dependencies = {
 			"nvim-lua/plenary.nvim",
 			"nvim-tree/nvim-web-devicons",
 			"nvim-treesitter/nvim-treesitter",
+
+			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
 			"nvim-telescope/telescope-ui-select.nvim",
-			"crispgm/telescope-heading.nvim",
 			"fhill2/telescope-ultisnips.nvim",
 			"debugloop/telescope-undo.nvim",
 		},
@@ -49,12 +50,10 @@ return {
 							border = true,
 						}),
 					},
-					heading = { treesitter = true },
 				},
 			})
 
 			telescope.load_extension("ui-select")
-			telescope.load_extension("heading")
 			telescope.load_extension("ultisnips")
 			telescope.load_extension("undo")
 			telescope.load_extension("aerial")

@@ -36,6 +36,34 @@ return {
 	},
 
 	{
+		"mfussenegger/nvim-dap",
+		build = ":helptags ALL",
+		config = function()
+			local dap = require("dap")
+
+			dap.adapters["pwa-node"] = {
+				type = "server",
+				host = "localhost",
+				port = "${port}",
+				executable = {
+					command = "js-debug-adapter",
+					args = { "${port}" },
+				},
+			}
+
+			dap.configurations.javascript = {
+				{
+					type = "pwa-node",
+					request = "launch",
+					name = "Launch file",
+					program = "${file}",
+					cwd = "${workspaceFolder}",
+				},
+			}
+		end,
+	},
+
+	{
 		"stevearc/conform.nvim",
 		opts = {
 			formatters_by_ft = {
@@ -78,46 +106,5 @@ return {
 				format(vim.api.nvim_get_current_buf())
 			end, { noremap = true })
 		end,
-	},
-
-	{
-		"piersolenski/wtf.nvim",
-		dependencies = {
-			"MunifTanjim/nui.nvim",
-		},
-		keys = {
-			{
-				"<leader>ai",
-				mode = { "n", "x" },
-				function()
-					require("wtf").ai()
-				end,
-				desc = "Debug diagnostic with AI",
-			},
-			{
-				mode = { "n" },
-				"<leader>as",
-				function()
-					require("wtf").search()
-				end,
-				desc = "Search diagnostic with Google",
-			},
-			{
-				mode = { "n" },
-				"<leader>ah",
-				function()
-					require("wtf").history()
-				end,
-				desc = "Populate the quickfix list with previous chat history",
-			},
-			{
-				mode = { "n" },
-				"<leader>ag",
-				function()
-					require("wtf").grep_history()
-				end,
-				desc = "Grep previous chat history with Telescope",
-			},
-		},
 	},
 }

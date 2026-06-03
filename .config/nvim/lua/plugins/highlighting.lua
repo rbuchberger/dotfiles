@@ -6,6 +6,13 @@ return {
 	},
 
 	{
+		"nvim-treesitter/nvim-treesitter",
+		branch = "main",
+		lazy = false,
+		build = ":TSUpdate",
+	},
+
+	{
 		"aaronik/treewalker.nvim",
 		opts = {},
 
@@ -19,12 +26,5 @@ return {
 			{ "<C-S-h>", "<cmd>Treewalker SwapLeft<cr>", mode = "n", silent = true },
 			{ "<C-S-l>", "<cmd>Treewalker SwapRight<cr>", mode = "n", silent = true },
 		},
-	},
-
-	{
-		"nvim-treesitter/nvim-treesitter",
-		branch = "main",
-		lazy = false,
-		build = ":TSUpdate",
 	},
 }
