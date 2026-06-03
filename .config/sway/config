@@ -90,6 +90,9 @@ set $term footclient
 # set $menu wofi --show drun --prompt="Launch"
 # set $menu 'bemenu-run --ignorecase --list 12 --prompt="Launch" --fn "Iosevka Aile 14" --tf="#da4939" --tb="#2b2b2b" --ff="#e6e1dc"--fb="5a647e" --nf="#e6e1dc" --nb="#2b2b2b" --hf="#a5c261" --hb="#5a647e" --sb="#5a647e" --sf="#a5c261"'
 # set $menu 'bemenu-run --ignorecase --list 12'
+# set $menu exec footclient --title="sway-launcher-desktop" sway-launcher-desktop
+set $menu sirula
+
 
 # App specific tweaks
 for_window [app_id="^launcher$"]  {
@@ -112,8 +115,8 @@ for_window [title="sway-launcher-desktop"] floating enable
 for_window [app_id="de.haeckerfelix.Shortwave"] floating enable
 for_window [title="Extension: \(Bitwarden Password Manager\) - Bitwarden — Mozilla Firefox"] floating enable
 for_window [app_id="flameshot"] floating enable
-
-set $menu exec footclient --title="sway-launcher-desktop" sway-launcher-desktop
+for_window [title="darktable - select a workspace"] floating enable
+for_window [title="darktable starting"] floating enable
 
 # program shortcuts
 bindsym $mod+Return exec $term
