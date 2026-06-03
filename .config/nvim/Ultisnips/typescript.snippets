@@ -26,3 +26,9 @@ export const Route = {
 
 export type RouteType = typeof Route
 endsnippet
+
+snippet test "vitest test case with db fixture"
+test('${1:test name}', async ({ expect, db }) => {
+	${2:expect(true).toBe(true)}
+})
+endsnippet
