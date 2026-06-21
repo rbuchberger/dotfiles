@@ -30,7 +30,7 @@
   },
   "custom/music": {
     "exec": "~/.local/bin/now_playing",
-    "exec-if": "playerctl status",
+    "exec-if": "playerctl status --no-messages",
     "interval": 1,
     "on-click": "playerctl play-pause",
     "on-click-right": "playerctl next",
