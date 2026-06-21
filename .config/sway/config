@@ -133,8 +133,8 @@ bindsym $mod+ctrl+u exec rbw-menu username | wl-copy --sensitive
 bindsym $mod+ctrl+o exec rbw-menu code | wl-copy --sensitive
 
 bindsym $mod+d exec $menu
-bindsym $mod+t exec ~/scripts/screenshot_translate
-bindsym $mod+ctrl+o exec ~/.local/bin/screenshot_ocr
+bindsym $mod+ctrl+c exec ~/.local/bin/screenshot_ocr
+bindsym $mod+t exec ~/.local/bin/translate_clipboard
 bindsym $mod+ctrl+v exec copyq menu
 
 # Media volume controls

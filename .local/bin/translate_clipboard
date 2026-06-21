@@ -1,0 +1,41 @@
+#!/usr/bin/env nu
+
+let config_dir = ($env.HOME | path join ".config" "translate_clipboard")
+let key_file = ($config_dir | path join "deepl_api_key")
+
+let key = if ($key_file | path exists) {
+    open $key_file | str trim
+} else {
+    let input = (input "DeepL API key: ")
+    mkdir $config_dir
+    $input | save $key_file
+    $input
+}
+
+if ($key | is-empty) {
+    error make { msg: "No API key provided" }
+}
+
+let text = (wl-paste)
+if ($text | is-empty) {
+    error make { msg: "Clipboard is empty" }
+}
+
+let base_url = if ($key | str ends-with ":fx") {
+    "https://api-free.deepl.com"
+} else {
+    "https://api.deepl.com"
+}
+
+let response = (
+    http post
+        --headers { Authorization: $"DeepL-Auth-Key ($key)" }
+        --content-type application/json
+        $"($base_url)/v2/translate"
+        { text: [$text], target_lang: "EN" }
+)
+
+let translated = $response.translations.0.text
+
+$translated | wl-copy
+notify-send --category 'translation' "Translation: " $translated
