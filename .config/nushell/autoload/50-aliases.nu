@@ -9,6 +9,7 @@ alias lazyadm = yadm enter lazygit --work-tree ~/
 
 alias yeet = git push --force-with-lease --set-upstream
 
+alias superdim = ddcutil setvcp 10 1
 alias dim = ddcutil setvcp 10 70
 alias bright = ddcutil setvcp 10 100
 
