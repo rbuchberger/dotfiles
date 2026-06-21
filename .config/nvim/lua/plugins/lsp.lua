@@ -158,6 +158,13 @@ return {
 			})
 			vim.lsp.enable("yamlls")
 
+			-- vim.lsp.config("tombi", {
+			-- 	cmd = { "tombi", "lsp" },
+			-- 	filetypes = { "toml" },
+			-- 	root_markers = { "tombi.toml", "pyproject.toml", ".git" },
+			-- })
+      vim.lsp.enable("tombi")
+
 			local util = require("lspconfig.util")
 
 			vim.lsp.config("astro-ls", {
@@ -186,7 +193,7 @@ return {
 
 			-- Typescript language server
 			vim.lsp.enable("vtsls")
-      -- vim.lsp.enable("tsgo")
+			-- vim.lsp.enable("tsgo")
 
 			vim.lsp.enable("cssls")
 
