@@ -124,11 +124,14 @@ bindsym $mod+Return exec $term
 
 bindsym $mod+apostrophe exec firefox
 bindsym $mod+semicolon exec qutebrowser
-# bindsym $mod+semicolon exec firefox
-bindsym $mod+p exec rbw-menu password | wl-copy
-bindsym $mod+u exec rbw-menu username | wl-copy
-bindsym $mod+o exec rbw-menu code | wl-copy
-bindsym $mod+Shift+u exec wofi-emoji
+
+bindsym $mod+p exec rbw-menu password | wtype -
+bindsym $mod+u exec rbw-menu username | wtype -
+bindsym $mod+o exec rbw-menu code | wtype -
+bindsym $mod+ctrl+p exec rbw-menu password | wl-copy --sensitive
+bindsym $mod+ctrl+u exec rbw-menu username | wl-copy --sensitive
+bindsym $mod+ctrl+o exec rbw-menu code | wl-copy --sensitive
+
 bindsym $mod+d exec $menu
 bindsym $mod+t exec ~/scripts/screenshot_translate
 bindsym $mod+ctrl+o exec ~/.local/bin/screenshot_ocr
