@@ -117,6 +117,7 @@ for_window [title="Extension: \(Bitwarden Password Manager\) - Bitwarden — Moz
 for_window [app_id="flameshot"] floating enable
 for_window [title="darktable - select a workspace"] floating enable
 for_window [title="darktable starting"] floating enable
+for_window [app_id="com.github.hluk.copyq"] floating enable
 
 # program shortcuts
 bindsym $mod+Return exec $term
@@ -131,6 +132,7 @@ bindsym $mod+Shift+u exec wofi-emoji
 bindsym $mod+d exec $menu
 bindsym $mod+t exec ~/scripts/screenshot_translate
 bindsym $mod+ctrl+o exec ~/.local/bin/screenshot_ocr
+bindsym $mod+ctrl+v exec copyq menu
 
 # Media volume controls
 bindsym XF86AudioMute exec pulsemixer --toggle-mute
@@ -253,7 +255,7 @@ bindsym $mod+Ctrl+period exec grim - | wl-copy
 # bindsym $mod+Ctrl+bracketright exec 'cliphist wipe'
 
 # Color picker
-bindsym $mod+Shift+p exec grim -g "$(slurp -p)" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:- | tail -n 1 | cut -d ' ' -f 4 | wl-copy 
+bindsym $mod+Shift+p exec 'grim -g "$(slurp -p)" -t ppm - | convert - -format '%[pixel:p{0,0}]' txt:- | tail -n 1 | cut -d ' ' -f 4 | wl-copy'
 
 # Mouse Mode
 mode Mouse {
