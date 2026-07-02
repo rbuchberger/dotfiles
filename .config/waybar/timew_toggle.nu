@@ -1,11 +1,9 @@
 #!/usr/bin/env nu
 
-(timew | complete | get exit_code) == 0 | let is_tracking
-
-if $is_tracking {
+if (timew get dom.active) == "1" {
     timew stop
 } else {
     timew continue
 }
 
-try { ^pkill -42 waybar } catch {}
+pkill -42 waybar
