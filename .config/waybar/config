@@ -16,6 +16,7 @@
     "backlight",
     "memory",
     "network",
+    "custom/timewarrior",
     "clock#date",
     "clock#time",
     "tray"
@@ -138,5 +139,13 @@
     "interval": 60,
     "format": "{} 𝄞",
     "on-click-right": "~/.local/share/cargo/bin/easyswitch easyeffects next"
+  },
+  "custom/timewarrior": {
+    "exec": "nu ~/.config/waybar/timew_status.nu",
+    "return-type": "json",
+    "interval": 10,
+    "signal": 8,
+    "on-click": "nu ~/.config/waybar/timew_toggle.nu",
+    "tooltip": true
   }
 }

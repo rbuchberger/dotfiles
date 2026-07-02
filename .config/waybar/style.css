@@ -74,6 +74,7 @@ window {
 #custom-email,
 #custom-music,
 #custom-easyswitch,
+#custom-timewarrior,
 #custom-switch-user {
   /* color: #e6e1dc; */
   color: rgba(230,225,220,.9);
@@ -133,4 +134,8 @@ window {
 #pulseaudio.muted,
 #mode {
   background: #cc6666;
+}
+
+#custom-timewarrior.tracking {
+  color: #a5c261;
 }
