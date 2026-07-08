@@ -14,8 +14,10 @@ let total = timew summary :quiet
   | default "0:00:00"
   | str trim
 
+let tag = timew export :today | from json | last | $in.tags.0?
+
 {
-  text: $"⏱ ($state.icon) ($total)",
+  text: $"⏱ ($state.icon) ($tag) ($total)",
   tooltip: (timew summary),
   class: $state.class
 } | to json --raw
