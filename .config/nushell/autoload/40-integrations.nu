@@ -4,9 +4,15 @@ carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
 source ~/.cache/carapace/init.nu
 
 # asdf
-path add '~/.asdf/shims'
-if ('~/.asdf/completions/nushell.nu' | path exists) {
-  source ~/.asdf/completions/nushell.nu
+$env.ASDF_DATA_DIR = '~/.asdf'
+path add $"($env.ASDF_DATA_DIR)/shims"
+
+# if ('~/.asdf/completions/nushell.nu' | path exists) {
+if ('/usr/bin/asdf' | path exists) {
+  const asdf_cmp = '~/.asdf/completions/nushell.nu'
+  asdf completion nushell | save -f $asdf_cmp
+
+  source $asdf_cmp
 }
 
 # Direnv

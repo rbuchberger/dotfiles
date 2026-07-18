@@ -11,6 +11,7 @@ load-env {
 
   # Set up SSH agent
   "SSH_AUTH_SOCK": ([$env.XDG_RUNTIME_DIR, ssh-agent.socket] | path join),
+  # "SSH_AUTH_SOCK": ([$env.XDG_RUNTIME_DIR, 'yubikey-agent', 'yubikey-agent.sock'] | path join)
 
   # Grim
   "GRIM_DEFAULT_DIR": ([$env.HOME, screenshots] | path join),

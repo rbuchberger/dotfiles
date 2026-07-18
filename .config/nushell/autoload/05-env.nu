@@ -8,5 +8,5 @@ load-env {
   "MANWIDTH": 80,
 
   "AUR_PAGER": yazi,
-  "MANPAGER": 'nvim +Man!'
+  "MANPAGER": 'nvim +Man!',
 }
