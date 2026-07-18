@@ -1,12 +1,5 @@
 return {
 	{
-		enabled = false,
-		"zbirenbaum/copilot.lua",
-		cmd = { "Copilot" },
-		opts = { keymap = { accept = "<a-n>" } },
-	},
-
-	{
 		"SirVer/ultisnips",
 		dependencies = { "honza/vim-snippets" },
 		lazy = false,
@@ -88,36 +81,6 @@ return {
 				}),
 				matching = { disallow_symbol_nonprefix_matching = false },
 			})
-		end,
-	},
-
-	{
-		"nickjvandyke/opencode.nvim",
-		version = "*",
-		config = function()
-			local oc = require("opencode")
-			---@type opencode.Opts
-			vim.g.opencode_opts = {}
-
-			local map = vim.keymap.set
-			map({ "n", "t" }, "<A-a>", oc.toggle, { desc = "Toggle opencode" })
-			map("n", "<leader>ac", oc.toggle, { desc = "Toggle opencode" })
-			map({ "n", "x" }, "<leader>ai", function()
-				oc.ask("@this: ", { submit = true })
-			end, { desc = "Ask opencode" })
-			map({ "n", "x" }, "<leader>ax", oc.select, { desc = "Opencode actions" })
-			map("n", "<leader>ab", function()
-				oc.ask("@buffer ", {})
-			end, { desc = "Add buffer to opencode" })
-			map("x", "<leader>as", function()
-				oc.ask("@this: ", { submit = true })
-			end, { desc = "Send selection to opencode" })
-			map({ "n", "x" }, "go", function()
-				return oc.operator("@this ")
-			end, { desc = "Add range to opencode", expr = true })
-			map("n", "goo", function()
-				return oc.operator("@this ") .. "_"
-			end, { desc = "Add line to opencode", expr = true })
 		end,
 	},
 }

@@ -47,27 +47,6 @@ return {
 		lazy = false,
 	},
 
-	-- {
-	-- 	"gorbit99/codewindow.nvim",
-	-- 	keys = {
-	-- 		{
-	-- 			"<leader>m",
-	-- 			function()
-	-- 				local codewindow = require("codewindow")
-	--
-	-- 				if require("codewindow.window").is_minimap_open() then
-	-- 					codewindow.close_minimap()
-	-- 				else
-	-- 					codewindow.open_minimap()
-	-- 					codewindow.toggle_focus()
-	-- 				end
-	-- 			end,
-	-- 			mode = "n",
-	-- 			noremap = true,
-	-- 		},
-	-- 	},
-	-- },
-
 	{
 		"sindrets/winshift.nvim",
 		keys = { { "<A-w>", "<cmd>WinShift<CR>", mode = "n", noremap = true } },

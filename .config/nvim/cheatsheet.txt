@@ -36,3 +36,10 @@ Hunk text object | ih
 
 ## Neogit
 Neogit | <leader>s
+
+## Flash @flash @motions
+Flash jump | s
+Flash Treesitter | S
+Remote Flash | r (operator mode)
+Treesitter Search | R
+Toggle Flash Search | <c-s> (cmdline mode)

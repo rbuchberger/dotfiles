@@ -2,7 +2,7 @@ return {
 	-- LSP status indicator
 	{ "j-hui/fidget.nvim", opts = {} },
 
-	{ "dmmulroy/ts-error-translator.nvim", opts = {} },
+	-- { "dmmulroy/ts-error-translator.nvim", opts = {} },
 
 	{
 		"neovim/nvim-lspconfig",
@@ -26,6 +26,15 @@ return {
 					vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
 					vim.keymap.set("n", "<Leader>k", vim.lsp.buf.signature_help, opts)
 					vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+					vim.keymap.set("n", "<leader>ef", function()
+						vim.lsp.buf.code_action({
+							context = {
+								only = { "source.fixAll.biome" },
+								diagnostics = {},
+							},
+							apply = true,
+						})
+					end, opts)
 					-- vim.keymap.set("n", "gr", vim.lsp.buf.references, opts)
 					vim.keymap.set("n", "[i", function()
 						vim.diagnostic.jump({ count = -1 })
@@ -33,8 +42,7 @@ return {
 					vim.keymap.set("n", "]i", function()
 						vim.diagnostic.jump({ count = 1 })
 					end, opts)
-					-- vim.keymap.set("n", "<leader>f", "vim.lsp.buf.format({ async = true })<CR>", opts)
-					vim.keymap.set("n", "<leader>ef", ":LspEslintFixAll<CR>")
+					-- vim.keymap.set("n", "<leader>ef", ":LspEslintFixAll<CR>")
 				end,
 			})
 
@@ -163,7 +171,7 @@ return {
 			-- 	filetypes = { "toml" },
 			-- 	root_markers = { "tombi.toml", "pyproject.toml", ".git" },
 			-- })
-      vim.lsp.enable("tombi")
+			vim.lsp.enable("tombi")
 
 			local util = require("lspconfig.util")
 
@@ -188,16 +196,35 @@ return {
 			vim.lsp.enable("astro-ls")
 
 			vim.lsp.enable("solargraph")
-			vim.lsp.enable("eslint")
+			-- vim.lsp.enable("eslint")
 			vim.lsp.enable("nushell")
 
-			-- Typescript language server
+			-- Old typescript language server
 			vim.lsp.enable("vtsls")
+
+			-- New, go-based language server
 			-- vim.lsp.enable("tsgo")
+			vim.lsp.config("biome", {
+				filetypes = {
+					"astro",
+					"css",
+					"graphql",
+					"html",
+					"javascript",
+					"javascriptreact",
+					"json",
+					"jsonc",
+					"svelte",
+					"svg",
+					"typescript",
+					"typescriptreact",
+					"vue",
+				},
+			})
+			vim.lsp.enable("biome")
 
 			vim.lsp.enable("cssls")
 
-			-- Incoming in a future version
 			-- vim.lsp.on_type_formatting.enable()
 		end,
 	},

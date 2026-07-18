@@ -1,22 +1,4 @@
 return {
-	-- {
-	-- 	"kdheepak/lazygit.nvim",
-	-- 	lazy = true,
-	-- 	cmd = {
-	-- 		"LazyGit",
-	-- 		"LazyGitConfig",
-	-- 		"LazyGitCurrentFile",
-	-- 		"LazyGitFilter",
-	-- 		"LazyGitFilterCurrentFile",
-	-- 	},
-	-- 	-- optional for floating window border decoration
-	-- 	dependencies = { "nvim-lua/plenary.nvim" },
-	-- 	-- setting the keybinding for LazyGit with 'keys' is recommended in
-	-- 	-- order to load the plugin when the command is run for the first time
-	-- 	keys = {
-	-- 		{ "<leader>s", "<cmd>LazyGit<cr>", desc = "LazyGit" },
-	-- 	},
-	-- },
 	{
 		"NeogitOrg/neogit",
 		dependencies = {
@@ -36,17 +18,17 @@ return {
 		},
 	},
 
-	{
-		"sindrets/diffview.nvim",
-		opts = {},
-		lazy = false,
-		keys = {
-			{ "<leader>gx", "<cmd>DiffviewClose<cr>", desc = "DiffView close" },
-			{ "<leader>gv", "<cmd>DiffviewOpen<cr>", desc = "DiffView open" },
-			{ "<leader>gh", "<cmd>DiffviewFileHistory %<cr>", desc = "DiffView file history - current file" },
-			{ "<leader>gH", "<cmd>DiffviewFileHistory<cr>", desc = "DiffView file history - branch" },
-		},
-	},
+	-- {
+	-- 	"sindrets/diffview.nvim",
+	-- 	opts = {},
+	-- 	lazy = false,
+	-- 	keys = {
+	-- 		{ "<leader>gx", "<cmd>DiffviewClose<cr>", desc = "DiffView close" },
+	-- 		{ "<leader>gv", "<cmd>DiffviewOpen<cr>", desc = "DiffView open" },
+	-- 		{ "<leader>gh", "<cmd>DiffviewFileHistory %<cr>", desc = "DiffView file history - current file" },
+	-- 		{ "<leader>gH", "<cmd>DiffviewFileHistory<cr>", desc = "DiffView file history - branch" },
+	-- 	},
+	-- },
 
 	{
 		"lewis6991/gitsigns.nvim",
@@ -109,20 +91,20 @@ return {
 		},
 	},
 
-	{
-		"pwntester/octo.nvim",
-		event = "VeryLazy",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-telescope/telescope.nvim",
-			"nvim-tree/nvim-web-devicons",
-		},
-
-		opts = {
-			enable_builtin = true,
-			-- ui = {
-			-- 	use_signstatus = false, -- show "modified" marks on the status column
-			-- },
-		},
-	},
+	-- {
+	-- 	"pwntester/octo.nvim",
+	-- 	event = "VeryLazy",
+	-- 	dependencies = {
+	-- 		"nvim-lua/plenary.nvim",
+	-- 		"nvim-telescope/telescope.nvim",
+	-- 		"nvim-tree/nvim-web-devicons",
+	-- 	},
+	--
+	-- 	opts = {
+	-- 		enable_builtin = true,
+	-- 		-- ui = {
+	-- 		-- 	use_signstatus = false, -- show "modified" marks on the status column
+	-- 		-- },
+	-- 	},
+	-- },
 }

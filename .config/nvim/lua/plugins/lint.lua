@@ -1,4 +1,4 @@
-local javascriptFormatters = { "prettierd" }
+-- local javascriptFormatters = { "prettierd" }
 -- local javascriptLinters = { "eslint" }
 
 return {
@@ -69,27 +69,27 @@ return {
 			formatters_by_ft = {
 				lua = { "stylua" },
 				markdown = { "markdownlint" },
-				typescript = javascriptFormatters,
-				javascript = javascriptFormatters,
-				typescriptreact = javascriptFormatters,
-				javascriptreact = javascriptFormatters,
-				json = { "prettier" },
-				yaml = { "yamllint" },
-				html = { "prettier" },
-				css = { "prettierd" },
+				-- typescript = javascriptFormatters,
+				-- javascript = javascriptFormatters,
+				-- typescriptreact = javascriptFormatters,
+				-- javascriptreact = javascriptFormatters,
+			-- json = { "prettier" },
+			-- yaml = { "yamllint" }, -- linter, not formatter; yamlls handles this via lsp_format fallback
+			-- html = { "prettier" },
+				-- css = { "prettierd" },
 				rust = { "rustfmt" },
 				sql = { "sql_formatter" },
-				astro = { "prettierd" },
-				caddy = { "caddy_fmt" },
-			},
-			formatters = {
-				caddy_fmt = {
-					command = "caddy",
-					args = { "fmt", "-" },
-					stdin = true,
-				},
+			-- astro = { "prettierd" },
+			caddy = { "caddy_fmt" },
+		},
+		formatters = {
+			caddy_fmt = {
+				command = "caddy",
+				args = { "fmt", "-" },
+				stdin = true,
 			},
 		},
+	},
 
 		config = function(_, opts)
 			require("conform").setup(opts)
@@ -99,6 +99,7 @@ return {
 					bufnr = bufnr,
 					timeout_ms = 500,
 					async = true,
+					lsp_format = "fallback",
 				}, overrides or {}))
 			end
 

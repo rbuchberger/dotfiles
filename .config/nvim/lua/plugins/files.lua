@@ -23,6 +23,7 @@ return {
 		},
 
 		lazy = true,
+		event = { "LspAttach" },
 		keys = {
 			"<C-g>",
 			"<C-p>",
