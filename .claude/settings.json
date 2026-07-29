@@ -5,11 +5,7 @@
       "Bash(git log:*)",
       "Bash(git show:*)",
       "mcp__codegraph__*"
-    ],
-    "deny": [
-      "Bash(git rebase:*)"
-    ],
-    "ask": []
+    ]
   },
   "model": "opus",
   "hooks": {
@@ -31,7 +27,6 @@
   "enabledPlugins": {
     "typescript-lsp@claude-plugins-official": true,
     "context7@claude-plugins-official": true,
-    "pr-review-toolkit@claude-plugins-official": true,
     "sentry@claude-plugins-official": true,
     "mattpocock-skills@mattpocock": true
   },
@@ -46,7 +41,7 @@
   "effortLevel": "high",
   "awaySummaryEnabled": false,
   "theme": "dark",
-  "remoteControlAtStartup": false,
+  "remoteControlAtStartup": true,
   "feedbackSurveyState": {
     "lastShownTime": 1754059718740
   }
