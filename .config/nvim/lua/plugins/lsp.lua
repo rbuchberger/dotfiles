@@ -46,12 +46,6 @@ return {
 				end,
 			})
 
-			vim.lsp.config("*", {
-				server = {
-					capabilities = require("cmp_nvim_lsp").default_capabilities(),
-				},
-			})
-
 			vim.lsp.config("lua_ls", {
 				on_init = function(client)
 					if client.workspace_folders then
@@ -195,7 +189,24 @@ return {
 
 			vim.lsp.enable("astro-ls")
 
-			vim.lsp.enable("solargraph")
+			-- `mise x` picks the ruby the project pins, so ruby-lsp can resolve its bundle.
+			-- A single global install can't: bundler rejects a mismatched ruby version.
+			-- Without MISE_EXEC_AUTO_INSTALL, opening a file in a project whose ruby isn't
+			-- installed silently starts compiling one from source.
+			vim.lsp.config("ruby_lsp", {
+				cmd = function(dispatchers, config)
+					local root = config and config.root_dir
+					return vim.lsp.rpc.start({ "mise", "x", "--", "ruby-lsp" }, dispatchers, {
+						cwd = root and (config.cmd_cwd or root) or nil,
+						env = { MISE_EXEC_AUTO_INSTALL = "false" },
+					})
+				end,
+			})
+			vim.lsp.enable("ruby_lsp")
+
+			-- HTML structure in .erb; ruby_lsp handles the ruby inside them.
+			vim.lsp.enable("herb_ls")
+
 			-- vim.lsp.enable("eslint")
 			vim.lsp.enable("nushell")
 
