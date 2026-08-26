@@ -39,16 +39,6 @@ rehash_precmd() {
   fi
 }
 
-add-zsh-hook -Uz precmd rehash_precmd
-
-if [ -f /opt/asdf-vm/asdf.sh ]; then
-  export ASDF_DIR=/opt/asdf-vm
-  export ASDF_CONFIG_FILE=$XDG_CONFIG_HOME/asdf/asdfrc
-  export ASDF_DATA_DIR=$XDG_DATA_HOME/asdf
-
-  source $ASDF_DIR/asdf.sh
-fi
-
 # direnv
 [ -f  "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc" ] && \
   source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
