@@ -4,28 +4,32 @@ carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
 source ~/.cache/carapace/init.nu
 
 # asdf
-$env.ASDF_DATA_DIR = '~/.asdf'
-path add $"($env.ASDF_DATA_DIR)/shims"
-
-# if ('~/.asdf/completions/nushell.nu' | path exists) {
-if ('/usr/bin/asdf' | path exists) {
-  const asdf_cmp = '~/.asdf/completions/nushell.nu'
-  asdf completion nushell | save -f $asdf_cmp
-
-  source $asdf_cmp
-}
+# $env.ASDF_DATA_DIR = '~/.asdf'
+# path add $"($env.ASDF_DATA_DIR)/shims"
+#
+# # if ('~/.asdf/completions/nushell.nu' | path exists) {
+# if ('/usr/bin/asdf' | path exists) {
+#   const asdf_cmp = '~/.asdf/completions/nushell.nu'
+#   asdf completion nushell | save -f $asdf_cmp
+#
+#   source $asdf_cmp
+# }
 
 # Direnv
-$env.config = ($env.config | upsert hooks {
-  env_change: {
-    PWD: [
-      {
-        condition: { || which direnv | is-not-empty }
-        code: { || direnv export json | from json | default {} | load-env }
-      }
-    ]
-  }
-})
+# $env.config = ($env.config | upsert hooks {
+#   env_change: {
+#     PWD: [
+#       {
+#         condition: { || which direnv | is-not-empty }
+#         code: { || direnv export json | from json | default {} | load-env }
+#       }
+#     ]
+#   }
+# })
+
+# mise is activated in config.nu; autoload files don't propagate a module's env
+# to the global scope. Regenerate mise.nu with:
+#   mise activate nu | save -f ($nu.default-config-dir | path join mise.nu)
 
 # yazi cd
 def --env yazi-cd [...args] {
