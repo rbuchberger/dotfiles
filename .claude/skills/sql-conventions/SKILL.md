@@ -3,14 +3,12 @@ name: sql-conventions
 description: Follow these conventions when writing SQL. If you are using an ORM, only reference if you are writing a raw SQL string or template that it will pass through to the database more or less directly.
 ---
 
-## Naming
-
 Do not use the common convention of aliasing tables to single letters. If a name is awkwardly long
 for the context, give it a meaningful alias.
 
-Bad:
 
 ```sql
+-- Bad:
     SELECT 
         r.title, r.id
     FROM
@@ -19,11 +17,8 @@ Bad:
        user_account_issues i ON r.issue_id = i.id
     WHERE
       i.account_id = ?;
-```
 
-Good:
-
-```sql
+-- Good:
     SELECT 
         resolutions.title, resolutions.id
     FROM
