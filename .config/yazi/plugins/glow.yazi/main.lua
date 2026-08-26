@@ -1,15 +1,15 @@
 local M = {}
 
 function M:peek(job)
-	-- Set a fixed width of 50 characters for the preview
-	local preview_width = 55
+	-- Render to the actual preview pane width
+	local preview_width = job.area.w
 
 	local child = Command("glow")
 		:args({
 			"--style",
 			"dark",
 			"--width",
-			tostring(preview_width),  -- Use fixed width instead of job.area.w
+			tostring(preview_width),
 			tostring(job.file.url),
 		})
 		:env("CLICOLOR_FORCE", "1")
