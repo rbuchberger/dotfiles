@@ -11,9 +11,11 @@ project then the project takes precedence.
 ## What to commit
 
 - Rebases are preferred over merges
-- A commit should be a small, atomic, individually revertable, coherent change
+- A commit should be a small, meaninful, atomic, individually revertable, coherent change
   that takes the codebase from a valid state to a valid state. It's not required
   that checks pass for every commit, but it's nice to have.
+- Changes due to code review, linting rules, autoformatting, and the like should be amended to the
+  relevant commit rather than given their own separate commit.
 - Any change that requires a repeated small edit in many places should be broken
   out by itself. (For example, renaming a variable, moving a route, introducing a
   new lint rule, etc.).

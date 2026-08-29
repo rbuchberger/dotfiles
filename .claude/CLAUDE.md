@@ -11,11 +11,11 @@ I'm sick of seeing these phrases (and their variations), please stop using them:
 - "is exactly/precisely the", as in "which is exactly the bug we are (...)". Just drop it: "which is the bug
   we are (...)"
 
-I have a hard time keeping track of issues or tickets when they are referred to only by a number.
-When discussing them, please add 1-3 words in parentheses to indicate which one we're dealing with
-in this context. For example, if we are discussing an overhaul of the review page, a ticket titled
-"Review queue: page header with stat tiles" you could refer to it as 'LV-539 (header)'. In another
-context, you might refer to it as 'LV-539 (review page header)'
+Please do not refer to anything by only numbers or meaningless IDs. Examples: Tickets & PRs by
+their ID, tests by their line number, etc. Instead, please add 1-3 words in parentheses to indicate
+which one we're dealing with in this context. For example, if we are discussing an overhaul of the
+review page, a ticket titled "Review queue: page header with stat tiles" you could refer to it as
+'LV-539 (header)'. In another context, you might refer to it as 'LV-539 (review page header)'
 
 ## Skills
 
