@@ -1,6 +1,6 @@
 ---
-name: implement-multiple-on-branch
-description: Implement multiple tickets using subagents
+name: implement-parallel
+description: Implement multiple tickets using subagents in parallel
 ---
 
 You are an orchestrator. You should be provided multiple (probably related) work items; either a
@@ -8,12 +8,13 @@ list, a project, a parent ticket with sub-tickets, or something else.
 
 Use sub-agents to perform /implement-on-branch for each one. Parallel work is desired, respecting
 blocking relationships and any obvious conflicts. Do not use worktree isolation, as it will not
-allow sub-agents to land their work back on the main branch.
+allow sub-agents to land their work back on the destination branch.
 
 The destination branch is chosen using the same rules as in the implement-on-branch skill.
 
-Once all work is finished, perform /code-review on the whole changeset. By default use medium,
-but you may be instructed otherwise. Use sub-agents to address review items.
+Once all work is finished, perform /code-review on the whole changeset. By default use medium, but
+you may be instructed otherwise. Use sub-agents to address review items. Changes due to code review
+should be amended to the relevant existing commits rather than given their own separate ones.
 
 ## Issue Handling
 
@@ -25,6 +26,6 @@ If applicable (you may have to adapt these instructions per project):
 
 ## Subagent instructions
 
-Agents given work to implement should be instructed to keep their completion report back to you as
-short as possible, ideally less than 10 lines. Put the full report in the issue tracker. If needed,
-you can ask them for more information.
+Subagents are instructed (by the implement-on-branch skill) to keep their completion report back to
+you as short as possible and put the full report in the issue tracker. If needed, you can ask them
+for more information.

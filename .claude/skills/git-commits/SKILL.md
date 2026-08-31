@@ -5,7 +5,7 @@ description: Always use whenever creating a git commit.
 
 # Creating Git Commits
 
-These are Robert's personal preferences; if they conflict with the documented conventions of a
+These are Robert's personal preferences; if they conflict with the *documented* conventions of a
 project then the project takes precedence.
 
 ## What to commit
@@ -15,7 +15,8 @@ project then the project takes precedence.
   that takes the codebase from a valid state to a valid state. It's not required
   that checks pass for every commit, but it's nice to have.
 - Changes due to code review, linting rules, autoformatting, and the like should be amended to the
-  relevant commit rather than given their own separate commit.
+  relevant commit rather than given their own separate commit, so long as that commit is not already
+  on main/master.
 - Any change that requires a repeated small edit in many places should be broken
   out by itself. (For example, renaming a variable, moving a route, introducing a
   new lint rule, etc.).
@@ -52,7 +53,7 @@ Example:
 ```gitcommit
 mcp: Derezz
 
-The master control program turned out to be evil and had become intent..
+The master control program turned out to be evil and had become intent
 on world domination. This commit throws Tron's disc into MCP (causing
 its deresolution) and turns it back into a chess game.
 

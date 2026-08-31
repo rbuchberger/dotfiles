@@ -1,10 +1,9 @@
 ---
-name: implement-on-branch
+name: implement-in-worktree
 description: Implement provided ticket in a worktree, placing commits back in current branch.
 ---
 
-Implement the work described in the provided ticket or spec, in a git worktree, and land the
-commits on the destination branch.
+/implement indicated work, in a git worktree, and land the commits on the destination branch.
 
 ## Destination branch
 
@@ -25,19 +24,6 @@ before you start, because they cost more to discover later:
 
 Nothing outside the worktree gets touched until you are landing the work.
 
-## Doing the work
-
-Write tests at pre-agreed seams. Prefer `/tdd` where the project's testing setup makes it
-practical.
-
-Typecheck often, and run scoped tests while you iterate. Run the full suite before you call the
-work done.
-
-Once finished, use /two-axis-code-review to review the work.
-
-The work is finished when the ticket is implemented, the full checks and tests pass, and anything
-the code-review subagents raised has been addressed. /tdd still applies here.
-
 ## Landing it
 
 The ticket is not done until the worktree is clean and everything is committed. If you dispatch a
@@ -52,8 +38,3 @@ Then:
 3. Place your commits at the end of the destination branch with a fast-forward merge.
 4. Once the work is safely on the destination branch, clean up any worktrees and branches you
    created.
-
-Do not push or create a PR unless specifically asked to do so.
-
-The user may not come back and read the session log, so if you have anything to say then leave it
-as a comment on the relevant issue (if provided).
