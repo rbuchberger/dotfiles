@@ -1,6 +1,10 @@
 -- local javascriptFormatters = { "prettierd" }
 -- local javascriptLinters = { "eslint" }
 
+-- Mason prepends its bin to PATH, so a bare "sqruff" finds the real binary
+-- rather than the wrapper supplying our postgres default.
+local sqruff = vim.fn.expand("~/.local/bin/sqruff")
+
 return {
 	{
 		"mfussenegger/nvim-lint",
@@ -15,6 +19,7 @@ return {
 				-- javascriptreact = javascriptLinters,
 				-- typescriptreact = javascriptLinters,
 				json = { "jsonlint" },
+				sql = { "sqruff" },
 				-- markdown = { "markdownlint" },
 				yaml = { "yamllint" },
 				-- css = { "stylelint" },
@@ -27,9 +32,21 @@ return {
 				args = { "--globals", "vim", "--" },
 			})
 
+			lint.linters.sqruff = vim.tbl_extend("force", lint.linters.sqruff, { cmd = sqruff })
+
 			vim.api.nvim_create_autocmd({ "BufEnter", "InsertLeave", "BufWritePost" }, {
-				callback = function()
-					lint.try_lint()
+				callback = function(args)
+					local path = vim.api.nvim_buf_get_name(args.buf)
+					local dir = vim.fn.fnamemodify(path, ":p:h")
+
+					local names = nil
+					if vim.bo[args.buf].filetype == "sql" and path:find("/drizzle/", 1, true) then
+						names = { "sqruff", "squawk" }
+					end
+
+					-- sqruff reads config only from its cwd, so both this and conform
+					-- must anchor on the buffer for the wrapper to resolve the same one.
+					lint.try_lint(names, { cwd = vim.fn.isdirectory(dir) == 1 and dir or nil })
 				end,
 			})
 		end,
@@ -78,11 +95,20 @@ return {
 			-- html = { "prettier" },
 				-- css = { "prettierd" },
 				rust = { "rustfmt" },
-				sql = { "sql_formatter" },
+				sql = { "sqruff" },
 			-- astro = { "prettierd" },
 			caddy = { "caddy_fmt" },
 		},
 		formatters = {
+			sqruff = {
+				command = sqruff,
+				-- sqruff fix writes the formatted file but still exits 1 if any
+				-- unfixable rule (AL06, LT05) is left over.
+				exit_codes = { 0, 1 },
+				cwd = function(_, ctx)
+					return ctx.dirname
+				end,
+			},
 			caddy_fmt = {
 				command = "caddy",
 				args = { "fmt", "-" },
