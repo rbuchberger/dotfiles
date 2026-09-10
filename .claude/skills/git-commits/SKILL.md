@@ -3,68 +3,39 @@ name: git-commits
 description: Always use whenever creating a git commit.
 ---
 
-# Creating Git Commits
-
-These are Robert's personal preferences; if they conflict with the *documented* conventions of a
-project then the project takes precedence.
+Documented project conventions override these.
 
 ## What to commit
 
-- A linear commit history (without merge commits) is strongly preferred.
-- A commit should be a meaninful, atomic, individually revertable, coherent change that takes the
-  codebase from a valid state to a valid state. It's not required that checks pass for every commit,
-  but it's nice to have.
-- ALWAYS amend code review and formatting fixes to the original implementation commit, unless the
-  implementation commit is already on main/master. If there is a story about implementation, code
-  review, and subsequent fixes, that story must happen in one commit's message. Formatting
-  fixes to please a linter don't even deserve a mention, much less their own commit.
-- Any change that requires a repeated small edit in many places should be broken out by itself. (For
-  example, renaming a variable, moving a file, introducing a new lint rule, etc.).
-- Multiple commits per PR is standard practice. I do not typically squash and merge.
-
-Intermediate, working commits can be whatever you like, but I want to be clear: DO NOT hand back a
-commit log with review or formatting fix commits in it.
+- Linear history, no merge commits. Multiple commits per PR is normal; I don't squash-merge.
+- Each commit is a coherent, atomic, individually revertable change from one valid state to another.
+  Passing checks on every commit is nice, not required. (Do not re-run checks for every commit to
+  verify.)
+- A repeated small edit across many places (rename, file move, new lint rule) gets its own commit.
+- Fold review and formatting fixes into the original implementation commit, unless it's already on
+  main/master. Any implementation/review/fix story belongs in that commit's message; lint formatting
+  fixes get no mention. Messy commits are fine while working, but the log you hand back has no
+  review or formatting fix commits.
 
 ## Format
-
-If a project has an established pattern, use that. Otherwise, I like scoped
-commits combined with the usual "Short, imperitive description" guidance.
-
-```
-<scope>: <description>
-
-[optional body]
-
-[trailers]
-```
-
-Basically scoped commits, with a short, imperitive description. Body says why, not what.
-
-- **Scope** — the subsystem, area, or module touched. Lowercase, matching how it
-  appears in the tree. Nest with `/` when it narrows something usefully
-  (`artefacts/ReviewWidget`). Comma-separate only when a change genuinely spans
-  two areas with no sensible parent; prefer a broader scope, or `global` for a
-  tree-wide change.
-- **Description** — imperative mood, no trailing period. Under 50 characters.
-- **Body** — why, not what. The diff already says what. Wrap at 72 columns.
-  Omit it for changes that need no explanation. Separate from subject with a blank line.
-- **Trailers** — always add an `Assisted-by: <model>` to indicate that this
-  commit was authored by AI.
-
-Example:
 
 ```gitcommit
 mcp: Derezz
 
-The master control program turned out to be evil and had become intent
-on world domination. This commit throws Tron's disc into MCP (causing
-its deresolution) and turns it back into a chess game.
+The master control program turned evil and was intent on world
+domination. Throw Tron's disc into it and turn it back into a chess game.
 
 close #321
 Assisted-by: claude-opus-5
 ```
 
+- **Scope**: the subsystem or module touched, lowercase, as it appears in the tree. Nest with `/`
+  when it narrows usefully (`artefacts/ReviewWidget`). Comma-separate only when two areas have no
+  sensible parent; prefer a broader scope, or `global` for tree-wide changes.
+- **Description**: imperative, no trailing period, under 50 characters.
+- **Body**: why, not what. Wrap at 72. Omit when nothing needs explaining.
+- **Trailers**: always `Assisted-by: <model>`.
+
 ## Rewriting history
 
-If you are going to modify commits deeper than the most recent one, cut a backup branch first and
-clean it up afterwards.
+Before modifying commits older than the latest, cut a backup branch. Delete it when done.

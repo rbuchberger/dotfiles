@@ -3,116 +3,57 @@ name: code-authoring
 description: You MUST use when writing any code.
 ---
 
-- KISS and YAGNI are far more important than DRY. (DRY still matters, though.)
-- Don't consider abstraction until at least 3 copies, possibly more.
-- Avoid misdirection. One large function that can be read top-to-bottom is better than several
-  smaller ones.
-- Seriously cool it with the comments. More on this later but I DO NOT WANT every file to be filled
-  with paragraphs of prose with a little code sprinkled in between.
-- ALWAYS ask me before you disable a linter rule, typechecker rule, or test. Only consider doing so
-  if you believe you have a strong justification for it.
+Documented project conventions override the style rules here.
+
+- KISS and YAGNI beat DRY (DRY still matters). Abstract only at 3+ copies.
+- One large function read top-to-bottom beats several small ones the reader has to jump between.
+- Ask me before disabling a linter rule, typechecker rule, or test, and only with a strong
+  justification.
 
 ## Comments
 
-- Prefer not to write a comment at all.
-- Comments longer than 2 lines should be rare.
-- Comments MUST NOT restate the code in prose.
-- Write comments, only when necessary to justify the code's intent or existence in its current form,
-  and only when not obvious.
-- Do not write comments that explain, in detail, the entire rationale for the chosen approach. If
-  such an explanation must be documented, that belongs in the commit message or an ADR.
-- Do not explain the same thing multiple times.
-- At the top of a file, a short introduction is ok to help the reader get their bearings. No more
-  than 5 extremely concise lines.
+I do not want files full of prose with code sprinkled in. Default to no comment. Comment only to
+justify code whose intent or existence isn't obvious, in one or two lines. Full rationale for an
+approach goes in the commit message or an ADR. Say each thing once. A file may open with an intro of
+at most 5 terse lines.
 
 ```ts
-// Ideal:
+// Good, if called for:
+// Using <harder A> over <easier B> because it handles <edge case>.
+function handleClick(event: MouseEvent) {}
 
-function handleClick(event: MouseEvent) { /* ... */ }
-
-// Good (if called for):
-// We are doing <harder A> instead of <easier B> because it correctly handles <edge case>.
-function handleClick(event: MouseEvent) { /* ... */ }
-
-// Bad:
+// Bad, restates the code:
 // Handle click
-function handleClick(event: MouseEvent) { /* ... */ }
+function handleClick(event: MouseEvent) {}
 
-// Awful:
-// This function handles the the mouse click event triggered when a user clicks on the button.
-function handleClick(event: MouseEvent) { /* ... */ }
-
-// Seriously please fucking stop doing this:
-/** 
-* This function handles the the mouse click event triggered when a user clicks on the button.
-* Initially we considered a stateful approach because it would be shorter by a few lines, but
-* instead we went with a deliberatly pure, stateless function. No useState, no context, no external
-* APIs called. This empowers us to thoroughly and completely test every aspect of the function, from
-* <several more lines of untested, useless noise that will do nothing other than make me scroll
-* more, fill up your context faster, and rot until it is actively misleading.>
-*/
-function handleClick(event: MouseEvent) { /* ... */ }
+// Awful, seriously stop fucking doing this:
+/**
+ * This function handles the mouse click event triggered when a user clicks the button.
+ * Initially we considered a stateful approach, but went with a pure, stateless function.
+ * No useState, no context, no external APIs. This lets us test every aspect...
+ */
+function handleClick(event: MouseEvent) {}
 ```
 
 ## Style
 
-If any of these style preferences conflict with the existing standards or conventiosn of a project,
-follow those instead.
-
-- Names should be complete words, short but specific in context. In a module `DB::Users`:
-  - Good: `create`, `delete`, `getAll`, `getById`.
-  - Bad: `getUser`, `deleteUser`
-  - Bad: `getUserFromDatabase`
-  - Bad: `cr`, `crUsr`
-- Functions and method names should be verbs (optionally followed by a noun).
-  - Good: `writeFile`
-  - Good: `write` (in a module named `File`)
-  - Bad: `file`
-  - Bad: `fileWrite`
-- Single letters only for:
-  - declared and used on one line (`users.map((u) => u.name)`)
-  - strong conventions like `i`/`j`/`k` for indices
-- Never use emojis or UTF symbols such as ✅ or ❌ in code or comments.
-- Prefer guard clauses over nesting.
-- Never use a nested ternary. Avoid multiline ternaries.
-- Unless there is an existing convention, prefer `snake_case` over `camelCase`.
+- Names are complete words, short but specific in context. In module `DB::Users`: `create`,
+  `getById`; not `getUser`, `getUserFromDatabase`, `crUsr`.
+- Functions are verbs, optionally plus a noun: `writeFile`, or `write` in module `File`; not `file`,
+  `fileWrite`.
+- Single letters only when declared and used on one line (`users.map((u) => u.name)`), or by strong
+  convention (`i`, `j`, `k`).
+- No emojis or UTF symbols in code or comments.
+- Guard clauses over nesting. No nested ternaries; avoid multiline ones.
+- `snake_case` over `camelCase`.
 
 ## Helpers
 
-- Before writing a helper, you *must* actively search the codebase to ensure you aren't creating a
-  duplicate. You are free to use a sub-agent to do this.
-- When writing a helper, place it somewhere that it can be found and reused. If it's
-  specific to a module, place it in that module.
-
-```ts
-// Bad:
-
-// src/ui/pie_chart/Indicator.tsx
-
-function sine(degrees: number): number {
-  return Math.sin((degrees * Math.PI) / 180)
-}
-
-export function Indicator(props: IndicatorProps)  { /* uses sine */ }
-
-// Good:
-
-// src/lib/geometry.ts
-
-export function sine(degrees: number): number {
-  return Math.sin((degrees * Math.PI) / 180)
-}
-
-// src/ui/pie_chart/Indicator.tsx
-
-import { sine } from '~/lib/geometry'
-
-export function Indicator(props: IndicatorProps)  { /* uses sine */ }
-```
+Before writing a helper, search the codebase for an existing one (a subagent is fine). Put new
+helpers where they'll be found and reused: a shared lib (`src/lib/geometry.ts`), or the owning module
+if module-specific. Not inline in the file that first needed it.
 
 ## Tests
 
-- Tests are generally desired.
-- Prefer explicitness over brevity. I should be able to read a test in the middle of a big test
-  file, and understand the test without having to remember the default parameters of some setup
-  helper.
+Tests are generally wanted. Favor explicitness over brevity: a test in the middle of a big file
+should make sense without remembering a setup helper's defaults.
