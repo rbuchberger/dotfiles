@@ -10,17 +10,20 @@ project then the project takes precedence.
 
 ## What to commit
 
-- Rebases are preferred over merges
-- A commit should be a small, meaninful, atomic, individually revertable, coherent change
-  that takes the codebase from a valid state to a valid state. It's not required
-  that checks pass for every commit, but it's nice to have.
-- Changes due to code review, linting rules, autoformatting, and the like should be amended to the
-  relevant commit rather than given their own separate commit, so long as that commit is not already
-  on main/master.
-- Any change that requires a repeated small edit in many places should be broken
-  out by itself. (For example, renaming a variable, moving a route, introducing a
-  new lint rule, etc.).
-- Multiple commits per PR is ok
+- A linear commit history (without merge commits) is strongly preferred.
+- A commit should be a meaninful, atomic, individually revertable, coherent change that takes the
+  codebase from a valid state to a valid state. It's not required that checks pass for every commit,
+  but it's nice to have.
+- ALWAYS amend code review and formatting fixes to the original implementation commit, unless the
+  implementation commit is already on main/master. If there is a story about implementation, code
+  review, and subsequent fixes, that story must happen in one commit's message. Formatting
+  fixes to please a linter don't even deserve a mention, much less their own commit.
+- Any change that requires a repeated small edit in many places should be broken out by itself. (For
+  example, renaming a variable, moving a file, introducing a new lint rule, etc.).
+- Multiple commits per PR is standard practice. I do not typically squash and merge.
+
+Intermediate, working commits can be whatever you like, but I want to be clear: DO NOT hand back a
+commit log with review or formatting fix commits in it.
 
 ## Format
 
@@ -60,3 +63,8 @@ its deresolution) and turns it back into a chess game.
 close #321
 Assisted-by: claude-opus-5
 ```
+
+## Rewriting history
+
+If you are going to modify commits deeper than the most recent one, cut a backup branch first and
+clean it up afterwards.

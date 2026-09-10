@@ -13,10 +13,10 @@ makes it practical.
 Typecheck often, and run scoped tests while you iterate. Run the full suite before you call the work
 done.
 
-Once finished, use /mattpocock-skills:two-axis-code-review to review the work.
+Once finished, use /two-axis-code-review to review the work.
 
 The work is finished when the ticket is implemented, the full checks and tests pass, and anything
-the code-review subagents raised has been addressed. /mattpocock-skills:tdd still applies here.
+the two-axis review raised has been addressed. /mattpocock-skills:tdd still applies here.
 
 ## Landing it
 

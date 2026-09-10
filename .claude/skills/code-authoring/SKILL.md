@@ -49,7 +49,7 @@ function handleClick(event: MouseEvent) { /* ... */ }
 * instead we went with a deliberatly pure, stateless function. No useState, no context, no external
 * APIs called. This empowers us to thoroughly and completely test every aspect of the function, from
 * <several more lines of untested, useless noise that will do nothing other than make me scroll
-  more, fill up your context faster, and rot until it is actively misleading.>
+* more, fill up your context faster, and rot until it is actively misleading.>
 */
 function handleClick(event: MouseEvent) { /* ... */ }
 ```
@@ -113,5 +113,6 @@ export function Indicator(props: IndicatorProps)  { /* uses sine */ }
 ## Tests
 
 - Tests are generally desired.
-- Prefer explicitness over brevity. I shouldn't have to remember a helper's default parameters to
-  know what is being tested.
+- Prefer explicitness over brevity. I should be able to read a test in the middle of a big test
+  file, and understand the test without having to remember the default parameters of some setup
+  helper.

@@ -37,3 +37,12 @@ the same problem. Examples:
 - Agents not doing what is expected
 - Skills not working right, or not being found.
 - Project tooling misconfigurations or conflicts.
+
+### My shell is nushell
+
+`nu`, not bash. It expands an unquoted glob anywhere on the line, including inside a flag's value,
+before the command runs. So `grep -rn "foo" src --include=*.tsx` dies with
+`no matches found: --include=*.tsx`. Quote it — `--include="*.tsx"` — and it works. Same for any
+flag carrying a glob (`--exclude`, `find -name`, `rsync --filter`).
+
+It reads as a grep error rather than a shell one, so don't rewrite the command. Add the quotes.
