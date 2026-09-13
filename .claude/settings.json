@@ -27,9 +27,17 @@
     "typescript-lsp@claude-plugins-official": true,
     "context7@claude-plugins-official": true,
     "sentry@claude-plugins-official": true,
-    "mattpocock-skills@claude-plugins-official": true
+    "mattpocock-skills@claude-plugins-official": false,
+    "agent-skills@rbuchberger": true
   },
-  "extraKnownMarketplaces": {},
+  "extraKnownMarketplaces": {
+    "rbuchberger": {
+      "source": {
+        "source": "directory",
+        "path": "/home/robert/development/agent-skills"
+      }
+    }
+  },
   "effortLevel": "medium",
   "promptSuggestionEnabled": false,
   "awaySummaryEnabled": false,
