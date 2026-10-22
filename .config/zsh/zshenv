@@ -71,3 +71,9 @@ export ZDOTDIR=$XDG_CONFIG_HOME/zsh
 
 # So rails app:update works nicely
 export THOR_MERGE="nvim -d"
+
+# Globbing: bash-compatible unmatched globs.
+# zsh's default `nomatch` makes an unmatched glob a fatal error, so a flag whose
+# value is a pattern -- `grep -r foo --include=*.ts` -- dies before the command
+# runs. Bash passes the pattern through literally, which is what tools expect.
+unsetopt nomatch
