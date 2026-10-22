@@ -12,18 +12,24 @@ Documented project conventions override the style rules here.
 
 ## Comments
 
-I do not want files full of prose with code sprinkled in. Default to no comment. Comment only to
-justify code whose intent or existence isn't obvious, in one or two lines. Full rationale for an
-approach goes in the commit message or an ADR. Say each thing once. A file may open with an intro of
-at most 5 terse lines.
+I do not want files full of prose with code sprinkled in. Ideally write no comment. Comment only to
+justify code whose intent or existence isn't obvious, in one or two lines. Exception: If you are
+doing something really weird, the 2 line limit does not apply. Explain yourself completely.
+
+Full rationale for an approach goes in the commit message or an ADR. Do not repeat explanations. A
+file may open with an intro of at most 5 terse lines.
 
 ```ts
+// Ideal:
+
+function handleClick(event: MouseEvent) {}
+
 // Good, if called for:
 // Using <harder A> over <easier B> because it handles <edge case>.
 function handleClick(event: MouseEvent) {}
 
 // Bad, restates the code:
-// Handle click
+// This function handles the mouse click event triggered when the user clicks on the button.
 function handleClick(event: MouseEvent) {}
 
 // Awful, seriously stop fucking doing this:
@@ -45,7 +51,7 @@ function handleClick(event: MouseEvent) {}
   convention (`i`, `j`, `k`).
 - No emojis or UTF symbols in code or comments.
 - Guard clauses over nesting. No nested ternaries; avoid multiline ones.
-- `snake_case` over `camelCase`.
+- `snake_case` over `camelCase`, if you are free to establish a convention.
 
 ## Helpers
 

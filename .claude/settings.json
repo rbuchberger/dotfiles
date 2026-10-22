@@ -38,15 +38,17 @@
       }
     }
   },
+  "outputStyle": "Concise",
   "effortLevel": "medium",
   "promptSuggestionEnabled": false,
   "awaySummaryEnabled": false,
   "theme": "dark",
-  "editorMode": "vim",
+  "editorMode": "normal",
   "autoCompactEnabled": true,
-  "autoContinueAtUsageLimit": true,
+  "autoContinueAtUsageLimit": false,
   "remoteControlAtStartup": true,
-  "agentPushNotifEnabled": true,
+  "inputNeededNotifEnabled": false,
+  "agentPushNotifEnabled": false,
   "autoMode": {
     "environment": [
       "### Org-wide",

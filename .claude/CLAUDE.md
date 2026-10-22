@@ -17,6 +17,11 @@ which one we're dealing with in this context. For example, if we are discussing 
 review page, a ticket titled "Review queue: page header with stat tiles" you could refer to it as
 'LV-539 (header)'. In another context, you might refer to it as 'LV-539 (review page header)'
 
+## Shell
+
+My shell is nushell, which your environment reports. Your shell (the one you get when you use
+Bash()) is zsh.
+
 ## Skills
 
 Load these when editing or reviewing:
@@ -38,11 +43,10 @@ the same problem. Examples:
 - Skills not working right, or not being found.
 - Project tooling misconfigurations or conflicts.
 
-### My shell is nushell
+Log each one to `~/.claude/tooling-log/` as well as telling me: one file per problem, named like
+`2026-09-15-pnpm-exec-tsc-noop.md`. I read your closing message during the session; I triage the
+log later.
 
-`nu`, not bash. It expands an unquoted glob anywhere on the line, including inside a flag's value,
-before the command runs. So `grep -rn "foo" src --include=*.tsx` dies with
-`no matches found: --include=*.tsx`. Quote it — `--include="*.tsx"` — and it works. Same for any
-flag carrying a glob (`--exclude`, `find -name`, `rsync --filter`).
-
-It reads as a grep error rather than a shell one, so don't rewrite the command. Add the quotes.
+A few lines each — what broke, the command or error verbatim, which project, and whether you got
+past it. Log it even when you suspect another session already hit the same thing: how often
+something recurs is what tells me it's worth fixing.
