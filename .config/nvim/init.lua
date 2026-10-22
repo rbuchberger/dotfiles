@@ -51,6 +51,13 @@ vim.opt.undodir = vim.fn.expand("~/.local/share/nvim/undo")
 vim.opt.updatetime = 1000
 vim.opt.completeopt = { "menuone", "noselect" }
 vim.opt.wrap = false
+vim.opt.linebreak = true
+vim.opt.breakindent = true
+-- list:-1 makes soft-wrapped list items hang-indent using formatlistpat.
+vim.opt.breakindentopt = "list:-1"
+-- Default only matches numbered lists; add bullets so gq and breakindent align
+-- continuation lines under the text, not the marker.
+vim.opt.formatlistpat = [[^\s*\d\+[\]:.)}\t ]\s*\|^\s*[-*+]\s\+]]
 
 -- vim.opt.foldopen = vim.opt.foldopen + "all"
 -- vim.opt.foldmethod = "expr"
@@ -120,7 +127,11 @@ vim.api.nvim_create_autocmd("FileType", {
 		if vim.treesitter.language.add(lang) then
 			vim.treesitter.start(args.buf, lang)
 			-- this is an experimental feature
-			vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+			-- markdown is excluded: its indentexpr overrides the list indent
+			-- from formatlistpat, so gq unindents wrapped bullets.
+			if ft ~= "markdown" then
+				vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+			end
 			vim.wo[0][0].foldexpr = "v:lua.vim.treesitter.foldexpr()"
 			vim.wo[0][0].foldmethod = "expr"
 		end

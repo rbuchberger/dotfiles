@@ -70,7 +70,9 @@ return {
 				},
 			})
 
-			cmp.setup.filetype({ "markdown", "gitcommit" }, { enabled = false })
+			cmp.setup.filetype("gitcommit", { enabled = false })
+			-- Only LSP in markdown, so zk can suggest note links without prose noise.
+			cmp.setup.filetype("markdown", { sources = { { name = "nvim_lsp" } } })
 
 			cmp.setup.cmdline(":", {
 				mapping = cmp.mapping.preset.cmdline(),

@@ -98,6 +98,7 @@ return {
 				sql = { "sqruff" },
 			-- astro = { "prettierd" },
 			caddy = { "caddy_fmt" },
+			nu = { "nufmt" },
 		},
 		formatters = {
 			sqruff = {

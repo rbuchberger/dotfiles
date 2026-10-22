@@ -43,3 +43,18 @@ Flash Treesitter | S
 Remote Flash | r (operator mode)
 Treesitter Search | R
 Toggle Flash Search | <c-s> (cmdline mode)
+
+## zk @zk @notes @mappings
+New note | <leader>zn
+Today's journal | <leader>zd
+Open note | <leader>zo
+Search notes | <leader>zf
+Search notes for selection | <leader>zf (visual)
+Notes by tag | <leader>zt
+Follow link | <CR> (in note)
+Preview linked note | K (in note)
+Backlinks | <leader>zb (in note)
+Outgoing links | <leader>zl (in note)
+Insert link | <leader>zi (in note)
+Link selection | <leader>zi (visual, in note)
+New note from selection | <leader>zn (visual, in note)
