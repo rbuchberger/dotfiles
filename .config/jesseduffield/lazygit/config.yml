@@ -4,5 +4,6 @@ gui:
 notARepository: 'quit'
 promptToReturnFromSubprocess: false
 git:
-  pagers:
-    - externalDiffCommand: difft --color=always
+  diffRenderers:
+    - command: difft --color=always
+      type: extDiff
