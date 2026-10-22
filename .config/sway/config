@@ -83,9 +83,9 @@ set $left h
 set $down j
 set $up k
 set $right l
-# set $term kitty
+set $term kitty
 # set $term alacritty
-set $term footclient
+# set $term footclient
 
 # set $menu wofi --show drun --prompt="Launch"
 # set $menu 'bemenu-run --ignorecase --list 12 --prompt="Launch" --fn "Iosevka Aile 14" --tf="#da4939" --tb="#2b2b2b" --ff="#e6e1dc"--fb="5a647e" --nf="#e6e1dc" --nb="#2b2b2b" --hf="#a5c261" --hb="#5a647e" --sb="#5a647e" --sf="#a5c261"'
