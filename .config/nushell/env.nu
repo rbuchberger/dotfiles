@@ -20,4 +20,5 @@
 # pnpm
 $env.PNPM_HOME = "/home/robert/.local/share/pnpm"
 $env.PATH = ($env.PATH | split row (char esep) | prepend $env.PNPM_HOME )
+$env.ZK_NOTEBOOK_DIR = ($nu.home-dir | path join zk)
 # pnpm end

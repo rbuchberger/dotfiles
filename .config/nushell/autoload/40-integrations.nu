@@ -1,6 +1,9 @@
 $env.CARAPACE_BRIDGES = 'zsh,fish,bash,inshellisense' # optional
 mkdir ~/.cache/carapace
-carapace _carapace nushell | save --force ~/.cache/carapace/init.nu
+# Migrate carapace's completer off the deprecated positional `spans` input until upstream does.
+carapace _carapace nushell
+| str replace '{|spans|' "{|place|\n  let spans = $place.command"
+| save --force ~/.cache/carapace/init.nu
 source ~/.cache/carapace/init.nu
 
 # asdf

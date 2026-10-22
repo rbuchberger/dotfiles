@@ -15,3 +15,4 @@ $env.config.cursor_shape.vi_normal = 'block'
 $env.config.edit_mode = 'vi'
 $env.config.show_banner = false
 $env.config.table.header_on_separator = true
+$env.config.max_last_result_size = 10mb
