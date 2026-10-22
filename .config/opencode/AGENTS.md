@@ -1,43 +1,39 @@
 # AGENTS.md
 
-Be extremely concise.
+Be extremely concise. Speak simply and plainly; avoid metaphor and business jargon rarely used
+outside of a meeting room or work email. Speak like a chill, down-to-earth colleague, not an
+ambitious middle manager who spends too much time on linkedin.
 
-## Code Style
+I'm sick of seeing these phrases (and their variations), please stop using them:
 
-Applies to every language. Language specifics live in the skills below.
+- "load bearing"
+- "long pole"
+- "is exactly/precisely the", as in "which is exactly the bug we are (...)". Just drop it: "which is the bug
+  we are (...)"
 
-- Use guard clauses. Return early instead of nesting.
-- Never use a nested ternary. Avoid multiline ternaries.
-- Names are complete words, as short as possible while staying specific
-  in context. In a module `DB::Users`: `create`, `delete`, `getAll`,
-  `getById`. Not `getUser` or `deleteUser` (redundant), not
-  `getUserFromDatabase` (verbose), not `cr` or `crUsr` (abbreviated).
-- Single letters only for: declared and used on one line (`users.map((u) => u.name)`), or strong
-  conventions like `i`/`j`/`k` for loops or `e` for errors.
-- Never add a comment that restates a function or variable name. Comment
-  only when the purpose of a block is not obvious, when deviating from
-  the standard approach, or for a gotcha that cannot be eliminated. Before adding such a comment,
-  consider changing the code so it is not necessary.
-- Never use emojis or UTF symbols such as ✅ or ❌ in code or comments,
-  and especially not inside user-facing text.
+I have a hard time keeping track of issues or tickets when they are referred to only by a number.
+When discussing them, please add 1-3 words in parentheses to indicate which one we're dealing with
+in this context. For example, if we are discussing an overhaul of the review page, a ticket titled
+"Review queue: page header with stat tiles" you could refer to it as 'LV-539 (header)'. In another
+context, you might refer to it as 'LV-539 (review page header)'
 
 ## Skills
 
-Load these when the work touches them; they are not otherwise in context.
+Load these when editing or reviewing:
 
-- `typescript-conventions` - TypeScript and TSX.
-- `react-conventions` - React components and Tailwind.
-- `html-css-conventions` - HTML, CSS, templates, accessibility.
-- `sql-conventions` - SQL authoring.
-- `research-writeup` - format for online research write-ups.
+- `code-authoring` - **Any computer code**. Any time you are writing any code, you **MUST** read this.
+- `typescript-conventions` - TypeScript and TSX
+- `react-conventions` - React components and Tailwind
+- `html-css-conventions` - HTML, CSS, templates
+- `sql-conventions` - SQL
 
-<!-- CODEGRAPH_START -->
-## CodeGraph
+## Tooling
 
-In repositories indexed by CodeGraph (a `.codegraph/` directory exists at the repo root), reach for it BEFORE grep/find or reading files when you need to understand or locate code:
+If you have to work around issues with the environment, please inform me once work is finished even
+if the workaround is successful. That way I can do something about it, so the next agent won't have
+the same problem. Examples:
 
-- **MCP tool** (when available): `codegraph_explore` answers most code questions in one call — the relevant symbols' verbatim source plus the call paths between them, including dynamic-dispatch hops grep can't follow. Name a file or symbol in the query to read its current line-numbered source. If it's listed but deferred, load it by name via tool search.
-- **Shell** (always works): `codegraph explore "<symbol names or question>"` prints the same output.
-
-If there is no `.codegraph/` directory, skip CodeGraph entirely — indexing is the user's decision.
-<!-- CODEGRAPH_END -->
+- Denied permissions that don't make sense.
+- Agents not doing what is expected
+- Skills not working right, or not being found.
+- Project tooling misconfigurations or conflicts.
