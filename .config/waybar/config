@@ -13,10 +13,9 @@
     "custom/music",
     "wireplumber",
     "battery",
-    "backlight",
+    "custom/backlight",
     "memory",
     "network",
-    "custom/timewarrior",
     "clock#date",
     "clock#time",
     "tray"
@@ -66,12 +65,15 @@
     "tooltip": true,
     "tooltip-format": "{calendar}"
   },
-  "backlight": {
-    "format": "{percent}% {icon}",
-    "on-scroll-up": "light -U 2",
-    "on-scroll-down": "light -A 2",
-    "on-click": "light -S 100",
-    "on-click-right": "light -S 20",
+  "custom/backlight": {
+    "exec": "nu ~/.config/waybar/backlight.nu",
+    "return-type": "json",
+    "interval": 30,
+    "format": "{percentage}% {icon}",
+    "on-scroll-up": "nu ~/.config/waybar/backlight.nu up 10",
+    "on-scroll-down": "nu ~/.config/waybar/backlight.nu down 10",
+    "on-click": "nu ~/.config/waybar/backlight.nu set 100",
+    "on-click-right": "nu ~/.config/waybar/backlight.nu set 20",
     "format-icons": [
       "",
       ""
@@ -100,14 +102,14 @@
   },
   "network": {
     "format-wifi": "{signalStrength}% ",
-    "format-ethernet": "{ipaddr} ",
+    "format-ethernet": "{ipaddr} 󰈀",
     "format-linked": "{ifname} (No IP) ",
     "format-disconnected": "Disconnected ⚠",
     "format-alt": "{ifname}: {ipaddr}/{cidr}",
     "tooltip": false
   },
   "memory": {
-    "format": "{used}/{total}Gib ",
+    "format": "{used:.2f}/{total:.2f}Gib ",
     "tooltip": false,
     "interval": 5
   },

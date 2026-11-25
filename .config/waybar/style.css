@@ -44,7 +44,7 @@
 }
 
 /* whole bar */
-window {
+window#waybar {
   /* background: #2b2b2b; */
   background: rgba(20,20,20,.3);
   color: #e6e1dc;
@@ -65,7 +65,7 @@ window {
 #memory,
 #network,
 #battery,
-#backlight,
+#custom-backlight,
 #tray,
 #mode, 
 #custom-covsum,

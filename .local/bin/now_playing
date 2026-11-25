@@ -2,7 +2,12 @@
 # Returns a reasonably formatted indicator showing play status
 
 symbol() {
-	[[ $(playerctl status) == "Playing" ]] && echo " " || echo ""
+	[[ $(playerctl status) == "Playing" ]] && echo $' ' || echo $''
 }
 
-echo "$(playerctl metadata artist) - $(playerctl metadata title) $(symbol)"
+# SONE reports favorited tracks as userRating 1.0
+heart() {
+	[[ $(playerctl metadata xesam:userRating 2>/dev/null) == "1.0" ]] && echo $' '
+}
+
+echo "$(heart)$(playerctl metadata artist) - $(playerctl metadata title) $(symbol)"
